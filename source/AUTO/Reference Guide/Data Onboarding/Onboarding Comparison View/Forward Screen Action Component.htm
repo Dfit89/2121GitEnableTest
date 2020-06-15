@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Under Construction">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="Automotive Solution: Forward Screen Action component is used for routing an object into the defined screen. If it is placed in the Buttons component, it will route the currently selected product. If it is placed in the Actions parameter on a Node List, it will route the object that is selected in the list." />
+    </head>
+    <body>
+        <h1>Forward Screen Action Component</h1>
+        <p>Forward Screen Action component is used for routing an object into the defined screen. If it is placed in the Buttons component, it will route the currently selected product. If it is placed in the Actions parameter on a Node List, it will route the object that is selected in the list.  This component is commonly used within Web UI search screens and the Node Detail screen.</p>
+        <p class="Body1">One common use case of the Forward Screen Action component within the Automotive solution is to route the selected object to the Onboarding Comparison Screen. There are no explicit limits on how the component can be used, but it was created specifically to route the selected object towards the Onboarding Comparison Screen so that the user can compare the selected Source object with the Target object in the context of the configured Mapper Configuration setup entity.</p>
+        <p>The <b>Forward Screen Action</b> button can be added to any Node List as a toolbar action (a button accessible above the table) and to any Node Details screen as a standard action button (a button accessible below the table).<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note"> PRODOC note: Web UI screens that requires an object selection</MadCap:conditionalText></p>
+        <p>To add the <b>Forward Screen Action</b> button to a Node Details screen as a standard action button, navigate to the relevant 'Node Details Properties' screen in the designer. Under 'Child Components', click the 'go to component' link next to the 'Buttons' parameter. Click 'Add' and then find, select, and add the 'Forward Screen Action' component.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Data Onboarding/184.png" />
+        </p>
+        <p>Displayed in the screenshot below is the Forward Screen action as it displays when configured within the Node Details screen. </p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Data Onboarding/185.png" />
+        </p>
+        <p>To add the <b>Forward Screen Action</b> button to a Node List screen as a toolbar action button, navigate to the relevant Node List component in the designer. In the 'Child Components' section, click the 'Add' button below the 'Actions' field. In the 'Add Component' screen that displays, find, select, and add the 'Forward Screen Action' component.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Data Onboarding/183.png" />
+        </p>
+        <p>Displayed in the screenshot below is the Forward Screen action as it displays when configured within the Node List of the Search by Card Screen. </p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Data Onboarding/182.png" />
+        </p>
+        <p>Whether configuring the Forward Screen Action component as an action button or a toolbar action button, the options displayed in the designer are the same.</p>
+        <p style="font-style: normal;">Displayed in the screenshot below is the Forward Screen Action properties screen as it displays when being configured for a Node List screen. The properties screen for this component when being configured for a Node Details screen will have slight differences, which will be outlined in the parameter descriptions located below the screenshot.</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/180.png" />
+        </p>
+        <ul>
+            <li class="Bullet2"><b>Label</b>: When configuring a standard action button, the text entered in this field will display on the button. When configuring a toolbar action button, the text entered in this field will display beside the button. If nothing is added, the Label default will display as 'Forward Screen.'</li>
+        </ul>
+        <p class="Bullet2NextPara">This is how the button will display at the Node List toolbar:</p>
+        <p class="Image3">
+            <img src="../../../Resources/Images/Data Onboarding/Onboard Button Label.png" />
+        </p>
+        <ul>
+            <li class="Bullet2"><b>Forwarding Screen:</b> Select a specific screen using the dropdown so that users are forwarded to that screen when they click on the action button.  It is important that only the right type of screen is configured within this parameter. Configuring the wrong type of screen will not allow the action button to perform as intended and an error will be displayed. <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: There are different  errors displayed for different screens, hence I cannot show the error message here.</MadCap:conditionalText></li>
+            <li class="Bullet2"><b>Context Help </b>: Enter the text that will display in a small informational popup message when the cursor is placed over the button.</li>
+        </ul>
+        <p class="Bullet2NextPara">For example, if the field is populated with the value ‘Click to navigate to Onboarding Comparison Screen,’ this is how the help text will display when the cursor is placed over the action button in the Node List toolbar:</p>
+        <p class="Image3">
+            <img src="../../../Resources/Images/Data Onboarding/181.png" />
+        </p>
+        <h2>Using Forward Screen Action button in Search Screens</h2>
+        <p class="Body1">The <b>Forward Screen Action</b> button (<img src="../../../Resources/Images/Data Onboarding/Onboard Button Label.png" />)  is enabled when an object is selected in the search results table. If no object or multiple objects are selected, the Forward Screen Action button remains disabled.</p>
+        <ol start="1">
+            <li>Perform a search for object.</li>
+            <li>Select the object that needs to be routed to the specific screen.</li>
+        </ol>
+        <ol start="3">
+            <li>Click the <b>Forward Screen Action</b> button (<img src="../../../Resources/Images/Data Onboarding/Onboard Button Label.png" />) that is available in the toolbar of the screen.</li>
+        </ol>
+    </body>
+</html>

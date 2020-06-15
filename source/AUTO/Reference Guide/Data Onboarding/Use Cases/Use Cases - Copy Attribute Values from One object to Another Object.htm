@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="Automotive Solution: Describes the use case of copying data from one object to another object." />
+    </head>
+    <body>
+        <h1>Use Cases - Copy Attribute Values from One Object to Another Object</h1>
+        <p class="Body1">Because the Attribute Mapping plugin within Onboarding Mappings Details screen has many uses for how the mappings can be configured,  describing the components within the mapper does not fully cover all of the functional use cases.. With that in mind, a use case is described below that outlines instances where this Attribute Mapping plugin has been successfully implemented to copy attribute values from one object to another object.</p>
+        <p class="Body1">The use case for the <b>Attribute mapping</b> plugin are described below.</p>
+        <h2>Example One</h2>
+        <p class="Body1">The  requirement for this use case entails that the user has an attribute value in the Source object that needs to be copied over to the Target object. The user can do this either by using the Attribute Mapping plugin or by using the Object to Object Mapping plugin where the Source STEP path and the Target attribute is defined to hold the Source and the Target attribute value respectively. As the main intention of this topic is to address the various possible use cases of Attribute Mapping plugin, the Attribute Mapping method will be described below to achieve this requirement.</p>
+        <p class="Body1"> For this example, the Source object is PIES Item '034-VC21499' and the Target object is NAPA Product 'ATA64A' interlinked through the reference type 'PIESItemtoNAPAProduct' in the system. </p>
+        <p class="Body1HeadNoTOC"><b>Prerequisites</b>
+        </p>
+        <p>The validity of the Source and the Target attribute shall not have any mismatch.</p>
+        <p>In the Web UI, create and configure the Mapper Configuration and define the Source and Target objects and the Reference type to follow to determine the relationship between the Source and Target object.  For more information on configuring and setup procedure about the Mapper Configuration, see topic <b>Configuring Mapper Configuration Setup Entity</b> within this guide<MadCap:xref href="../Configuring Mapper Configuration Setup Entity.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Data Onboarding/86.png" />
+        </p>
+        <p>Configure an Initiate Business Action button within the Product Details screen of the Source object which shall execute the Mapper Configuration. For more information on executing the Mapper Configuration, see topic <b>Executing Mapper Configuration Setup Entity</b> within this guide<MadCap:xref href="../Executing Mapper Configuration Setup Entity.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <ol start="1">
+            <li class="Numbered1">Add a new Attribute Mapping plugin (or edit the one that exists) in the required Mapper Configuration.</li>
+            <li class="Numbered1">Type in a suitable name next to Name field. In this example, the Name field is entered with the text 'Copy PIES Attribute to NAPA Product Attribute'</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/125.png" />
+        </p>
+        <ol start="1" MadCap:continue="true">
+            <li class="Numbered1">Click the ‘Add attribute mapping’ icon, and the Mapping Guide window will display (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/126.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>With the Sources tab selected, click in the search field and start typing the initial letters of the attribute name or ID. This searches for the  attribute of the Source object from where the attribute value could be retrieved. Select the attribute from the result list displayed below the search bar. In this example, the attribute 'Description Long' is used as source attribute.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/127.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click <b>OK</b> and the selected attribute  will be populated in the Source field (as shown below)</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/128.png" />
+        </p>
+        <ol start="5" MadCap:continue="true">
+            <li>With the Targets tab selected, search and select the attribute of the Target object where the retrieved value from the Source object shall reside.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/129.png" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The Source object attribute and the Target object attribute should have a validity match.</p>
+        <p class="Body2">Once selected, the selected  attribute will be populated in the Target field.</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/130.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click <b>OK</b> to save and close the Mapping Guide window. The newly added object mapping  row will be listed as shown below. </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/131.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>In the Web UI, standing on the Source object, execute the Mapper Configuration that holds the mapping plugin. For more information on executing the Mapper Configuration, see topic <b>Executing Mapper Configuration Setup Entity</b> within this guide<MadCap:xref href="../Executing Mapper Configuration Setup Entity.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+        </ol>
+        <p>&#160;</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/Data Onboarding/84.png" />
+        </p>
+        <p>After the user runs the mapping, the value (Check Engine Light Sensor) of the 'Description Long' attribute from the Source object is copied over to the Target object attribute 'NAPA Text Block.'</p>
+        <p class="Body1">
+            <img src="../../../Resources/Images/Data Onboarding/85.png" />
+        </p>
+    </body>
+</html>

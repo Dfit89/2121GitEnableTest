@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes Automotive Validation Path functionality and how it is used for Search Box Criteria, Options on Applications, Missing Applications, Advanced Filtering, and Workbench Configurations.&#xD;&#xA;" />
+    </head>
+    <body>
+        <h1>Mapping Validation Path Functionality </h1>
+        <p class="Body1">The Mapping Validation Path functionality in the STEP Path Editor dialog ensures that users are able to select valid Source and Target objects to define their mapping setup in Object to Object Mapping or Application Mapping configurations.  The premise behind this concept is that when some level of valid Source STEP Path data (or valid Target STEP Path data) for objects is provided, the  mapping is able to retrieve the ID / Name / attribute values / references of the object present at the defined path.</p>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">Data for an automotive validation path is represented in STEP via a series of objects, references, and attributes. The values for those attributes and references are stored on the Vehicle Configuration objects, and the Application to Base Vehicle reference is applied to the individual application. </MadCap:conditionalText>Based on the Source  and the Target object type defined for the Mapper Configuration, the system always evaluates the Source STEP path (or Target STEP path) and suggests the valid attributes / reference types / object types from the system.<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: add something to define the Starting Points parameter that displays the object type that the Validation Path will begin evaluation on in order to follow the path to retrieve information from.</MadCap:conditionalText></p>
+        <p>The Starting Points parameter available in the STEP Path Editor dialog  displays the object type that the Validation Path will begin evaluation on in order to follow the path to retrieve information from.</p>
+        <p class="Body1">This relationship data is captured within the  Validation Path field based on the data model setup  that defines the relationship between different object types.</p>
+        <p class="Body1">Each of the elements available within the Keywords field in the STEP Path Editor dialog is explained in detail below. Note that all elements are not necessarily used in all requirements. The specific combinations of elements are chosen depending on how the data needs to be retrieved from the Source object. <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: replace the below screenshot with the latest screenshot available in 9.2MP1 notes. At this hour of documentation, My flare is neither possible to commit or make changes.</MadCap:conditionalText></p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Data Onboarding/55.png" />
+        </p>
+        <ul>
+            <li class="Bullet3"><b>attribute[id:'[id]']</b>: This element defines the valid attribute where a value may be retrieved from the Source object. Further configuration is required to define the attribute. Once the attribute[id:'[id]'] keyword has been selected, double-click on the Validation Path field to select an attribute (only attributes valid to the Source object type are displayed) from the Select Attribute dialog.</li>
+        </ul>
+        <ul>
+            <li class="Bullet3"><b>child[objecttype:'[id]']</b>: This element allows the user to retrieve the data  from the child of the object that is displayed in the Starting Points parameter. Further configuration is required to define the object type and also what value of the child object (ID / Name / attribute value /references) is to be retrieved.  This element should always be accompanied by some of these <b>id</b> / <b>name</b> / <b>attribute[id:'[id]']</b> / <b>reference[type:'[id]']</b> elements.</li>
+            <li class="Bullet3"><b>id</b>: This element retrieves the ID of the defined object. </li>
+            <li class="Bullet3"><b>name</b> : This element retrieves the name of the defined object.</li>
+            <li class="Bullet3"><b>parent</b>: This element retrieves the data  from the parent of the defined object. Further configuration is required to define what value of the parent object (ID / Name / attribute value /references) is to be retrieved.  This element can always be accompanied by <b>id</b> / <b>name</b> / <b>attribute[id:'[id]']</b> / <b>reference[type:'[id]']</b> elements.</li>
+            <li class="Bullet3"><b>reference[type:'[id]']</b>: This element retrieves the data  from the referenced object of the defined object. Further configuration is required to define the reference type and is also required to define what value of the referenced object (ID / Name / attribute value /references) is to be retrieved.  This element can always be accompanied by <b>id</b> / <b>name</b> / <b>attribute[id:'[id]']</b> / <b>reference[type:'[id]']</b> elements.</li>
+            <li class="Bullet3"><b>referenceBy[type:'[id]']</b>: This element retrieves the data from the source object  when the defined object is the target object of the configured reference. Further configuration is required to define the reference type and is also required to define what value of the source object (ID / Name / attribute value /references) is to be retrieved.  This element can always be accompanied by <b>id</b> / <b>name</b> / <b>attribute[id:'[id]']</b> / <b>reference[type:'[id]']</b> elements.</li>
+            <li class="Bullet3"><b>text['[text]']</b>: This element lets the user enter a static text of the user's choice.</li>
+        </ul>
+        <p class="Body1">For example, for the ACES Body Num Doors attribute (AC_ACESBodyNumDoors) stored at the child of the Source object (PIES Item), the Source STEP path is configured as: </p><pre xml:space="preserve">child[objecttype:'AC_ACESApplication'].attribute[id:'AC_ACESBodyNumDoors']</pre>
+        <p class="Body2">This Source STEP Path  is determined by:</p>
+        <ol>
+            <li class="Bullet3">Identifying the source object.</li>
+            <li class="Bullet3">Examining all  children with object type AC_ACESApplication of the source object.</li>
+            <li class="Bullet3">Evaluating the value of the ACES Body Num Doors attribute (AC_ACESBodyNumDoors) that is stored on the child object.</li>
+        </ol>
+    </body>
+</html>

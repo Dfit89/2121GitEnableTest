@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:searchable="True" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="The Attribute Mapping Plugin is accessible on Onboarding Mappings Details screen. The settings available in this 'plugin' allow more control over the behavior of Mapper Configuration." />
+    </head>
+    <body>
+        <h1>Attribute Mapping Plugin</h1>
+        <p>The Attribute Mapping plugin will copy attribute values from the source object to the target object. It is configured on the Onboarding Mappings Details Screen for the selected Mapper Configuration. The settings available in this plugin allow the user to define what the Mapper Configuration should do with the attribute values.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">All settings are not necessary for all attributes. The specific combinations chosen are dependent on the unique requirements for the attribute being configured. The settings contained within this plugin can include transformations. The plugin can be configured to either  Onboard / Outboard the data or  in some cases can be configured to work along with transformations, too.<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note:We should add that this can be used with lookup tables and provide a use case with the lookup tables. NGK uses a lot of lookup tables.</MadCap:conditionalText></p>
+        <p class="Body1">To configure the Attribute Mapping plugin, follow these steps.</p>
+        <ol>
+            <li>With the   required Mapper Configuration selected, click on <b>New mapping</b> available within the Mappings tab of  the Onboarding Mappings Details screen.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/23.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Select Attribute Mapping, and a screen is displayed prompting the user to further configure  the plugin (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/37.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Type in a suitable name next to Name field. This could be any unique name that clearly describes the mapping functionality.<MadCap:conditionalText MadCap:conditions="Primary.Under Construction">In the example below, a name 'Copy attribute value from PIES to NAPA Product' is entered.</MadCap:conditionalText></li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Click the ‘Add attribute mapping’ icon, and the Mapping Guide window will display (as shown below). </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/38.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>With the Sources tab selected, click in the Search field and start typing the initial letters of the attribute name or ID.  This brings up a dropdown of typeahead search results listing the attributes of the Source object available in the system from where the attribute value could be retrieved. Select the attribute from the result list displayed below the search bar.</li>
+        </ol>
+        <p class="Body1">
+            <img src="../../Resources/Images/Data Onboarding/39.png" />
+        </p>
+        <p class="Body2">Once selected, the attribute will be populated in the Source field (as shown below)</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/40.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>With the Targets tab selected, click in the Search field and start typing the initial letters of the attribute name or ID. This searches for the attribute from the Target object where the retrieved value should be copied to. Select the attribute from the result list displayed below the search bar.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/41.png" />
+        </p>
+        <p class="Body2">Once selected, the attribute will be populated in the Target field (as shown below).</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/42.png" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Only attributes that are valid for the object type that is defined in the mapping Setup tab will be displayed as options to select from in the Sources and Targets tabs.</p>
+        <p class="Body1">After the source and target attributes are defined,  the system evaluates the validity match between the source and the target attributes. A  hyperlink text  explaining the reason for the validity match / mismatch gets displayed. Clicking on the hyperlink will open the 'Detailed Information' dialog and displays the  validity match / mismatch information of the attribute mapping. Below is an example of a validation mismatch between the source and the target attribute displayed in the 'Detailed Information' dialog:</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Data Onboarding/43.png" />
+        </p>
+        <p>The user can suppress the validation mismatch warning message by clicking on the 'Suppress' checkbox in the Mapping Guide window. Selecting the 'Suppress' checkbox will <i>only</i> remove the  data type mismatch warnings displayed on the Mapping Guide window and <i>does not resolve</i> the mismatch irregularities.</p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Data Onboarding/48.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>With the 'Transformations' tab selected, click in the search field and start typing the initial letters of the transformation name or ID. This brings up a dropdown of typeahead search results listing the attribute transformations available in the system. Select the relevant transformation from the list displayed below the search bar.</li>
+        </ol>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The transformations must be created and defined in workbench System Setup prior to being available to be selected in the Mapping Guide.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/44.png" />
+        </p>
+        <p class="Body2">The selected transformation will be populated in the Transformation field (as shown below).</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/45.png" />
+        </p>
+        <p class="Body2">The populated transformation can be deleted by clicking the delete icon (<img src="../../Resources/Images/Data Onboarding/Delete icon.png" />)  in the Transformation field. Clicking  the edit icon  (<img src="../../Resources/Images/Data Onboarding/Edit icon.png" />) will open the Transformation Overview dialog and lets the user  test the functionality of the transformation via  the <b>Test</b> button (as shown below). For more information on this <b>Test</b> button, see the <b>Testing Transformations Configured in Attribute Mapping Plugin</b> topic within this guide<MadCap:xref href="Attribute Transformation in Mapping Plugin/Testing Attribute Transformations Configured in Mapping Plugins.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/47.png" />
+        </p>
+        <p>The attribute transformations can also be created in the Mapping guide window by clicking on the Create New Transformation icon (<img src="../../Resources/Images/Data Onboarding/Create transformation icon.png" />) available within the Transformation field. Users can define the ID, Name, and the hierarchy in which the attribute transformation should be stored in. </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">The Create New Transformation icon (<img src="../../Resources/Images/Data Onboarding/Create transformation icon.png" />) would only create the attribute transformation, and the user needs to  configure and define the functionality of the transformation separately in the workbench.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Data Onboarding/51.png" />
+        </p>
+        <p class="Body1">For  information on configuring the attribute transformations, see the <b>Attribute Transformations</b> topic within the <b>System Setup</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../System Setup/Attributes/Attribute Transformations/Attribute Transformations.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>. And for details on each of the available transformation options, see the <b>Transformations</b> topic in the <b>Resource Materials</b> online help<MadCap:xref href="../../../../Resource Materials/Transformations/Transformations.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <ol MadCap:continue="true">
+            <li>Click <b>OK</b> to close the Mapping Guide window and then click <b>Save</b> to save the changes. The newly added attribute mapping  row will be listed as shown below. To edit the attribute mapping selections, click on the row and it will open up the Mapping Guide window in order to make edits.</li>
+        </ol>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Once the user adds a mapping and selects the Source and Target attribute and clicks <b>OK</b> to close out of the Mapping Guide window, the <b>Save</b> button is enabled until the user clicks on <b>Save</b> button. If the user fails to click <b>Save</b>, than the mapping will be lost once user selects a new mapping configuration.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Data Onboarding/52.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Repeat the above steps 4 to 8 to add more attribute mapping rows for the same plugin. </li>
+        </ol>
+        <p>User can add any number of mapping rows in the mapping plugin. When there are multiple mapper rows available within the mapping plugin, the order of execution of each mapper row is based on the order in which it is listed within the mapping plugin.</p>
+        <p class="Body1">The health of the  mapping row is displayed next to each mapping row. Users can also add some additional information describing each of the mapper rows. The user has the flexibility to   disable, delete, or rearrange the listing order of the mapper rows. For more information on handling the mapper rows, see topic <b>Modifying Mapper Rows on the Onboarding Mapping Details Screen</b> within this guide.</p>
+    </body>
+</html>

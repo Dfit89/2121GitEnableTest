@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p class="Body1">Once the  business action has been configured in the workbench, configuration within Web UI is necessary. This section addresses the steps necessary within Web UI.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">After the initial setup,  the access to the dialogs does not change, therefore these steps can be helpful when editing the configuration. However, when editing the 'Add' button will be replaced with the 'Save' button, and the 'Add component...' labels at the top of the dialogs will display as 'Edit component... .' </p>
+        <ol>
+            <li class="Numbered1">Access the Application Manager screen where the business action needs to be available to users.</li>
+            <li class="Numbered1">Access the Designer &gt; navigate to Node List Properties &gt; Child Components &gt; Actions &gt; Double click <b>Bulk Applications Updates</b> and the 'Bulk Applications Updates Properties' dialog will display (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/BA1s.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Click the <b>Add</b> button beneath the Bulk Updates parameter, and the 'Add component - configure required properties' for the 'Bulk Applications Update Properties' dialog will display (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/BA2.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">
+                <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> next to the Business Action parameter &gt; select the business action previously created &gt; click the <b>OK</b> button to close the dialog, and return to the Bulk Applications Update Properties dialog. The selected action is displayed in the Business Action parameter. </li>
+            <li class="Numbered1">Click the <b>Add</b> button beneath the Parameters field, and the Add Component dialog will display (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/BA3.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Select <b>Node Picker Parameter</b> &gt; click the <b>Add</b> button to close the dialog, and the 'Add component - configure required properties' for the 'Node Picker Parameter Properties' dialog will display (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/BA4.png" />
+        </p>
+    </body>
+</html>

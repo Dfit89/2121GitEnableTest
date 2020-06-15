@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:searchable="True" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to allow application outside part type." />
+    </head>
+    <body>
+        <h1>Allowing Applications Outside Part Type</h1>
+        <p class="Body1">When using an Application Editor, if a part number is found using the part type search, but the part number is being applicated to a part type that differs from the one used to search, an error dialog will display informing the user that the part cannot be linked because the part type is different. In other words, when using the application editor to applicate parts, a parts part type must match the applications part type.</p>
+        <p class="Body1">However, it is possible to override this, allowing users to select a part number with a part type that does not match the part type searched for application. In other words, the Application Editor will ignore the searched part type when assigning the part number to the application. This is helpful when working with a part that can only have a single part type, but can be applicated for multiple part types.</p>
+        <p class="Body1HeadNoTOC">Prerequisites</p>
+        <p class="Body1">The new parameter will need to be added by running <b>Automotive - [Standard] Model &gt; 4. Configure [Standard] WebUI</b> Easy Setup.</p>
+        <p class="Body1HeadNoTOC" MadCap:conditions="Primary.Print">Enabling the Allow Applications Outside Part Type </p>
+        <h2 MadCap:conditions="Primary.Web">Enabling the Allow Applications Outside Part Type </h2>
+        <p class="Body1">Below are the steps to enable the Allow Applications Outside Part Type parameter.</p>
+        <ol>
+            <li>Go to the Application Editor's Multi Edit Display mode Properties &gt; Headers.</li>
+            <li>Select <b>Application Set Part</b>.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/QS/AppSetPartSelected.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click the <b>Edit</b> button, and the Application Set Part Properties will display.</li>
+            <li>Click the checkbox for the <b>Allow Applications Outside Part Type</b>.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/QS/AllowApplicationsOutsidePT.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click the <b>Save</b> and <b>Close</b> buttons to save and close the designer.</li>
+        </ol>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST-2370</p>
+    </body>
+</html>

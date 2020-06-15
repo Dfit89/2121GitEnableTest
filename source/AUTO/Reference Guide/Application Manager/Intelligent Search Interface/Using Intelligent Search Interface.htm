@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to use the intelligent search interface within the Application Manager." />
+    </head>
+    <body>
+        <h1>Using  Intelligent Search Interface</h1>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST-2671 BEJA Sprint demo (2/13/18) how the options filter works on the results</p>
+        <p>The Application Manager intelligent search interface has been carefully designed to allow users to quickly and easily select criteria for valid combinations of different vehicle types, makes, models, years, options (i.e., sub models, regions), and part types. This allows users to create accurate  search criteria on the fly and benefit from the customized search results. This is accomplished by allowing users to select only valid criteria across multiple search boxes per the configuration of the Vehicle Type Search Panel.</p>
+        <p class="Body1">Within an Application Manager screen, the Vehicle Type Search Panel can be configured to display up to four search box types. Because the Options Group search box type allows for up to two Options search boxes, up to five search boxes can be displayed. Within each search box, a  typeahead field is used to view and select valid search criteria. Because only valid criteria can be selected from each dropdown list, the Application Manager provides automated intelligence for each search. Thanks to the synchronization of the search boxes, the valid criteria is considered upon each selection and within any of the displayed search boxes, no matter the order of entry. </p>
+        <p class="Body1">For example, if the Make/Model search box contains a vehicle that was only produced from 1994-2010, then the dropdown within the Year search box will only display those years for selection. Because Chrysler established Ram trucks as a new brand (Make) beginning with the 2011 model year, the available years are displayed as 1994-2010 when Make/Model ‘Dodge Ram 3500’ is selected (as shown below).</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Dodge Ram Example Year list short.png" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The Vehicle Type Search Panel, and its search boxes, have many configuration options. If your screen, or search criteria dropdown options display differently than the examples within this section, contact your Web UI administrator. For more information on configuring an Application Manager, see the <b>Configuring Application Manager</b> topic<MadCap:xref href="../Configuring Application Manager/Configuring Application Manager.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within this guide. For information about the general layout and features of the Application Manager, see the <b>Application Manager</b> topic<MadCap:xref href="../Application Manager.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within this guide.  </p>
+        <p class="Body1">However, if the Ram 3500 is added to the Make/Model search box, then the available years display as 1994-2018 (as shown below).</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Dodge Ram Example Year list long.png" />
+        </p>
+        <MadCap:pageBreak MadCap:conditions="Primary.Print" />
+        <p class="Body1">Additionally, consider being able to easily view the engines used for selected vehicles.  In the screenshot below, a Dodge Ram 3500 is selected for the Make/Model search box, and some available years have also been selected. Therefore, when the Engine option is selected for the Options search box, and the cursor is placed within the search box field, only those engines used for those vehicles display for selection. </p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Search Make Model using Engine.png" />
+        </p>
+        <p class="Body1">Taking this example a step further, after selecting Dodge Ram 3500 for the Make/Model search box, and 6.7L L6, -CC, 408CID for the Engine options search box, users can easily view the valid years the selected engine has been was manufactured within the selected vehicle (as shown below).</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Engine.png" />
+        </p>
+        <p class="Body1">This section addresses the following:</p>
+        <ul>
+            <li><b>Using Search Boxes</b>
+                <MadCap:xref href="Using Search Boxes.htm" class="Here"><span style="color: Blue;" class="mcFormatColor" MadCap:conditions="Primary.Web"> here</span>
+                </MadCap:xref>
+            </li>
+            <li><b>Search Box Synchronization</b>
+                <MadCap:xref href="Search Box Synchronization.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li><b>Using Make/Model Search Box</b>
+                <MadCap:xref href="Using Make Model Search Box.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li><b>Using Year Search Box</b>
+                <MadCap:xref href="Using Year Search Box.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li><b>Using Options Search Boxes</b>
+                <MadCap:xref href="Using Options Search Boxes.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li><b>Using Part Type Search Box</b>
+                <MadCap:xref href="Using Part Type Search Box.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+        </ul>
+    </body>
+</html>

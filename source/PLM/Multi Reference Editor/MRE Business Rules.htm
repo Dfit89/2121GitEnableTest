@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="PLM Solution: For the Multi-Reference Editor, several business rules can be configured. Each of the business rules will be described in detail in this section." />
+    </head>
+    <body>
+        <h1>Multi-Reference Editor Business Rules</h1>
+        <p>For the Multi-Reference Editor (MRE), several business rules can be configured. Each of the business rules will be described in detail in this section.</p>
+        <h2>Get Reference Type – Business Function</h2>
+        <p>This business function is used by the <b>PLM Create Reference Action</b> component to get the reference type ID that will be used to create the new reference.</p>
+        <p>It has two input parameters:</p>
+        <ul>
+            <li>Source object of the type Node which is the owner of the reference that will be created</li>
+            <li>Target object of the type Node which is the target object of the reference that will be created</li>
+        </ul>
+        <p>The return type of the business function is in the format of a string, containing the STEP reference type ID.</p>
+        <p>Below is an example of a business function that is used in the private label food solution to get the reference type ID when adding a requirement or a parameter to a variant.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Solution Enablement/PLM/MRE10.png" />
+        </p>
+        <h2>Copy From Template- Business Action</h2>
+        <p>This business action is used by the <b>PLM Create Reference Action</b> component for getting default values to display in the Multi-Reference Editor (MRE).</p>
+        <p>The low-level processing flow to display default values in the MRE dialog is:</p>
+        <ol>
+            <li>Start a transaction.</li>
+            <li>Create a reference between the source and target object using the reference type ID returned by the 'get reference type – business function'.</li>
+            <li>Execute the defined 'copy from template – business action'. This will populate values on the created reference in step 2.</li>
+            <li>The MRE dialog reads the defined attribute values from the reference that was created in step 2 and has default values populated in step 3.</li>
+            <li>MRE dialog is shown.</li>
+            <li>The transaction is rolled back. </li>
+        </ol>
+        <p class="important2" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Any values that are copied to the created reference that are not displayed in the MRE dialog will be deleted when the reference is deleted (rolled back). The values in the MRE dialog will be saved to a new reference when the user clicks the save button in the MRE dialog.</p>
+        <p>This business action has a bind that is an instance of the reference object that was created in step 2 above.</p>
+        <p>Below is an example for a business action that is used in the private label food solution to copy default values based on attributes in an attribute group when adding a requirement or parameter.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Solution Enablement/PLM/MRE11.png" />
+        </p>
+        <h2>Validation – Business Function</h2>
+        <p>This business function is used by the <b>PLM Create Reference Action</b> and the <b>PLM Edit Reference Action</b> components to validate the entered data in the Multi- Reference Editor (MRE) dialog.</p>
+        <p>It has two input parameters:</p>
+        <ul>
+            <li>Source object of the type Node which is the owner of the reference that was created</li>
+            <li>Target object of the type Node which is the target object of the reference that was created</li>
+        </ul>
+        <p>The return type of the business function is in the format of a list&lt;String&gt;, which is a list of strings containing pairs of values where the first value is the attribute name and the second value is the validation error message. The validation error message can contain html tags including links (a href)</p>
+        <p MadCap:conditions="Primary.PRODOC Note">PRODOC note:&#160;Jan says that even though this is not used the in PLM food solution, we need to tell the reader how to create a validation if they need to, independently of if one is used or not.</p>
+        <p>Below is an example of a validation – business function. This example  is not used in the private label food solution.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Solution Enablement/PLM/MRE12.png" />
+        </p>
+        <p>The validation errors are shown to the user in a dialog as shown below:</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Solution Enablement/PLM/MRE13.png" />
+        </p>
+        <h2>Copy From Template (Context) – Business Action</h2>
+        <p>This business action is used by the <b>PLM Create Reference Action</b> component for copying additional values to the created reference, including values in other contexts than the current context. An example of copying values in other contexts could be that when working in the US English context, and adding a new parameter to a variant, we need to populate the default help text in Spanish and potential other contexts as well.</p>
+        <p>This business action has a bind which an instance of the reference object.</p>
+        <p>Below is an example for a business action that is used in the private label food solution to copy default values based on attributes in an attribute group when adding a requirement or parameter. This is the same business action used in the 'copy from template – business action'. The business action is copying attribute values for all of the system-defined contexts.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Solution Enablement/PLM/MRE14.png" />
+        </p>
+    </body>
+</html>

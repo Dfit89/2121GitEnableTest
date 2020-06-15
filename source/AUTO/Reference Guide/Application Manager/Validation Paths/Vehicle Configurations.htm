@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1420" MadCap:lastWidth="897" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how Vehicle Configurations are stored within Workbench in relation to the automotive validation path functionality." />
+    </head>
+    <body>
+        <h1>Vehicle Configurations</h1>
+        <p class="Body1">Options for different vehicle configurations are stored within STEP as attributes on a classification object type. Classification object types are referenced by Vehicles that are children of the Base Vehicle object type. </p>
+        <p class="Body1">In the example below, the <b>VCdb Body Num Doors</b>, and <b>VCdb Body Type</b> AutoCare options are modeled as attributes within the <b>Body Style Config</b> classification object type.   The valid configuration for the '2 door, Coupe' consists of '2' doors and a 'Coupe' body type.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/QS/BodyStyleConfig.png">
+            </img>
+        </p>
+        <p class="Body1">All 2 door coupe vehicles reference the <b>2 door, Coupe</b> body style using the <b>Vehicle To Body Style Config</b> Reference Type. A vehicle can have more than one 'Vehicle To Body Style Config' reference and if so, it will display as multiple references on the vehicle (as shown below).</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/QS/BodyStyleConfigRefs.png">
+            </img>
+        </p>
+        <p class="Body1"> In the example below, the <b>1996 Dodge Viper GTS, United States</b> has only one valid <b>Vehicle To Body Style Config</b> reference target, the <b>2 door, Coupe</b>.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/QS/1996DodgeViperRefs.png">
+            </img>
+        </p>
+        <p class="Body1">Since only one valid body style exists for this vehicle, it would be invalid for an application to be supplied for the vehicle where any other body style was implied. Additionally, within the Application Manager, it is not possible for a user to select a value other than 2 for the Body Num Doors value, or Coupe for the Body Type value. </p>
+    </body>
+</html>

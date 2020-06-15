@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how Automotive Validation Path affect Search Box Criteria.&#xD;&#xA;" />
+    </head>
+    <body>
+        <h1>Validation Path Functionality and Search Box Criteria</h1>
+        <p class="Body1">The validation path concept drives the intelligence that allows Application Manager search boxes to display only valid options filtered by previous selections and/or specific vehicle configurations. </p>
+        <p class="Body1">For example, the 2013 Audi A3 was manufactured with six engine options, and some of those engines require diesel fuel instead of gas. When the Make/Model search box is populated with the Audi A3 criterion, and the Year search box is populated with the 2013 criterion, then the Fuel Type options search box will display the two available fuel types; Diesel and Gas (as shown below).</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Options search boxes can be configured with many different attributes and/or references. For the following examples, the Options search boxes are displayed using the Fuel Type and Engines attributes.</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Validation Paths/A3 2013 Fuel Type Dropdown.png" />
+        </p>
+        <p class="Body1">When the Fuel Type options search box is left blank, then the Engine options search box will display the six engines available for the 2013 Audi A3 (as shown below).</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Validation Paths/A3 2013 Engine Dropdown.png" />
+        </p>
+        <p class="Body1">Whereas, when the Diesel criterion is selected for the Fuel Type options search box, then the Engine options search box will display the engine that uses diesel fuel and is available for the 2013 Audi A3 (as shown below).</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Validation Paths/EngineDropdownFuel.png" />
+        </p>
+        <p>Notice in the examples provided above, the AND/OR toggle button is set to AND. When the toggle button is set to OR, then the Options search boxes (displaying the 'Fuel Type' and 'Engine' options in the screenshot below) do not limit the display of valid criteria based upon each other. However, the Options search boxes always consider the Make/Model and Year search box criteria before displaying the valid criteria options within the dropdown. In the example below, the same criteria is selected from the previous example, however the OR toggle button is active, and all the valid engines for the 2013 Audi A3 display.</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Validation Paths/AfterFuelOR.png" />
+        </p>
+        <p>For more information on the Options search boxes, see the <b>Using the Options Search Boxes</b> topic<MadCap:xref href="../Intelligent Search Interface/Using Options Search Boxes.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>  within the Intelligent Search Interface section of this guide.</p>
+    </body>
+</html>

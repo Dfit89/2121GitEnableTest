@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to configure an Attribute Search Box component." />
+    </head>
+    <body>
+        <h1>Configuring the Attribute Search Box</h1>
+        <p class="Body1">The Attribute Search Box will search for attribute values that are valid for the object type that is intended for search. For example, in the AutoCare standard, if a Base Vehicle object is being searched, then the Attribute Search Box will by default search only on the attribute(s) that are valid for the Base Vehicle objects to display (e.g. VCdb Year).  If a root node has been configured in the Root Nodes parameter, then the Attribute Search Box will only search below the configured root node(s). To add the Attribute Search Box component within the Search Cards parameter follow the instructions below. </p>
+        <ol MadCap:continue="false">
+            <li>From the Search by Card Screen Properties dialog, click the <b>Add</b> button next to the Search Cards parameter field.The Add Component dialog will display.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/30.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click <b>Attribute Search Box</b> from the list of components.</li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Click the <b>Add</b> button, and the Attribute Search Box Properties will display, as shown below.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/31.png" />
+        </p>
+        <p class="Body2"><b>Attributes:</b> This required field allows users to add one or more attribute criteria to their search. All attribute validation base types (e.g., Text, Number, List Of Values) are allowed. <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select the required attribute. The selected attribute must be valid for the object type that is intended for search, and the attribute value must be populated on that object in order for it to display correctly. The name of the attribute will display in the configured search box.</p>
+        <p class="Body2"><b>Include Inherited Value:</b> This checkbox determines the requirement to include the inherited attribute values in its search criteria. Check the field to enable searching of the  inherited attribute values in the search card.</p>
+        <p class="Body2"><b>Minimal Suggestion Length:</b> This required field determines the minimum number of characters that must  be entered into the typeahead field so the associated card starts suggesting relevant values in the dropdown.</p>
+        <ol MadCap:continue="true">
+            <li>Once the required parameters are populated, click the <b>Add</b> button to return to the Search by Card Screen Properties and <b>Save</b> the configuration. Users may add additional  search fields, if needed.</li>
+        </ol>
+        <p class="Body2">Below is an example of a configured Attribute Search Box component:</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/32.png" />
+        </p>
+    </body>
+</html>

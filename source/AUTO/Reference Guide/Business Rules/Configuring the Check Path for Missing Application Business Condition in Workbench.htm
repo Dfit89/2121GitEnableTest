@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes how to configure the Check Path for Missing Application Business Condition." />
+    </head>
+    <body>
+        <h1>Configuring the Check Path for Missing Application Business Condition in Workbench</h1>
+        <p class="Body1">Implementing this solution includes configuring a Business Condition using the 'Check path for missing application' plugin, and then adding the Business Condition to the 'Missing Application Conditions' attribute.</p>
+        <p class="Body1HeadNoTOC">Configuring the Business Condition</p>
+        <p class="Body1">This section provides steps for configuring a Business Condition using the 'Check path for missing application' plugin within Workbench.</p>
+        <ol>
+            <li>Confirm the  'Missing Application Conditions' attribute (MissingApplicationConditions) exists, otherwise create it.</li>
+            <li>Confirm the Missing Application Conditions attribute (MissingApplicationConditions) is  valid for the necessary object types for each standard being used. For example, when Easy Setup Actions are completed, the following are made valid when the AutoCare, NAPA, and TecDoc standards are used:  Part Terminology, NAPA MPCC, and Standard Assembly GA. </li>
+            <li>
+                <p class="Body1"> Create a new Business Condition with a name that represents the Condition or Part Type value to be filtered. In the example below, the Spark Plug Part Type value will determine if a vehicle with the Diesel option will display within the results table, thus the Name is <b>Missing Application Spark Plug</b>.</p>
+            </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Within the Business Rule Editor, click the <b>Add new Business Condition</b> link, and a Business Condition will display within the Operations tab. </li>
+            <li>Click the <b>Edit icon</b>, and an Edit Operation dialog will display. </li>
+            <li>Click the dropdown within the Edit Operation dialog to select the <b>Automotive</b> option, and then the <b>Check path for missing application</b> plugin (as shown below).</li>
+        </ol>
+        <p class="Image1">
+            <img src="../../Resources/Images/BRs/CheckPathformissing.jpg">
+            </img>
+        </p>
+        <p class="Image3">&#160;</p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Once the plugin is selected, the Edit Operation dialog will display the following parameters:</li>
+        </ol>
+        <ul>
+            <li class="Bullet2"><b>Path:</b> Defines the reference that should be followed on the application to retrieve the attribute value defined in the path. The Path information for an attribute lives on a referenced object that is referenced from another referenced object from the child of the actual vehicle. For this example, the Path information for Fuel Type (GAS/DIESEL) is stored on the Automotive Validation Path attribute (as shown below). </li>
+        </ul>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">For more information on the Automotive Validation Path, see the Automotive Validation Path Functionality section within the <b>Automotive Reference Guide</b> found within the <b>Solution Enablement</b> section of <b>STEP Online Help</b><MadCap:xref href="../Application Manager/Validation Paths/Automotive Validation Path Functionality.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Image1" MadCap:conditions="Primary.Print">
+            <img src="../../Resources/Images/BRs/3.jpg">
+            </img>
+        </p>
+        <p class="Image3" MadCap:conditions="Primary.Web">
+            <img src="../../Resources/Images/BRs/3.jpg">
+            </img>
+        </p>
+        <p class="Body3">The Path information (attribute value) must be copied from the Fuel Type specification Automotive Validation Path attribute, and pasted into the Path parameter (as shown below).</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/BRs/4.jpg">
+            </img>
+        </p>
+        <ul>
+            <li><b>Valid Values:</b> One or more IDs of an LOV value must be entered. IDs entered will be displayed within the Application Manager Results Table when applicable. In the example below, the value ID for the Fuel Type - List of Values GAS is 5. </li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/BRs/5.jpg">
+            </img>
+        </p>
+        <ol MadCap:continue="true">
+            <li value="8" class="Numbered1">Within the Edit Operation dialog, click the <b>green plus sign</b> icon (<img src="../../Resources/Images/GreenAddIcon.png" />) to add a value ID to the <b>Valid values</b> parameter. </li>
+            <li class="Numbered1">In the example below the number 5 is entered so that the GAS Fuel Type will display when the Spark Plug part type is searched. </li>
+        </ol>
+        <p class="Image3">
+            <img src="../../Resources/Images/BRs/BC Check Path WB Config.png">
+            </img>
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Optionally, click the <b>green plus sign</b> icon (<img src="../../Resources/Images/GreenAddIcon.png" />) to add more value IDs, if more Fuel Types should display when the Spark Plug part type is searched.</li>
+            <li class="Numbered1">Click the <b>Save</b> and <b>Close</b> buttons to save the Business Condition.</li>
+        </ol>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Copy the ID of the Business Condition for the next steps.</p>
+        <p class="Body1HeadNoTOC">Adding the Business Condition to the Missing Application Conditions Attribute</p>
+        <p class="Body1">Once the Business Condition has been configured, it must be added to the Missing Application Conditions attribute. Below are the steps necessary to add the Business Condition to the Part Type attribute.</p>
+        <ol>
+            <li class="Numbered1">Go to the Part Type that needs its results improved. For the example below, the 'Spark Plug' Part Type is used.</li>
+            <li class="Numbered1">Go to the 'Missing Application Conditions attribute, double click to add a value, and the Value Editor will display.</li>
+            <li class="Numbered1">Click the <b>Add Value</b> link, and a blank row will display.</li>
+            <li class="Numbered1">Paste the ID of the Business Condition into the value row.</li>
+            <li class="Numbered1">Click the <b>OK</b> button to save, and the Business Condition ID will display as the attribute value. </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/BRs/9.jpg" />
+        </p>
+    </body>
+</html>

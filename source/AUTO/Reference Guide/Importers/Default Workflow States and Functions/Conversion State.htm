@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes the functions of the Conversion State default workflow state." />
+    </head>
+    <body>
+        <h1>Conversion State</h1>
+        <p class="Body1">The conversion state converts the original file into a series of STEPXML files. This provides two benefits:</p>
+        <ol>
+            <li class="Numbered1">By converting to STEPXML, the import can be carried out using standard STEP import functionality. </li>
+            <li class="Numbered1">By converting to multiple standalone files rather than a single large file, there is a performance gain in that some files can be imported in parallel.</li>
+        </ol>
+        <p class="Body1">By default, the conversion state includes one business action (<b>Run background process action</b>), which runs the conversion service as a background process. Each standard has its own conversion service and some parameters are specific to the standards. Each standard's Conversion state parameters are described below, along with the possible conversion state results.</p>
+        <h2>AutoCare Conversion State Parameters</h2>
+        <p class="Body1">Within the STEP AutoCare solution, two conversion services are offered; [AutoCareToStepXMLConvertService] and [ACESToStepXMLConvertService]. [AutoCareToStepXMLConvertService] is used in the workflow Conversion state for the Brand, PAdb, PCdb, VCdb, Qdb  and PIES imports. The [ACESToStepXMLConvertService] is used only in the workflow Conversion state for the ACES import. </p>
+        <p class="Body1HeadNoTOC"><b>[AutoCareToStepXMLConvertService]</b>
+        </p>
+        <p class="Body1">Each of the parameters are explained in detail below.</p>
+        <p class="Body1">
+            <img src="../../../Resources/Images/TecDoc/Autocare Conversion state background process.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>QueueID:</b> Required parameter for all background process actions that specifies the queue in which the background process should run, which defaults to 'queue_Conversion'. This parameter is specified for the action itself, not the particular service within the action, though the outcome is the same as each action runs only a single service.</li>
+            <li class="Bullet1"><b>Background Process Service: </b> Required parameter for all background process actions that specifies the background process, which defaults to [AutoCareToStepXMLConvertService].</li>
+            <li class="Bullet1"><b>AutoCare file attachment ID:</b> Required parameter used in all conversion services and functions the same as described in the Validation process (forming the relationship between the file originally supplied to the endpoint and the file that the workflow processes will act on). For more information, see the <b>Validation State</b> topic<MadCap:xref href="Validation State.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet1"><b>STEP XML attachment ID:</b>Required parameter used in all conversion services and specifies the name of the file that is the product of the conversion process, which defaults to 'convert.' If multiple files are created by the conversion service, this will be a zipped file, e.g., convert.zip.</li>
+        </ul>
+        <p class="Body1HeadNoTOC"><b>[ACESToStepXMLConvertService]</b>
+        </p>
+        <p class="Body1">Each of the parameters are explained in detail below. <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: BOND RDCUST-3335 : Insert this discussion in the document</MadCap:conditionalText></p>
+        <p class="Body1">
+            <img src="../../../Resources/Images/TecDoc/Aces Coversion state.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>QueueID:</b> Required parameter for all background process actions that specifies the queue in which the background process should run, which defaults to 'queue_Conversion'. Note that this parameter is specified for the action itself, not the particular service within the action, though the outcome is the same as each action runs only a single service.</li>
+            <li class="Bullet1"><b>Background Process Service: </b> Required parameter for all background process actions that specifies the background process, which defaults to '[ACESToStepXMLConvertService]'.</li>
+        </ul>
+        <ul>
+            <li class="Bullet1"><b>ACES Default FULL Import handling:</b>   By default, BRAND is selected. Defines how files with a SubmissionType=FULL are handled. For more information, see the <b>9. Specify Complete Replacement Handling (ACES Import Workflow Only)</b> topic within the <b>Automotive Quick Start Guide</b><MadCap:xref href="../../../Quick Start Guide/Admin QSG/9. Specify Complete Replacement Handling (ACES Import Workflow Only).htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet1"><b>ACES Default SUPPLIER Import handling:</b>  By default, NO is selected. Defines whether or not Supplier is taken into consideration when evaluating replacement scenarios. For more information, see the <b>9. Specify Complete Replacement Handling (ACES Import Workflow Only)</b> topic within the <b>Automotive Quick Start Guide</b><MadCap:xref href="../../../Quick Start Guide/Admin QSG/9. Specify Complete Replacement Handling (ACES Import Workflow Only).htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet1"><b>ACES Default UPDATE Import handling:</b> By default, STANDARD is selected. Defines how files with a SubmissionType=UPDATE are handled.  For more information, see the <b>9. Specify Complete Replacement Handling (ACES Import Workflow Only)</b> topic within the <b>Automotive Quick Start Guide</b><MadCap:xref href="../../../Quick Start Guide/Admin QSG/9. Specify Complete Replacement Handling (ACES Import Workflow Only).htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+        </ul>
+        <ul>
+            <li class="Bullet1"><b>AutoCare file attachment ID:</b> Required parameter used in all conversion services and functions the same as described in the Validation process (forming the relationship between the file originally supplied to the endpoint and the file that the workflow processes will act on). For more information, see the <b>Validation State</b> topic<MadCap:xref href="Validation State.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet1"><b>Create PIES items:</b>
+                <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: BOND RDCUST-3525</MadCap:conditionalText> Optional parameter used to import applications when associated part number (PIES Item) does not exist in the system. Selecting the parameter  allows an ACES file to be imported even if the Part Number does not already exist. The Part Terminology product hierarchy (PIES Brand/PIES PCdb Category/PIES PCdb Sub Category/PIES PCdb Part Terminology/PIES Item) and Part Number will be created by the ACES import, and applications will be created below the Part Number. Having the parameter deselected would require that the Part Number must already exist. With this parameter deselected and if the Part Number doesn't exist, then the ACES import will not be able to create any applications because of the missing Part Number.</li>
+            <li class="Bullet1"><b>Omit application names: </b>By default, this optional parameter specific to the AutoCare standard is disabled and when the ACES Importer creates application objects it sets the STEP Name to be the same value as the Part Number. After the applications are created, users have the option to change the STEP Name to something other than the Part Number (i.e., Acura TSX 2010). However, an issue is encountered the next time an ACES file containing those same applications is imported, because the STEP Name will be reverted to the Part Number. This occurs because the Conversion state checks the name in the file against the name in the database, and processes them as an update. Therefore, it includes those records in the delta file, even though nothing has changed in the record. If the application name and part number should always match, then the parameter should remain disabled. This way, upon the next import of an ACES file, the Part Number's STEP Name will be reverted to the Part Number's name within the ACES file. If the application name should not be altered to match what is in the ACES file then <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST- 2704 </MadCap:conditionalText>When enabled, application names will be omitted during the conversion process so that the record will not be included in the delta file.<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: This parameter is exclusively available in the ACES Conversion State workflow. A new screenshot needs to be added and behavior of this parameter needs to be <MadCap:annotation MadCap:createDate="2018-11-06T16:55:17.9497328-05:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="Need to complete / review" MadCap:editor="medu" MadCap:editDate="2018-11-15T14:21:32.0830009-05:00">documented.</MadCap:annotation>The ACES Importer creates application objects and sets the STEP Name to be the same value as the Part Number. After the applications have been created, users have the option to change the STEP Name to be something other than the Part Number (i.e., Acura TSX 2010). An issue is encountered when the next time that an ACES file is imported, the STEP Name will get reverted to the Part Number again because the Conversion is checking the name in the file against the name in the database, and sees it as an update and is including those records in the delta file even though nothing has changed in the record. To resolve this issue, AutoCare ACES Import workflow has been updated to include a new parameter called 'Omit application names' in the Conversion state. When this option is selected, the name of applications would be omitted in the conversion process so that the record will not be included in the delta file.</MadCap:conditionalText></li>
+            <li class="Bullet1"><b>STEP XML attachment ID: </b>Required parameter used in all conversion services and specifies the name of the file that is the product of the conversion process, which defaults to 'convert.' If multiple files are created by the conversion service, this will be a zipped file, e.g., convert.zip.</li>
+            <li class="Bullet1"><b>Regular Expression for parsing Supplier from file name:</b>Optionally, populate the 'Regular Expression for parsing Supplier from file name' parameter (using the JavaScript regular expression format) to specify how the Supplier value should be extracted from the ACES file name. By default, the parameter is populated with <b>(.*?)_.*</b>, meaning that the system will extract the first string prior to an underscore (typically a Supplier value) in the file name as this is how the ACES standard defines the naming convention. For example, with a file name of ACMESupply_BrakeHardware_2016-04-23_FULL.xml, 'ACMESupply' would be extracted as the Supplier value. If this is not desired, a Regular Expression can be inserted in the parameter to extract Supplier in an alternate way.<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;"><b>PRODOC note</b>: Changing the value to .*_(.+?)_.* parses what is between the 1st and 2nd underscore (if there are only 2 underscores. If there are 2, it takes what is between the 2nd and 3rd). Can be updated however the user needs though to get the right information from the file name.</MadCap:conditionalText></li>
+        </ul>
+        <h2>NAPA Conversion State Parameters</h2>
+        <p class="Body1">Within the STEP NAPA solution, two conversion services are offered; [NAPAToStepXMLConvertService] and [NAPATransToStepXMLConvertService]. 'NAPAToStepXMLConvertService' is used in the workflow Conversion state for Vehicle, Attribute, Application,  and Interchange imports. The 'NAPATransToStepXMLConvertService' is used only in the workflow Conversion state for Translation import. </p>
+        <p class="Body1HeadNoTOC"><b>[NAPAToStepXMLConvertService]</b>
+        </p>
+        <p class="Body1">Each of the parameters are explained in detail below.</p>
+        <p class="Body1">
+            <img src="../../../Resources/Images/AppMgr/Configuring/C3.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>QueueID:</b> Required parameter for all background process actions that specifies the queue in which the background process should run, which defaults to 'queue_Conversion'. Note that this parameter is specified for the action itself, not the particular service within the action, though the outcome is the same as each action runs only a single service.</li>
+            <li class="Bullet1"><b>Background Process Service: </b> Required parameter for all background process actions that specifies the background process, which defaults to 'NAPAToStepXMLConvertService'.</li>
+            <li class="Bullet1"><b>NAPA file attachment ID:</b> Required parameter used in all conversion services and functions the same as described in the Validation process (forming the relationship between the file originally supplied to the endpoint and the file that the workflow processes will act on). For more information, see the <b>Validation State</b> topic<MadCap:xref href="Validation State.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet1"><b>STEP XML attachment ID:</b>Required parameter used in all conversion services and specifies the name of the file that is the product of the conversion process, which defaults to 'convert.' If multiple files are created by the conversion service, this will be a zipped file, e.g., convert.zip.</li>
+        </ul>
+        <p class="Body1HeadNoTOC"><b>[NAPATransToStepXMLConvertService]</b>
+        </p>
+        <p class="Body1">Each of the parameters are explained in detail below.</p>
+        <p>
+            <img src="../../../Resources/Images/AppMgr/Configuring/C4.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>QueueID:</b> Required parameter for all background process actions that specifies the queue in which the background process should run, which defaults to 'queue_Conversion'. Note that this parameter is specified for the action itself, not the particular service within the action, though the outcome is the same as each action runs only a single service.</li>
+            <li class="Bullet1"><b>Background Process Service: </b> Required parameter for all background process actions that specifies the background process, which defaults to 'NAPATransToStepXMLConvertService'.</li>
+            <li class="Bullet1"><b>NAPA file attachment ID:</b> Required parameter used in all conversion services and functions the same as described in the Validation process (forming the relationship between the file originally supplied to the endpoint and the file that the workflow processes will act on).  For more information, see the <b>Validation State</b> topic<MadCap:xref href="Validation State.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet1" MadCap:conditions="Primary.Under Construction"><b>Product lines:</b> Required? parameter used in all NAPA conversion services and serves to ... <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU per KRMA ??? BEJA can't remember what it does. NAPA is currently unsupported so whatever... conditioning this out for now but we should figure it out at some point and then UN-condition it ... NIFE thinks its only in the translation import.</MadCap:conditionalText></li>
+            <li MadCap:conditions="Primary.Under Construction" class="Bullet1"><b>Product lines:</b>Optional parameter specific to the NAPA standard. This  option allows for the ....<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note"> PRODOC note: This parameter shall be tested upon import of NAPA file and to be documented. This functions similar to the properties mentioned under parameter Generic article described below.</MadCap:conditionalText></li>
+            <li class="Bullet1"><b>STEP XML attachment ID:</b>Required parameter used in all conversion services and specifies the name of the file that is the product of the conversion process, which defaults to 'convert.' If multiple files are created by the conversion service, this will be a zipped file, e.g., convert.zip.</li>
+        </ul>
+        <h2>TecDoc Conversion State Parameters</h2>
+        <p class="Body1">Within the STEP TecDoc solution, the  [TAFToStepXMLConvertService] conversion services is offered.</p>
+        <p class="Body1HeadNoTOC"> [TAFToStepXMLConvertService]</p>
+        <p class="Body1">Each of the parameters are explained in detail below.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/QS/TecDocConversionService.png">
+            </img>
+        </p>
+        <ul>
+            <li class="Bullet1"><b>QueueID:</b> Required parameter for all background process actions that specifies the queue in which the background process should run, which defaults to 'queue_Conversion'. Note that this parameter is specified for the action itself, not the particular service within the action, though the outcome is the same as each action runs only a single service.</li>
+            <li class="Bullet1"><b>Attachment ID for TAF file<MadCap:annotation MadCap:createDate="2018-09-26T13:55:58.3646769-04:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="RDCUST-3212:  Request for parameter name to be TecDoc file attachment ID\r\n\r\nAs of 11/07/18 this was in an open state and assigned to SIMO." MadCap:editor="medu" MadCap:editDate="2018-11-07T17:22:55.7545679-05:00">:</MadCap:annotation></b> Required parameter used in all conversion services and functions the same as described in the Validation process (forming the relationship between the file originally supplied to the endpoint and the file that the workflow processes will act on). For more information, see the <b>Validation State</b> topic<MadCap:xref href="Validation State.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note"> PRODOC note: MEDU per KRMA Need to create an issue for this to be updated to [Standard file attachment ID', and then remove this once that change is made (and update the TecDoc screenshot)</MadCap:conditionalText></li>
+            <li class="Bullet1"><b>Generic article filter:</b>
+                <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST- 2853 and RD-11468 </MadCap:conditionalText>Optional parameter specific to the TecDoc standard. This filter option allows for the reduction of unnecessary Generic Articles (Classifications) being imported into STEP. Only those Generic Articles selected within the filter are imported. </li>
+        </ul>
+        <p class="Body2">In the example below, the 0003 Product Hierarchy is shown including many Articles, the editing of the 'TecDoc Reference Import Conversion' Business Rule is displaying the 'Generic article filter' parameter with the 'Air Mass Sensor' and 'Glow Plug' generic articles selected for import, and the results are the 0003 Product Hierarchy is shown with only the 'Air Mass Sensor' and 'Glow Plug' articles.</p>
+        <p class="Image3">
+            <img src="../../../Resources/Images/TecDoc/1.jpg" />
+        </p>
+        <p class="Image3">
+            <img src="../../../Resources/Images/TecDoc/TecDocArticleFiltering.jpg" />
+        </p>
+        <p class="Image3">
+            <img src="../../../Resources/Images/TecDoc/3.jpg" />
+        </p>
+        <p class="Body2">To select a Generic Article, click the green icon (<img src="../../../Resources/Images/GreenAddIcon.png" />) within the parameter, and a blank Classification field will display. <MadCap:snippetText src="../../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> and a Select Classification dialog will display. Select the desired classification, and click the Select button to close the dialog. Repeat these steps to add more Generic Articles. </p>
+        <ul>
+            <li class="Bullet1"><b>Reference data asset ID:</b> Required parameter used in all TecDoc conversion services that functions the same as described for the validation service (providing a link between the file being imported and the reference data asset it should be stored in or validated against). For more information, see the <b>Validation State</b> topic<MadCap:xref href="Validation State.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+        </ul>
+        <ul>
+            <li class="Bullet1"><b>Attachment ID to store STEP xml to:</b> Required parameter used in all conversion services and specifies the name of the file that is the product of the conversion process, which defaults to 'convert.' If multiple files are created by the conversion service, this will be a zipped file, e.g., convert.zip.</li>
+            <li class="Bullet1"><b>Omit search structures:</b>
+                <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU PRODOC-1576 </MadCap:conditionalText>Optional parameter specific to the TecDoc standard. This filter option allows for the reduction of unnecessary TecDoc Reference data being imported. When disabled, all Search Trees and Reference Data classification folders are imported per the TecDoc Reference Data file. When enabled, Search Trees and Reference Data classification folders (except Generic Articles and Linking Targets) are omitted. To filter Generic Articles and/or Linking Targets, the 'Generic article filter' parameter must be used. For example, if the 'Omit search structures' parameter is enabled, and the 'Generic article filter' is blank, then only the Generic Articles and Linking Targets Reference Data will be imported. </li>
+        </ul>
+        <h2>Conversion State Function Details</h2>
+        <p>As the conversion service runs a background process (BGP), a corresponding BGP folder is created on the application server at /workarea/background-processarea/[Standard]toStepXMLConvertService. The BGP folder contains a sub-folder whose name matches the STEP ID of the controller entity that is moving through the workflow and contains the originally loaded file, the same as is seen in the validation service. The conversion service also writes an additional file, which is the output of the conversion process, (e.g., a zipped file with the name specified in the STEPXML attachment ID parameter). This zipped file contains sub-files in STEPXML format that are submitted to the delta calculation service for further processing. The sub-files contained in any convert file differ based on the file type. </p>
+        <p class="Body1">For example, an AutoCare VCdb conversion result is shown below:</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/QS/ConversionBGP.png">
+            </img>
+        </p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/QS/ConvertSubFiles.png">
+            </img>
+        </p>
+        <p>In addition, the converted file is prefixed with the value from the file attachment ID parameter in the BGP service ('convert' in our example) and deposited on the application server at /workarea/stepworkflow-area/[Standard][Format]Import/entity-[ControllerID]/attachments/ImportFlowAttachment. For example:</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/QS/ConversionFileAttachments.png">
+            </img>
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">If modifications need to be made to the converted file(s) before further processing is completed, it is the workflow attachment file (e.g., convert-convert.zip in the above example) that must be manipulated as this is the file that is actually carried through the workflow.</p>
+        <h2>Conversion State Results</h2>
+        <p class="Body1">The following are possible conversion state results:</p>
+        <ul>
+            <li class="Bullet1"><b>Failed:</b> If the import file fails conversion for some reason, the controller object in the workflow is sent to the Error state via the bgp.failed transition. This transition includes one default business rule which is used to populate the overall status of the controller entity (the overall status is displayed to end users in the Web UI). The controller will remain in the Error state until acted on by a user.</li>
+            <li class="Bullet1"><b>Succeeded:</b> If conversion completes successfully without any errors, the controller automatically moves to the Delta Calculation state via the bgp.succeeded transition. This transition does not include any default business rules as the controller is moved automatically so there is no need to display an overall status to the end user at this time. </li>
+            <li class="Bullet1"><b>Completed with errors:</b> It is also possible for a file to complete conversion, but with errors. In this case the controller is moved to the next state via the bgp.completedwitherrors transition that, like the bgp.succeeded transition, does not contain any default business rules. As with successful completion of conversion, the controller is automatically moved to the Delta Calculation state.</li>
+        </ul>
+    </body>
+</html>

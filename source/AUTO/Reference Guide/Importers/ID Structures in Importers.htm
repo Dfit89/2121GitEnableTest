@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:searchable="True" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes the necessary ID structures for importers to properly function." />
+    </head>
+    <body>
+        <h1>ID Structures in Importers</h1>
+        <p MadCap:conditions="Primary.PRODOC Note">PRODOC note: per KRMA the first question we get from every customer trying to load application data (they get an error for the part not being found) and then we have to explain this whole ID structure bit.</p>
+        <p class="Body1">Prior to importing part and/or application data, it is imperative to know the ID structure for the relevant standard. If part and/or application data is imported into STEP without using the proper ID structures, then errors will occur.</p>
+        <p class="Body1">The part ID and application ID structures for each of the standards (i.e., AutoCare, NAPA, and TecDoc) are described below. In the examples below, the import file information is displayed (when applicable) above a screenshot of the workbench ID, Name, and Object Type fields.</p>
+        <p class="Body1HeadNoTOC">Prerequisites</p>
+        <p class="Body1">The ID structures described within this section are dependent upon the completion of the setup as described in the <b>2. Run Easy Setup of Import Flow Process</b> section<MadCap:xref href="../../Quick Start Guide/Admin QSG/2. Run Easy Setup of Import Flow Process.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> of the <b>Automotive Quick Start Guide</b>.</p>
+        <p class="Body1HeadNoTOC">AutoCare Part ID and Application ID Structures</p>
+        <ul>
+            <li><b>PIES ID</b> = AC_PIESItem_[BrandAAIAID]_[PartNumber]</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../Resources/Images/Importers/PIES Part Number.png" />
+        </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Importers/PIES Part in STEP.png" />
+        </p>
+        <ul>
+            <li><b>ACES ID</b> = AC_ACESApp_[hash function]</li>
+        </ul>
+        <p class="Body2">
+            <img src="../../Resources/Images/Importers/ACES Part Number.png" />
+        </p>
+        <p class="Body2">
+            <img src="../../Resources/Images/Importers/ACES Part in STEP.png" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Submitting the above application will search for the above part, with the ID as shown. If not found, an error will be reported and the application will not be created.</p>
+        <p class="Body1HeadNoTOC">NAPA Part ID and Application ID Structures</p>
+        <ul>
+            <li><b>Part ID</b> = NAPA_Product_[ProductLine][PartNumber]</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../Resources/Images/Importers/ProductIDNAPA.png" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">A NAPA parts importer does not exist within STEP because the NAPA standard does not offer a standard parts import format, but parts must still be created with this ID&#160;structure.</p>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST-2559</p>
+        <ul>
+            <li><b>Application ID</b> = NAPA_App_[hash <MadCap:annotation MadCap:createDate="2017-10-11T15:17:45.5072535-04:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="To be changed when NAPA data model is completed " MadCap:editor="medu" MadCap:editDate="2017-10-11T15:57:49.7894957-04:00">function]</MadCap:annotation></li>
+        </ul>
+        <p class="Image2">
+            <img src="../../Resources/Images/Importers/NAPA Application Part Number.png" />
+        </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Importers/NAPA Application in STEP.png" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Submitting the above application will search for the above part, with the ID as shown. If not found, an error will be reported and the application will not be created.</p>
+        <p class="Body1HeadNoTOC">TecDoc Part ID and Application ID Structures</p>
+        <ul>
+            <li><b>Part ID</b> = [Supplier ID]-[hash function]</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../Resources/Images/Importers/TecDoc import.png" />
+        </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Importers/TecDoc Part in STEP.png" />
+        </p>
+        <ul>
+            <li><b>Application ID</b> = TD_L_[hash function]</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../Resources/Images/Importers/TecDoc Application in STEP.png" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The part and application data are in the same file, eliminating the 'product not found' error.</p>
+    </body>
+</html>

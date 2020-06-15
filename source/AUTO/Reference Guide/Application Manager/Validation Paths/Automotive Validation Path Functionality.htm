@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes Automotive Validation Path functionality and how it is used for Search Box Criteria, Options on Applications, Missing Applications, Advanced Filtering, and Workbench Configurations.&#xD;&#xA;" />
+    </head>
+    <body>
+        <h1>Automotive Validation Path Functionality </h1>
+        <p class="Body1">Having the optional automotive validation path functionality in place ensures Application Manager users are able to select valid configurations when selecting criteria for their search, applicating parts to vehicles, adding / editing options for applications, and maintaining missing applications.  The premise behind the concept is that when some level of 'valid configuration' data for vehicles is provided, the Application Manager is able to intelligently decipher those. </p>
+        <p class="Body1">Data for an automotive validation path is represented in STEP via a series of objects, references, and attributes. The values for those attributes and references are stored on the Vehicle Configuration objects, and the Application to Base Vehicle reference is applied to the individual application. Regardless of the model / standard you are working in, the system always evaluates the automotive validation path by beginning with the Base Vehicle / assembly object used in application records. </p>
+        <p class="Body1">For example, for the Fuel Type attribute (AC_ACESFuelType), the validation path is configured as: </p><pre>child.reference[type:'AC_VehicleToEngineConfig'].attribute[id:'AC_VCdbFuelType']</pre>
+        <p class="Body2">This automotive validation path  is determined by:</p>
+        <ol>
+            <li class="Bullet3">Identifying the application and following the ACES Application To Base Vehicle reference (AC_ACESApplicationToBaseVehicle) to the Base Vehicle object type (AC_BaseVehicle).</li>
+            <li class="Bullet3">Examining all vehicle children (AC Vehicle) of the Base Vehicle.</li>
+            <li class="Bullet3">Following the  Vehicle To Engine Config reference (AC_VehicleToEngineConfig) on the vehicle to the target object.</li>
+            <li class="Bullet3">Evaluating the value of the VCdb Fuel Type attribute (AC_VCdbFuelType) that is stored on the Engine Config object (AC_EngineConfig). </li>
+        </ol>
+        <p class="Body1">After running Easy Setup, the application data model (Automotive - Application Model) includes configuration for object types and link types that define the relationship between different configurations of vehicles and conditions on applications. This relationship data is captured within the Automotive Validation Path attribute. </p>
+        <p class="Body1">Within the AutoCare model, the validation path attribute is populated on some standard ACES vehicle options during Easy Setup when the attribute and/or reference modeling option is first created. This allows many features (including validation error handling) to be available within the Application Manager intelligent search interface, and results table value editor. Details on these features can be found within the <b>Intelligent Search Interface</b><MadCap:xref href="../Intelligent Search Interface/Intelligent Search Interface.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> and <b>Results Table and Toolbar</b><MadCap:xref href="../Results Table/Results Table and Toolbar.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> topics within this guide. </p>
+        <p class="Body1">This section addresses:</p>
+        <ul>
+            <li><b>Validation Path Functionality and Search Box Criteria</b>
+                <MadCap:xref href="Validation Path Functionality and Search Box Criteria.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>
+            </li>
+            <li><b>Validation Path Functionality and Options on Applications</b>
+                <MadCap:xref href="Validation Path Functionality and Options on Applications.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>
+            </li>
+            <li><b>Validation Path Functionality and Missing Applications</b>
+                <MadCap:xref href="Validation Path Functionality and Missing Applications.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>
+            </li>
+            <li><b>Validation Path Functionality and Advanced Filtering</b>
+                <MadCap:xref href="Validation Path Functionality and Advanced Filtering.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>
+            </li>
+            <li><b>Workbench Configurations Related to Validation Path</b>
+                <MadCap:xref href="Workbench Configurations Related to Validation Path Functionality.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>
+            </li>
+        </ul>
+    </body>
+</html>

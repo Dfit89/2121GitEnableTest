@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p> <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST-2732 </MadCap:conditionalText>For example, when searching for missing applications for spark plugs on a 2013 Audi A3, the result table will list both Gas and Diesel engines, since Diesel engines do not use spark plugs, this is inaccurate. However, when the validation path functionality is implemented in conjunction with the 'Missing Application Conditions' attribute and the 'Check path for missing application' business condition,  the search results will display more accurately because the application coverage will consider both the Condition and Part Type values. </p>
+    </body>
+</html>

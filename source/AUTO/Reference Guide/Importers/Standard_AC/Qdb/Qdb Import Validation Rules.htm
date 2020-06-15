@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <link href="../../../../../../Resources/TableStyles/StiboTableStyles.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <meta name="description" content="Automotive Solution:  Describes the Qdb import validation rules." />
+    </head>
+    <body>
+        <h1>Qdb Import Validation Rules</h1>
+        <p class="Body1">When importing  an AutoCare Qdb (Qualifier Database) file many STEP validation rules are performed. The table below describes each of these validation rules, where the validation check occurs, what happens when a validation fails, and an example of a failed validation message  (when applicable). However, it does not detail the file type's data rules per the AutoCare Association. This information can be found at <a href="http://www.autocare.org/Default.aspx?gmssopc=1" target="_blank">www.autocare.org</a>.<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note"> PRODOC note: 10/30/17 Link is live intentionally.</MadCap:conditionalText></p>
+        <p class="Body1">For information on the supported versions, see the <b>Supported Versions and Formats</b> topic within this guide<MadCap:conditionalText MadCap:conditions="Primary.Web"><MadCap:xref href="../../../Supported Versions and Formats.htm" class="Here"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></MadCap:conditionalText>.</p>
+        <p class="Body1"><b>Accepted File Extension:</b> .zip</p>
+        <table style="mc-table-style: url('../../../../../../Resources/TableStyles/StiboTableStyles.css');margin-left: 0;margin-right: auto;width: 827px;" class="TableStyle-StiboTableStyles" cellspacing="0">
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 248px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 102px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 189px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 289px;">
+            </col>
+            <thead>
+                <tr class="TableStyle-StiboTableStyles-Head-Header1">
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 12pt;">
+                        <p class="Body1TableSmall" style="font-size: 10pt;">Validation Rule</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 12pt;">
+                        <p>Occurs </p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 12pt;">
+                        <p class="Body1TableSmall" style="font-size: 10pt;">When Validation Fails</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadD-Column1-Header1" style="font-size: 12pt;">Failed Validation Message Example</th>
+                </tr>
+            </thead>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">All tables present
+</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Validation state</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BGP ends in an error triggering the import to enter the Error state.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">The required table '[Required Table Name]' is missing in the ZIP archive or is empty.</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Mandatory values present
+</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Validation state</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BGP ends in an error triggering the import to enter the Error state.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">Table '[Table Name]' contains a row that misses value for the required column '[Column Name]' at line 3.</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Correct number of columns
+ (If last column is optional, then the last column can be missing without affecting validation.)</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Validation state</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BGP ends in an error triggering the import to enter the Error state.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">Table '[Table Name]' contains a row with wrong number of columns at line 2.
+</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Loading of older version
+</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Validation state</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Warning
+is displayed.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">Existing version '2015-09-25' is newer that provided '2014-11-28.'
+</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Empty line
+</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Validation state</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Warning
+is displayed.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">Table '[Table Name]' contains an empty row at line 3.
+</td>
+            </tr>
+        </table>
+        <p MadCap:conditions="Primary.PRODOC Note">PRODOC note: None of the Failed Validation Messages were provided by RDCUST-2384 Copied from other examples and need to be tested / confirm the table and column names in the example are viable.</p>
+    </body>
+</html>

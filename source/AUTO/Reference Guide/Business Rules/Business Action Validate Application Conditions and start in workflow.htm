@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes the 'Validate Application Conditions and start in workflow' Business Action." />
+    </head>
+    <body>
+        <h1>Business Action: Validate Application Conditions and Start in Workflow</h1>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: BOND RDCUST-3365 and PRODOC-1759</p>
+        <p>The 'Validate Application conditions and start in workflow'  operation is found within the STEP Workbench Business Rule Editor under the Automotive menu and requires population of a single parameter (Workflow). Setup is required in the STEP Workbench for the action to be available to users.</p>
+        <p class="important1" MadCap:conditions="Primary.Under Construction" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">This business action can ONLY&#160;be used within the Import state of a workflow. </p>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: Delete this because it is not true. This Business Action can also be used as a Bulk Update. The following is NGK's use case per VEKE: I can actually use this Business Action from outside the workflow. We’ve currently set up a workflow for NGK and asked them to run a bulk update of all their applications periodically to validate their applications and start them in an invalid applications workflow. So, they’ll at least know which applications are invalid. This is also true for Validate Application on Import Business Condition, it can also be used in a bulk update outside of the ACES import workflow.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/BRs/Validate Application Conditions and Start in Workflow/1.png" />
+        </p>
+        <p class="Body1">Configuring this business action in the Import state of the relevant workflow checks for applications with invalid vehicle configurations, and when a record is found that does not meet the condition, it will initiate the invalid application records into a workflow configured within the Workflow parameter of the business action. </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The 'Validate Application conditions and start in workflow' business action does the same check as 'Validate Application on Import' business condition, but instead of rejecting the application, the 'Validate Application conditions and start in workflow' business action imports the invalid application records and starts them in the configured workflow.</p>
+        <p class="Body1" MadCap:conditions="Primary.Under Construction">When a record is found that does not meet the condition,an error is written to the execution report of the import process and the record is  imported . </p>
+        <p class="Body1" MadCap:conditions="Primary.Under Construction">Below is an example of an error that is written to the execution report when an assembly (Base Vehicle id) mentioned in the ACES file does not exist in the STEP <MadCap:annotation MadCap:createDate="2019-09-17T15:02:10.3351698+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="" MadCap:editor="bond" MadCap:editDate="2019-09-17T15:03:00.0624548+05:30">database</MadCap:annotation>.</p>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note"> PRODOC note: No error message was detected while importing the invalid ACES File. I assume that it is better that there is a mention of such changes written in the execution report. Currently, when I write this document, BEJA, NIFE and SIMO are in a meeting for 2 weeks. I am assuming to release this document as is for now.</p>
+        <p MadCap:conditions="Primary.Under Construction"> When an application record is found that does not meet the condition, an error is written to the execution report of the import process and the invalid application record is imported and then initiated in to the workflow configured in the business action. </p>
+        <p class="Body1">In order to divert invalid application records into a different workflow when applications with invalid configurations are imported, a business action with the 'Validate Application conditions and start in workflow' operation can be used within the Import state of a workflow. As a prerequisite, one unique workflow that can handle the invalid applications is necessary for the invalid application record import. In all cases, when an importer determines that applications with invalid configurations should be handled separately, it routes those application records to the workflow indicated in the business action configuration. This allows each customer to determine their own strategy for managing applications with invalid configurations.<MadCap:conditionalText MadCap:conditions="Primary.Under Construction">, such as processing the invalid applications  via a work<MadCap:annotation MadCap:createDate="2019-09-17T17:11:08.1044362+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="How the customer handles such invalid application in a different workflow is beyond the scope of this topic. It's a customised solution that the SC can implement on to their system." MadCap:editor="bond" MadCap:editDate="2019-09-17T17:12:02.3963281+05:30">flo</MadCap:annotation>w.</MadCap:conditionalText> </p>
+        <h2>Configuring Business Action for Applications with Invalid Configuration</h2>
+        <p class="Body1">To properly configure this business action to handle applications with invalid configurations, the following is needed:</p>
+        <ul>
+            <li>Create / Identify a Valid Workflow that Handles Applications with Invalid Configurations</li>
+            <li>Configure a Business Action to Use the 'Validate Application conditions and start in workflow' Operation</li>
+            <li>Update Workflow Settings</li>
+        </ul>
+        <p class="Body1HeadNoTOC">Create / Identify a Valid Workflow</p>
+        <ol>
+            <li>Create the necessary workflow (or verify that it exists) to be used to handle the applications with invalid configurations. </li>
+            <li>Make the workflow valid for the object type being managed by the import.</li>
+        </ol>
+        <p class="Body2">For example: </p>
+        <ul>
+            <li class="Bullet2">The workflow used to handle ACES applications with invalid configurations must be valid on the AC_ACESApplication object type.</li>
+            <li class="Bullet2">The workflow used to handle TecDoc linkages with invalid configurations must be valid on the DS_Linkage object type.</li>
+        </ul>
+        <ul>
+            <li class="Bullet2">The workflow used to handle NAPA applications with invalid configurations must be valid on the NAPA_Application object type.</li>
+        </ul>
+        <p class="Body1HeadNoTOC">Configure a Business Action to Use the 'Validate Application conditions and start in workflow' Operation</p>
+        <ol MadCap:continue="false">
+            <li>Create a business action and give it a name that users can easily identify. In the example below, the 'Validate Application Conditions and Start in Workflow' name is used.</li>
+            <li class="Numbered1">
+                <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to the right of the Valid Object Types parameter to find and select the necessary object type(s). In the Validate Application Conditions and Start in Workflow example below, 'All object types valid' is selected.</li>
+            <li class="Numbered1">On the Operations tab, click the 'Merge into' button, and the Edit Operation dialog will display.</li>
+            <li class="Numbered1">Click on the Edit Operation dropdown, click  <b>Automotive</b>, and then click <b>Validate Application conditions and start in workflow</b>.</li>
+        </ol>
+        <p class="Image1">
+            <img src="../../Resources/Images/BRs/Validate Application Conditions and Start in Workflow/2.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">The Workflow parameter will be displayed. Configure the parameter to use the necessary workflow.</li>
+        </ol>
+        <ul>
+            <li class="Bullet2"><b>Workflow:</b>
+                <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select the workflow. The configured workflow   should be able to handle the applications with invalid configurations (if any) upon import of the relevant application file. The workflow defined in this parameter should be made valid for the object type being managed by the import. For the example above, the Invalid Application Workflow (created / identified in the previous section) valid for AC_ACESApplication object type is selected.</li>
+        </ul>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Upon configuration of the 'Validate Application conditions and start in workflow' business action, the Automotive solution only provides an option to  import the applications with invalid configuration and start them in another workflow.  Users need to determine their own strategy for how to handle these invalid applications in another workflow.</p>
+        <ol start="7">
+            <li value="6">Click the <b>Save</b> buttons to save and close the business rule.</li>
+        </ol>
+        <p class="Body2">For more information on creating and/or editing business rules, see the <b>Creating a Business Rule or Library</b> topic<MadCap:xref href="../../../../Business Rules/Creating a Business Rule or Library.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>, and the <b>Editing a Business Rule</b> topic<MadCap:xref href="../../../../Business Rules/Editing a Business Rule.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within the <b>Business Rules</b> guide.</p>
+        <p class="Body1HeadNoTOC">Update Workflow Settings</p>
+        <p class="Body1">Once the business rule is configured, the necessary workflows need to be updated to use the business rule. Below are the steps to update a workflow to use the business rule created in the previous section.</p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Because the business rule created in the previous section is configured to work with ACES Application valid object types, the ACES Import Workflow is used for the example below. If the business rule is configured to also work with TecDoc and/or NAPA Applications, then those import workflows would need to also be edited.</p>
+        <ol start="1">
+            <li class="Numbered1">Go to workbench &gt; System Setup &gt; Workflows &gt; select the workflow to be used when validating applications.</li>
+            <li class="Numbered1">Right-click and select <b>Edit STEP Workflow</b>.</li>
+        </ol>
+        <ol start="1" MadCap:continue="true">
+            <li class="Numbered1">On the STEP&#160;Workflow Designer window, double click on the <b>Import</b> state to open the State Editor. </li>
+            <li class="Numbered1">Select the <b>On Entry</b> tab, and within the Operations tab, click the Edit button to display the Edit Operations Dialog (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/BRs/Validate Application Conditions and Start in Workflow/3.png" />
+        </p>
+        <ol start="1" MadCap:continue="true">
+            <li class="Numbered1">In the Edit Operation dialog, <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button.flsnp" />  to the right of the 'Import action' parameter to find and select the business action previously created.</li>
+            <li class="Numbered1">Click the <b>Save</b> button and exit the workflow.</li>
+        </ol>
+    </body>
+</html>

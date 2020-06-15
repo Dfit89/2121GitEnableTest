@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <ol start="16">
+            <li class="Numbered1">Click the <b>Add</b> button beneath the Valid Object Types parameter &gt; select the desired valid object types &gt; Click the <b>OK</b> button to return to the  'Add component - configure required properties' for the 'Node Picker Parameter Properties' dialog.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/Change Assembly/2.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Click the <b>Add</b> button, and 'Add component - configure required properties' for the 'Bulk Applications Update Properties' dialog will display (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/Change Assembly/6.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Click the <b>Add</b> button, and the 'Bulk Applications Updates Properties' dialog will display with the newly added Bulk Update listed.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/Change Assembly/5.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Click the <b>Save</b> button and then click the <b>Close</b> button to close the designer.</li>
+        </ol>
+    </body>
+</html>

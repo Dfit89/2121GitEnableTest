@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h2>Import Process Overview</h2>
+        <p class="Body1">Once a valid automotive data file is uploaded to a hotfolder on the application server (optionally using a File Loading Widget), the file is picked up from the hotfolder by an IIEP, and the IIEP creates an Entity in STEP that represents the file. This Entity object is called the 'controller' and contains basic data about the file and the file's status in the workflow.  Web UI users are able to monitor the import status using a Status Selector Widget and an Import Controller Screen. Once an import file reaches the 'Ready for Import' state, then users can start the import by clicking on the 'Start import' button within the Control Panel screen. At that time, the BGP service (that runs as part of the Import state) allows for the configured business rules to act on the objects being imported. </p>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head>
+        <link href="../../../../Resources/TableStyles/StiboTableStyles.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes missing application coverage functionality." />
+    </head>
+    <body>
+        <h1>Missing Application Coverage Functionality</h1>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: BOND RDCUST-3236 and PRODOC-1661 update topic from here</MadCap:conditionalText>Application coverage is determined by both the Condition and Part Type values. The  existing and missing applications dropdown allows users to determine if their search should or should not contain existing and/or missing applications. The following three options are available for the existing and missing applications dropdown: </p>
+        <ul>
+            <li class="Bullet1">Existing Applications Only</li>
+            <li class="Bullet1">Existing and Missing Applications</li>
+            <li class="Bullet1">Missing Applications Only</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/Search Functions/Dropdown.png" />
+        </p>
+        <p>To search or report on missing applications, users can select either the  'Missing Applications Only' or 'Existing and Missing Applications' options from the dropdown located below the search boxes, and to the left of the Report button. </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Though it is not required, it is strongly recommended to include criteria for at least one Vehicle and one Part Type before conducting a missing application search. Failure to do so may result in very long search times, timeout, or inconsistent results.</p>
+        <p class="Body1">When users select the 'Missing Applications Only' option, and the Search or Report button is clicked, the following occurs:</p>
+        <ol>
+            <li>STEP searches for and displays existing combinations of the vehicles and part types defined in the search   that do not have applications.</li>
+            <li>If the Part Type search box is left blank, then the results table will display a new row for each combination of the vehicle(s) valid for the search criteria and the part types valid for that vehicle (and/or any additional search criteria).</li>
+            <li>If applications exist for the vehicles and part types defined in the search, then STEP checks if the applications cover all the different configurations of the vehicle. This is found by using attributes that are populated and have a validation path. The additional configurations of the vehicle(s) are displayed as a new row in the results table.  For more information about validation paths, see the <b>Automotive Validation Path Functionality</b> topic<MadCap:xref href="Validation Paths/Automotive Validation Path Functionality.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within this guide. </li>
+        </ol>
+        <MadCap:snippetBlock src="../../Resources/Snippets/ResultsTableMaxAllowedUseReport.flsnp" />
+        <p> When the 'Existing and Missing Applications' option is selected, in addition to the actions described above, STEP also searches for and displays existing combinations of the vehicles and part types defined in the search.</p>
+        <p>In other words, when a search for missing applications is run, by selecting either the  'Missing Applications Only' or 'Existing and Missing Applications' option, the populated values on the existing applications are evaluated to ensure that every option / criteria that is populated with a value (and included in the attribute group identified in the 'Application Condition Header - Group') is considered for all valid configurations of the selected vehicle(s). Each combination that is considered valid, and does not have an application, is displayed as a single row within both the Application Manager results table, and the Application Coverage Report.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">A blank / null value for any option / criteria equates to that option being valid for ALL values of that option.</p>
+        <p>For example, consider a vehicle that has two Sub Models, each of which is available with Gas or Diesel fuel types, and each fuel type has a valid configuration with each Sub Model; totaling four valid configurations of this vehicle. Further, assume that only Sub Model and Fuel Type are populated on the records we are working with (e.g., no other options have data populated in any of the existing records for the selected vehicle and part type), and that Sub Model and Fuel Type are both included in the attribute group identified in the application condition header. Some of the scenarios based on data population and the expected missing coverage outcome are as follows:</p>
+        <table style="border-left-style: solid;border-left-width: 1pt;border-left-color: #000000;border-right-style: solid;border-right-width: 1pt;border-right-color: #000000;border-top-style: solid;border-top-width: 1pt;border-top-color: #000000;border-bottom-style: solid;border-bottom-width: 1pt;border-bottom-color: #000000;mc-table-style: url('../../../../Resources/TableStyles/StiboTableStyles.css');margin-left: 0;margin-right: auto;" class="TableStyle-StiboTableStyles" cellspacing="0">
+            <col class="TableStyle-StiboTableStyles-Column-Column1">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-StiboTableStyles-Head-Header1">
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1">
+                        <p><span style="font-weight: bold;">Existing Record</span>
+                        </p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadD-Column1-Header1">
+                        <p class="Body1"><span style="font-weight: bold;">Missing Application Record</span>
+                        </p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">
+                        <p>One record where Sub Model and Fuel Type are null</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">
+                        <p>None, as the existing record is understood to work for all Sub Model and Fuel Type options</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">
+                        <p>One record where Sub Model is populated with Sub Model 1 and Fuel Type is null</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">
+                        <p>One record: Sub Model 2 + null Fuel Type</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">
+                        <p>One record where Fuel Type is populated with Gas and Sub Model is null</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">
+                        <p>One record: null Sub Model + Diesel</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">One record where Sub Model is populated with Sub Model 1 and Fuel Type is Gas</td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">Three records: Sub Model 2 + Diesel, Sub Model 1 + Diesel, Sub Model 2 + Gas</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Two records: Sub Model 1 + null Fuel Type, Sub Model 2 + Gas</td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">One record: Sub Model 2 + Diesel</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-StiboTableStyles-BodyB-Column1-Body1">No records</td>
+                    <td class="TableStyle-StiboTableStyles-BodyA-Column1-Body1">
+                        <p>One record with both Sub Model and Fuel Type as null</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p MadCap:conditions="Primary.PRODOC Note">PRODOC note: VCdb data had to be manually edited to create this scenario on the 2010 Acura TSX, as it actually has 3 Mfr Body Codes. To test, edit the Vehicle To Mfr Body Code references on the 2010 Acura TSX vehicles so that each submodel has at least one vehicle using CU2 and at least one vehicle using JH4CL9. For the case above, Canada Base = CU2, Mexico Base = JH4CL9, US Base = CU2, Canada V6 = CU2, US V6 = JH4CL9.</p>
+        <h2> Improving Part Type Accuracy</h2>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: MEDU RDUCST-2713 </MadCap:conditionalText>As previously mentioned, the application data model (Automotive - Application Model) includes a relationship between conditions on applications and different configurations of vehicles. This is possible due to the automotive validation path functionality. However, sometimes  the conditions on specific part types need to be considered to ensure that  missing applications display more accurately. </p>
+        <MadCap:snippetBlock src="../../Resources/Snippets/PartTypesNotValidExample.flsnp" />
+        <p class="Body1">To implement this improvement, the automotive validation path functionality and Check Path for Missing Application Business Condition must be implemented. For more information, see the <b>Automotive Validation Path Functionality</b><MadCap:xref href="Validation Paths/Automotive Validation Path Functionality.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> and the <b>Business Condition: Check Path for Missing Application</b> topics<MadCap:xref href="../Business Rules/Business Condition Check Path for Missing Application.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within this guide.</p>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU Easy setup now creates the attribute: Missing Applications Conditions. A missing application will display for each condition related to the part in the search, and each missing application will display as a single row within both the Application Manager results table, and the Application Coverage Report. When a vehicle is available with two different engines, and a part is applied to engine A,  vehicles with engine B will display as a missing application. </p>
+    </body>
+</html>

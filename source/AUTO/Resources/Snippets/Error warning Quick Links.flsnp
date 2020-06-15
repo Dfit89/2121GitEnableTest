@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="90" MadCap:lastWidth="865">
+    <head>
+    </head>
+    <body>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">An error will occur when trying to access an Application Manager screen if the Vehicle table classifications have not been properly configured. When this error displays, the user must log out and then back in to the Web UI. Once the Vehicle reference data is imported, the link to the Application Manager will function properly. </p>
+    </body>
+</html>

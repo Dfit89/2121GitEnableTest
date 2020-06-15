@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p class="important2" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">If this key is not entered exactly in both places, then the business action will not properly function within the Web UI.</p>
+        <ol start="8">
+            <li class="Numbered1">Within the Label parameter, enter text that will prompt the user as to what they should select when using this business action. For example, when the Label parameter is blank the parameter within the dialog will display as 'null' as shown in the image on the left. If the Label parameter is populated with 'Base vehicle' the parameter within the dialog will display with 'Base vehicle' as shown within the image on the right. </li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/Change Assembly/1.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Use the Node Picker Configuration parameter dropdown to select the <b>Node Picker Dialog</b> option, and the 'Edit component' for the 'Node Picker Dialog Properties' dialog will display.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/BA5.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Use the Root Node Plugin parameter dropdown to select the <b>Static Root Nodes</b> option, and the 'Edit component' for the 'Static Root Nodes Properties' dialog will display.</li>
+        </ol>
+    </body>
+</html>

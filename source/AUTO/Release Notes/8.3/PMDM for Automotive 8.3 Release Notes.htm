@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>PMDM for Automotive 8.3 Release Notes</title>
+        <meta name="description" content="Automotive Solution: PMDM for Automotive 8.3 Release Notes" />
+    </head>
+    <body>
+        <h1 class="MPN">PMDM for Automotive 8.3 Release Notes</h1>
+        <h2 class="MPN">Release Date: February 2, 2018</h2>
+        <p class="Body1"><b>Stibo Systems is excited to share the Automotive 8.3 solution, built using the recently released STEP 8.3 platform.</b><![CDATA[  ]]></p>
+        <h2 class="MPNDocumentation">Announcement</h2>
+        <p class="Body3">The NAPA standard is now complete.  Including recent NAPA data model changes handled with Easy Setup, and production-readiness initiatives conducted through the development cycle to ensure a high quality release.</p>
+        <h2 class="MPNNewFeatures">New Features</h2>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2147</MadCap:conditionalText>Easy Setup now creates new File Loading Widgets for each standard's importers</p>
+        <p class="Body3">Previously, in order for users to process an import that involved a hotfolder, they would need to access the application server, find the hotfolder, drop the file into the hotfolder, and then wait for the scheduled IIEP to pick up the file (or access Workbench and invoke the IIEP).  Now users can login to the Web UI and from the homepage easily drag and drop a file onto a File Loading Widget. Additionally, Easy Setup functionality for all three standards has been updated to automatically create and configure File Loading Widgets for each  standards commonly used reference and supplier data imports.</p>
+        <p class="Body3">This update is part of Easy Setup via <b style="font-weight: normal;">Automotive - [Standard] Model &gt; 2. Configure [Standard] Import Process</b>.</p>
+        <p class="Body3"><b>Existing Implementations</b>:  Please manually update existing Web UI's with the new File Loading Widgets, because the Easy Setup functionality does not currently update existing Web UI configurations with the File Loading Widgets.   For more information on how to configure a File Loading Widget, see the Homepage Widgets section<MadCap:conditionalText MadCap:conditions="Primary.Web"><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Homepage Widgets/File Loading Widget.htm" class="HereWithParens"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></MadCap:conditionalText> of Online Help.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2488</MadCap:conditionalText>NAPA Easy Setup and Application Exporter now support exporting delta files</p>
+        <p class="Body3">In order for the NAPA&#160;Application Exporter to offer the option to handle exporting delta files, the Easy Setup via Automotive - NAPA Model &gt; 1. Configure NAPA Data Model has been updated to create: two new object types (ExportBaselineRoot and ExportBaselineAsset),  a new attribute (ID = NAPA_PartNumber), new parameters for the NAPA Application Exporter format to export either in 'Full' or 'Delta' mode, and to select which baseline to run the delta export on. For more information, see the NAPA Application Export section<MadCap:conditionalText MadCap:conditions="Primary.Web"><MadCap:xref href="../../Reference Guide/Exporters/Standard_NAPA/NAPA Application Exporter.htm" class="HereWithParens"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></MadCap:conditionalText> of the Automotive Reference Guide. </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The Automotive solution does not provide an importer that will specifically create the NAPA Product hierarchy. Therefore, the NAPA Product hierarchy must be created manually in STEP Workbench before creating applications using the Application Importer. The NAPA Product MPCC is expected to have an ID structure prefixed with <b>NAPA_MPCC_</b>, and the NAPA Product is expected to have the following ID structure: <b>NAPA_Product_[Line Abbrev][PartNumber]</b> (i.e., NAPA_Product_FIL1515). It is important to note that when the user creates the NAPA Product, that the <b>NAPA_PartNumber</b> attribute must also be populated with the Part Number value, as this attribute value is used to the determine the Part Number in the NAPA&#160;Application and Interchange Exporter.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2681</MadCap:conditionalText>NAPA Interchange Importer now creates new NAPA&#160;Interchange Product objects</p>
+        <p class="Body3">Previously, the NAPA Interchange Importer did not create new Interchange Product objects, it only makes references from a NAPA Product to an existing Interchange Product object. The interchange import file contains all the data that is needed in order to create Interchange Product objects on import, so NAPA Interchange Importer has been updated to create new Interchange Product objects if they don't already exist in STEP.</p>
+        <p class="Body3">The following must exist in STEP for new Interchange Products to be created successfully:</p>
+        <ul>
+            <li class="Bullet3">The data in field 3 of the import file must be NAPA Interchange Manufacturer product objects that are created from the Translation Importer with data coming from the manufacturer.txt file.</li>
+        </ul>
+        <ul>
+            <li class="Bullet3">The data in field 6 of the import file comes from the iccomments.txt file that is imported into STEP as values for LOV ID = NAPA_InterchangeComment through the Translation Importer.</li>
+            <li class="Bullet3">The NAPA Product objects must be created with the NAPA standard ID format  and the NAPA_PartNumber attribute must be populated with the Part Number as the value.</li>
+        </ul>
+        <p class="Body3"> When an interchange file is imported through the Interchange Importer, the following will occur:</p>
+        <ul>
+            <li class="Bullet3">If the interchange object doesn't already exist in STEP, the Interchange Importer will create a new NAPA Interchange Product <i>(the name comes from field 3 of the import file)</i> object below the Interchange Manufacturer:</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/MPNotes/New Interchange Product object.png" />
+        </p>
+        <ul>
+            <li class="Bullet3">A reference will be established between the NAPA Product to Interchange Product:</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/MPNotes/NAPA1.png" />
+        </p>
+        <ul>
+            <li class="Bullet3">Set the value for the Interchange Comment on the reference if an ID is provided in field 6:</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/MPNotes/Interchange Comment.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2678</MadCap:conditionalText>NAPA Interchange Exporter</p>
+        <p class="Body3">A new 'NAPA Interchange Exporter' format has been implemented, allowing for the export of Interchanges. The NAPA Interchange Exporter will export interchanges that are referenced by a NAPA Product using the 'Product To Interchange Product' reference. The exporter uses a parameter to indicate which Product Line to export. This way when a Product is linked to multiple MPCCs, an interchange export is possible. If a Product Line is not specified, then all Product Lines will be included in the exported file with a row for each Product Line for the same Part Number. If a Product Line is specified in the parameter, then the exported file will only contain part numbers and interchanges relevant for the chosen Product Line.</p>
+        <p class="Body3">
+            <img src="../../Resources/Images/MPNotes/NAPA Interchange Exporter.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2535/2711</MadCap:conditionalText>Updated NAPA Easy Setup and Vehicle Importer to remove data model redundancies</p>
+        <p class="Body3">To remove vehicle data model redundancies, NAPA Easy Setup will no longer create Year Engine, Year Submodel, and All Valid Vehicles object types. Instead, two new objects (NAPA_EngineRoot and NAPA_Years) will be created, NAPA&#160;Engine is moved below NAPA Vehicle Option Root node, and NAPA&#160;Valid Vehicle is created below NAPA Year. The new Vehicle classification will display as shown in the screenshot below:</p>
+        <p class="Body3">
+            <img src="../../Resources/Images/MPNotes/Vehicle data model.png">
+            </img>
+        </p>
+        <p class="Body3">Also, a new Classification Reference Type has been created (NAPA_ValidVehicleToSubmodel) to reference Valid Vehicle to Submodel.</p>
+        <p class="Body3">The Vehicle Importer has been updated to do the following:</p>
+        <ul>
+            <li class="Bullet3">No longer create Year Engine, Year Submodel, and All Valid Vehicle objects based on data from the NapaValidVehicleMaster.txt file.</li>
+        </ul>
+        <ul>
+            <li class="Bullet3">No longer create a reference from Year Engine to Engine objects, and Year Submodel to Submodel objects.</li>
+            <li class="Bullet3">Create the new NAPA&#160;Engine, NAPA Model, NAPA Years, and NAPA Valid Vehicle objects in the new data model structure.</li>
+            <li class="Bullet3">Create a reference from Valid Vehicle to Submodel.</li>
+        </ul>
+        <p class="Body3">The new data model objects and reference can be created by running Easy Setup via Automotive - NAPA Model &gt; 1. Configure NAPA Data Model.</p>
+        <p class="Body3"><b>Existing Implementations</b>: please make the following changes manually. The steps below will only need to be done once, and are applicable for all bugfixes that involve the Vehicle Importer.</p>
+        <ol>
+            <li class="Bullet3">Delete the NAPA Reference Data root Classification.</li>
+            <li class="Bullet3">Delete all references using Vehicle object types as source or target references. (NAPA_ApplicationToEngine, NAPA_ApplicationToSubmodel, NAPA_ApplicationToYear, NAPA_SisterVehicle, NAPA_ValidVehicleToEngine, NAPA_ValidVehicleToAxle, NAPA_ValidVehicleToSubmodel, NAPA_ValidVehicleToTransmissionType)</li>
+            <li class="Bullet3">Delete the NAPA_VehicleTableRoot object type structure.</li>
+            <li class="Bullet3">Run Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup to create the new vehicle data model and references.</li>
+            <li class="Bullet3">Re-import the NAPA Valid Vehicle file.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2704</MadCap:conditionalText>Updated AutoCare ACES Import workflow Conversion state to have a new parameter to omit application names in delta files</p>
+        <p class="Body3">The ACES Importer creates application objects and sets the STEP Name to be the same value as the Part Number. After the applications have been created, users have the option to change the STEP Name to be something other than the Part Number (i.e., Acura TSX 2010). An issue is encountered when the next time that an ACES file is imported, the STEP Name will get reverted to the Part Number again because the Conversion is checking the name in the file against the name in the database, and sees it as an update and is including those records in the delta file even though nothing has changed in the record. To resolve this issue, AutoCare ACES Import workflow has been updated to include a new parameter called 'Omit application names' in the Conversion state. When this option is selected, the name of applications would be omitted in the conversion process so that the record will not be included in the delta file.</p>
+        <p class="Body3">This fix has been backported to STEP 8.2. The recipe to patch with 8.2 is: to:hotfix/300/issue-300893-HOTFIX-2176.spr</p>
+        <p class="Image1" MadCap:conditions="Primary.Print">
+            <img src="../../Resources/Images/MPNotes/Omit application names parameter.png" />
+        </p>
+        <p class="Image3" MadCap:conditions="Primary.Web">
+            <img src="../../Resources/Images/MPNotes/Omit application names parameter.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2508</MadCap:conditionalText>New parameter to support delete status in change flag functionality</p>
+        <p class="Body3">Previously, the change flag functionality was not handled ideally and resulted in New records having a 'true' change flag written for both a new record and an updated record. To handle this functionality properly, the logic has been improved and a new 'Deleted object attribute' parameter has been added to support Delete status as well. (The attribute that is used in the new parameter should be the same attribute that is configured in the delta calculation.)</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/MPNotes/New Delete Status parameter for change flags.png" />
+        </p>
+        <p class="Body3">The result will be that only a new record will get a new flag (i.e., New Object = true), only an existing record that is getting updated will get an updated flag  (i.e., Changed Object = true), and only an existing record that is marked for deletion will get a delete flag (i.e., Delete Status = true).</p>
+        <h2 class="MPNBugFix">Bugfixes</h2>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2595</MadCap:conditionalText>Fixed 'Offending stack trace' warning in log for workflow Import state</p>
+        <p class="Body3">Previously, an 'Offending stack trace' warning would be displayed in the log in the workflow 'Import' state to indicate that the import is handling parallel threads in an unsafe way. The importer has been fixed to no longer use the wrong threads for reporting and status so that the 'Offending stack trace' warning will no longer appear in the log.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2612</MadCap:conditionalText>Fixed NumberFormatException error in PIES and ACES Exporter</p>
+        <p class="Body3">Previously, if a PIES or ACES attribute has a non-numeric value where the code is expecting a numeric value, then the PIES or ACES export would fail with a java.lang.NumberFormatException error. PIES and ACES Exporter has been updated to handle NumberFormatException to no longer throw an error if these attributes have non-numeric values and the exporter will continue to run successfully.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2316/2157</MadCap:conditionalText>Add XSD validation for PIES and ACES Exporters</p>
+        <p class="Body3">Previously, PIES and ACES exporters did not validate against the XSD, which lead to all parts and applications being exported, even though required data was missing for those records. PIES and ACES exporters have been updated to validate against the XSD, and any errors that are encountered are written to the Background Process Execution Report.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2656</MadCap:conditionalText>Updated ACES Importer to allow more than 100 objects in Delta Calculation delete xml file</p>
+        <p class="Body3">Previously, ACES Complete Replacement using 'context' delta calculation method only included a maximum of 100 objects in the Delta Calculation deleteFile.xml file even though there are &gt;100 objects that should be included. The ACES Importer Delta Calculation has been fixed so that there is no longer a limit on how many objects the delete file can contain.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2579</MadCap:conditionalText>Updated Asset Exporter to use a Business&#160;Condition for filtering</p>
+        <p class="Body3">Step 3 of the Asset Exporter wizard has an option to use a Business Condition to filter out assets from the exported file. Previously, using a Business Condition did not work with this option and that has now been resolved.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2577</MadCap:conditionalText>Updated Asset Exporter to no longer display duplicate Delta Baselines</p>
+        <p class="Body3">Step 4 of the Asset Exporter wizard has an option to use a saved asset export configuration as a Delta Baseline. Previously, the Delta Baseline dropdown list would display duplicate options with the same date and timestamp to select from. This has been fixed so that only one unique option is listed per date and timestamp.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2524</MadCap:conditionalText>Updated parameter label for Change part, Copy application to other part, and Copy application to other assembly Business Actions</p>
+        <p class="Body3">Previously, the parameter label was incorrect for three Business Actions. The parameter label has been updated for:</p>
+        <ul>
+            <li class="Bullet3">'Change part' business action to be 'Part parameter key.'</li>
+        </ul>
+        <ul>
+            <li class="Bullet3">'Copy application to other part' business action to be 'Copy application to other part parameter key.'</li>
+            <li class="Bullet3">'Copy application to other assembly' business action to be 'Copy application to other assembly parameter key.'</li>
+        </ul>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2427</MadCap:conditionalText>Updated Delta Calculation to include or filter away setup objects</p>
+        <p class="Body3">Previously, the delta calculation process across all importers looks only at products and classifications to include in the delta calculation file. Everything else is ignored by the calculation, meaning that the data is always written to the delta calculation files whether it has changed or not. For example, LOVs in an import file will have all LOVs with all values written every time to the delta calculation file, even when nothing has changed on any of the LOVs.</p>
+        <p class="Body3">The delta calculation service has been updated to take setup objects into account, where setup objects (LOVs, attributes, reference types, etc.) that have not changed will be filtered away and not be included in the delta calculation file. Only changed setup objects will be included in the delta calculation file. This is done by comparing what is in the import file to what's in the database whether 'context' or 'file' delta calculation method is used.</p>
+        <p class="Body3">The importers will not handle deleted setup objects, this will instead be reported as a warning in the delta calculation background process Execution Report. For example, if there are LOV values that are in the database but are no longer in the import file, then there will be a warning in the delta calculation background process Execution Report listing the LOV and values that are missing in the import file. In this case, the user will need to check the delta calculation report and manually carry out the deletion of the LOV values.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2600</MadCap:conditionalText>Updated Delta Calculation 'file' method to ignore files that have never been imported</p>
+        <p class="Body3">Previously in the Delta Calculation state in any importer, using the 'file' method would incorrectly compare the  file that's getting imported against the most recent file in the workflow, even if the most recent file wasn't imported successfully. The delta calculation should instead compare against the most recent file in the workflow that has exited the 'Import' state via the bgp.succeeded or bgp.completedwitherrors transitions. The 'file' method for Delta Calculation has been updated to ignore files that was never imported when doing the delta calculation.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2382</MadCap:conditionalText>Updated Root Node for NodePicker in Application Set Assembly Header component in Application Editor</p>
+        <p class="Body3">Previously when clicking on a NodePicker to select a new vehicle in Application Editor, all root classifications for all standards would be displayed rather than just the  vehicle root classification. Application Set Assembly Header component has been updated to only display the vehicle root classification that applies for each standard. The title in the component has also been updated so that AutoCare and NAPA will show 'Select Vehicle' while TecDoc will show 'Select Assembly.'</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2599</MadCap:conditionalText>Updated Application Condition Header - Group component to have the same width for both LOV and Text fields in Value Editor</p>
+        <p class="Body3">The width of the fields in the conditions Value Editor window has been updated to be aligned on both the left and right side. Previously, the width of LOV fields were shorter than the width of Text fields.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2603</MadCap:conditionalText>Updated Application Editor to no longer create multiple applications when a part is added to a missing application</p>
+        <p class="Body3">Previously, when a user adds a part to a missing application in Application Editor and the autosave option is enabled, the system would create three new applications with the same data. This has been fixed so that after adding a part to a missing application and autosave is enabled, only one new application will be created.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2635</MadCap:conditionalText>Updated alignment of click targets in Application Editor</p>
+        <p class="Body3">Previously in Application Editor, if a user resize a column that contains a click target that would cause the content in the column to wrap, the click target would be misaligned. For example, the Vehicle column would have the click target as top aligned, while the Part Number column would be middle aligned. Application Editor has been updated to always place the click target to be top aligned.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2520</MadCap:conditionalText>Fixed filtering in Application Editor table column heading</p>
+        <p class="Body3">Previously, filtering in Application Editor didn't display any of the cell contents in the filter. Application Editor has been fixed to properly display filtered column values. For values that have been added or deleted, the change must be saved first before it is reflected in the filtered list. For consolidated conditions in the Options column (Application Condition Header - Group), if a record has multiple options defined, setting the filter to include only one option will still show the record. The only way for the filter to exclude something is to have a situation where ALL options populated for the record are unchecked in the filter.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2590</MadCap:conditionalText>Fixed filtering in Application Editor table column heading for missing applications</p>
+        <p class="Body3">Previously, filtering in Application Editor didn't display the cell contents in the filter from missing applications. Application Editor has been fixed to include values from missing applications in the filtered list.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2507</MadCap:conditionalText>Updated Application Condition Header - Group component in Application Editor to be able to tab through condition fields</p>
+        <p class="Body3">The Application Condition Header - Group component in Application Editor has been improved so that users can use the Tab and Shift+Tab to navigate through all conditions. When the user changes at least one of the field value the 'OK' button will be enabled.</p>
+        <p class="Body3"><b>Limitations:</b>
+        </p>
+        <ol>
+            <li class="Bullet3">Once the focus is on the 'OK' or 'Cancel' button, Tab and Shift+Tab will no longer work in the conditions area because the buttons do not belong to the body of the component that holds the conditions.</li>
+            <li class="Bullet3">If the last field in the conditions area is a Text field and that is the only value that the user populates, the user will need to hit 'Enter' before the 'OK' button becomes enabled.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2130</MadCap:conditionalText>Updated Application Condition to display suggestion list for part number</p>
+        <p class="Body3">Previously in Application Editor, when a user enters a new value for a part number, no suggestion list is provided. This has now been updated where a suggestion list is provided when the user starts entering a part number. Note that in order for the suggestion list to be displayed, the reference between the part and part type must be established first. Also, it has been updated to no longer support inherited part type links.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2370</MadCap:conditionalText>Add new parameter to Application Set Part header component in Application Editor to allow part type on application to differ from part type on part</p>
+        <p class="Body3">Previously in Application Editor, when a user tries to select a part for the application that is different than the part type populated for the application, an error would be displayed and the user is unable to select the part. In order to support the option to allow an application to be applicated for a different part type than the part, a new parameter has been introduced in the Application Set Part header component called 'Allow Applications Outside Part Type.' This parameter is defaulted to be unchecked so that existing functionality is not affected.</p>
+        <p class="Body3">But if a user should be able to select a part for the application that has a different part type than the part itself, then the box should be checked.</p>
+        <p class="Body3">Add this new parameter by running Automotive - [Standard] Model &gt; 4. Configure [Standard] WebUI Easy Setup.</p>
+        <p class="Image1" MadCap:conditions="Primary.Print">
+            <img src="../../Resources/Images/MPNotes/2.png" />
+        </p>
+        <p class="Image3" MadCap:conditions="Primary.Web">
+            <img src="../../Resources/Images/MPNotes/2.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2506</MadCap:conditionalText>Updated Easy Setup for all three standards to only show valid configuration changes</p>
+        <p class="Body3">Previously, running step 3 of Easy Setup for all three standards would always show that there were updates to the component model even though the aspects of the component model have already been updated or created. Step 3 of Easy Setup has been fixed to only show valid configuration changes that need to be updated. If there aren't any updates, then running step 3 of Easy Setup will show 'No changes.' </p>
+        <p class="Body3">This update is part of Automotive - [Standard] Model &gt; 3. Configure [Standard] Types for Application Editor Easy Setup.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2597</MadCap:conditionalText>Updated AutoCare Easy Setup to combine values from ANSI X.12 Element 355 and 639 tables in AC_PIESPriceUOM LOV</p>
+        <p class="Body3">Previously, importing a PIES file with a price break value of 'EA' would cause the PIES import to fail because the 'EA' value didn't exist in the AC_PIESPriceUOM LOV which had values from ANSI X.12 Element 639 table. In order to resolve the error, Easy Setup has been updated to create the AC_PIESPriceUOM LOV with values that are combined from both the  355 and 639 tables.</p>
+        <p class="Body3">This update can be applied by running Automotive - AutoCare Model &gt; 1. Configure AutoCare Data Model Easy Setup.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2010</MadCap:conditionalText>Updated AutoCare Easy Setup to no longer create AC_PIESAssetMaintenanceTypes LOV</p>
+        <p class="Body3">Previously AutoCare Easy Setup created an LOV with ID=AC_PIESAssetMaintenanceTypes that didn't have an attribute reference and wasn't used for anything. AutoCare Easy Setup has been updated to no longer create this LOV.</p>
+        <p class="Body3"><b>Existing implementations:</b> Please make this change manually by deleting the AC_PIESAssetMaintenanceTypes LOV.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2049</MadCap:conditionalText>Updated AutoCare Easy Setup to create Part Terminology To Application Note reference to allow multiple links</p>
+        <p class="Body3">Previously the Part Terminology to Application Note reference did not allow for more than one Part Type to be linked to an ACES Application Note. AutoCare Easy Setup has been updated to create the Part Terminology to Application Note reference with Allow multiple links=Yes. When a user adds a Note reference to an application in Application Editor, it will also create a reference between the Part Type that is linked to the application to the Application Note. </p>
+        <p class="Body3">This update is part of Automotive - AutoCare Model &gt; 3. Configure AutoCare Types for Application Editor Easy Setup.</p>
+        <p class="Body3"><b>Existing implementations:</b> Please make this change manually by going to AC_PartTerminologyToApplicationNote reference and setting Allow multiple links=Yes.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2354</MadCap:conditionalText>Updated AutoCare Easy Setup to create Product to Part Terminology reference to not allow multiple links</p>
+        <p class="Body3">The Product to Part Terminology reference is used to link parts and applications to part types. Each part and each application can have only one part type, but previously the Product to Part Terminology reference allowed links to be made to multiple part types from the same part or application. To prevent a part or application to reference multiple part types, AutoCare Easy Setup has been updated to create the Product to Part Terminology reference with Allow multiple links=No. </p>
+        <p class="Body3">This update is part of Easy Setup via Automotive - AutoCare Model &gt; 1. Configure AutoCare Data Model.</p>
+        <p class="Body3" style="font-weight: normal;"><b>Existing implementations:</b> Please make this change manually by going to the AC_ProductToPartTerminology reference and setting Allow multiple links=No.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1992</MadCap:conditionalText>Updated AutoCare Easy Setup to create the AC_PIESContainerType LOV with the correct values and ID and Updated PIES Importer to use IDs with the LOV</p>
+        <p class="Body3">Previously, errors were encountered during PIES Import because certain values were missing from the PIESContainerType LOV. Easy setup for AutoCare has been updated to create the AC_PIESContainerType LOV to use IDs and Names with all of the allowable values defined in the PIES Field Definition Document in table: ANSI X.12 Element 355. </p>
+        <p class="Body3">This update can be applied by running Automotive - AutoCare Model &gt; 1. Configure AutoCare Data Model Easy Setup.</p>
+        <p class="Body3">In addition, the PIES Importer has been updated to looks at value IDs rather than just at the values.</p>
+        <p class="Body3"> <b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete attribute with ID=AC_PIES_ITEMContainerType.</li>
+            <li class="Bullet3">Delete LOV with ID=AC_PIESContainerType.</li>
+            <li class="Bullet3">Run Automotive - AutoCare Model &gt; 1. Configure AutoCare Data Model Easy Setup to recreate the attribute and LOV with the correct values and IDs.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1959</MadCap:conditionalText>Updated AutoCare Easy Setup and PIES Importer to handle many asset types</p>
+        <p class="Body3">In order to handle many PIES asset types, AutoCare Easy Setup has been updated to create a new object type with ID=AC_PIESAsset, a new asset reference type with ID=AC_PIESToAsset, and a new attribute with ID=AC_PIES_ASSTAssetType. </p>
+        <p class="Body3">This update can be applied by running Easy Setup via Automotive - AutoCare Model &gt; 1. Configure AutoCare Data Model.</p>
+        <p class="Body3">In addition, the PIES Importer has been updated to create all other assets (aside from HMS, LGO, MSD, OWN, or P04) as object type 'PIES Asset (General)' and using the AC_PIESToAsset reference to link the PIES Item to the PIES Asset (General) object. And the AC_PIES_ASSTAssetType attribute that is valid on the reference is populated with the value from the AssetType tag in the input file.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1962</MadCap:conditionalText>Updated AutoCare Easy Setup, PIES Importer, and PIES Exporter to handle asset data</p>
+        <p class="Body3">Previously certain PIES asset elements were missing in STEP and asset data couldn't be stored for those missing elements. Easy setup for AutoCare has been updated to create attributes and LOVs to store FileType, FileSize, ColorMode, AssetDimensions UOM, AssetHeight, AssetWidth, and AdditionalInformation. </p>
+        <p class="Body3">This update can be applied by running Automotive - AutoCare Model &gt; 1. Configure AutoCare Data Model Easy Setup.</p>
+        <p class="Body3">In addition, the PIES Importer has been updated to write the asset data to the new attributes. And the PIES Exporter has been updated to include the asset data in the exported file.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1956</MadCap:conditionalText>Updated PIES Importer to store PriceSheetName and PriceSheetNumber data</p>
+        <p class="Body3">PIES Importer has been updated to now create Price Sheet Name and Price Sheet Number attributes if they don't already exist, and store the data from the imported file in those attributes in STEP.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1957</MadCap:conditionalText>Updated PIES Importer to store Price Break and Price Break UOM data</p>
+        <p class="Body3">PIES Importer has been updated to now create Price Break and Price Break UOM attributes if they don't already exist, and store the data from the imported file in those attributes in STEP.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2040/2433</MadCap:conditionalText>Updated ACES and PIES Importers to validate BrandAAIAID against Brand Table</p>
+        <p class="Body3">Previously when importing a PIES or ACES file that had an invalid BrandAAIAID, the file would complete processing successfully without any errors and the PIES Item or application would still get created in STEP. PIES and ACES Importers have been updated so that if an invalid Brand is provided in the import file, an error would be written in the  Background Process Execution Report in the Conversion state indicating that the part or application was not imported or updated because an invalid Brand was supplied in the file. If the file contains other records  with a valid Brand, then the file will continue to process and create the records  with a valid Brand successfully.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2644/2685</MadCap:conditionalText>Updated PIES and ACES Importer to handle zip files</p>
+        <p class="Body3">PIES and ACES xml files can contain many records that make the file size large and users therefore zip the file. Previously, attempting to import a PIES or ACES zip file would generate a stacktrace error and the file would fail to import. PIES&#160;and ACES Importer have been updated to handle zip files containing PIES or ACES xml files. If the zip file contains multiple xml files, the importer will unzip the file and process each xml file individually. Users still have the option to import just the xml files without zipping it.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2567</MadCap:conditionalText>Updated NAPA Easy Setup to update Import workflow parameters</p>
+        <p class="Body3"> Previously, all NAPA import workflows have the STEPXML attachment ID in the Conversion workflow state indicated as 'convertVehicleTable,' which only makes sense for the Vehicle Importer. NAPA Easy Setup has been updated to change the STEPXML attachment ID to be called 'convert' instead so that it is applicable to all importers. </p>
+        <p class="Body3">This update can be applied by running Automotive - NAPA Model &gt; 2. Configure NAPA Import Process Easy Setup.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Go to System Setup tab &gt; Workflows &gt; right-click on each NAPA Import workflow &gt; select 'Edit STEP Workflow.'</li>
+            <li class="Bullet3">Double-click on the 'Conversion' state &gt; go to the [On Entry] tab and click on the Business Action to edit it.</li>
+            <li class="Bullet3">Change the 'STEP XML attachment ID' parameter from 'convertVehicleTable' to 'convert.'</li>
+            <li class="Bullet3">Save and Exit the workflow.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2563</MadCap:conditionalText>Updated NAPA Conversion service to include 'Product lines' parameter only for Translation Importer</p>
+        <p class="Body3">Previously, the NAPA Conversion Background Process Service that is used by all NAPA Importers included a 'Product lines' parameter, even though the parameter is only applicable for the Translation Importer.</p>
+        <p class="Body3">The [NAPAToStepXMLConvertService] Background Process Service has been updated to no longer include the 'Product lines' parameter. A new Background Process Service has been introduced called [NAPATransToStepXMLConvertService] that contains the 'Product lines' parameter and is applied only to the NAPA Translation Import workflow. </p>
+        <p class="Body3">This update can be applied by running Automotive - NAPA Model &gt; 2. Configure NAPA Import Process Easy Setup.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Go to System Setup tab &gt; Workflows &gt; right-click on the NAPA Translation Import workflow &gt; select 'Edit STEP Workflow.'</li>
+            <li class="Bullet3">Double-click on the 'Conversion' state &gt; go to the [On Entry] tab and click on the Business Action to edit it.</li>
+            <li class="Bullet3">Change the 'Background Process Service' parameter to  [NAPATransToStepXMLConvertService].</li>
+            <li class="Bullet3">Save and Exit the workflow.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2558</MadCap:conditionalText>Updated NAPA Translation Importer to handle Product Lines parameter correctly if the Product Line already exists in STEP</p>
+        <p class="Body3">A 'Product Lines' parameter exists in the NAPA Translation Importer in the Conversion state. Previously, if a user adds a Product Line Abbreviation to the parameter and the Product Line already exists in STEP, the object would incorrectly get marked for deletion even though the object is included in the import file. Translation Importer has been updated so that if one or more Product Line Abbreviations are indicated in the parameter, then those Product Line Abbreviations and all child MPCCs should be added to STEP and <b>not</b> get marked for deletion unless they are excluded from the import file.</p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">This requires that the Delete Status attribute has been created, made valid on the Product Line and MPCC objects, and indicated for use in the correct workflow state.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2689</MadCap:conditionalText>Updated NAPA Easy Setup to have new IDs for Interchange Comment LOV and attribute</p>
+        <p class="Body3">In order to make the ID naming be more consistent with the new interchange data model, the attribute and LOV ID for 'NAPA_ICComment' has been changed to 'NAPA_InterchangeComment.' The LOV maximum length has also been increased from '100' to '500' to support interchange comments that have more than 100 characters. </p>
+        <p class="Body3">This update is part of Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete attribute with ID=NAPA_ICComment.</li>
+            <li class="Bullet3">Delete LOV with ID=NAPA_ICComment.</li>
+            <li class="Bullet3">Run Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup to recreate the attribute and LOV with the correct IDs.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2642</MadCap:conditionalText>Updated NAPA Easy Setup and Translation Importer to handle Revision Date</p>
+        <p class="Body3">Previously, Easy Setup created the NAPA_RevisionDate to be valid for unnecessary classification objects that do not need to have Revision Date populated. Easy setup has been updated to make the attribute valid only for NAPA_ProductLineRoot and NAPA_VehicleTableRoot classification type. </p>
+        <p class="Body3">This update is part of Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup.</p>
+        <p class="Body3">Translation Importer has been updated to populate the Revision Date attribute on the NAPA_ProductLineRoot node from the date that is provided in the Translation import file name.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make this change manually by going to the attribute (ID=NAPA_RevisionDate) and removing all Classification Type validity except for: NAPA_ProductLineRoot and NAPA_VehicleTableRoot.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1612</MadCap:conditionalText>Updated NAPA Translation Importer to import interchange comments as LOV values instead of Classification objects</p>
+        <p class="Body3">The interchange comments found in the iccomments.txt file were originally being imported into STEP as classification objects. The decision was later made to create the interchange comments as LOV values so that the values can be populated on the 'Product to Interchange Product' reference. Therefore, NAPA Translation Importer has been updated to no longer create interchange comments as classification objects, but as LOV values in LOV ID = NAPA_InterchangeComment instead. NAPA Easy Setup has also been updated to no longer create the classification object types for the Interchange Comment root node.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete the NAPA_InterchangeCommentRoot and NAPA_InterchangeComment classification hierarchy.</li>
+            <li class="Bullet3">Delete the NAPA_InterchangeComment then NAPA_InterchangeCommentRoot object types.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2684</MadCap:conditionalText>Updated NAPA Easy Setup and Translation Importer to import interchange manufacturer as Product instead of Classification objects</p>
+        <p class="Body3">Previously, the Translation Importer imports the manufacturer.txt file and creates classification objects below the NAPA_InterchangeManufacturerRoot node.</p>
+        <p class="Body3">In order to implement the change to now be able to create Interchange Products in STEP, the same Interchange Manufacturer hierarchy needs to exist in the Product Hierarchy. In order to prevent repetitive data models, the NAPA Translation Importer has been updated to create interchange manufacturers as product objects below the NAPA_InterchangeProductHierarchyRoot node and no longer create interchange manufacturer classification objects.</p>
+        <p class="Body3">NAPA Easy Setup has also been updated to no longer create the object types for the Interchange Manufacturer classification objects, and classification reference types that are no longer needed.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete the NAPA_InterchangeManufacturerRoot classification hierarchy.</li>
+            <li class="Bullet3">Delete the NAPA_ICManufacturerToInterchangeMfr and NAPA_InterchangeProductToICManufacturer Classification Reference Types.</li>
+            <li class="Bullet3">Delete the NAPA_ProductToInterchangeProduct Product Reference type.</li>
+            <li class="Bullet3">Delete Classification and Product Object Types: NAPA_InterchangeManufacturer, NAPA_InterchangeManufacturerRoot, NAPA_InterchangeProduct, and NAPA_ICManufacturer.</li>
+            <li class="Bullet3">Run Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup to recreate some objects with new IDs.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2072</MadCap:conditionalText>Updated NAPA Easy Setup to add Application Importer to Homepage Widget Grid in Web UI</p>
+        <p class="Body3">Previously, the Application Import workflow was not included in the Web UI. NAPA Easy Setup has been updated to add the Application Importer to the home page widget grid in Web UI. </p>
+        <p class="Body3">This update can be applied by running Automotive - NAPA Model &gt; 2. Configure NAPA Import Process Easy Setup.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Go to System Setup tab &gt; Web UIs &gt; delete the existing 'NAPA Web UI.'</li>
+            <li class="Bullet3">Run Automotive - NAPA Model &gt; 2. Configure NAPA Import Process Easy Setup to recreate the NAPA Web UI to include the Application Importer widget.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2682</MadCap:conditionalText>Updated NAPA Easy Setup and Application Importer to handle User Optional Field data</p>
+        <p class="Body3">NAPA application files can contain data in field 24. This is an optional numeric field called ‘User Optional Field’ that can be used by the Supplier for miscellaneous data (Suppliers provide an ID to reference back to the data in their database). Previously, NAPA Application Importer ignored the field and did not store the data that was provided in field 24 on the application. Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup has been updated to create a new attribute with ID=NAPA_ApplicationUserOptionalField to hold the data for that field. And NAPA&#160;Application Importer has been updated to populate the attribute with a value if data is provided in field 24.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2566</MadCap:conditionalText>Updated NAPA Application Importer to handle Axle, Chassis, and Country data</p>
+        <p class="Body3">Previously, NAPA Application Importer did not handle the data that was provided in fields 25-27 and caused validation to fail indicating that there were too many columns provided in the imported file. NAPA&#160;Application Importer has been updated to create a reference to the Axle object if data is provided in field 25 by using the classification reference ID=NAPA_ApplicationToAxle. If data is provided in field 26, then the value would be populated in attribute ID=NAPA_ApplicationChassis. If data is provided in field 27, then the value would be populated in attribute ID=NAPA_ApplicationVehicleCountry.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2559</MadCap:conditionalText>Updated NAPA Application Importer to add a prefix to the application record ID and add a name to the application record</p>
+        <p class="Body3">Previously, NAPA applications were created without a name and the ID didn't have anything specific to identify that it is a NAPA application record. NAPA Application Importer has been updated to add a Name to the application record which uses fields 18 and 19 from the import file, as well as add the prefix 'NAPA_App_' to the ID hash function.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2564</MadCap:conditionalText>Updated NAPA Application Importer to create Product to MPCC local reference on applications</p>
+        <p class="Body3">Classification reference with ID=NAPA_ProductToMPCC has both applications and products as sources and MPCC as targets. Previously, NAPA Application Importer did not create a local reference on the application, but just inherit from the product if one exists. NAPA Application Importer has now been updated to create a local reference to MPCC from the application. Field 17 in the input file identifies the MPCC that the application should be linked to.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2565</MadCap:conditionalText>Updated Delta Calculation in NAPA Application Importer </p>
+        <p class="Body3">Previously, delta calculation for&#160;NAPA&#160;Application Importer did not work properly in reporting the records that need to be deleted or added in the delta file. NAPA Application Importer has been updated to do delta calculation using 'context ' method so that the data in the imported file will be compared to the data in the database. </p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually  by going to the NAPA Application Import workflow &gt; 'Delta Calculation' state &gt; edit Business Action, and changing the 'Delta calculation method' parameter to be 'context.'</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2560</MadCap:conditionalText>Updated NAPA Application Importer to include row number in error messages</p>
+        <p class="Body3">Previously, when an application can't be created due to a missing parent product, vehicle, or MPCC, there isn't anything specific in the error message to indicate which application didn't get created. NAPA Application Importer has been updated to include the row number in the error message for the application(s) that didn't get created.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2561</MadCap:conditionalText>Fixed ValidateApplication Business Condition in NAPA Application Importer</p>
+        <p class="Body3">Previously, when importing an application file and there were both valid applications and invalid applications, the entire import would fail and the valid applications did not get created. The ValidateApplication Business Condition has been fixed in NAPA Application Importer to correctly handle valid applications. Applications which have a valid vehicle, parent product, and MPCC will get created. Applications that are invalid will get skipped and logged as an error in the Execution report.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2056</MadCap:conditionalText>Updated NAPA Easy Setup to make application attributes be specification type</p>
+        <p class="Body3">Previously, NAPA Easy Setup created application attributes as Description type. NAPA Easy Setup has been updated to now create the application attributes as Specification type. </p>
+        <p class="Body3">This update can be applied by running <b style="font-weight: normal;">Easy Setup via the Automotive - NAPA Model &gt; 1. Configure NAPA Data Model</b>.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete all application attributes below attribute group ID=NAPA_ApplicationAttributes.</li>
+            <li class="Bullet3">Run Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup to recreate the application attributes.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2653</MadCap:conditionalText>Updated NAPA Easy Setup to create Product to MPCC and Product to Interchange references to allow multiple links</p>
+        <p class="Body3">A single Product (part) can have multiple  MPCCs and multiple interchanges.</p>
+        <p class="Body3">Previously, NAPA Easy Setup created the link type from product to MPCC and the reference type from product to interchanges  to not allow multiple links. This has now been updated where both are created to allow multiple links. </p>
+        <p class="Body3">This update is part of Easy Setup via Automotive - NAPA Model &gt; 1. Configure NAPA Data Model.</p>
+        <p class="Body3"><b>Existing implementations:</b> Please make these changes manually by going to the NAPA_ProductToMPCC and NAPA_ProductToInterchangeProduct references, and setting Allow multiple links=Yes.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2533</MadCap:conditionalText>Updated NAPA Easy Setup to change Option IDs for LOVs and attributes</p>
+        <p class="Body3">Previously, some LOVs and attributes were created with 'Option2,' 'Option3,' and 'Option4' in the LOV and attribute IDs. NAPA Easy Setup has been updated to create these LOVs and attributes with new IDs to include 'Chassis' or 'Vehicle' instead of 'Option.' The updates can be applied by running <b>Automotive - NAPA Model &gt; 1. Configure NAPA Data Model</b> Easy Setup.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete the following attributes and LOVs: NAPA_ApplicationOption2, NAPA_Option2, NAPA_Option2LOV, NAPA_ApplicationOption3, NAPA_Option3, and NAPA_Option3LOV.</li>
+            <li class="Bullet3">Run Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup to recreate the attributes and LOVs.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2525</MadCap:conditionalText>Updated NAPA Easy Setup change the Name and ID of the root NAPA attribute group</p>
+        <p class="Body3">NAPA Easy Setup has been updated to rename the root NAPA attribute group from 'NAPA Configuration' to 'NAPA Attributes.' All attribute subgroups that were previously created below NAPA Configuration will now be created below NAPA Attributes. </p>
+        <p class="Body3">These updates can be applied for new and existing implementations by running Easy Setup via Automotive - NAPA Model &gt; 1. Configure NAPA Data Model.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2534</MadCap:conditionalText>Updated NAPA Easy Setup to clean up Vehicle attributes</p>
+        <p class="Body3">To clean up Vehicle attributes that are not needed, NAPA Easy Setup has been updated to no longer create the following attributes with IDs=NAPA_VehicleTypes, VehTypes, and VehType. Also, the attribute with ID=NAPA_VehicleType is now made valid only on NAPA Valid Vehicle object.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete the following attributes with IDs=NAPA_VehicleTypes, VehTypes, and VehType.</li>
+            <li class="Bullet3">Select attribute with ID=NAPA_VehicleType &gt; go to the 'Validity' tab &gt; uncheck the 'NAPA Model' object so that it is no longer a valid classification type (only NAPA Valid Vehicle should be selected).</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1761</MadCap:conditionalText>Updated NAPA Easy Setup to clean up Transmission attributes</p>
+        <p class="Body3">NAPA Easy Setup has been updated to no longer create eight Transmission attributes that were not needed on applications as they already exist on the Transmission Type object.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete the following attributes with IDs: NAPA_ApplicationTransAlsoKnownAs, NAPA_ApplicationTransmissionCommonName, NAPA_ApplicationTransmissionControlType, NAPA_ApplicationTransmissionElecControl, NAPA_ApplicationTransmissionMfringCode, NAPA_ApplicationTransmissionMfrName, NAPA_ApplicationTransmissionSpeeds, and NAPA_ApplicationTransmissionType</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1450</MadCap:conditionalText>Updated NAPA Easy Setup to change Revision Date attribute ID</p>
+        <p class="Body3">Since the Revision Date attribute stores the date for many objects other than valid vehicles, NAPA Easy Setup has been updated to change the ID of the attribute from 'NAPA_ValidVehiclesRevisionVersionDate' to 'NAPA_RevisionDate.'  </p>
+        <p class="Body3">The update can be applied by running Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete the attribute with ID=NAPA_ValidVehiclesRevisionVersionDate.</li>
+            <li class="Bullet3">Run Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup to create the new NAPA_RevisionDate attribute.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2529</MadCap:conditionalText>Updated NAPA Easy Setup to no longer create NAPA_DeleteBasedOnImport attribute and NAPA_DeleteBasedOnImportLOV</p>
+        <p class="Body3">NAPA Easy Setup has been updated to no longer create attribute with ID=NAPA_DeleteBasedOnImport and LOV with ID=NAPA_DeleteBasedOnImportLOV that were used in the Delta Calculation state of the workflow. Instead, users should create a delete attribute to handle deletes as described in the Quick Start Guide.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by following the steps below.</p>
+        <ol>
+            <li class="Bullet3">Delete the attribute with ID=NAPA_DeleteBasedOnImport.</li>
+            <li class="Bullet3">Delete the LOV with ID=NAPA_DeleteBasedOnImportLOV.</li>
+        </ol>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2573</MadCap:conditionalText>Updated NAPA Attribute Importer to accept both txt and zip files</p>
+        <p class="Body3">NAPA&#160;Attribute Importer has been updated to accept both a txt and zip file format. Previously, importing a  txt file would fail during Conversion workflow state with a STACKTRACE: java.lang.UnsupportedOperationException error.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1557</MadCap:conditionalText>Updated NAPA Attribute Importer to write a warning for attributes that have been unlinked from the MPCC</p>
+        <p class="Body3">If an attribute is no longer included in the import file for an MPCC, NAPA&#160;Attribute Importer has been updated to write a warning message in the Background Process of the Conversion state to indicate that the attribute is no longer linked to the MPCC and should be removed manually. An example of the warning message:</p>
+        <p class="Body3">Attribute 'NAPA_PHdb_3240480' is no longer linked to 'NAPA_MPCC_3334565' and should be removed manually.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2574</MadCap:conditionalText>Updated NAPA Attribute Importer to report a product that can't be found from the DATA segment</p>
+        <p class="Body3">The DATA segment in the NAPA Attribute import file can contain products that should have attribute values written to it by the Attribute Importer. Previously, there wasn't any reporting to indicate that a product couldn't be matched. The Attribute Importer has been updated so that if it finds a match, it writes the attribute data to the product. But if a match is not found, then the execution report will report an error stating that the product with ID '[ID]' cannot be found and was skipped.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2575</MadCap:conditionalText>Updated NAPA Attribute Importer to create LOVs in a subgroup</p>
+        <p class="Body3">In order to prevent too many LOVs from being created directly under the NAPA_LOVGroup root level, NAPA Attribute Importer has been updated to create a subgroup with ID=NAPA_AttributeLOVGroup and create LOVs with hard domaintype below this new subgroup.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2545/2652/2711</MadCap:conditionalText>Updated NAPA Vehicle Importer ID structure to account for makes being used by more than one Vehicle Type</p>
+        <p class="Body3">Previously, the Make ID does not take Vehicle Type into account, which doesn't allow for a Make to exist for more than one Vehicle Type. In order to support Make for multiple Vehicle Types, the NAPA Vehicle Importer has been updated to change the ID structure of NAPA_Make and NAPA_Model object types to include the Vehicle Type in the ID. For example, NAPA Make previously would have the ID structure of NAPA_Make_[MakeID], e.g., NAPA_Make_1. Now the ID structure would be NAPA_Make_[VehicleTypeID]_[MakeID], e.g., NAPA_Make_1_1.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2536</MadCap:conditionalText>Updated NAPA Easy Setup and Vehicle Importer to clean up NAPA Transmission data</p>
+        <p class="Body3">To make NAPA Transmission data more consistent with other data models, Easy Setup has been updated to do the following:</p>
+        <ul>
+            <li class="Bullet3">No longer create the attribute with ID=TransMFGCode and TransMfrName.</li>
+        </ul>
+        <ul>
+            <li class="Bullet3">Change the attribute ID=NAPA_TransmissionManufacturingCode to  ID=NAPA_TransmissionManufacturerCode and STEP Name to 'NAPA Transmission Manufacturer Code.'</li>
+            <li class="Bullet3">Change attribute with ID=NAPA_TransmissionElectricControl to use LOV validation.</li>
+            <li class="Bullet3">Create new object type ID=NAPA_TransmissionTypeManufacturer that lives below the Transmission Root.</li>
+        </ul>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually to delete the TransMFGCode, TransMfrName, NAPA_TransmissionManufacturingCode, and NAPA_TransmissionElectricControl attributes. Then run Automotive - NAPA Model &gt; 1. Configure NAPA Data Model Easy Setup to create the new NAPA_RevisionDate attribute.</p>
+        <p class="Body3">The Vehicle Importer has been updated to do the following:</p>
+        <ul>
+            <li class="Bullet3">Create NAPA_TransmissionTypeManufacturer objects below the Transmission Root and create Transmission Type objects below the new Transmission Type Manufacturer objects.</li>
+        </ul>
+        <ul>
+            <li class="Bullet3">Import values to the new attributes from the NapaTransmission.txt file that is part of the NAPA&#160;Valid Vehicles reference data.</li>
+        </ul>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2539</MadCap:conditionalText>Updated NAPA Easy Setup and Vehicle Importer to clean up Axle data</p>
+        <p class="Body3">To make Axle objects more consistent with other data models, Easy Setup has been updated to create a new NAPA_AxleManufacturer object, and two new attributes to hold Axle Position and Axle Model values. Vehicle Importer has been updated to create Axle object types as children of Axle Manufacturer; change the STEP Name of the Axle to include Manufacturer, Position, and Model; and populate the Axle Position and Axle Model attributes with values from the imported file.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2549</MadCap:conditionalText>Updated NAPA Vehicle Importer to write Year data to NAPA Year objects</p>
+        <p class="Body3">NAPA Vehicle Importer has been updated to write data to the NAPA_Year attribute that is valid on the NAPA_Year objects, which it did not do previously. The data for the value comes from the NapaValidVehicleMaster file in the valid vehicles zip file.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2550</MadCap:conditionalText>Updated NAPA Easy Setup and Vehicle Importer to handle NAPA Engine Qualifier data</p>
+        <p class="Body3">The NAPA Vehicle NapaEngine file that is part of the NAPA vehicle import includes a 4th field referred to as the Engine Qualifier that was previously not being handled. In order for the Engine Qualifier data to be handled, Easy Setup has been updated to create a new attribute with ID=NAPA_EngineQualifier, and NAPA Vehicle Importer has been updated to write data to the new attribute for Engine objects.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2551</MadCap:conditionalText>Updated NAPA Vehicle Importer to add spaces to Valid Vehicle STEP Name</p>
+        <p class="Body3">NAPA Valid Vehicle Importer has been updated to add spaces to the STEP Name for Valid Vehicle objects. For example, the previous name would be 'ValidVehicle_873821' and is now changed to 'Valid Vehicle 873821.'</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2552</MadCap:conditionalText>Updated NAPA Easy Setup and Vehicle Importer to handle NAPA Sister Vehicle data</p>
+        <p class="Body3">The NapaValidVehicleMaster file that is part of the NAPA vehicle import includes field 30 (Sister Vehicle ID) and field 31 (Sister Vehicle Note) which was previously not being handled. The Sister Vehicle ID is used to identify records of vehicles in the single year table that are related to each other (i.e., a 1993 Chevrolet Camaro and 1993 Pontiac Firebird both have Sister Vehicle ID 193). In order for the Sister Vehicle data to be handled, Easy Setup has been updated to create two new attributes with ID=NAPA_SisterVehicleID and NAPA_SisterVehicleNote. And NAPA Vehicle Importer has been updated to write data to the new attributes for Valid Vehicle objects.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2553</MadCap:conditionalText>Updated NAPA Easy Setup and Vehicle Importer to handle NAPA Vehicle Comments data</p>
+        <p class="Body3">The NapaValidVehicleMaster file that is part of the NAPA vehicle import includes field 26 (Vehicle Comments) which was previously not being handled. In order for the Vehicle Comments data to be handled, Easy Setup has been updated to create a new attribute with ID=NAPA_VehicleComment, and NAPA Vehicle Importer has been updated to write data to the new attribute for Valid Vehicle objects.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2531</MadCap:conditionalText>Updated NAPA Vehicle Importer to transform date into 'ISO Date and Time' format</p>
+        <p class="Body3">The date fields in the NapaValidVehicleMaster file from columns 19 and 20 is formatted in the M/D/YYYY H:MM:SS format. This doesn't conform to 'ISO Date and Time' format and would cause an error when the NAPA Vehicle Importer tries to populate the attribute ID=NAPA_RevisionDate with the value from the NapaValidVehicleMaster file. NAPA Vehicle Importer has been updated to transform the date to be in 'ISO Date and Time' format (YYYY-MM-DD HH:MM:SS) so that the value can be populated for the Revision Date attribute.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2070</MadCap:conditionalText>Updated NAPA and TecDoc Easy Setup to create object types with names</p>
+        <p class="Body3">NAPA and TecDoc Easy Setup has been updated to provide STEP names for some Classification, Entity, and Product object types that previously didn't have a name.</p>
+        <p class="Body3">The update can be applied by running  Automotive - NAPA/TecDoc Model &gt; 1. Configure NAPA/TecDoc Data Model Easy Setup. Some objects are also created in step 3. Configure NAPA/TecDoc Type for Application Editor.</p>
+        <p class="Body3">The Classification object types that had the STEP Names updated are:</p>
+        <ul>
+            <li class="Bullet3">TecDoc Supplier Images Root (ID=TD_SupplierImagesRoot), Part Type Group Folder (ID=TD_PartTypeGroupFolder), Part Type Group (ID=TD_PartTypeGroup), Standard Assembly GA (ID=TD_StandardAssemblyGA), Universal Assembly GA (ID=TD_UniversalAssemblyGA), NAPA Part Terminology List Root (ID=NAPA_PartTerminologyListRoot), and NAPA Part Terminology List (ID=NAPA_PartTerminologyList)</li>
+        </ul>
+        <p class="Body3">The Entity object types that had the STEP Names updated are:</p>
+        <ul>
+            <li class="Bullet3">TecDoc Supplier Price List Root (ID=TD_DS_SupplierPriceListRoot), TecDoc Prices (ID=TD_TecDocPrices), TecDoc Manufacturer Root (ID=TD_Manufacturer_Root), and TecDoc Resource Root (ID=TD_ResourceRoot)</li>
+        </ul>
+        <p class="Body3">The Product object types that had the STEP Names updated are:</p>
+        <ul>
+            <li class="Bullet3">TecDoc Supplier Data Root (ID=TD_DS_SupplierDataRoot), TecDoc Reference Data Objects (ID=TD_ReferenceDataObjects), LOV Filters (ID=TD_LOVFilters), and LOV Filter GA (ID=TD_LOVFilterGA)</li>
+        </ul>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by updating the STEP Name for each object type mentioned above.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1943</MadCap:conditionalText>Updated NAPA and TecDoc Easy Setup to create references with more consistent names</p>
+        <p class="Body3">NAPA and TecDoc Easy Setup has been updated to provide STEP names for some references that previously didn't have a name (e.g., 'NAPA_PartRelation' and 'TD_PartRelation'). And also to remove 'NAPA' and 'TD' as a prefix in the reference names. The prefix in the reference ID can be used to distinguish between the standards if the reference names are the same. </p>
+        <p class="Body3">The updates can be applied by running <b style="font-weight: normal;">Automotive - NAPA/TecDoc Model &gt; 1. Configure NAPA/TecDoc Data Model</b> Easy Setup. Some references are also created in step <b style="font-weight: normal;">3. Configure NAPA/TecDoc Type for Application Editor</b>.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please update the STEP Name for these references manually:</p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The name should not include the prefix standard (AutoCare, NAPA, or TecDoc). The prefix in the ID can be used to distinguish between the standards if the name is the same (e.g., Part Relation).</p>
+        <ol>
+            <li class="Numbered2">Product Reference Types:</li>
+        </ol>
+        <ul>
+            <li class="Numbered2">NAPA_NoteSuggestionRelation has no name - should be “Note Suggestion Relation”</li>
+            <li class="Numbered2">NAPA_PartRelation has no name - should be “Part Relation”</li>
+            <li class="Numbered2">TD_PartRelation has no name - should be “Part Relation”</li>
+            <li class="Numbered2">NAPA_ApplicationToComment has a name, but it should be updated to “Application To Comment”</li>
+            <li class="Numbered2">NAPA_ProductToInterchangeProduct has a name, but it should be updated to “Product To Interchange Product”</li>
+            <li class="Numbered2">TD_GenericArticleToTextBlock has a name, but it should be updated to “Generic Article To Text Block”<p><img src="../../Resources/Images/MPNotes/Reference Types for Name Update.png" /></p></li>
+        </ul>
+        <ol start="2">
+            <li class="Numbered2">Image and document Reference Types: </li>
+        </ol>
+        <ul>
+            <li class="Numbered2">NAPA_PartNumberToImage has a name, but it should be updated to “Part Number To Image”<p><img src="../../Resources/Images/MPNotes/3.png" /></p></li>
+        </ul>
+        <ol start="3">
+            <li class="Numbered2">Classification Reference Types:</li>
+        </ol>
+        <ul>
+            <li class="Numbered2">NAPA_PartTerminologyListToNAPA_PartTerm has no name - should be “Part Terminology List To NAPA Part Term”</li>
+            <li class="Numbered2">NAPA_PartTypeRelation has no name - should be “Part Type Relation”</li>
+            <li class="Numbered2">TD_ManufacturerToKBA has no name - should be “Manufacturer To KBA”</li>
+            <li class="Numbered2">TD_PartTypeGroupToPartType has no name - should be “Part Type Group To Part Type”</li>
+            <li class="Numbered2">TD_PartTypeRelation has no name - should be “Part Type Relation”</li>
+            <li class="Numbered2">TD_VehicleType(CV)ToKBA has no name - should be “Vehicle Type (CV) To KBA”</li>
+            <li class="Numbered2">TD_VehicleType(LCV)ToKBA has no name - should be “Vehicle Type (LCV) To KBA”</li>
+            <li class="Numbered2">TD_VehicleType(PC)ToKBA has no name - should be “Vehicle Type (PC) To KBA”</li>
+            <li class="Numbered2">NAPA_ApplicationToOption1 has a name, but it should be updated to “Application To Axle”</li>
+            <li class="Numbered2">NAPA_ApplicationToEngine has a name, but it should be updated to “Application To Engine”</li>
+            <li class="Numbered2">NAPA_ApplicationToSubmodel has a name, but it should be updated to “Application To Submodel”</li>
+            <li class="Numbered2">NAPA_ApplicationToTransmissionType has a name, but it should be updated to “Application To Transmission Type”</li>
+            <li class="Numbered2">NAPA_ApplicationToYear has a name, but it should be updated to “Application To Year”</li>
+            <li class="Numbered2">NAPA_SisterVehicle has a name, but it should be updated to “Sister Vehicle”</li>
+            <li class="Numbered2">NAPA_ValidVehicleToAxle has a name, but it should be updated to “Valid Vehicle To Axle”</li>
+            <li class="Numbered2">NAPA_ValidVehicleToEngine has a name, but it should be updated to “Valid Vehicle To Engine”</li>
+            <li class="Numbered2">NAPA_ValidVehicleToTransmissionType has a name, but it should be updated to “Valid Vehicle To Transmission Type”<p><img src="../../Resources/Images/MPNotes/4.png" /></p></li>
+        </ul>
+        <ol start="4">
+            <li class="Numbered2">Product to Classification Link Types </li>
+        </ol>
+        <ul>
+            <li class="Numbered2">TD_SupplierArticleToUniversalGA has no name - should be “Supplier Article To Universal GA”</li>
+            <li class="Numbered2">NAPA_ProductToMPCC has a name, but it should be updated to “Product To MPCC”<p><img src="../../Resources/Images/MPNotes/Product to classification link rename.png" /></p></li>
+        </ul>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2054</MadCap:conditionalText>Updated TecDoc Easy Setup to add the STEP Name for root objects</p>
+        <p class="Body3">Previously, certain TecDoc root objects didn't have a STEP Name. TecDoc Easy Setup has been updated to add the STEP Names to the objects. The updates are part of  Automotive - TecDoc Model &gt; 1. Configure TecDoc Data Model Easy Setup.</p>
+        <p class="Body3">The root Classification object that had the STEP Name updated is:</p>
+        <ul>
+            <li class="Bullet3">TecDoc Assets Root (ID=TD_TecDoc_Assets_Root)</li>
+        </ul>
+        <p class="Body3">The root Entity objects that had the STEP Names added are:</p>
+        <ul>
+            <li class="Bullet3">TecDoc Manufacturer Root (ID=TD_TecDocManufacturerRoot) and TecDoc Resource Root (ID=TD_TecDocResourceRoot)</li>
+        </ul>
+        <p class="Body3">The root Product object that had the STEP Name added is:</p>
+        <ul>
+            <li class="Bullet3">TecDoc Supplier Root (ID=TD_DS_Supplier Root)</li>
+        </ul>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by updating the STEP Names for the root classification objects listed above.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2538</MadCap:conditionalText>Updated TecDoc Easy Setup to clean up LOVs that are created by Easy Setup</p>
+        <p class="Body3">TecDoc Easy Setup has been updated to change some LOV names and create some LOVs in a different LOV Group to make it look cleaner.</p>
+        <p class="Body3">The update can be applied by running  Automotive - TecDoc Model &gt; 1. Configure TecDoc Data Model Easy Setup.</p>
+        <p class="Body3">The LOV Group and LOVs that had the STEP Names updated are:</p>
+        <ul>
+            <li class="Bullet3">TecDoc LOV Group (ID=TD_Top_Level_Lov_Group), LOV-Comparative Manufacturer (ID=TD_LOV-Comparative-Manufacturer), and LOV-OE Manufacturer (ID=TD_LOV-OE-Manufacturer)</li>
+        </ul>
+        <p class="Body3">Eight LOVs are now created under the TD_TecDocLOV group:</p>
+        <ul>
+            <li class="Bullet3">TD_LOV-AttributeValidFor, TD_LOV-LinkTargets, TD_LOV-Comparative-Manufacturer, TD_LOV-Country Code, TD_LOV-OE-Manufacturer, TD_LOV-213, TD_LOV-214, and TD_LOV-216</li>
+        </ul>
+        <p class="Body3">LOV Group 'Display Condition LOV' (ID=TD_DS_LOV) is no longer created by Easy Setup.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by updating the STEP Names for the LOVs, moving the LOVs, and deleting the TD_DS_LOV group.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2592/2593/2634</MadCap:conditionalText>Updated TecDoc Easy Setup Article Number to be Specification attribute and add a warning for attributes that have changed Type</p>
+        <p class="Body3">Easy setup for TecDoc has been updated to change attribute with ID=TD_ATTR_ArtNr from Description to Specification Type. Also, if a user changes the type for an attribute that is created through Easy Setup from Description to Specification, then a warning will appear indicating that the, 'Attribute [ID] has been manually modified to be a Specification attribute rather than a Description attribute. Therefore, it cannot be made valid on the non-product object type.'</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-1089</MadCap:conditionalText>Updated TecDoc Easy Setup to add link types and Axle object types as assemblies to Application Model component</p>
+        <p class="Body3">TecDoc Easy Setup has been updated to add Axle object types as assemblies, and 'Supplier Article to Axle' and 'Supplier Article To CV Producer' as application to assembly link types in Automotive - Application Model component.</p>
+        <p class="Body3">The updates can be applied by running  Automotive - TecDoc Model &gt; 3. Configure TecDoc Types for Application Editor Easy Setup.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2615</MadCap:conditionalText>Updated TecDoc Easy Setup to no longer add Business Condition to Reference and Supplier workflows</p>
+        <p class="Body3">Previously, TecDoc Easy Setup created the Reference and Supplier workflows with a Start Condition that contained a Business Rule that looks for a specific Final state in the workflow. If the specified state does not exist in the Reference workflow, this would prevent the Supplier import to be started. TecDoc Easy Setup has been updated to no longer add the Business Rule to the Start Condition in the Reference and Supplier workflows.</p>
+        <p class="Body3">The start condition rule is still available and can be found under the 'TecDoc' Business Condition menu if a user wants to manually create a business rule that controls when to import reference and supplier data.</p>
+        <p class="Body3"><b>Existing implementations: </b>Please make these changes manually by going to the TecDocReferenceImport and TecDocSupplierImport workflows and removing the Business Rule from the Start Condition field.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2518</MadCap:conditionalText>Updated TecDoc component model to no longer mention 'attribute block object types' in Linkage Source aspect </p>
+        <p class="Body3">Since there is no concept of an attribute block any longer in the latest STEP release, the TecDoc component model Configuration description has been updated for Linkage Source aspect to no longer mention 'attribute block object types.'</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-2580</MadCap:conditionalText>Fixed TecDoc Reference data load to make it possible to run Business Rules </p>
+        <p class="Body3">Previously, setting a change flag business rule in the TecDoc Reference data importer would generate an error because some files were generated with data after the child item in the STEPxml. The error that was encountered was: Import encountered node data after node children while using Business Rules. TecDoc Reference data importer has been fixed to make it possible to run Business Rules so that the data and object elements are created in the correct order in the STEPxml.</p>
+        <h2 class="MPNDownload">Patch recipe</h2>
+        <p class="Body3">The Automotive add-on can be installed with the following recipe:</p>
+        <p class="Body3"><b>to:automotive/7.0/automotive-7.0.7.spr</b>
+        </p>
+        <p class="Body3">Note that the above recipe is compatible only with the STEP 8.3 baseline (<b>to:step/trailblazer/step-8.3.spr</b>).</p>
+        <p class="Body3">For assistance in applying the patch to systems with extensions or additional add-on components, contact Stibo Systems Technical Services.</p>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <link href="../../../../../Resources/TableStyles/StiboTableStyles.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <meta name="description" content="Stibo SDQ User Guide: With Stibo SDQ, real-time phone validation to check for the validity of an address is conducted globally. Additionally, the validation status can be captured along with the validation timestamp." />
+    </head>
+    <body>
+        <h1>Address Validation</h1>
+        <p class="Body1">With Stibo SDQ,  address validation is powered by typeahead search technology, which enables users to capture a complete and verified address with minimal key strokes. Address validation is available when creating Business Accounts, Person Accounts, and Contacts. Address information is verified against authoritative data sources for over 248 countries including USPS, Canada Post, Royal Mail, Australia Post, La Poste, New Zealand Post, and Deutsche Post. </p>
+        <p class="Body1">This section addresses: </p>
+        <ul>
+            <li>Using Address Validation</li>
+            <li>Address Data Quality</li>
+            <li>Address Quality Index</li>
+            <li>Address Validation Statuses</li>
+        </ul>
+        <MadCap:pageBreak />
+        <p class="Body1HeadNoTOC">Using Address Validation</p>
+        <p>Once configured, when users create Business Accounts, Person Accounts, and/or Contacts using the same Salesforce button they have always used, they will be able to select valid addresses from an auto-complete dropdown of any address in the world. </p>
+        <p class="Body1">In the example below, within the Search Address Country field, 'United States of America' is selected (or is set as the default), and the first few numbers and letters of an address have been entered. Based upon the text entered, the three addresses within the selected country  that match the entered text will display in the  dropdown. In other words, by entering  a few characters and then selecting the correct address, a user can easily populate the contact record with valid address information.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Real-time Contact Data Validation/AVAddressTypeAhead.png" />
+        </p>
+        <p class="Body1">In the example above, the validated address is selected from the dropdown, and will have either a Verified or Unverified address validation status. If the correct address does not display within the dropdown, then users can disable address validation or select an address that is close to the correct address and then edit the address further. When address validation is disabled the validation status will be set to 'Entered Manually.'</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">In the example above, one address field is displayed, however there is no limit to the number of contact data validation configurations allowed. For more information on how to configure fields for contact data validation, see the <b>Configuring Mappings</b> section of the Enabling Real-Time Data Validation topic<MadCap:xref href="../../Admin Guide/2a. Enable Real-Time Data Validation.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>, the Enable Master Data Management Theme topic<MadCap:xref href="../../Admin Guide/2b. Enable Master Data Management Theme.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>, or the Enable Dun &amp; Bradstreet Theme topic<MadCap:xref href="../../Admin Guide/2c. Enable Dun &amp; Bradstreet Theme.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within the <b>Stibo SDQ Admin Guide</b>.</p>
+        <MadCap:pageBreak />
+        <p class="Body1HeadNoTOC">Address Data Quality</p>
+        <p class="Body1">Once a valid address is selected, the address data is automatically enriched by auto-populating fields configured by the system administrator. These are helpful when creating reports to get an overview of address quality. At a minimum, the following custom fields are recommended <MadCap:annotation MadCap:createDate="2018-01-24T15:10:55.6874819-05:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="Recommended to what? I get the gist but I feel this isn't quite clear. Added to the SDQ tab?" MadCap:editor="brcr" MadCap:editDate="2018-01-24T15:11:32.7530942-05:00">for</MadCap:annotation> each address type that should be validated (i.e., Billing, Shipping, Mailing):</p>
+        <ul>
+            <li>Address Validation Status</li>
+            <li>Address Validation Timestamp (for the latest validation)</li>
+            <li>Address Verification Code</li>
+            <li>Address Quality Index (AQI)</li>
+        </ul>
+        <p>When the suggested custom fields are configured, it is easy for users to view the important information about the record. In the example below, the following Billing related fields are displayed with the contact details: Address Validation Timestamp, Validation Status, Quality Index, and Verification Code.</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Billing Address Validation Fields.png" />
+        </p>
+        <MadCap:pageBreak />
+        <p class="Body1HeadNoTOC">Address Quality Index</p>
+        <p class="Body1">The table below describes each of the available Address Quality Indexes (AQI's).</p>
+        <table style="border-left-style: solid;border-left-width: 1pt;border-left-color: #000000;border-right-style: solid;border-right-width: 1pt;border-right-color: #000000;border-top-style: solid;border-top-width: 1pt;border-top-color: #000000;border-bottom-style: solid;border-bottom-width: 1pt;border-bottom-color: #000000;mc-table-style: url('../../../../../Resources/TableStyles/StiboTableStyles.css');margin-left: 0;margin-right: auto;width: 794px;" class="TableStyle-StiboTableStyles" cellspacing="0">
+            <col class="TableStyle-StiboTableStyles-Column-Column1" />
+            <col class="TableStyle-StiboTableStyles-Column-Column1" />
+            <col class="TableStyle-StiboTableStyles-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-StiboTableStyles-Head-Header1">
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1">
+                        <p>AQI</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1">
+                        <p>Address Quality</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadD-Column1-Header1">
+                        <p>Explanation</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 11pt;">A</td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 11pt;">
+                        <p class="Body1">Excellent</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 11pt;">
+                        <p class="Body1">Verifiable to at least Premise-level without changes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 11pt;">B</td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 11pt;">
+                        <p class="Body1">Good</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 11pt;">
+                        <p class="Body1">Verifiable to at least Thoroughfare-level with minor changes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 11pt;">C</td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 11pt;">
+                        <p class="Body1">Average</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 11pt;">
+                        <p class="Body1">Verifiable to at least Locality-level with moderate changes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 11pt;">D</td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 11pt;">Poor</td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 11pt;">Only verifiable to at least Locality-level with more than moderate changes.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyB-Column1-Body1" style="font-size: 11pt;">E</td>
+                    <td class="TableStyle-StiboTableStyles-BodyB-Column1-Body1" style="font-size: 11pt;">Bad</td>
+                    <td class="TableStyle-StiboTableStyles-BodyA-Column1-Body1" style="font-size: 11pt;">Not verifiable.</td>
+                </tr>
+            </tbody>
+        </table>
+        <MadCap:pageBreak />
+        <p class="Body1HeadNoTOC">Address Validation Statuses</p>
+        <p class="Body1">How a user enters an address affects the address validation status. The table below describes each address validation status and the details associated with that status.</p>
+        <table style="border-left-style: solid;border-left-width: 1pt;border-left-color: #000000;border-right-style: solid;border-right-width: 1pt;border-right-color: #000000;border-top-style: solid;border-top-width: 1pt;border-top-color: #000000;border-bottom-style: solid;border-bottom-width: 1pt;border-bottom-color: #000000;mc-table-style: url('../../../../../Resources/TableStyles/StiboTableStyles.css');margin-left: 0;margin-right: auto;width: 711px;" class="TableStyle-StiboTableStyles" cellspacing="0">
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 192px;" />
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 317px;" />
+            <thead>
+                <tr class="TableStyle-StiboTableStyles-Head-Header1">
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;">
+                        <p class="Body1">Address Validation Status</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadD-Column1-Header1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;">
+                        <p class="Body1">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" rowspan="4" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Verified </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">A user has selected the validated address from a dropdown.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Address has a Loqate AQI value.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Address has an address quality index (AQI) of Excellent or Good.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Address is verifiable to at least Premise-level without changes or Thoroughfare level with minor changes.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" rowspan="4" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Unverified</td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">A user has selected the validated address from a dropdown.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Address has a Loqate AQI value.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Address has an address quality index (AQI) of Average, Poor, or Bad.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Address is verifiable to at least Thoroughfare-level with minor changes, Locality level with average changes, or Locality level with more than moderate changes.</td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">Entered Manually</td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p><span style="font-size: 11pt;">When an address has an Entered Manually validation status, then a user has  disabled address validation, by clicking the </span><b style="font-size: 11pt;">Enter Address Manually</b><span style="font-size: 11pt;"> checkbox (as shown below).</span>
+                        </p>
+                        <p>
+                            <img src="../../../../../Resources/Images/CMDM/User Guide/Real-time Contact Data Validation/AVAddressInfo.png" />
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyB-Column1-Body1" style="font-size: 11pt;">User Preferred</td>
+                    <td class="TableStyle-StiboTableStyles-BodyA-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p style="font-size: 11pt;">When a user edits an address field after validation, then the validation status field will be updated with 'User Preferred.' In the example below, the 'Billing Address Validation Status' field has been configured to store the billing address validation status. Since a user has edited the Billing Address, the validation status value is set to 'User Preferred.'</p>
+                        <p class="Image2">
+                            <img src="../../../../../Resources/Images/CMDM/User Guide/User Preferred.png" />
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For more information on configuring fields for address data enrichment, see the <b>Configuring the Real-time Contact Data Validation</b> section of the <b>Stibo SDQ Admin Guide</b>.</p>
+    </body>
+</html>

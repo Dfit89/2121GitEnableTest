@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="50" MadCap:lastWidth="730">
+    <body>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">When using the 'file' delta calculation method, discarded files will not be used for delta calculations. The last loaded file must be retained for it to be used in delta <MadCap:annotation MadCap:createDate="2017-11-03T12:03:29.8326020-04:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="I need to test and see if delta calculation compares against the file that exists prior to the deleted file. and update this statement with what it WILL do" MadCap:editor="medu" MadCap:editDate="2017-11-03T12:06:44.2036483-04:00">calculation.</MadCap:annotation></p>
+    </body>
+</html>

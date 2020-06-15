@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to configure the Execute mapper configuration Business Action in Workbench." />
+    </head>
+    <body>
+        <h1>
+            <MadCap:annotation MadCap:createDate="2019-08-20T17:22:08.6061387+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Moving this to page 32" MadCap:editor="bond" MadCap:editDate="2019-08-20T17:22:16.1154099+05:30">Configuring</MadCap:annotation> the Execute Mapper Configuration Business Action</h1>
+        <p class="Body1">The 'Execute mapper configuration' business operation is found within the STEP Workbench  Business Rule Editor under the Mapping menu and requires population of a mapper configuration. This section addresses the steps necessary for configuring the 'Execute mapper configuration' business action within the workbench.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Data Onboarding/5.png" />
+        </p>
+        <ol>
+            <li class="Numbered1">Create the business action with a name that accurately describes to the user what this action will do.  For this example, the business action name is 'PIES Item to NAPA Product.'</li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Edit the new business rule, <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button.flsnp" /> next to the Valid Object Types parameter, and select the 'All Object Types' for this business action.</li>
+            <li class="Numbered1">On the Operations tab of the Business Rule Editor, click the <b>Add new Business Action</b> link, and click the edit button to open the Edit Operation dialog. </li>
+            <li class="Numbered1">Use the dropdown menu within the Edit Operation dialog to select <b>Mapping</b> &gt; <b>Execute mapper configuration</b> operation, and the parameter 'Mapper configuration'   will display (as shown above).</li>
+            <li class="Numbered1">Within the parameter, <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button.flsnp" /> and select the desired Mapper Configuration from the list of available Mapper Configurations.</li>
+        </ol>
+        <p class="important2" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">A different Business Action will need to be created for each different mapper configuration so that the Business Action can be used wherever the mapping needs to be executed.</p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Click the <b>Save</b> button.</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <ol start="12">
+            <li class="Numbered1">Click the <b>Save</b> button, and the 'Edit component' for the 'Node Picker Dialog Properties' dialog will display with the Root Node Plugin parameter populated with Static Root Nodes.</li>
+            <li class="Numbered1">Click the <b>Add</b> button beneath the Tab Pages parameter &gt; select the <b>Browse Tab</b> component &gt; click the <b>Add</b> button to close the dialog and the 'Edit component' for 'Node Picker Dialog Properties' will display with the Tab Pages parameter populated with Browse Tab. Optionally, repeat this step and add the Search Table Tab.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../Images/BRs/BA6.png" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Leave the Title parameter blank and <i>after the configuration is saved</i> an i18n key will be populated (as shown above). For more information, see the <b>Localization</b> topic<MadCap:xref href="../../../../Admin Portal/Localization.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within the <b>Administration Portal</b> section of the <b>STEP Online Help</b>. Otherwise, text entered within the Title parameter will display in place of the default 'Select Node(s)' title for the dialog used to select the vehicle assembly.</p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Click the <b>Save</b> button, and the   'Add component - configure required properties' for the 'Node Picker Parameter Properties' dialog will display with the Node Picker Configuration parameter populated.</li>
+        </ol>
+    </body>
+</html>

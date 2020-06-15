@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>Modifying Mapper Rows on the Onboarding Mapping Details Screen</title>
+        <meta name="description" content="Automotive Solution: On the Onboarding Mapping Details Screen, the user has the flexibility to disable, delete, or rearrange the listing order of the mapper rows. The health of the&#xD;&#xA;mapping row is displayed next to each mapping row. Users can also add some additional information describing&#xD;&#xA;each of the mapper rows." />
+    </head>
+    <body>
+        <h1>Modifying Mapper Rows on the Onboarding Mapping Details Screen</h1>
+        <p class="Body1">As described within each of the mapping plugin topics, the user can add any number of mapping rows in the mapping plugin. When there are multiple mapper rows available within the mapping plugin, the order of execution of each mapper row is based on the order in which it is listed within the mapping plugin.</p>
+        <p class="Body1">The user has the flexibility to disable, delete, or rearrange the listing order of the mapper rows. The health of the mapping row is displayed next to each mapping row. Users can also add some additional information describing each of the mapper rows. In the following image, the various functionalities are numbered. </p>
+        <p class="Body1">In the image below, the Attribute Mapping plugin is configured to perform multiple mapping functions. Each of the mapping functions is displayed as rows, and are called mapping rows.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Data Onboarding/154.png" />
+        </p>
+        <p class="Body1"> The available modifications defined below include:</p>
+        <ol>
+            <li class="Numbered1">Add a mapper row to the mapping plugin</li>
+            <li class="Numbered1">Delete a mapper row in the mapping plugin</li>
+            <li class="Numbered1">Disable a mapper row in the mapping plugin</li>
+            <li class="Numbered1">Enable the disabled mapper row in the mapping plugin</li>
+            <li class="Numbered1">Check the health of the mapper row </li>
+            <li class="Numbered1">Add a description to the mapper row</li>
+            <li class="Numbered1">Change the order of the mapper row in the mapping plugin</li>
+        </ol>
+        <h2>Add a mapper row to the mapping plugin</h2>
+        <p>Details on how to add the mapper rows are provided within each of the mapping plugin topics. For more information about how to add these mapper rows, see the Mapping Plugins topic<MadCap:xref href="Mapping Plugins.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <h2>Delete a mapper row in the mapping plugin</h2>
+        <p class="Body1">Deleting a mapper row allows you to no longer display (and execute) the mapper row for the selected plugin in the Onboarding Mappings Details screen when it is no longer required.</p>
+        <ol>
+            <li>For the selected Mapper Configuration setup entity, on the Mappings tab, open the mapping plugin for the mapping row that should be deleted. </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Select the checkbox that is available on the left of the mapper row that is intended to delete. This makes the Delete button visible in the toolbar. </li>
+            <li>Click the Delete button. This removes the mapper row from the Onboarding Mappings Details screen in Web UI and also removes the functionalities defined in that particular mapper row from being executed when the user executes the Mapper Configuration setup entity.</li>
+            <li>Save the configuration after the row has been deleted.</li>
+        </ol>
+        <h2>Disable a mapper row in the mapping plugin</h2>
+        <p class="Body1">The execution of the mapper rows within the plugin can be controlled. The rows displayed within the plugin can be disabled as needed, and the disabled mapper row lies in a deactivated state on the mapping plugin. Disabling a mapper row allows you to no longer execute (unless enabled) the mapper row for the selected plugin in the Onboarding Mappings Details screen when it is temporarily not required. By default, all the newly created mapper rows remain activated / enabled.</p>
+        <ol>
+            <li>For the selected Mapper Configuration setup entity, on the Mappings tab, open the mapping plugin for the mapping row that should be disabled. </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Select the checkbox that is available on the left of the mapper row that is intended to be disabled. This makes the Disable button visible in the toolbar. </li>
+            <li>Click the Disable button. This disables the particular mapper row from being executed when the user executes the associated Mapper Configuration setup entity.</li>
+            <li>Save the configuration after the row has been disabled.</li>
+        </ol>
+        <p>The mapper row turns gray when disabled. </p>
+        <h2>Enable the disabled mapper row in the mapping plugin</h2>
+        <p class="Body1">The disabled mapper row can be enabled (reactivated) as per the user requirement. Enabling a mapper row allows you to execute the mapper row for the selected plugin in the Onboarding Mappings Details screen. By default, all the newly created mapper rows remain activated / enabled.</p>
+        <ol>
+            <li>For the selected Mapper Configuration setup entity, on the Mappings tab, open the mapping plugin for the disabled mapping row that should be enabled. </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Select the checkbox that is available on the left of the disabled mapper row that is intended to be enabled. This makes the Enable button visible in the toolbar. </li>
+            <li>Click the Enable button. This enables the particular mapper row to be executed when the user executes the associated Mapper Configuration setup entity.</li>
+            <li>Save the configuration after the row has been enabled.</li>
+        </ol>
+        <h2>Check the health of the mapper row</h2>
+        <p class="Body1">The health of the mapper row is displayed by a unique type of icon that is visible next to each mapping row. The following are three different types of icons that depict the health of the mapper row. Click any of the below-mentioned icons to view the health of the mapper row.</p>
+        <ul>
+            <li class="Bullet1">Red bug icon <img src="../../Resources/Images/Data Onboarding/Red bug.png" /></li>
+        </ul>
+        <p class="Body2">This icon denotes the mapper row as unhealthy and includes some flaws. Clicking on the icon displays a 'Detailed Information' dialog. </p>
+        <p class="Body2">Users can suppress the mismatch warning message by clicking on the 'Suppress' checkbox in the Mapping Guide window. Selecting the 'Suppress' checkbox <i>only</i> removes the data type mismatch warnings that is displayed on the Mapping Guide window and <b>does not</b> resolve the mismatch irregularities. </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/157.png" />
+        </p>
+        <ul>
+            <li class="Bullet1">Green bug icon <img src="../../Resources/Images/Data Onboarding/Green bug.png" /></li>
+        </ul>
+        <p class="Body2">This icon denotes the mapper row as unhealthy with some flaws but the user has decided to suppress the warning message. Clicking on the icon displays a 'Detailed Information' dialog. </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/156.png" />
+        </p>
+        <ul>
+            <li class="Bullet1">Green tick <img src="../../Resources/Images/Data Onboarding/All correct.png" /></li>
+        </ul>
+        <p class="Body2">This icon denotes the mapper row as healthy without any flaws. Clicking on the icon displays a 'Detailed Information' dialog. </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/155.png" />
+        </p>
+        <h2>Add a description to the mapper row</h2>
+        <p class="Body1">Users can add any information as text that helps explain the mapper row functionality. Below is the detailed procedure to add a description to the mapper row. </p>
+        <ol>
+            <li>For the selected Mapper Configuration setup entity, on the Mappings tab, open the mapping plugin for the mapping row that should be described. </li>
+            <li>Click the Add Description icon (<img src="../../Resources/Images/Data Onboarding/Add description Icon.png" />) that is available to the right of the mapper row. This will display the Edit Information dialog.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Data Onboarding/158.png" />
+        </p>
+        <ol start="3">
+            <li>Type in the required text and click OK to save and close the dialog.</li>
+        </ol>
+        <p>After the description has been entered, the icon style will be changed from (<img src="../../Resources/Images/Data Onboarding/Add description Icon.png" />) to (<img src="../../Resources/Images/Data Onboarding/Description added.png" />) symbolizing the presence of some information within the icon. The description will be visible when the user clicks or hovers over the (<img src="../../Resources/Images/Data Onboarding/Description added.png" />) icon.</p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Data Onboarding/159.png" />
+        </p>
+        <h2>Change the order of the mapper row in the mapping plugin</h2>
+        <p class="Body1">When there are multiple mapper rows available within the mapping plugin, the order of execution of each mapper row is based on the order in which it is listed within the mapping plugin. The user can rearrange the order of the mapper row. Below is the procedure to rearrange the order of the mapper row.</p>
+        <ol>
+            <li>For the selected Mapper Configuration setup entity, on the Mappings tab, open the mapping plugin for the mapping row that the order should be rearranged.</li>
+            <li>Click the three-dotted icon (<img src="../../Resources/Images/Data Onboarding/three dotted icon.png" />) that is available in the right of the mapper row. This will display the rearranging dialog. The user can select the Top, Up, Down, or Bottom button to rearrange the mapper row accordingly.</li>
+        </ol>
+        <p class="Body1">
+            <img src="../../Resources/Images/Data Onboarding/160.png" />
+        </p>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>Customer Hierarchies</title>
+        <meta name="description" content="Customer MDM Solution: This topic covers how to construct customer Hierarchies." />
+    </head>
+    <body>
+        <h1>Customer Hierarchies</h1>
+        <p class="Body1">The primary purpose for a customer hierarchy in CMDM is for proper grouping of customers. There are two avenues for application: internal view and external view.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/HierarchyViews.png" />
+        </p>
+        <p class="Body1">With internal view, organizational ownership shows business owners as the customers and allocate customers to actual locations when doing businesses with your company. This affords a view from your own company’s perspective as well as the ability to group customers according to your internal structure.</p>
+        <p class="Body1">With external view, the customer has a legal ownership structure, works as a standard industry classification, and it shows the customer location, without regard to the company's location. This affords a view on customers from their company’s perspective.</p>
+        <h2>Constructing Hierarchies</h2>
+        <p class="Body1">There are three primary methods of constructing a customer hierarchy in STEP:</p>
+        <ul>
+            <li class="Bullet2">
+                <b>Manually</b> - This is the approach delivered with the implementations package configurations.</li>
+            <li class="Bullet2">
+                <b>Import</b> - Relevant reference types and parent ID's can be loaded via an import to construct hierarchies based on external data.</li>
+            <li class="Bullet2">
+                <b>Business logic</b> - D&amp;B could potentially be leveraged to construct hierarchies based on linking of DUNS number and parent DUNS.</li>
+        </ul>
+        <h2>
+            <MadCap:annotation MadCap:createDate="2019-01-07T15:40:38.7282638-05:00" MadCap:creator="dfit" MadCap:initials="DF" MadCap:comment="Require explanation of financial hierarchy." MadCap:editor="dfit" MadCap:editDate="2019-01-07T15:40:54.9913302-05:00">Hierarchy Benchmark</MadCap:annotation>
+        </h2>
+        <p class="Body1">When considering recommended practices in constructing customer hierarchies, customers must pass the 'is grouped by' test.  This is a general analysis of grouping based on common characteristics.  Some examples of characteristic groupings are as described in the following sections.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/OrgChart.png" />
+        </p>
+        <h2>Organizational Characteristics</h2>
+        <p class="Body1">Organizational hierarchies may be characterized by customers that are owned by the same organizational unit, such as with a Financial or Sales organization.  Organizational hierarchies are typically used by the business to organize customers according to the organizational setup of their company (division, sales organization etc.) and may also be used in sales transactions, revenue reporting, and/or commissioning.  The same customer may also be referenced in different locations within this hierarchical structure.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/OrgCharacteristics.png" />
+        </p>
+        <p class="Body1">A division is regarded as an organizational unit for sales and distribution with a specific product portfolio to a customer. For every division, customer-specific agreements can be made like for partial deliveries, pricing, and terms of payment. A division can create an exclusion list of products for other divisions which can only be sold to a customer from that particular division.</p>
+        <p class="Body1">In large organizations, one or more divisions may be responsible for a customer, such as if the company is selling cleaning equipment such as disinfectant dispensers (healthcare division) and laundry machines (textile care division) to the same hospital.</p>
+        <h2>Legal Characteristics</h2>
+        <p class="Body1">Legal hierarchies may be characterized by customers that are owned by the same legal entity.  Legal hierarchies are typically used by the business to categorize customers according to legal ownership, i.e., between holdings and subsidiaries and/or shareholders.  A common usage is for legal reporting and analytics such as whitespace, risk analysis and credit checks (ex. roll up from subsidiary to holding).  The same customer is not typically placed under different locations.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/LegalHierarchy.png" />
+        </p>
+        <p class="Body1">The above example illustrates a legal hierarchy for ACME Inc.</p>
+        <h2>Industry Characteristics</h2>
+        <p class="Body1">Industry-specific hierarchies may be characterized by customers that are conducting the same type of business.  Industry hierarchies are typically used by the business to categorize customers by type of business using the Standard Industry Classification (SIC).  This hierarchy may be used for analytics, i.e., customer/ market segmentation (customer allocated to industry, organizational unit allocated to industry).</p>
+        <p class="Body1">The same customer is not typically placed under different locations.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/CompaniesStructure.png" />
+        </p>
+        <p class="Body1">Companies of the same industry are assigned the same SIC code. For example, General Motors, Ford Motor Corporation, Honda, and Toyota were all assigned the SIC code of 3711.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Entities have limited functionality when using in combination with Classifications:<br /><ul><li>Entities are not shown as 'sub-products' (or children) of the Classification node</li><li>Attribute values cannot be inherited from the Classification node to the Entity object.</li><li>Classification references to Entities are not inherited from parent Classification to child Classification.</li></ul></p>
+        <h2>Spatial Location</h2>
+        <p class="Body1">Location-based hierarchies may be characterized by customers that are allocated at the same spatial location.  Location hierarchies are typically used by the business in sales transactions (ordering address), delivery planning (routing), regional revenue reporting, whitespace analysis, segmentation (demographics).  This hierarchy may mix different customers under the same location.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/SpatialLocation.png" />
+        </p>
+        <p class="Body1">In this example, the hierarchy is purely spatial:</p>
+        <ul>
+            <li>	The Region contains lower categories called 'EMEA' and 'ASIA'</li>
+            <li>Below 'EMEA' you’d find countries of Europe and Middle East</li>
+            <li>Below 'ASIA,' you would have countries like 'CN,' 'JPN,' etc.</li>
+            <li>Below 'CN' you could have provinces like 'Beijing' and cities like 'Yizhuang,' etc.</li>
+            <li>Below the 'Yizhuang' node, you have all customers which are allocated on this location</li>
+        </ul>
+        <p class="Body1">When grouping customers, consider what the usage of the hierarchy is (organizational, legal, spatial or other).  Furthermore, hierarchy names should be designed to organize customers used in that specific context.</p>
+        <p class="Body1">Customer hierarchies are a way of structuring customer data so that the data is related to and connected to other objects. This isn't the same structuring as with classifications for products, nor will it be the same structure as a web hierarchy where each sales channel has their own web sites. Finally, customer hierarchies are not structured for searching, sorting, and browsing data, though these can be built to apply to customer hierarchies.</p>
+        <h2>Customer Hierarchy Use Cases</h2>
+        <h3>Use Case 1 - ACME Group Company Financial Hierarchy</h3>
+        <p class="Body1">Acme Group consists of fourteen daughter companies across the Americas region.  Among these, the relationships across sister companies may or may not exist.  In each of these companies there may also exist subsidiaries which operate independently of the each other and of the parent company.  These subsidiaries are a combination of acquisitions and spin-offs of individual divisions / business units:</p>
+        <ul>
+            <li>
+                <b>ACME Group</b> - Parent holding company with multiple subsidiary</li>
+            <li>
+                <b>ACME Inc</b> - Apparel Manufacturer and Distributor</li>
+            <li>
+                <b>ACME Healthcare</b> - Manufacturer and Distributor of healthcare equipment and supplies</li>
+            <li>
+                <b>Imaging &amp; IT</b> – Focus on healthcare imaging systems</li>
+            <li>
+                <b>Workflow Solutions</b> – Focus on business workflow solutions either as a standalone solution or to compliment an ERP system.</li>
+            <li>
+                <b>Diagnostics</b> – Focus on healthcare chemical diagnostic supplies</li>
+            <li>
+                <b>ACME Healthcare Supplies LTDA, Brazil</b> - Healthcare Supply Division headquartered in Brazil and caters to South America</li>
+            <li>
+                <b>Obits Technologies</b> – Subsidiary focusing on enterprise software</li>
+            <li>
+                <b>Obits Financial Services</b> – Focus on financial sector: banking, insurance, wealth management</li>
+            <li>
+                <b>Obits Energy Innovations</b> – Think tank for innovations with a  focus on energy generation, usage, and consumption</li>
+            <li>
+                <b>Wind Power</b> – Leader in wind turbine technology</li>
+            <li>
+                <b>Solar &amp; Hydroelectric</b> – Leader in alternative energy solutions for businesses and municipalities</li>
+            <li>
+                <b>Oil &amp; Gas</b> – Focus on technology to safely transport crude oil and natural gas</li>
+            <li>
+                <b>Energy Service</b> – Energy Solutions Professional Service offerings</li>
+            <li>
+                <b>Obits Energy LTDA, Brazil</b> – Energy division headquartered in Brazil and caters to South America</li>
+        </ul>
+        <p class="Body1">Walter is an Level I analyst for Acme Group, the primary holding company of Acme Inc and all daughter companies and subsidiaries. In alignment with a new initiative, one of Walter’s tasks is to assist with the quarterly reporting for Acme Group.  To do so, Walter requires running consolidated (roll-up) reports to provide an aggregate view of all of Acme Group’s holdings and investments.</p>
+        <p class="Body1">The challenge that Walter faces today is due to the growing number of holdings and subsidiaries over time, each individual company may have implemented their own accounting solutions to track various performance metrics and KPIs.  As such, each company has different views of the truth this makes it very difficult to track and report on the relationships between daughter-to-subsidiary, daughter-to-daughter, subsidiary-to-subsidiary companies.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Data Governance/HierarchiesForACME.png" />
+        </p>
+        <p class="Body1">Every quarter, Walter is tasked with generating a quarterly financial report broken down by industry and subsidiaries. However, with no centralized view of the corporate hierarchy and since finances are maintained in separate, isolated ERPs based on industry and divisions. Walter is operationally challenged due to lack of governance.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Data Governance/ACMETools.png" />
+        </p>
+        <p class="Body1">However in using CMDM, Walter is now able to utilize the hierarchy maintenance tools to visualize and maintain a golden hierarchy which models the complete company hierarchy for Acme Group.  By taking in consolidating the various information provided by each company’s source system, CMDM may now establish the proper relationships between companies within Acme Group.</p>
+        <p class="Body1">This golden hierarchy information may be synchronized with Acme Group’s accounting application so Walter now has an accurate and complete view of all holdings and daughter companies.  Walter is able to confidently select which subsidiaries to be included for various roll-up reports to drive Acme Group’s quarterly analysis.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Data Governance/RoadRunnerHierarchy.png" />
+        </p>
+        <h3>Use Case 2 - ACME Group Company Sales Hierarchy</h3>
+        <p class="Body1">Whitney, a data steward, is responsible for maintaining internal customer hierarchies at ACME. A new sales manager has been hired to replace a retiree, and Whitney has been asked to update the sales hierarchy. She will need to locate the appropriate territory for the retiree and remove him before adding the new sales manager.</p>
+        <p class="Body1">Without a structured internal view, however, ACME struggles with the ability to accurately view and maintain their internal sales structure. To overcome this obstacle, Whitney&#160;can use STEP's customer hierarchy capabilities to easily identify the correct region for the new sales manager and create a new entity to represent the sales manager directly below.</p>
+        <p class="Body1">With&#160;STEP, ACME can now easily view their internal hierarchies, and data stewards are empowered to maintain them.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/Sales Hierarchy.png" />
+        </p>
+        <h2>Recommended Practices for Hierarchies</h2>
+        <h3>Navigation</h3>
+        <p class="Body1">The Web UI should be optimized for navigating hierarchies:</p>
+        <ol>
+            <li class="Numbered1">The Homepage Left Primary Navigation&#160;Panel should include 'Hierarchies' as a Tree Navigator menu item.</li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">All hierarchy roots should be included in the within the Hierarchies menu item. Customer entities should be visualized within the company hierarchy screen, but should not be included in the Hierarchies Tree in the navigation panel.</li>
+            <li class="Numbered1">A hierarchy tab page should be available on all details pages for valid hierarchy object types.</li>
+        </ol>
+        <h3>Referenced Based Hierarchy</h3>
+        <p class="Body1">Referenced based hierarchies are structured to where customers reference other customers. Customers that are assigned to higher customer levels specified by the reference type used to appropriate attribution. One benefit of this hierarchy over the parent-child hierarchy is that reassigning a customer doesn’t not require related customers to have to be moved, though the relationship change does apply to them.</p>
+        <p>
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/ReferencedHierarchy.png" />
+        </p>
+        <h3>Web Hierarchy</h3>
+        <p class="Body1">It is recommended to keep the web or sales hierarchy for products clean from customer data.  A web or sales hierarchy for products is not intended to be customer specific but rather to represent the product portfolio intended for a specific sales channel.</p>
+        <p class="Body1">Customers are typically assigned to a distribution channel in ERP in sales transactions. The distribution channel is an entity through which sales items (products or services) reach customers. They may include wholesale, retail and direct sales. Sales organization is the legal entity that structures the company according to its sales requirements (selling unit) and defines the basic sales and distribution structure. A sales organization is responsible for selling products and services.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/WebHierarchy.png" />
+        </p>
+        <h3>Search Hierarchy</h3>
+        <p class="Body1">Customer hierarchies is not structured a searching, sorting, or browsing hierarchy.  If necessary these structures may be built in addition to customer hierarchies.</p>
+        <p class="Image1">
+            <img src="../../../../../Resources/Images/Solution Enablement/CMDM/SearchHierarchy.png" />
+        </p>
+    </body>
+</html>

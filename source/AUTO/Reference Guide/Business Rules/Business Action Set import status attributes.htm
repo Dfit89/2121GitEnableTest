@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes the Set import status attributes Business Action." />
+    </head>
+    <body>
+        <h1>Business Action: Set Import Status Attributes</h1>
+        <p class="Body1">While not strictly required, it may be helpful to implement change flags; a way for users to view what data has been created or changed due to an import. </p>
+        <p class="Body1">In order to enable the system to indicate when data is new and/or changed, metadata attributes and the 'Set import status attributes' business action can be used within the Import state of a workflow. At a minimum, at least one attribute is required for delete statuses, new statuses, and changed statuses for all imports. If additional distinction is desired, unique attributes can be created to store delete, new, and changed statuses for varying objects or imports. In either case, when an importer determines that data should be flagged as delete, new, or changed, it writes 'true' in the attributes indicated in the business action configuration. This allows each customer to determine their own strategy for managing delete, new, and/or changed data, such as processing the new and/or changed data via a workflow. </p>
+        <p class="Body1">In the example below, an ACES import created a new application for part VC21499. Because the application is new, the configured attribute New Object displays the value of 'true.'</p>
+        <p class="Body1">
+            <img src="../../Resources/Images/MPNotes/New Object True.png" />
+        </p>
+        <p>If the application had previously existed and had information changed during the import, then only the Changed Object attribute value would display 'true.'</p>
+        <p class="Body1">
+            <img src="../../Resources/Images/MPNotes/Changed Object.png" />
+        </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">This business action can ONLY&#160;be used within the Import state of a workflow. Additionally, an error will occur when delete flags are used for TecDoc reference data on an 8.2 system. It is recommended that change flags for TecDoc reference data only be implemented on 8.3 (or newer) releases.</p>
+        <h2>Configuring Change Flags for New and/or Updated Objects</h2>
+        <p class="Body1">To properly configure this business action to track new and/or updated objects, the following is needed:</p>
+        <ul>
+            <li>Create / Identify Valid Attributes</li>
+            <li>Configure a Business Action to Use the Set Import Status Attributes Operation</li>
+            <li>Update Workflow Settings</li>
+        </ul>
+        <p class="Body1HeadNoTOC">Create / Identify Valid Attributes</p>
+        <ol>
+            <li>Create the necessary attributes (or verify that they exist) to be used to store the new and/or changed data (i.e., Delete Status, New  Object, Changed  Object). </li>
+            <li>Make sure the attributes are valid for the object(s) being managed by the import. </li>
+        </ol>
+        <p class="Body2">For example, an attribute used in the AutoCare ACES Application Importer must be valid on ACES Application objects. Alternatively, an attribute used in the AutoCare PCdb Importer must be valid on all nodes in the PCdb classification hierarchy.</p>
+        <p class="Body1HeadNoTOC">Configure a Business Action to Use the Set Import Status Attributes Operation</p>
+        <ol MadCap:continue="false">
+            <li>Create a business action and give it a name that users can easily identify. In the example below, Set Change Flags is used.</li>
+            <li class="Numbered1">
+                <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to the right of the Valid Object Types parameter to find and select the necessary object type(s). In the Set Change Flags example below, 'All object types valid' is selected.</li>
+            <li class="Numbered1">On the Operations tab, click the 'Merge into' button, and the Edit Operation dialog will display.</li>
+            <li class="Numbered1">Click on the Edit Operation dropdown, click  <b>Import flow</b>, and then click <b>Set import status attributes</b>.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/MPNotes/6.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Three parameters will display. Configure the parameters to use the necessary attributes.<MadCap:conditionalText MadCap:conditions="Primary.Under Construction"> <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">Some  detailed use cases of these parameters are explained towards the end of this topic</MadCap:conditionalText>.</MadCap:conditionalText></li>
+        </ol>
+        <ul>
+            <li class="Bullet2"><b>Deleted object attribute:</b>
+                <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select the attribute which is configured in the Delta Calculation state within the 'Delete status attribute' parameter. This parameter clears the delete flag status (if any) upon successful import of the same object again. The attribute that is used in this parameter should be the same attribute that is configured in the Delta Calculation state. For the example above, the Delete Status attribute (created / identified in the previous section) is selected.</li>
+        </ul>
+        <ul>
+            <li class="Bullet2"><b>New object attribute:</b> <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select an attribute to be used to identify when an object is added. For the example above, the New Object attribute (created / identified in the previous section) is selected.</li>
+            <li class="Bullet2"><b>Updated values attribute:</b> <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select an attribute to be used to identify when an object is changed. For the example above, the Changed Object (created / identified in the previous section) is selected.</li>
+        </ul>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">PMDM for Automotive solution, upon configuration, only provides an option to  automatically erase the existing flags in the attribute marked for deletion. Wherein the flags (attribute value) marked for notifying newly added objects and changed objects cannot be erased automatically. User needs to determine their own strategy for erasing the flags (attribute value). For information on erasing the existing delete status flags, see topic <b>Use Cases - Clearing Delete Status Flag</b><MadCap:xref href="Use Cases - Clearing Delete Status Flag.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <ol start="7">
+            <li value="6">Click the <b>Save</b> buttons to save and close the business rule.</li>
+        </ol>
+        <p class="Body2">For more information on creating and/or editing business rules, see the <b>Creating a Business Rule or Library</b> topic<MadCap:xref href="../../../../Business Rules/Creating a Business Rule or Library.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>, and the <b>Editing a Business Rule</b> topic<MadCap:xref href="../../../../Business Rules/Editing a Business Rule.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within the <b>Business Rules</b> guide.</p>
+        <p class="Body1HeadNoTOC">Update Workflow Settings</p>
+        <p class="Body1">Once the business rule is configured, the necessary workflows need to be updated to use the business rule. Below are the steps to update a workflow to use the business rule created in the previous section.</p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Because the business rule created in the previous section is configured to work with ACES Application valid object types, the ACES Import Workflow is used for the example below. If the business rule is configured to also work with TecDoc and/or NAPA Applications, then those import workflows would need to also be edited.</p>
+        <ol start="1">
+            <li class="Numbered1">Go to workbench &gt; System Setup &gt; Workflows &gt; select a workflow.</li>
+            <li class="Numbered1">Right-click, and select <b>Edit STEP Workflow</b>.</li>
+        </ol>
+        <ol start="1" MadCap:continue="true">
+            <li class="Numbered1">On the STEP&#160;Workflow Designer window, double click on the <b>Import</b> state to open the State Editor. </li>
+            <li class="Numbered1">Select the <b>On Entry</b> tab, and within the Operations tab, click the Edit icon to display the Edit Operations Dialog (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/BRs/Set import status attributes Add To WF.png" />
+        </p>
+        <ol start="1" MadCap:continue="true">
+            <li class="Numbered1">In the Edit Operation dialog, <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" />  to the right of the Import action parameter to find and select the business action previously created.</li>
+            <li class="Numbered1">Click the <b>Save</b> button, and exit the workflow.</li>
+        </ol>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: Per KRMA Using change flags in general is an optional feature of the system and you wouldn’t expect by default that the importer would apply this information. So it only needs to be in the reference guide…. In the Business Rules section of the Reference Guide, document the rule in it’s own header. And include there that it is for use in the import state. Many of the out of the box rules are related to the various import flow states so we will end up documenting everything twice if we try to cover it both as part of import and as part of business rules. So I just want to keep it in business rules and each rule should describe it’s intended place of use if applicable (some of them can be used anywhere and it’s not relevant, but others are supposed to be used specifically in an Import or Conversion or whatever and when that is the case, we can state that). If you want, you can add some statement to the Import Framework Modifications section that says that there are many out of the box business rules that can be added for advanced functionality in the importers and to see the Business Rules section for more info - that will then tie it all together a little more.</p>
+    </body>
+</html>

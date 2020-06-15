@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes setting access for Application Editor Screens." />
+    </head>
+    <body>
+        <h1>Accessing Application Editor and Manager Screens</h1>
+        <p>Within each standard, Easy Setup creates multiple screens that can be used for viewing and editing application records. Each of the standards and their out of the box screens are described below. Though these screens can be customized as needed, this topic describes each of the screens created across the different standards (AutoCare, NAPA and TecDoc) and steps for adding the Application Manager screen to the Links Widget.</p>
+        <p class="Body1HeadNoTOC">AutoCare</p>
+        <p class="Body1">Each of the automatically configured screens for the AutoCare solution are described below:</p>
+        <ul>
+            <li class="Bullet2"><b>AutoCare Application Editor Screen (Parts):</b> A screen for viewing / editing application records when a part is selected.</li>
+            <li class="Bullet2"><b>AutoCare Application Editor Screen (Vehicles):</b> A screen for viewing / editing application records when a vehicle is selected</li>
+            <li class="Bullet2"><b>AutoCare Application Manager Screen:</b> A screen for viewing / editing application records where users input vehicle, part type, and/or part number selections to search for application records, and optionally search for missing coverage on the input selections</li>
+        </ul>
+        <p class="Body1">When Easy Setup actions are completed, the Automotive - Application Model is populated with the following value IDs related to these screens:</p>
+        <ul>
+            <li class="Bullet2">Application Records = AC_ACESApplication</li>
+            <li class="Bullet2">Vehicles / Assemblies = AC_BaseVehicle</li>
+            <li class="Bullet2">Part Types =  AC_PartTerminology</li>
+        </ul>
+        <p class="Body1">In the example below, the Application parameter is displayed within the Automotive - Application Model component model configured with the ACES Application (AC_ACESApplication) value. When Easy Setup actions are completed, the component model is configured automatically.</p>
+        <p>
+            <img src="../../Resources/Images/AppMgr/Configuring/C1.png" />
+        </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">For the Application Editor and/or Manager screens to properly function, the desired object types must be configured within both the component model and the Web UI screens.</p>
+        <p class="Body1HeadNoTOC">NAPA </p>
+        <p class="Body1">Each of the automatically configured screens for the NAPA solution are described below:</p>
+        <ul>
+            <li class="Bullet2"><b>NAPA Application Editor Screen (Parts):</b> A screen for viewing / editing application records when a part is selected.</li>
+            <li class="Bullet2"><b>NAPA Application Editor Screen (Vehicles):</b> A screen for viewing / editing application records when a vehicle is selected</li>
+            <li class="Bullet2"><b>NAPA Application Manager Screen:</b> A screen for viewing / editing application records where users input vehicle, part type (MPCC), and/or part number selections to search for application records, and optionally search for missing coverage on the input selections</li>
+        </ul>
+        <p class="Body1">When  Easy Setup actions are completed, the Automotive - Application Model is populated with the following value IDs related to these screens:</p>
+        <ul>
+            <li class="Bullet2">Application Records = NAPA_Application</li>
+            <li class="Bullet2">Vehicles / Assemblies = NAPA_Year</li>
+            <li class="Bullet2">Part Types =  NAPA_MPCC</li>
+        </ul>
+        <p class="Body1">In the example below,  the Application parameter is displayed within the Automotive - Application Model component model configured  with the NAPA Application (NAPA_Application) value. When Easy Setup actions are completed, the component model is configured automatically. </p>
+        <p class="Body1">
+            <img src="../../Resources/Images/AppMgr/Configuring/C2.png" />
+        </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">For the Application Editor and/or Manager screens to properly function, the desired object types must be configured within both the component model and the Web UI screens.</p>
+        <p class="Body1HeadNoTOC">TecDoc</p>
+        <p class="Body1">Each of the automatically configured screens for the TecDoc solution are described below:</p>
+        <ul>
+            <li class="Bullet2"><b>TecDoc Application Editor Screen (Articles):</b> A screen for viewing / editing application records when an article is selected.</li>
+            <li class="Bullet2"><b>TecDoc Application Editor Screen (Assemblies):</b> A screen for viewing / editing application records when an assembly is selected</li>
+            <li class="Bullet2"><b>TecDoc Application Manager Screen:</b> A screen for viewing / editing application records (where users input vehicles or assemblies and/or part types (TD generic article) selections to search for application records, and optionally search for missing coverage on the input selections. </li>
+        </ul>
+        <p class="Body1">When Easy Setup actions are completed the Automotive - Application Model is populated with the following value IDs related to these screens:</p>
+        <ul>
+            <li class="Bullet2">Application Records = TD_DS_Linkage</li>
+            <li class="Bullet2">Vehicles / Assemblies = TD_VehicleType(PC), TD_VehicleType(CV), TD_EngineCode</li>
+            <li class="Bullet2">Part Types =  TD_StandardAssemblyGA, TD_UniversalAssemblyGA</li>
+        </ul>
+        <p class="Body1">In the example below,  the Application parameter is displayed within the Automotive - Application Model component model configured with the TecDoc Application (TD_DS_Linkage) value. When Easy Setup actions are completed, the component model is configured automatically. </p>
+        <p class="Body1">
+            <img src="../../Resources/Images/AppMgr/Configuring/C5.png" />
+        </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">For the Application Editor and/or Manager screens to properly function, the desired object types must be configured within both the component model and the Web UI screens.</p>
+        <p class="Body1">Each of the above screens are created by Easy Setup and mapped to the following object types: </p>
+        <ul>
+            <li>AC_Basevehicle</li>
+            <li>AC_PIESITEM</li>
+            <li> NAPA_Year</li>
+            <li>NAPA_Product</li>
+            <li>TD_VehicleType(PC)</li>
+            <li>TD_DS_SupplierArticle</li>
+        </ul>
+        <p class="Body1"> However, it is up to each implementation to make them available to all the necessary object types. </p>
+        <p class="Body1">The Application Editor screens require an object selection, so  these screens need to be mapped for a particular object type or added on a tab within another screen that is mapped to the appropriate object. To map the Parts or Vehicles screen directly (meaning that when you are on a part or vehicle, you will only see that screen) see the <b>Mappings</b> topic within the <b>Main Properties Overview</b> section of  <b>STEP Online </b><b>Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Main Properties/Mappings.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1">To add the Parts or Vehicles screen to an existing screen, use the Sub Screen Tab Page configuration, described in the <b>Tab Pages</b> topic in the <b>Web User Interfaces / Web UI Getting Started</b> documentation  of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node Details/Tab Pages.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Body1">The Application Manager screen does not require an object selection, so this needs  to be made accessible to users, which can easily be done by adding a link to the screen on the homepage.</p>
+        <p class="Body1">To add access to the Application Manager screen from the homepage, use the Links widget, which is configured as part of Easy Setup. For more information about the Links Widget, see the <b>Homepage Widgets</b> topic in the <b>Web User Interfaces / Web UI Getting Started</b> documentation of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Homepage Widgets/Homepage Widgets.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <h2>Adding an Application Manager Screen to a Links Widget</h2>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">If Easy Setup actions for the AutoCare, NAPA, or TecDoc solution have been completed as described in the Automotive Quick Start Guide, then the  links to the standard specific Application Manager screens will automatically be added to the Quick Links Homepage Widget as shown in the examples below. Otherwise, the following steps can be used to complete configuration. </p>
+        <ol>
+            <li class="Numbered1">In design mode, select the <b>Links Widget</b> from the Homepage</li>
+            <li class="Numbered1">Click the <b>Add</b> button</li>
+            <li class="Numbered1">Select <b>Screen Navigation</b></li>
+            <li class="Numbered1">Click the <b>Add </b>button.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/QS/LinksWidget1.png">
+            </img>
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Add a <b>Label</b> that will display as a clickable link in the Links widget, select the appropriate Search screen, and click the <b>Add</b> button</li>
+        </ol>
+        <p class="Body2">In the screenshot below, the Label and Screen parameters are populated with the value 'AutoCare Application Manager.'</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/QS/LinksWidget2.png">
+            </img>
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">The result will be that the Links widget in the homepage will now include a link directly to the Application Manager screen.</li>
+        </ol>
+        <p class="Image3">
+            <img src="../../Resources/Images/QS/LinksWidget3.png">
+            </img>
+        </p>
+        <p class="Body1">Additional information on the Links Homepage widget, and its configurations, is available in the <b>Homepage Widgets</b> section within the <b>Web User Interfaces / Web UI Getting Started</b> documentation of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Homepage Widgets/Homepage Widgets.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+    </body>
+</html>

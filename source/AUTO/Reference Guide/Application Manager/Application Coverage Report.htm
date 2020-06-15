@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes the Application Coverage Report." />
+    </head>
+    <body>
+        <h1>Application Coverage Report</h1>
+        <p>
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDUCST-2808 </MadCap:conditionalText>The Application Coverage Report can display missing and/or existing application data  in an Excel spreadsheet (XLSX file type). The results displayed within an Application Coverage Report are based on the search criteria selected within an Application Manager screen. Since the Application Coverage Report is built to work with the Application Manager's intelligent search interface, it is extremely configurable, and provides  users on-demand flexibility to choose the report criteria that best meets their needs. </p>
+        <p class="Body1">Before an Application Coverage Report can be run, the desired search criteria must be entered into the Application Manager Search Panel, either manually or by selecting from the list of saved searches. Once criteria have been selected,  clicking the 'Report' button  allows users to export the Application Coverage Report. </p>
+        <p class="Body1">Within an Application Coverage Report, each application and/or missing application  will display as its own  row. Missing application rows are prepopulated with the condition(s) that are currently missing coverage. Because the missing coverage is visible within the Application Manager results table, it becomes easy for the user to applicate the part  by entering the part number necessary for the vehicle and its conditions.</p>
+        <h2 MadCap:conditions="Primary.Web">Prerequisites</h2>
+        <p MadCap:conditions="Primary.Print" class="Body1HeadNoTOC">Prerequisites</p>
+        <p class="Body1">Before attempting to understand how the Application Coverage Report is used, it is recommended to first become familiar with the  <b>Application Manager Overview </b>and <b>Using Application Manager Intelligent Search Interface</b><MadCap:xref href="Intelligent Search Interface/Using Intelligent Search Interface.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> topics within this guide.</p>
+        <h2>Application Coverage Report Results</h2>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST- 2809 </MadCap:conditionalText>The Web UI designer can be used to easily add and/or remove the display of columns within the Application Manager results table. Within an Application Coverage Report, when the following column headings are configured within the Application Manager results table, they will display within the Application Coverage Report: </p>
+        <ul>
+            <li class="Bullet1">Application Assembly Value</li>
+            <li class="Bullet1">Application Competitor or OE Part Numbers</li>
+            <li class="Bullet1">Application Condition Header - Group</li>
+            <li class="Bullet1">Application Condition Header - Individual</li>
+            <li class="Bullet1">Application Part Type Value</li>
+            <li class="Bullet1">Application Part Type Title Header </li>
+            <li class="Bullet1">Application Part Value</li>
+            <li class="Bullet1">Application Set Assembly</li>
+            <li class="Bullet1">Application Set Part</li>
+        </ul>
+        <p class="Body1">Along with the columns configured to display within the results table, several ID columns (that may not display within the results table) will display to the right of their respective Name columns within the report. <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDUCST-2812 </MadCap:conditionalText>Below is an example of the attribute and/or classification references that will display an ID column:</p>
+        <ul>
+            <li class="Bullet1">NAPA_ApplicationToEngine</li>
+            <li class="Bullet1">AC_ACESApplicationToEngineBase</li>
+            <li class="Bullet1">AC_ACESApplicationToTransmissionBase</li>
+            <li class="Bullet1">LOVs using an ID (i.e., NAPA_BodyStyleLOV, NAPA_EngineDesignatorLOV)</li>
+            <li class="Bullet1">Application Part Type Title Header</li>
+            <li class="Bullet1">Application Set Assembly</li>
+            <li class="Bullet1">Application Set Part</li>
+        </ul>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST-2810 </MadCap:conditionalText>Additionally, attributes that are both valid for the search criteria provided, and configured within the 'Application Condition Header - Group' component, will display within the Application Coverage Report. For ease of use, each valid attribute name is listed within a column header of the report. For more information on the Application Condition Header - Group' component, see the <b>Application Condition Headers</b> topic<MadCap:xref href="Results Table/Column Headers/Application Condition Header Components.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within this guide.</p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Only options that contain a value will be exported. When an option is exported, its name will display as a column heading. Even when the following options are added to the Node List Properties Headers, they will not be exported because the they are not handled: Application comments (AC Comment), ACES Application Qualifiers, Comments, NAPA Notes, and Application Asset References.</p>
+        <h2>Running an Application Coverage Report </h2>
+        <p class="Body1">Users can choose to export existing applications and/or missing applications by selecting one of the following options in the dropdown to the left of the Report button: </p>
+        <ul>
+            <li>Existing Applications Only</li>
+            <li>Existing and Missing Applications</li>
+            <li>Missing Applications Only</li>
+        </ul>
+        <p>When the 'Existing and Missing Applications' or 'Missing Applications Only' options are selected, STEP performs specific actions known as missing application coverage functionality. For more information about missing applications, see the <b>Missing Application Coverage Functionality</b> topic within this guide<MadCap:xref href="Missing Application Coverage Functionality.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>.</p>
+        <p class="Body1">After at least one criterion has been added to a search box, the Report button will enable. Once enabled, the Report button can be clicked before or after clicking the Search button. In other words, users are not required to use the Search button prior to the Report button. In fact, for searches that are time consuming or vague, it is recommended to use the Report button instead of the Search.</p>
+        <p class="Body1"> Once the Report button is clicked, a background process is initiated, and a notification displays informing users of the linked background process ID, and that the process has started. In the example below, the background process notification displays with the ID link displayed as 'BGP_101869.' </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/BGP Notification.png" />
+        </p>
+        <p class="Body1">Within the notification, clicking the 'X' will close the dialog, whereas clicking the ID link will close the dialog and display the Background Process Details (as shown below).</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/BGP Details Screen.png" />
+        </p>
+        <p>Once the Background Process Details screen Status parameter displays as 'Succeeded,' the download link for the Application Coverage Report will display. In the example above, the link displays as 'ApplicationCoverageReport-2018-05-08.xlsx.'</p>
+        <p class="Body1">If the Background Process Notification Component is enabled, then users can easily track the progress of the report in the right side panel. In the example below, the 'Run application coverage report' link displays within the 'Finished Processes' of the side panel. </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/BGP corner bar.png" />
+        </p>
+        <p class="Body1">From within the notification of the Background Process side panel, users can click the background process link (Run application coverage report), and the Background Process Details screen will display. Users can also click the 'Download' link to download the .XLSX Application Coverage Report. For more information on the Background Process Notification Component, see the <b>Background Process Notification Component</b> topic<MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Main Properties/Corner Bar Component/Background Process Notification Component.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within <b>STEP Online Help</b>.</p>
+        <p class="Body1">Additionally, the report can be downloaded from the workbench. To download the report from the workbench, go to the BG Processes tab &gt; AppCoverageReprtSrvce &gt; Ended Processes. Locate the desired process and click the save icon in the lower right corner of the workbench.</p>
+        <p class="Body1">In the example below, the third of six background processes for the Application Coverage reports is selected.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/Missing Applications/ReportLocation.png" />
+        </p>
+        <h2>Adding the Application Coverage Report to a Background Processes Screen</h2>
+        <p class="Body1">Optionally, the progress of a download for the Application Coverage Report can be configured to display within a Background Processes Screen. When configured, users can navigate to a Background Processes screen to view the following: TemplateID,  ID, Started By, Progress, Start Date (and time), Finish Date (and time), Results download (as shown below). </p>
+        <p class="Image1">
+            <img src="../../Resources/Images/AppMgr/Missing Applications/BGPScreen List.png" />
+        </p>
+        <p>From this table, users can optionally click on the BGP ID and the Background Process Details screen will display, or click the Results download to download the report.</p>
+        <p class="Body1">Below are the steps to add the Application Coverage Report to a Background Processes Screen.</p>
+        <ol>
+            <li>Within a Web UI, go to a Background Processes Screen, access the Designer, and the Background Processes Screen Properties will display as shown below.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/Missing Applications/Properties.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click the <b>Add</b> button below the 'Template ID&#160;Allowed List' parameter, and the Select Nodes list will display.</li>
+            <li>Select the <b>AppCoverageReportSrvce</b> node, as shown below.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/Missing Applications/SelectNode.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click the <b>OK</b> button, the dialog will close, and the  'Template ID&#160;Allowed List' parameter will display with the newly added AppCoverageReportSrvce (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/Missing Applications/ReportSrvc.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click the <b>Save</b> and <b>Close</b> buttons on the Designer.</li>
+        </ol>
+        <p>For more information about the Background Process List Screen, see the <b>Background Process List Screen</b> topic<MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Background Process List Screen.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within <b>STEP Online Help</b>.</p>
+    </body>
+</html>

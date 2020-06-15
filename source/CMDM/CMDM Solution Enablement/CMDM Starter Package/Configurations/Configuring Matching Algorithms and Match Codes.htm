@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>[%=Heading.Level1%]</title>
+        <meta name="description" content="Customer MDM Solution: The Matching Algorithm is typically configured first, followed by the Match Codes." />
+    </head>
+    <body>
+        <h1>Configuring Matching Algorithms and Match Codes</h1>
+        <p class="Body1">The Matching Algorithm is typically configured first, followed by the Match Codes.</p>
+        <h2 class="RNNoTOC">Matching Algorithm Configuration</h2>
+        <p class="Body1">The Matching Algorithm should be tailored to the data, and strive for precision. The CMDM&#160;initial configuration includes four pre-configured Matching Algorithms that can be used as a foundation to build a client organization's Matching solution:</p>
+        <ul>
+            <li class="Bullet2">Individual Customer<MadCap:xref href="Algorithm &amp; Match Codes - Individual Customer.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet2">Organization Customer<MadCap:xref href="Algorithm &amp; Match Codes - Organizational Customer.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet2">Contact Person<MadCap:xref href="Algorithm &amp; Match Codes - Contact Person.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet2">Household <MadCap:xref href="Algorithm &amp; Match Codes - Household.htm" class="HereWithParens" MadCap:conditions="Primary.Web">(<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+        </ul>
+        <p class="Body1" MadCap:conditions="Primary.Print">For more information, see the Algorithm &amp; Match&#160;Codes topics.</p>
+        <p class="Body1">When configuring the Matching Algorithm, it is important to consider the impact that Thresholds have on match results. If the Clerical Review threshold is set too high, a large amount of false negatives may be generated. Similarly, if the Auto Threshold is set too low, false positives could be generated. If the initial Matching configuration produces false negatives and/or false positives, the Thresholds should be reevaluated during the Match Tuning sessions. </p>
+        <p class="Body1">For more information on configuring a Matching Algorithm, see the <b>Configuring Matching Algorithms</b> section of the <b>Matching, Linking, and Merging</b> documentation<MadCap:xref href="../../../../../Matching, Linking, and Merging/Configuring Matching Algorithms.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <h2 class="RNNoTOC">Match Codes Configuration</h2>
+        <p class="Body1">Match Codes should aim to ensure that anything given a high score by the algorithm is included, and that only those records that may score high get compared.  The Match&#160;Codes should be considering the same data points that the Match Criteria does. This ensures that the comparison pool that Match Codes generate is relevant to the data points the Match&#160;Criteria is matching on.</p>
+        <p class="Body1">For example, if the Match&#160;Criteria is matching on a combination of Person Name and Address, it is not recommended to generate Match&#160;Codes based on&#160;unrelated attributes (e.g., Phone and Email).</p>
+        <p class="Body1HeadNoTOC">Example Match Codes</p>
+        <p class="Body1">Typical attributes used to generate Match Codes for Individual (B2C) solutions include&#160;Name, Address, Email, and Phone. For Organization (B2B), these attributes potentially include Name, Address, Phone, DUNS (D&amp;B Number), and Tax Identifier. </p>
+        <p class="Body1" style="font-weight: bold;">Email</p>
+        <p>Email is often used to narrow the pool of potential match candidates.  The Email Match Code Generator may be selected to work in conjunction with an Email normalizer to auto-generated email match codes.</p>
+        <p>Example: A customer with the email "InesJung@armyspy.com" becomes the Match Code "EMAIL#INESJUNG@ARMYSPY.COM".</p>
+        <p class="Body1" style="font-weight: bold;">Phone</p>
+        <p>Phone shares many of the same benefits that email provides. </p>
+        <p>Example: A customer with the phone number '(931) 839-9039' becomes the Match Code "PHONE#19318399039".</p>
+        <p>In this example, the phone number normalizer is configured to default the country code to US.</p>
+        <p class="Body1" style="font-weight: bold;">Address</p>
+        <p class="Body1">Address is often used in combination with person name or organization name. It is fairly unique if the full address is used, but has low uniqueness if only part of the address is used. </p>
+        <p class="Body1">The accuracy of addresses varies (i.e., one entry may include suite no. while another may not). When matching, techniques like edit distance is used on city and street. Because of this, and the fact that accuracy varies, the full address does not make a good match code, as it will likely lead to false negatives.</p>
+        <p class="Body1">Addresses are often abbreviated ('st' for street or station, etc.) in complex patterns that cannot be uniquely resolved easily. For high accuracy of address matching, it is therefore recommended to use STEP’s Address standardization capabilities, which are integrated to Loqate.</p>
+        <p>The match code generator for addresses provides the following address combinations:</p>
+        <ul>
+            <li class="Bullet1">ZIP code + Street Name</li>
+            <li class="Bullet1">Metaphone3 City + Street Name</li>
+        </ul>
+        <p>Example: The match codes for "134 Trace Lane, Lawrenceville, GA, 30046" would be "ADDRESS#30046+TRACELANE" or "ADDRESS#LRNSFL+TRACELANE"</p>
+        <p class="Body1" style="font-weight: bold;">Name and Address</p>
+        <p class="Body1">Combining elements of a person name and elements of an address is often a good way to create Match&#160;Codes that are sufficiently unique, without causing false negatives. However, multiple permutations are often required to avoid false negatives.</p>
+        <p>Example: Kimberly Kaine resides at 134 Trace Lane, Lawrenceville, GA, 30046.  Her corresponding match code would be "INDIVIDUAL#K+K+30046+134 TRACE".</p>
+        <p class="Body1">Other examples of Name and Address combination Match&#160;Codes:</p>
+        <ul>
+            <li class="Bullet1">First Name initial + Metaphone3 Last Name + ZIP&#160;code</li>
+            <li class="Bullet1">Last Name initial + Metaphone3 First Name + ZIP code</li>
+            <li class="Bullet1">First Name initial + Metaphone3 Last Name + Metaphone3 City</li>
+            <li class="Bullet1">Last name initial + Metaphone3 First Name + Metaphone3 City</li>
+            <li class="Bullet1">First name initial + Last Name initial + ZIP code + Street name</li>
+            <li class="Bullet1">First Name initial + Last Name initial + Metaphone3 City + Street Name</li>
+        </ul>
+        <p class="Body1">For more information on configuring Match Codes, see the <b>Configuring Match Codes</b> section of the <b>Matching, Linking, and Merging</b> documentation<MadCap:xref href="../../../../../Matching, Linking, and Merging/Configuring Match Codes.htm" class="Here"><span style="color: Blue;" class="mcFormatColor" MadCap:conditions="Primary.Web"> here</span></MadCap:xref>.</p>
+        <p class="Body1HeadNoTOC">Initial Configuration Match Codes</p>
+        <p class="Body1">The CMDM&#160;initial configuration includes four pre-configured sets of Match Codes that correspond to the four Matching Algorithms mentioned in the above section:</p>
+        <ul>
+            <li class="Bullet2">Individual Customer<MadCap:xref href="Algorithm &amp; Match Codes - Individual Customer.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet2">Organization Customer<MadCap:xref href="Algorithm &amp; Match Codes - Organizational Customer.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet2">Contact Person<MadCap:xref href="Algorithm &amp; Match Codes - Contact Person.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet2">Household <MadCap:xref href="Algorithm &amp; Match Codes - Household.htm" class="HereWithParens" MadCap:conditions="Primary.Web">(<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+        </ul>
+        <p class="Body1" MadCap:conditions="Primary.Print">For more information, see the Algorithm and Match Codes topics.</p>
+    </body>
+</html>

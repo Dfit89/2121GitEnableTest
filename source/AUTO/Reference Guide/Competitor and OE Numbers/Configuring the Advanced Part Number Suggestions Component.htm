@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes how to configure the Advanced Part Number Suggestions component." />
+    </head>
+    <body>
+        <h1>Configuring the Advanced Part Number Suggestions Component</h1>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note"> Suggested OE numbers will display as a list. The suggested OE numbers are Object Types valid for Reference Types. The Reference Number screen is extended with this OE Number plugin. </MadCap:conditionalText>The Advanced Part Number Suggestions component is a Node Editor component, often used along with the Advanced Part Number References component, to display potential part numbers listed as suggestions. The Advanced Part Number Suggestions component displays the suggestion list based on the configured reference types and Suggestion <MadCap:annotation MadCap:createDate="2019-02-06T17:32:37.2946003+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="The word 'Plugin' is used as the name of the parameter, and is used in many instances across Automotive components. Thus, the word 'Plugin' shall be retained in accordance." MadCap:editor="bond" MadCap:editDate="2019-03-01T12:41:46.1447647+05:30">Plugins</MadCap:annotation> when a part  is selected in the Tree navigator. This component is an  advanced feature of Part Number Suggestions Component with  additional features as explained in this document. For information about how to use this component, and prerequisites, see the <b>Competitor and OE Numbers Solution</b> topic<MadCap:xref href="Competitor and OE Numbers Solution.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1HeadNoTOC">Configuration Steps</p>
+        <p class="Body1">Below are steps to configure the Advanced Part Number Suggestions component within a Node Editor. Each of the parameters for the Advanced Part Number Suggestions Properties are described below.</p>
+        <ol>
+            <li>In the Web UI the Designer, go to Node Editor Properties &gt; Child Components &gt; Rows parameter for the screen that needs to display part number suggestions.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/97.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click the <b>Add</b> button, and the Add Component dialog will <MadCap:annotation MadCap:createDate="2019-02-06T15:03:21.6781134-05:00" MadCap:creator="lato" MadCap:initials="LA" MadCap:comment="add pic- again, I know that you are kind of doing it the step 4 pic, but I'd almost break that picture up...as in, I feel you are shoing steps 1-4 all in the one screenshot. Sometimes that is ok, but here it is a lot to follow. I'd show each step. (just my suggestion....don't feel you have to follow my suggestion).\r\n\r\nBOND:Suggestion followed :)" MadCap:editor="bond" MadCap:editDate="2019-02-28T16:45:43.1865684+05:30">display</MadCap:annotation>.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/99.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Select the Advanced Part Number Suggestions component, click <b>Add</b>, and the Advanced Part Number Suggestions Properties dialog will display. Parameter options are explained below:</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/100.png" />
+        </p>
+        <p class="Body2"><b>Height:</b>This optional parameter specifies the visual height of the Advanced Part Number Suggestions component  in pixels. By default, this parameter is pre-populated with a value '400.' Users can enter a numeric value to alter height of the component.</p>
+        <p class="Body2"><b>Reference Types:</b> By default, this required parameter is blank. However, it is mandatory to add at least one Product Reference Type so that when a part is selected, STEP can follow the reference types listed within this parameter and directly display  the target and/or  targets related information  based on the plugins configured in the Suggestion Plugins parameter. Some examples are:</p>
+        <ul>
+            <li class="Bullet2">Within the AutoCare solution, when a part is selected STEP would need to follow the <b>PIES Interchange</b> reference and display the target and/or  targets related information.</li>
+        </ul>
+        <ul>
+            <li class="Bullet2">Within the NAPA solution, when a part is selected STEP would need to follow the <b>Product to Interchange Product</b> reference and display the target and/or  targets related information.</li>
+        </ul>
+        <ul>
+            <li class="Bullet2">Within the TecDoc solution, when a part is selected STEP would need to either follow the <b>Supplier Article to Competitor Number</b> and/or the <b>Supplier Article to OE Number</b> reference and display the target and/or  targets related to the selected reference.</li>
+        </ul>
+        <ol start="4">
+            <li>Click the <b>Save</b> button, the Advanced Part Number Suggestions Properties dialog will close, and the newly added component will display within the Rows parameter.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/101.png" />
+        </p>
+        <ol start="5">
+            <li>Double click the newly added Advanced Part Number Suggestions component, and the Advanced Part Number Suggestions Properties will display as shown below.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/84.png" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"> The Node List component defined within this parameter displays the competitor and/or OE number information in a table / grid format. The view can be further customized by configuring the data to display via different display modes and adding different action buttons that users can click while working with the competitor and/or OE number information. The display modes can then be customized with a range of headers, allowing for different information about the listed objects to be displayed. The behavior of many of the various actions can be further configured, also. For more information, see the <b>Node List Component</b> topic within the <b>Web User Interfaces</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node List Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body2"><b>Suggestion Plugins:</b> By default, this required parameter is pre-populated with the Same Number plugin. Optionally, a user can add one or more plugins by clicking  the <b>Add</b> button. It is mandatory to have at least one plugin so that when a part is selected, information about the suggested competitor and/or OE number can be displayed.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/25.png" />
+        </p>
+        <p class="Body3">The Suggestion Plugins options are the following:</p>
+        <p class="Body3"><b>Common applications:</b> This plugin is used to suggest other part numbers that have the same applications as the current part number.  Additional configuration parameters are not available for this plugin.</p>
+        <p class="Body3"><b>Common number:</b> This plugin  suggests  other part number(s) that are referencing the same part number (or Competitor Number or OE Number) as the currently selected part number does. In other words, if the current part refers to a part number (OE Number / Competitor Number) that is referenced by another part number (OE Number / Competitor Number), then the other part number is suggested via this plugin. For example, if two different parts 'JK21499' and 'JK36004' are referenced to a part 'GL26409', then part 'JK36004' is suggested in the Part Number Suggestions component when part 'JK21499' is selected.</p>
+        <p class="Body3">Double click on the plugin name in the Suggestions Plugins parameter to further configure the plugin.</p>
+        <p class="Body3">
+            <img src="../../Resources/Images/Competitor OE Number/27.png" />
+        </p>
+        <ul>
+            <li class="Numbered2"><b>Reference Types:</b> By default, this required parameter is blank. However, it is mandatory to add at least one Product Reference Type so that when a part is selected, the reference types listed within this parameter are followed and display the target and/or related competitor and/or OE number information on the targets. </li>
+        </ul>
+        <p class="Body3"><b>Referenced By:</b> This plugin is used  for suggesting  part numbers that are referencing the current part <MadCap:annotation MadCap:createDate="2019-01-23T16:59:15.3663804+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment=" In other words, the current part number is referenced by the part numbers displayed via this plugin." MadCap:editor="bond" MadCap:editDate="2019-01-23T16:59:19.4577496+05:30">number.</MadCap:annotation> Additional configuration is required for this plugin. Double click the plugin name in the Suggestions Plugins parameter and click on the <b>Add</b> button to add the reference type. When a part is selected, the reference types listed within this parameter are followed, and the source part number and its related information is displayed.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Competitor OE Number/24.png" />
+        </p>
+        <ul>
+            <li class="Numbered2">For AutoCare solution this may be adding reference type with id 'AC_PartRelation' </li>
+            <li class="Numbered2">For NAPA solution this may be adding reference type with id 'NAPA_PartRelation'</li>
+            <li class="Numbered2">For TecDoc solution this may be adding reference type with id 'TD_PartRelation'</li>
+        </ul>
+        <p class="Body3"><b>Referenced <MadCap:annotation MadCap:createDate="2019-02-28T17:37:35.3652635+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="other part numbers that are referenced by the part number which  is already referenced by the current part number. " MadCap:editor="bond" MadCap:editDate="2019-02-28T17:37:37.6810855+05:30">Chain:</MadCap:annotation></b> This plugin is used  for suggesting a series of part numbers that reference one another. In other words, part number 'A' suggests part number 'B.' Part number 'B' suggests Part number 'C' and so on. Double click on the plugin name in the Suggestions Plugins parameter to further configure the plugin.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Competitor OE Number/26.png" />
+        </p>
+        <ul>
+            <li class="Numbered2"><b>Max Chain Size:</b> By default, this required parameter is blank and allows a numeric value. This parameter defines the maximum allowed chain size to follow the reference types listed within the next parameter Reference <MadCap:annotation MadCap:createDate="2019-01-24T15:22:22.7947700+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Tweak this and add as an Example: \r\n\r\nFor example, if a competitor and/or OE number is referenced once, but that reference leads to another reference, which leads to yet another reference, there are three links in this 'chain.' Setting the Max Chain Size to 2 would mean that information from the last reference in the chain will not be displayed." MadCap:editor="bond" MadCap:editDate="2019-01-24T15:23:15.1722318+05:30">Types</MadCap:annotation>. For example, If the value '4' is entered against the Max Chain Size parameter, then the maximum chain links of references that the STEP looks to suggest as potential Part Number / OE Numbers / Competitor Number   is four.</li>
+            <li class="Numbered2"><b>Reference Types:</b> By default, this required parameter is blank. However, it is mandatory to add at least one Product Reference Type. When a part is selected, the reference types listed within this parameter are followed, and the target and/or related competitor and/or OE number information on the targets are displayed.</li>
+        </ul>
+        <p class="Body3"> For example, consider there are six different parts 'JK21499', 'JK36004', 'JK36009', 'JK36112', 'VC21499' and  'VC36004' interlinked in a manner, 'JK21499' is referenced by 'JK36004', 'JK36004' is referenced by 'JK36009', 'JK36009' is referenced by 'JK36112',  'JK36112' is referenced by 'VC21499' and 'VC21499' is referenced by 'VC36004'. Assuming that the Max Chain Size value as '4' and all the references connecting these parts are listed within the Reference Types parameter, the Part Number Suggestions component would suggest only the parts 'JK36004', 'JK36009', 'JK36112' and 'VC21499' when the part 'JK21499' is selected.</p>
+        <p class="Body3"><b>Same Number:</b> This plugin is used to suggest other part numbers based upon matching part number names used in the Part Number Suggestions component. Additional configuration parameters are not available for this plugin. However, customers with the Extension API license can create their own plugins. For more information, click the STEP&#160;API Documentation button on the Start Page, or contact your Stibo Systems representative.</p>
+        <ol start="6">
+            <li> Go to Child Components &gt; Node List &gt;in the dropdown select  'Node List' &gt; click on 'go to component.' The Node List Properties dialog with two pre-configured action buttons will display as shown below.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/85.png" />
+        </p>
+        <p class="Body2"><b>Add suggestion(s) to Reference Numbers Action:</b> This required action button   adds the selected competitor and/or OE part number reference to a selected part from the Part Number Suggestions list. Further configuration is required as explained below.</p>
+        <p class="Body2"><b>Remove from suggestions Action:</b> This action button   removes the selected Competitor and/or OE part number reference of a selected part from the Part Number Suggestions list. This is a ready to use button and user can double click on the 'Remove from suggestions Action' to further configure the Icon style, title and label of the action button if necessary.</p>
+        <ol start="7">
+            <li> Double click on the 'Add suggestion(s) to Reference Numbers Action' to configure, and the Add suggestion(s) to Reference Numbers Action Properties will display. </li>
+        </ol>
+        <p>
+            <img src="../../Resources/Images/Competitor OE Number/86.png" />
+        </p>
+        <ol start="8">
+            <li> In the Reference Types to Create parameter, Click the <b>Add</b> button and select the Reference Type to determine the reference type which the action button follows to create a reference. The action button  follows through the reference type(s) listed within this parameter and  creates the references of the selected Competitor and/or OE part number to the selected part.</li>
+        </ol>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">It is  required to  add a minimum of one reference type in the Reference Types to Create parameter. Attempting to save the configuration prior to configuring the Reference Types to Create parameter will result in the following warning: The screen cannot be saved while one or more components has configuration errors.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/87.png" />
+        </p>
+        <ol start="9">
+            <li>
+                <p>Click the <b>Save</b> button, and then click the <b>Close</b> button to close the designer.</p>
+            </li>
+        </ol>
+    </body>
+</html>

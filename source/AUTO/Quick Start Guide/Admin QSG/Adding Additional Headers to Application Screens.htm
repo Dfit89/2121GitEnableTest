@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes adding additional headers to Application screens." />
+    </head>
+    <body>
+        <h1>Adding Additional Headers to Application Screens</h1>
+        <p class="Body1">All three of the application manager screens described in the previous section are usable as-is, once they have been made accessible following the previous instruction. However, they are intended as 'starter' screens only, meaning that it is expected that users will want to see additional data on them, which can easily be added via configuration. </p>
+        <p class="Body1">Each of the application manager screens uses a Node List. Configuration of the Node List component is covered in detail in the <b>Node List Component</b> documentation in the <b>Web User Interfaces / Web UI Getting Started</b> documentation of the<b> STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node List Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. Within the Node List Headers parameter, users can choose any number of columns / headers to apply to the table view. Many of the most commonly used header components are covered in the STEP Online Help. Access the Node List Properties in the designer, and click the <b>Add</b> button to add additional headers to the screen.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/AppMgr/ResultsTable/AddColumnsHeaders.png" />
+        </p>
+        <p>Below are tips for adding headers within the Automotive model:</p>
+        <ul>
+            <li>Be aware of the active selection of the screen when choosing headers to add. For example, on the Parts screen, a part object is the active selection so to display data from the part itself, standard Web UI components such as Attribute Value Header, Name Header, and Reference Header can be used. However, to display data from the application record or vehicle when on the Parts screen, the Application headers must be used (e.g., Application Assembly value to display data from the vehicle used in the application record, or Application Condition Header - Group to show criteria / option data from the application record).</li>
+            <li>Most Application headers are self-explanatory via the header name and/or description text provided within the designer. However, there are two headers for which additional explanation can be helpful: 'Application Condition Header - Individual' and 'Application Condition Header - Group.' </li>
+            <li class="Bullet3">Both are used to display data in conditions / criteria / options on an application record (e.g., Engine Base or Drive Type in the AutoCare model, Axle or Clutch Type in TecDoc, etc.). </li>
+            <li class="Bullet3">The headers are differentiated by whether they display multiple conditions in a single column in the results table, or display conditions individually in their own columns. </li>
+            <li class="Bullet3"><b>Application Condition Header - Individual</b>: displays all other populated conditions in a single header, where double-clicking in the cell opens a value editor where users can search for and populate data in the 'less important' conditions. </li>
+            <li class="Bullet3"><b>Application Condition Header - Group</b>: dynamically displays all conditions identified as 'important' for the part type(s) of the application record(s) being displayed. </li>
+        </ul>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">A condition is identified as 'important' by setting the Display Condition attribute to 'true' on the reference between the attribute and the part type. </p>
+        <p class="Body2">Additional information on configuring these headers and the supporting data model behind them is covered in the <b>Controlling Display of Conditions in Application Manager</b> topic of the <b>Automotive Reference Guide</b> found within the <b>Solution Enablement</b> section of <b>STEP Online Help</b><MadCap:xref href="../../Reference Guide/Application Manager/Results Table/Controlling Display of Conditions in Application Manager.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDUCST-1860 updated the name of the application headers</p>
+    </body>
+</html>

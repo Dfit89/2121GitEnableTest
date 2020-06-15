@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>Use Cases - Tracking Changed Objects</title>
+        <meta name="description" content="Automotive Solution: Describes the procedure to track objects that has underwent any changes in the subsequent imports." />
+    </head>
+    <body>
+        <h1>Use Cases - Tracking Changed Objects</h1>
+        <p class="Body1">The user is responsible for configuring the STEP to keep track of all changed objects on subsequent imports.</p>
+        <p class="Body1">Consider an example that a  file containing the Brand details is imported into the system and all Brands including their additional information are stored in the system under their respective hierarchy. The next time the same file with any changes in the existing Brands are imported into the system, the Brands with changes are tracked as defined below.</p>
+        <p class="Body1HeadNoTOC">Track changed objects created during import</p>
+        <ol>
+            <li>Create an attribute  (or verify that one exists) with the validity set to the object type(s) that need to be tracked. In this example, an attribute 'Changed Object' is created with the validity set to object type Brand.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/BRs/26.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Configure the business rule to include the newly created attribute  within the 'Updated values attribute' parameter in the 'Set import status attributes' operation. For more information on configuring the attribute in the business action, see the topic <b>Business Action: Set Import Status Attributes</b><MadCap:xref href="Business Action Set import status attributes.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. In the example below, 'Changed Object' attribute is defined in the 'Set import status attributes' operation within the business action 'Set Change Flags.'</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/BRs/27mod.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Configure the <b>Import</b> state of the workflow with the updated business action discussed in the previous step. For detailed procedures on updating the workflow settings, see the topic  <b>Business Action: Set Import Status Attributes</b><MadCap:xref href="Business Action Set import status attributes.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. In the example below, the Import state in the AutoCare Brand Import workflow is configured with Set Change Flags business action.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/BRs/Set import status attributes Add To WF.png" />
+        </p>
+        <p>When a file is uploaded, the system evaluates the contents of the import file as compared to the contents of the database, or against the previously loaded file of that type. For data that is observed to have information changed during the import, the importer writes to the defined attribute  with a value of  'true.' Hereafter, users shall determine their own strategy for managing the changed objects.</p>
+        <p class="Body1">In the example below,  the brand 3M had previously existed and had information changed during the import. Because the brand 3M is changed, the configured attribute Changed Object displays the value of 'true.'</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/BRs/25.png" />
+        </p>
+    </body>
+</html>

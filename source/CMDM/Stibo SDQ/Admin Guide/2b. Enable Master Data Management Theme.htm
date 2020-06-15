@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:changes="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Stibo SDQ Admin Guide: Leveraging the STEP platform, the MDM theme allows users to maintain Salesforce data." />
+    </head>
+    <body>
+        <h1>Enable Master Data Management Theme</h1>
+        <p class="Body1">Master Data Management users may connect to their STEP platform to manage automatic removal of duplicate accounts and contacts as well as perform associated data steward functions. To configure the MDM theme, enter your STEP URL, STEP username, STEP password, and the associated context that will be used as supplied by Stibo Systems. The <b>Search Before Create</b> section uses the following fields:</p>
+        <ul>
+            <li class="Bullet3"><b>Threshold:</b> Matching threshold. This should be set to 50 or higher. The Threshold number should be determined as a part of tuning the STEP matching processes.</li>
+            <li class="Bullet3"><b>Maximum Results Count:</b> 20 is the recommended setting.  </li>
+            <li class="Bullet3"><b>Account Matching Algorithm:</b> This information is supplied by Stibo Systems.</li>
+            <li class="Bullet3"><b>Person Account Matching Algorithm: </b>This field is only displayed when the Person Account option is enabled within Salesforce. This information is supplied by Stibo Systems.</li>
+            <li class="Bullet3"><b>Contact Matching Algorithm:</b> This information is supplied by Stibo Systems.</li>
+        </ul>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/MDM-Settings.png" />
+        </p>
+        <p>Select <b>Save</b>, and the MDM theme will be configured. However, unless remote sites were configured, this error will display:</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/ErrorMessageRemote.png" />
+        </p>
+        <p class="Body1HeadNoTOC">Remote Site Settings</p>
+        <p class="Body1">Navigate to the Remote Site Settings page by going to Setup &gt; Security &gt; Remote Site Settings. Click the 'New Remote Site' button.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/RemoteSiteButton.png" />
+        </p>
+        <p>In the Remote Site Edit section, name the site whatever you wish. In the Remote Site URL, enter the  STEP host URL. Afterward, create a second Remote Site Settings with the Salesforce host URL. Finally, add a third remote site with the Salesforce host name prefixed with the package namespace.</p>
+        <p class="Body1HeadNoTOC">STEP Host</p>
+        <p class="Body1" style="font-weight: normal;">In the following example, the Remote Site Name is <b>Stibo</b> with the Remote Site URL as <b>https://salesint-eudemo.scloud.stibo.com</b>.</p>
+        <p MadCap:conditions="Primary.Print" class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddRemoteSite-Reduced.png" />
+        </p>
+        <p MadCap:conditions="Primary.Web" class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddRemoteSite.png" />
+        </p>
+        <p class="Body1HeadNoTOC">Salesforce Host</p>
+        <p class="Body1" style="font-weight: normal;">In the following example, the Remote Site Name is <b>Self</b> with the Remote Site URL as <b>http://eu9.salesforce.com</b>.</p>
+        <p class="Image1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/SalesforceRemoteSiteAccess-Reduced.png" />
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/SalesforceRemoteSiteAccess.png" />
+        </p>
+        <p class="Body1HeadNoTOC">Salesforce Host Prefixed with Package Namespace</p>
+        <p class="Body1" style="font-weight: normal;">In the following example, the Remote Site Name is <b>self_prefix</b> with the Remote Site URL as <b>https://stibo-dq.eu9.visual.force.com/</b>.</p>
+        <p class="Image1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/SalesforcePrefixRemoteSite-Reduced.png" />
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/SalesforcePrefixRemoteSite.png" />
+        </p>
+        <p class="Body1">One additional element to the MDM theme is that the <b>Connection Status</b> section contains the Integration Endpoint Status. How this is configured differs if your Salesforce organization uses Person Accounts or not. The Stibo Systems contact will provide you the required information.</p>
+        <p class="Body1HeadNoTOC">Custom Settings</p>
+        <p class="Body1">Navigate to the Custom Settings and 'Select Manage.'</p>
+        <p class="Body1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/CustomSettingManage-Reduced.png" />
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/CustomSettingManage.png" />
+        </p>
+        <p>Select Edit on the Custom Settings management screen.</p>
+        <p class="Body1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/CustomSettingsEdit-Reduced.png" />
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/CustomSettingsEdit.png" />
+        </p>
+        <p>The settings edit screen will display. Select the 'ApplicationModelsMaster' checkbox, and fill in the IntegrationEndpointsToTrack field with the information supplied by Stibo Systems. Select 'Save.'</p>
+        <p class="Body1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/IntegrationEndpointConfig-Reduced.png" />
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/IntegrationEndpointConfig.png" />
+        </p>
+        <p class="Body1HeadNoTOC">Verify</p>
+        <p class="Body1">On the MDM theme settings screen, the associated integration endpoints will be populated at the bottom.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/EndpointActivated.png" />
+        </p>
+        <p class="Body1">Once the MDM theme is configured, you will need to create / modify a user profile, some custom fields, and map the Salesforce objects to the Stibo Systems objects. To do these, see the following sections titled <b>Configure User Profile</b> for permissions and to enable Visualforce pages, <b>Setting up Custom Fields</b>, <b>Overriding Buttons</b>, and <b>Configure Mappings between Salesforce and Stibo SDQ</b>.</p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">To finish configuring the MDM theme, a number of setups must be completed on the STEP side. These extra setup steps include making a Salesforce System Administrator account and an associated Security token available. Note that disabling this  account or the Security token will cause the MDM aspect of Stibo SDQ to fail. Contact Stibo Systems to begin this work.</p>
+        <h2>Configuring MDM Theme Mapping between Salesforce and Stibo SDQ</h2>
+        <p class="Body1">Data enters Salesforce by way of user entry. For this data to be validated, however, it needs to connect to Stibo SDQ. To create this connection, Salesforce data objects need to be mapped to Stibo SDQ data objects. Each theme will require its own mappings. Each mapping is configured by selecting 'Mapping' below the theme header.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/Initial Setup/MDMMappingHeader.png" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Each mapping will only display when the theme is configured in Settings.</p>
+        <p class="Body1">When opening the mapping section, mappings are not preconfigured, so you must select the 'New Mapping' button to begin.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/NewMappings.png">
+            </img>
+        </p>
+        <p>Select any of the desired options, and follow the email mapping example. All mappings are configured in the same manner of selecting 'New Mapping,' naming it, defining the object type, then mapping the input and output values.</p>
+        <p class="Body1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddEmailMapping-Reduced.png">
+            </img>
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddEmailMapping.png">
+            </img>
+        </p>
+        <p class="Body1">With each mapping, provide a name, object type, and input / output mappings. The following sections will show the needed API fields to match. More mappings can be added to each section by selecting the 'New Mapping' option at the top right of the screen.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The 'New Mapping' option at the top of the mapping screen is different from the '+ New Mapping' button at the bottom of the mapping screen. The '+ New Mapping' button will add new fields for mapping where as the 'New Mapping' creates a new object that collects all the fields.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/NewMappingButton.png">
+            </img>
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+            <br />The appended '__c' indicates that the Salesforce field is a custom one. Two required custom fields are for validation status and timestamp. The timestamp field must be a date / time format.
+			 See the <b>Setting Up Custom Fields</b> section of this document for information on this process.<br /><br />In the following examples, any blue option is a suggestion and may be deleted. The gray field cannot be replaced or removed. </p>
+        <h3>Master Data Management Theme - Search Before Create Mapping</h3>
+        <p> For 'Search Before Create', the expected input and output API fields to match are as follows. Included are the account, the contact, and person account mappings.</p>
+        <p class="Body1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AccountSBC_Reduced.png" />
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AccountSBC.png" />
+        </p>
+        <p class="Body1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/ContactSBC_reduced.png" />
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/ContactSBC.png" />
+        </p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/PersonSBC.png" />
+        </p>
+    </body>
+</html>

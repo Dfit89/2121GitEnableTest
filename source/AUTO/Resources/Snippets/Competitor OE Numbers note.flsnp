@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The components used for this solution are extremely flexible and can be configured to display both the competitor and OE numbers on the same screen. Also, additional column headers can be added to the components to display more information than is shown in this example.</p>
+    </body>
+</html>

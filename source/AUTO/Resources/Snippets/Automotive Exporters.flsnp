@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <ul>
+            <li><b>Asset Exporter:</b> Used to export asset data. <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">For more information, see the <b>Asset Exporter</b> topic within the <b>Automotive Reference Guide</b>.</MadCap:conditionalText></li>
+            <li><b>AutoCare ACES Application </b><b>Exporter:</b> Used to export application data in ACES format. ACES versions 3.0 and 3.2 are supported. The exporter requires that applications be stored in the standard AutoCare data model. The result is that all ACES Application objects beneath the selection(s) (either as child objects or via links) are exported. For more information, see the <b>AutoCare ACES Application </b><b>Exporter</b> topic within the <b>Automotive Reference Guide</b><MadCap:conditionalText MadCap:conditions="Primary.Web"><MadCap:xref href="../../Reference Guide/Exporters/Standard_AC/AutoCare ACES Application Exporter.htm" class="Here"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></MadCap:conditionalText>.</li>
+            <li><b>AutoCare PIES 6.5 </b><b>Exporter:</b> Used to export parts data in PIES 6.5 format. The exporter defaults to exporting data in the standard AutoCare data model, but configuration options are also available to export data in PIES format from an Own model. <MadCap:conditionalText MadCap:conditions="">The result is that all PIES objects beneath the selection(s) (either as child objects or via links) are exported. For more information, see the <b>AutoCare PIES 6.5 </b><b>Exporter</b> topic</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions=""> within the <b>Automotive Reference Guide</b><MadCap:xref href="../../Reference Guide/Exporters/Standard_AC/AutoCare PIES Exporter.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</MadCap:conditionalText></li>
+        </ul>
+        <ul>
+            <li><b>NAPA Application Exporter:</b> Used to export application data in NAPA Application format. The exporter requires that applications be stored in the standard NAPA data model. The result is that all NAPA Application objects beneath the selection(s) (either as child objects or via links) are exported. For more information, see the <b>NAPA Application Exporter</b> topic within the <b>Automotive Reference Guide</b><MadCap:xref href="../../Reference Guide/Exporters/Standard_NAPA/NAPA Application Exporter.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li><b>NAPA Asset Reference Exporter:</b> Used to export a full digital asset reference file in NAPA format, which links a part number to an image.</li>
+            <li MadCap:conditions="Primary.Under Construction"><b>NAPA MPCC / Attribute Exporter:</b> Used to export </li>
+        </ul>
+        <ul>
+            <li><b>TecDoc Supplier Data Exporter:</b> Used to export a specified supplier's parts data in the supported TAF format. By default, data within the standard TecDoc data model will be exported, but configuration options are available to export data within an Own data model using the supported TAF format. <MadCap:conditionalText MadCap:conditions="">The export will contain the specified supplier data (either as child objects or via links) beneath the object type(s) configured within the exporter.</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="Primary.Under Construction"><MadCap:conditionalText MadCap:conditions=""> For more information, see the <b>TecDoc Supplier Data </b><b>Exporter</b> topic within the <b>Automotive Reference Guide</b>. </MadCap:conditionalText></MadCap:conditionalText></li>
+        </ul>
+    </body>
+</html>

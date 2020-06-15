@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="573" MadCap:lastWidth="585">
+    <head><title>Use Cases - Marriage and Relocation</title>
+        <meta name="description" content="Customer MDM Solution: Describes the Marriage and Relocation use case." />
+    </head>
+    <body>
+        <h1>Use Cases - Marriage and Relocation</h1>
+        <p>In these use cases, the data steward is responsible for overseeing customer record updates in the event that two customers get married or relocate.</p>
+        <h2>Marriage</h2>
+        <p class="Body1">ACME&#160;must update their database in the event that two customers get married. A pre-existing customer named Catherine Yu got married to another pre-existing customer, Charles Johnson, and had her last name and address changed.</p>
+        <p class="Body1">In this scenario, the change in status is initially updated in a source system by a customer service representative within a call center.  The source system feeds this update to STEP, where it is then matched to an existing record via the source system record ID for Catherine Yu.</p>
+        <p class="Body1">Once matched and updated, Catherine Yu is now Catherine Johnson and has a new address. Additionally, the household is updated to reflect that Catherine and Charles belong to the same household.</p>
+        <h2>Relocation</h2>
+        <p>ACME&#160;must update their database in the event that a customer moves to another address. In this scenario, Maxie Hadley was a pre-existing customer who moved from KY to UT. At some point a second record was created with the new address. STEP automatically identifies that the two records with different address are the same person. </p>
+        <p class="Body1">Once flagged as potential duplicates, a data steward can handle the deduplication task via a clerical review. Concluding that they are in fact the same person, the data steward merges the two records into a single golden record.</p>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to easily add part number references to a selected part in Web UI." />
+    </head>
+    <body>
+        <h1>Adding Part Number References Manually</h1>
+        <p class="Body1"> Users can easily add an existing competitor and/or OE part number reference to a selected part within Web UI. When the Part Number References component is configured, and a part is selected, STEP looks at the configured Reference Types and displays their targets, attribute values, and/or metadata via configurations within the 'Part Number References' Node Editor component. Whether or not references are displayed, at a minimum a blank typeahead field will display prompting users to 'Enter a manufacturer name and/or part number.' This typeahead field can be used to manually add a reference from an existing part number to the selected part. </p>
+        <p class="Body1">In the example below, part 90069 is selected within the Web UI Tree, and an 'OE Numbers' tab is configured to display results for 'Existing OE Part Number References.' Within the results, two Make / Manufacturer part numbers are displayed, along with the blank typeahead field that prompts users to 'Enter a manufacturer name and/or part number.'</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Competitor OE Number/30.jpg" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Though a new part number can be created using the Create New Part dialog, a new manufacturer name cannot be created.<MadCap:conditionalText MadCap:conditions="Primary.Under Construction"> For more information on simultaneously creating a new part number and referencing it to a selected part, see the <b>Creating and Referencing New Competitor and/or OE Part Numbers</b> topic<MadCap:xref href="Creating and Referencing New Competitor and OE Part Numbers.htm" class="Here" MadCap:conditions="Primary.Under Construction"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref> within this section.</MadCap:conditionalText></p>
+        <p class="Body1">When the manufacturer name and part number exist in STEP, users can type in the manufacturer name [space bar] part number to easily find the desired part number. Once a manufacturer name is typed into the typeahead field, available part numbers for the manufacturer will display  in the dropdown list. Clicking a listed part number will add the part number to the top of the references list.</p>
+        <p class="Body1">In the example below, 'lancia 46444' is typed into the typeahead field and the Lancia part numbers that begin with 46444 display within the dropdown list. </p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/34.jpg" />
+        </p>
+        <p>Clicking on 46444287 adds the part number to the top of the references list, as shown below.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/35.jpg" />
+        </p>
+        <p>If the Part Number Suggestions component is configured below the references list, then the suggestions list will update as new part numbers are added to the references list. <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">For more information, see the <b>Adding Part Number References from Suggestions</b> topic<MadCap:xref href="Adding Part Number References from Suggestions.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within this section.</MadCap:conditionalText></p>
+    </body>
+</html>

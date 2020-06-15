@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:changes="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Stibo SDQ Admin Guide: In order to use Stibo SDQ, a lot of fields are needed to be created and mapped. This topic will explain that process." />
+    </head>
+    <body>
+        <h1>Set Up Custom Fields</h1>
+        <p>The Validation Status and Validation Timestamp are required fields in the Data Quality output section to create a record to show if a data object was validated and when this validation was performed. However, these two fields are not standard Salesforce fields and must first be created with custom fields. The custom fields may be used in any mapping. For an idea of the fields that may be needed for mapping, see the address, email, and phone section of the <b>Configure Mappings</b> section of this guide.</p>
+        <p>Users are strongly advised against manual modification of those fields' values. They are used for making the decision of whether validation happens or not.</p>
+        <p>Users should prefix the Status and Timestamp field to be prefixed with the unique identifier for the field / fields that are being validated in addition to 'Validation' and 'Status' or 'Timestamp,' depending on which field you are creating. Status fields should be of type 'Text Area' and Timestamp fields should be of type 'Date / Time.'</p>
+        <p class="Body1">The following examples show how Validation Status and Validation Timestamps work with various objects. </p>
+        <ol>
+            <li>Billing Address fields would look something like this. This should be repeated for all address types, such as Mailing, Other, etc. where address validation is activated.</li>
+        </ol>
+        <ul>
+            <li class="Bullet2">Validation Status field</li>
+        </ul>
+        <p class="Bullet2NextPara">Field Label: Billing Address Validation Status</p>
+        <p class="Bullet2NextPara">Field Name: Billing_Address_Validation_Status</p>
+        <p class="Bullet2NextPara">Field Type: Text Area</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/BillAddressStatus.png">
+            </img>
+        </p>
+        <ul>
+            <li class="Bullet2">Validation Timestamp field</li>
+        </ul>
+        <p class="Bullet2NextPara">Field Label: Billing Address Validation Timestamp</p>
+        <p class="Bullet2NextPara">Field Name: Billing_Address_Validation_Timestamp</p>
+        <p class="Bullet2NextPara">Field Type: Date/Time</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/BillAddressTimestamp.png">
+            </img>
+        </p>
+        <ol MadCap:continue="true">
+            <li>Email</li>
+        </ol>
+        <ul>
+            <li class="Bullet2">Validation Status field</li>
+        </ul>
+        <p class="Bullet2NextPara">Field Label: Email Validation Status</p>
+        <p class="Bullet2NextPara">Field Name: Email_Validation_Status</p>
+        <p class="Bullet2NextPara">Field Type: Text Area</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/EmaiStatus.png">
+            </img>
+        </p>
+        <ul>
+            <li class="Bullet2">Validation Timestamp field</li>
+        </ul>
+        <p class="Bullet2NextPara">Field Label: Email Validation Timestamp</p>
+        <p class="Bullet2NextPara">Field Name: Email_Validation_Timestamp</p>
+        <p class="Bullet2NextPara">Field Type:  Date/Time</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/EmailTimestamp.png">
+            </img>
+        </p>
+        <ol start="3">
+            <li>Phone validation would look like this. This should be repeated for all phone types, such as Home, Mobile, etc., where address validation is activated.</li>
+        </ol>
+        <ul>
+            <li class="Bullet2">Validation Status field</li>
+        </ul>
+        <p class="Bullet2NextPara">Field Label: Phone Validation Status</p>
+        <p class="Bullet2NextPara">Field Name: Phone_Validation_Status</p>
+        <p class="Bullet2NextPara">Field Type: Text Area</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/PhoneStatus.png">
+            </img>
+        </p>
+        <ul>
+            <li class="Bullet2">Validation Timestamp field</li>
+        </ul>
+        <p class="Bullet2NextPara">Field Label: Phone  Validation Timestamp</p>
+        <p class="Bullet2NextPara">Field Name: Phone_Validation_Timestamp</p>
+        <p class="Bullet2NextPara">Field Type:  Date/Time</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/PhoneTimestamp.png">
+            </img>
+        </p>
+        <p>If the user wants to map an API field to a custom field, it is required that this a custom field is of type which can contain text (String) (e.g., Text, Text Area, Text Area(Long), Text Area(Rich), etc.) because all of the response field values are returned as String. The max length of that field may vary based on the length of the result, which this field may contain. Most fields will work fine with Text Area.</p>
+        <p>The exception of the API fields list would be the Validation Timestamp where this is a Date / Time.</p>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to configure a Year Search Box type." />
+    </head>
+    <body>
+        <h1>Configuring Year Search Box </h1>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">With effective from Automotive 9.1 MP2 patch, the Year Search Box component has been superseded by the Attribute Search Box component and therefore may be removed in a future release. It is recommended that users transition to using Attribute Search Box component, which are described in the  <b>Configuring Attribute Search Box</b> documentation<span style="color: Blue;" class="mcFormatColor" MadCap:conditions="Primary.Web"> here</span>.</p>
+        <p class="Body1">Steps for adding the Year search box type to a Vehicle Type Search Panel are below. </p>
+        <ol MadCap:continue="false">
+            <li>From the Vehicle Type Search Panel Properties dialog, click the <b>Add</b> button below the Search Box Types parameter field, and the Add Component dialog will display. </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Configuring/Add Component.png">
+            </img>
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click <b>Year Search Box</b> from the list of components.</li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Click the <b>Add</b> button, and the Year Search Box Properties will display, as shown below.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Configuring/Year Search Card.png" /> </p>
+        <p class="Body2"><b>Label:</b> Optionally, provide a label for the Year search box that best communicates to the user what criteria are available for selection within the Application Manager.  By default, the label is set to ‘Year.’</p>
+        <p class="Body2"><b>Year Attribute:</b> This required field determines the Year Attribute that allows users to add one or more year criteria to their search. All attribute validation base types (e.g., Text, Number, List Of Values) are allowed. <MadCap:snippetText src="../../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select the necessary Year Attribute. The selected attribute must be valid for the object type that is defined in the Vehicle Object Types parameter, and the Year Attribute value must be populated on that object in order for it to display correctly.</p>
+        <ol MadCap:continue="true">
+            <li>Once the required parameters are populated, click the <b>Save</b> button to return to the Vehicle Type Search Panel Properties, and optionally add another search box type, or move on to the next required parameter.</li>
+        </ol>
+        <p class="Body2">Below is an example of a configured Year search box type for the AutoCare standard.</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/Year Search Box Properties.png" />
+        </p>
+        <MadCap:snippetBlock src="../../../Resources/Snippets/Warning 1 Part Type Search Box Allowed.flsnp" />
+    </body>
+</html>

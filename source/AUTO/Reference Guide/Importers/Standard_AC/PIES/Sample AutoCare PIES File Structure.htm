@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head>
+        <link href="../../../../../../Resources/TableStyles/StiboTableStyles.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Introduces the AutoCare PIES sample file structure." />
+    </head>
+    <body>
+        <h1>Sample AutoCare PIES File Structure</h1>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note:  Details can be found at PRODOC-1248</p>
+        <p class="Body1">The intention of this topic is to introduce  the basic AutoCare <MadCap:annotation MadCap:createDate="2019-04-22T08:33:31.7041769-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="You may consider writing out what PIES means at the top of each topic. So here you might consider, &quot;...introduce the basic AutoCare Product Information Exchange Standard (PIES) file structure...&quot;\r\nBOND: Not required, because this lies along with other PIES topics.." MadCap:editor="bond" MadCap:editDate="2019-04-23T16:03:01.0319836+05:30">PIES </MadCap:annotation>file structure and the way the objects are built in the  system when a PIES file is imported into the system.</p>
+        <p class="Body1">Currently, the Automotive solution supports import and export of three versions of  PIES files: PIES 6.5, PIES 6.7 and PIES 7.0. All three versions share a common structure with additional add-on features available in the later versions. For the purposes of this topic, PIES 6.5 will be the PIES&#160;version referenced throughout the following text.</p>
+        <p>The PIES file shall include only plain text delimited by 'valid' XML tags (as defined below). A CR/LF (ASCII 13,10 decimal) should separate lines and it is recommended that the text should use UTF-8 character encoding. However,  ISO-8859-1 is also accepted.</p>
+        <p>The PIES standard is designed in a flexible format which allows each record segment to loop as many times as needed in order to meet data delivery requirements. For example, a part with multiple price levels would  have multiple price detail segments, one for each price level. Also, only those segments, which are needed to provide specific information, need be sent. To accomplish this flexibility, the PIES delivery standard is designed using XML and XML Schema Definition (XSD).</p>
+        <p class="Body1HeadNoTOC">Delivering PIES Files</p>
+        <p class="Body1" style="font-weight: bold;">Sample File structure </p>
+        <p class="Body1">Below is a sample PIES 6.5 file with one PIES Item.</p><pre class="PreIndent" xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;PIES xmlns="http://www.aftermarket.org"&gt;
+    &lt;Header&gt;
+        &lt;PIESVersion&gt;6.5&lt;/PIESVersion&gt;
+        &lt;SubmissionType&gt;FULL&lt;/SubmissionType&gt;
+        &lt;BlanketEffectiveDate&gt;2017-03-15&lt;/BlanketEffectiveDate&gt;
+        &lt;BrandOwnerDUNS&gt;123456789&lt;/BrandOwnerDUNS&gt;
+        &lt;BrandOwnerGLN&gt;4567890120003&lt;/BrandOwnerGLN&gt;
+        &lt;TechnicalContact&gt;krma&lt;/TechnicalContact&gt;
+        &lt;ContactEmail&gt;krma&lt;/ContactEmail&gt;
+    &lt;/Header&gt;
+    &lt;PriceSheets&gt;
+        &lt;PriceSheet MaintenanceType="A"&gt;
+            &lt;PriceSheetNumber&gt;2017WD&lt;/PriceSheetNumber&gt;
+            &lt;PriceSheetName&gt;2017 WD Prices&lt;/PriceSheetName&gt;
+            &lt;SupersededPriceSheetNumber&gt;2016WD&lt;/SupersededPriceSheetNumber&gt;
+            &lt;CurrencyCode&gt;USD&lt;/CurrencyCode&gt;
+            &lt;PriceZone&gt;Western&lt;/PriceZone&gt;
+            &lt;EffectiveDate&gt;2017-03-07&lt;/EffectiveDate&gt;
+            &lt;ExpirationDate&gt;2018-03-07&lt;/ExpirationDate&gt;
+        &lt;/PriceSheet&gt;
+    &lt;/PriceSheets&gt;
+    &lt;Items&gt;
+        &lt;Item MaintenanceType="A"&gt;
+            &lt;HazardousMaterialCode&gt;Y&lt;/HazardousMaterialCode&gt;
+            &lt;BaseItemID&gt;VC21&lt;/BaseItemID&gt;
+            &lt;ItemLevelGTIN GTINQualifier="UP"&gt;11234567890123&lt;/ItemLevelGTIN&gt;
+            &lt;PartNumber&gt;VC21499&lt;/PartNumber&gt;
+            &lt;BrandAAIAID&gt;DKGX&lt;/BrandAAIAID&gt;
+            &lt;BrandLabel&gt;Wako&lt;/BrandLabel&gt;
+            &lt;SubBrandAAIAID&gt;DMST&lt;/SubBrandAAIAID&gt;
+            &lt;SubBrandLabel&gt;SubBrand Label&lt;/SubBrandLabel&gt;
+            &lt;ACESApplications&gt;Y&lt;/ACESApplications&gt;
+            &lt;ItemQuantitySize UOM="EA"&gt;1&lt;/ItemQuantitySize&gt;
+            &lt;ContainerType&gt;BO&lt;/ContainerType&gt;
+            &lt;QuantityPerApplication Qualifier="VAR" UOM="EA"&gt;1&lt;/QuantityPerApplication&gt;
+            &lt;ItemEffectiveDate&gt;2010-08-13&lt;/ItemEffectiveDate&gt;
+            &lt;AvailableDate&gt;2010-08-13&lt;/AvailableDate&gt;
+            &lt;MinimumOrderQuantity UOM="EA"&gt;123&lt;/MinimumOrderQuantity&gt;
+            &lt;ManufacturerProductCodes&gt;
+                &lt;Group&gt;02347&lt;/Group&gt;
+                &lt;SubGroup&gt;A&lt;/SubGroup&gt;
+            &lt;/ManufacturerProductCodes&gt;
+            &lt;AAIAProductCategoryCode&gt;199456&lt;/AAIAProductCategoryCode&gt;
+            &lt;UNSPSC&gt;11223348&lt;/UNSPSC&gt;
+            &lt;PartTerminologyID&gt;5696&lt;/PartTerminologyID&gt;
+            &lt;VMRSCode&gt;123000789&lt;/VMRSCode&gt;
+            &lt;Descriptions&gt;
+                &lt;Description MaintenanceType="A" DescriptionCode="MKT"&gt;MKT&lt;/Description&gt;
+            &lt;/Descriptions&gt;
+            &lt;Prices&gt;
+                &lt;Pricing MaintenanceType="A" PriceType="WD1"&gt;
+                    &lt;PriceSheetNumber&gt;2017WD&lt;/PriceSheetNumber&gt;
+                    &lt;CurrencyCode&gt;USD&lt;/CurrencyCode&gt;
+                    &lt;EffectiveDate&gt;2008-10-22&lt;/EffectiveDate&gt;
+                    &lt;ExpirationDate&gt;2012-10-22&lt;/ExpirationDate&gt;
+                    &lt;Price UOM="PE"&gt;10&lt;/Price&gt;
+                &lt;/Pricing&gt;
+            &lt;/Prices&gt;
+            &lt;ExtendedInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="HSB"&gt;01&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="RCT"&gt;Marietta, GA&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="MSD"&gt;MSDS26426&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="RCS"&gt;Cobb, GA&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="EMS"&gt;1&lt;/ExtendedProductInformation&gt;
+                
+            &lt;/ExtendedInformation&gt;
+            &lt;Packages&gt;
+                &lt;Package MaintenanceType="A"&gt;
+                    &lt;PackageLevelGTIN&gt;12345000451747&lt;/PackageLevelGTIN&gt;
+                    &lt;ElectronicProductCode&gt;4A.356E414.B351C7.AD331A465&lt;/ElectronicProductCode&gt;
+                    &lt;PackageBarCodeCharacters&gt;005555010&lt;/PackageBarCodeCharacters&gt;
+                    &lt;PackageUOM&gt;PK&lt;/PackageUOM&gt;
+                    &lt;QuantityofEaches&gt;1&lt;/QuantityofEaches&gt;
+                    &lt;Dimensions UOM="CM"&gt;
+                        &lt;Height&gt;10.2&lt;/Height&gt;
+                        &lt;Width&gt;3.6&lt;/Width&gt;
+                        &lt;Length&gt;2.0&lt;/Length&gt;
+                    &lt;/Dimensions&gt;
+                    &lt;Weights UOM="PG"&gt;
+                        &lt;Weight&gt;12.5&lt;/Weight&gt;
+                        &lt;DimensionalWeight&gt;45&lt;/DimensionalWeight&gt;
+                    &lt;/Weights&gt;
+                    &lt;WeightVariance&gt;90&lt;/WeightVariance&gt;
+                    &lt;HazardousMaterial MaintenanceType="A" LanguageCode="EN"&gt;
+                        &lt;ShippingScope&gt;INT&lt;/ShippingScope&gt;
+                        &lt;Bulk&gt;N&lt;/Bulk&gt;
+                        &lt;RegulatingCountry&gt;US&lt;/RegulatingCountry&gt;
+                        &lt;TransportMethod&gt;R&lt;/TransportMethod&gt;
+                        &lt;Regulated&gt;Y&lt;/Regulated&gt;
+                        &lt;Description&gt;Hazmat Description&lt;/Description&gt;
+                        &lt;HazardousClass&gt;2.2&lt;/HazardousClass&gt;
+                        &lt;HazardousMaterialCodeQualifier&gt;D&lt;/HazardousMaterialCodeQualifier&gt;
+                        &lt;HazardousMaterialClassCode&gt;1.4&lt;/HazardousMaterialClassCode&gt;
+                        &lt;HazardousMaterialDescription&gt;Hazardous&lt;/HazardousMaterialDescription&gt;
+                        &lt;ShippingName&gt;Great Lakes Shipping&lt;/ShippingName&gt;
+                        &lt;UNNAIDCode&gt;027455&lt;/UNNAIDCode&gt;
+                        &lt;HazardousPlacardNotation&gt;Caution&lt;/HazardousPlacardNotation&gt;
+                        &lt;WHMISCode&gt;B.4&lt;/WHMISCode&gt;
+                        &lt;WHMISFreeText&gt;Caution&lt;/WHMISFreeText&gt;
+                        &lt;PackingGroupCode&gt;III&lt;/PackingGroupCode&gt;
+                        &lt;RegulationsExemptionCode&gt;4&lt;/RegulationsExemptionCode&gt;
+                        &lt;TextMessage&gt;Be careful&lt;/TextMessage&gt;
+                        &lt;OuterPackageLabel&gt;ORM-AIR&lt;/OuterPackageLabel&gt;
+                    &lt;/HazardousMaterial&gt;
+                &lt;/Package&gt;
+            &lt;/Packages&gt;
+            &lt;PartInterchangeInfo&gt;
+                &lt;PartInterchange MaintenanceType="A" LanguageCode="EN"&gt;
+                    &lt;TypeCode&gt;O&lt;/TypeCode&gt;
+                    &lt;BrandAAIAID&gt;BBTB&lt;/BrandAAIAID&gt;
+                    &lt;BrandLabel&gt;Great Lakes&lt;/BrandLabel&gt;
+                    &lt;PartNumber&gt;GL26409&lt;/PartNumber&gt;
+                    &lt;QualityGradeLevel&gt;P&lt;/QualityGradeLevel&gt;
+                    &lt;InterchangeNotes&gt;Yellow indicator light&lt;/InterchangeNotes&gt;
+                    &lt;InternalNotes&gt;May be dificult to remove&lt;/InternalNotes&gt;
+                &lt;/PartInterchange&gt;
+            &lt;/PartInterchangeInfo&gt;
+            &lt;DigitalAssets&gt;
+                &lt;DigitalFileInformation MaintenanceType="A" AssetID="Asset456" LanguageCode="EN"&gt;
+                    &lt;FileName&gt;VC21499_P04&lt;/FileName&gt;
+                    &lt;AssetType&gt;P04&lt;/AssetType&gt;
+                    &lt;Representation&gt;R&lt;/Representation&gt;
+                    &lt;Resolution&gt;96&lt;/Resolution&gt;
+                    &lt;Background&gt;CLI&lt;/Background&gt;
+                    &lt;OrientationView&gt;BAC&lt;/OrientationView&gt;
+                    &lt;Details&gt;Details/Description&lt;/Details&gt;
+                    &lt;FilePath&gt;images\SVlight.tif&lt;/FilePath&gt;
+                    &lt;URI&gt;www.stibo.com&lt;/URI&gt;
+                    &lt;FileDateModified&gt;2008-04-11&lt;/FileDateModified&gt;
+                    &lt;EffectiveDate&gt;2008-04-11&lt;/EffectiveDate&gt;
+                    &lt;ExpirationDate&gt;2012-04-11&lt;/ExpirationDate&gt;
+                    &lt;Country&gt;US&lt;/Country&gt;
+                &lt;/DigitalFileInformation&gt;
+                
+            &lt;/DigitalAssets&gt;
+            &lt;Kits&gt;
+                &lt;Kit MaintenanceType="A"&gt;
+                    &lt;ComponentPartNumber IDQualifier="VN"&gt;VC36004&lt;/ComponentPartNumber&gt;
+                    &lt;ComponentBrand&gt;DKGX&lt;/ComponentBrand&gt;
+                    &lt;Description DescriptionCode="SHO" LanguageCode="EN"&gt;CKENGSENS&lt;/Description&gt;
+                    &lt;QuantityInKit UOM="EA"&gt;2&lt;/QuantityInKit&gt;
+                    &lt;SequenceCode&gt;1&lt;/SequenceCode&gt;
+                &lt;/Kit&gt;
+                &lt;Kit MaintenanceType="A"&gt;
+                    &lt;ComponentPartNumber IDQualifier="VP"&gt;VC36009&lt;/ComponentPartNumber&gt;
+                    &lt;ComponentBrand&gt;DKGX&lt;/ComponentBrand&gt;
+                    &lt;Description DescriptionCode="SHO" LanguageCode="EN"&gt;CKENGSENS&lt;/Description&gt;
+                    &lt;QuantityInKit UOM="EA"&gt;1&lt;/QuantityInKit&gt;
+                    &lt;SequenceCode&gt;2&lt;/SequenceCode&gt;
+                &lt;/Kit&gt;
+            &lt;/Kits&gt;
+        &lt;/Item&gt;
+    &lt;/Items&gt;
+&lt;/PIES&gt;
+</pre>
+        <p>A normal PIES file has five segments in it:  Header, Price Sheet (PRCS), Market Copy (MKTC),   Item (ITEM), and the Trailer. These five segments also includes some additional segments within them. The way it is structured is demonstrated in the screenshot below.</p>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/44.png" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">STEP PMDM for Automotive solution currently do not handle the Market Copy segment. If Market Copy segment is included in the PIES file, it will cause the import to fail <MadCap:annotation MadCap:createDate="2019-05-30T15:31:39.9808531+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="This shall be deleted after RDCUST-1941" MadCap:editor="bond" MadCap:editDate="2019-05-30T15:31:52.8333838+05:30">Validation.</MadCap:annotation></p>
+        <p class="Body1">A description of each of these five segments and some segments within them follows below.</p>
+        <h3>Header</h3>
+        <p>The Header constitutes the  initial section of the file. This <MadCap:annotation MadCap:createDate="2019-04-22T09:20:55.6884058-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="I think we should be consistent with terminolgy here. We have price detail 'segments', but you called each of these elements 'sections' in the previous paragraph. For ease of reading, we should always refer to these as 'sections', unless there's a better word for it, in which case we should use the better word for these sections in all instances." MadCap:editor="brcr" MadCap:editDate="2019-04-22T09:22:35.9553552-04:00">segment </MadCap:annotation>defines trading partner information and global value characteristics. There can only be one  instance of this  segment within a PIES file.  All Header information is contained within &lt;Header&gt; tags.</p>
+        <p class="Body1">The order of the tags within the <MadCap:annotation MadCap:createDate="2019-04-22T09:37:16.2920785-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="whether the 'H&quot; in 'Header' is capitalized or not just need to be consistent." MadCap:editor="brcr" MadCap:editDate="2019-04-22T09:37:45.0406764-04:00">H</MadCap:annotation>eader is defined by the XML <MadCap:annotation MadCap:createDate="2019-04-22T09:38:57.0666417-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="This fact seems out of place. We need something that connect it to the next sentence or else it feels like a completely disconnected bit of text. " MadCap:editor="brcr" MadCap:editDate="2019-04-22T09:40:05.6434702-04:00">schema</MadCap:annotation>. In the Header section, the<MadCap:conditionalText MadCap:conditions="Primary.Under Construction">&lt;BlanketEffectiveDate&gt;, &lt;TechnicalContact&gt;, &lt;ContactEmail&gt;, and &lt;BrandOwnerDUNS&gt; / &lt;BrandOwnerGLN&gt;</MadCap:conditionalText> &lt;PIESVersion&gt; and &lt;SubmissionType&gt; tags are required to be populated.  If they are left empty, the XML file will fail to load and will be moved to an Error state in the workflow.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Although element &lt;BrandOwnerAAIAID&gt; is optional, if the &lt;Item&gt; segment doesn't have the &lt;BrandAAIAID&gt; defined (an element within the &lt;Item&gt; segment), then &lt;BrandOwnerAAIAID&gt; would need to be defined in the &lt;Header&gt; segment in order for the PIES Items to get created.</p>
+        <p>In the table below,  tags included within the Header section of the PIES file are explained. For more information  on  the tags available in the PIES Header section, see the <b>AutoCare PIES  Exporter</b> topic  within the <b>Exporting Automotive Data</b> section of  <b>Automotive Reference Guide</b><MadCap:xref href="../../../Exporters/Standard_AC/AutoCare PIES Exporter.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <table style="mc-table-style: url('../../../../../../Resources/TableStyles/StiboTableStyles.css');margin-left: 0;margin-right: auto;width: 827px;" class="TableStyle-StiboTableStyles" cellspacing="0">
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 248px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 102px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 189px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 289px;">
+            </col>
+            <thead>
+                <tr class="TableStyle-StiboTableStyles-Head-Header1">
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 12pt;">
+                        <p>XML Element</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 12pt;">
+                        <p>Requirement</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 12pt;">
+                        <p>Description</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadD-Column1-Header1" style="font-size: 12pt;">Example XML Code </th>
+                </tr>
+            </thead>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">PIESVersion </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Required</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;PIESVersion&gt;6.5&lt;/PIESVersion&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">SubmissionType </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Required</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;SubmissionType&gt;FULL&lt;/SubmissionType&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BlanketEffectiveDate </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">"Blanket Effective Date" acts as the global default value for a particular PIES file. "Blanket Effective Date" may be overridden at Price Sheet Header, Item, or Price Segment Levels.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;BlanketEffectiveDate&gt;2013-01-31&lt;/BlanketEffectiveDate&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">ChangesSinceDate </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Conditional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">“Changes Since Date” is a control date indicating the date the last PIES file was generated. This field is MANDATORY if the tag 'Submission Type', has been filled with the value 'UPDATE' </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;ChangesSinceDate&gt;….&lt;/ChangesSinceDate&gt;  </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">ParentDUNSNumber </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Unique 9-digit Dun &amp; Bradstreet ID. May also use +4 format with 13 digits. The D&amp;B D-U-N-S Number is a unique nine-digit identification sequence, which provides unique identifiers of single business entities, while linking corporate family structures together</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;ParentDUNSNumber&gt;9999999990001&lt;/ParentDUNSNumber&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">ParentGLN </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">GS1 Company ID + Location ID + Check Digit. The GLN is a standard means of identifying global trading partner locations. Through the process of Product Synchronization, the seller and buyer identify each other’s names, addresses, and other information, so that all subsequent electronic documents can be identified, routed, and processed using only these codes. This is essential for the smooth, automated, error-free processing of electronic documents. </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;ParentGLN&gt;7777777555551&lt;/ParentGLN&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">ParentVMRSID </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">A unique Company identifier for all participating Heavy Duty parts manufacturers. </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;ParentVMRSID&gt;GIANT&lt;/ParentVMRSID&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">ParentAAIAID </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">This field is  recommended  to use when identifying Parent Company <MadCap:annotation MadCap:createDate="2019-04-22T10:06:20.5209758-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="This 'field' is the recommended 'value'? Some clarification needed here to make this clearer." MadCap:editor="brcr" MadCap:editDate="2019-04-22T10:06:41.7899944-04:00">Ownership</MadCap:annotation>.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;ParentAAIAID&gt;BBCD&lt;/ParentAAIAID&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BrandOwnerDUNS </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Unique 9-digit Dun &amp; Bradstreet ID. May also use +4 format with 13 digits. The D&amp;B D-U-N-S Number is a unique nine-digit identification sequence, which provides unique identifiers of single business entities, while linking corporate family structures together </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;BrandOwnerDUNS&gt;8888888880001&lt;/BrandOwnerDUNS&gt; 
+
+</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BrandOwnerGLN </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">GS1 Company ID + Location ID + Check Digit. The GLN is a standard means of identifying global trading partner locations. Through the process of Product Synchronization, the seller and buyer identify each other’s names, addresses, and other information, so that all subsequent electronic documents can be identified, routed, and processed using only these codes. This is essential for the smooth, automated, error-free processing of electronic documents. </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;BrandOwnerGLN&gt;7777777123459&lt;/BrandOwnerGLN&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BrandOwnerVMRSID</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">A unique Company identifier for all participating Heavy Duty parts manufacturers.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;BrandOwnerVMRSID&gt;WONDR&lt;/BrandOwnerVMRSID&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BrandOwnerAAIAID</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">This field is recommended  to be populated when identifying Brand Owner of the data supplied in the PIES <MadCap:annotation MadCap:createDate="2019-04-22T10:16:50.0133059-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="Same comment as above re field or value." MadCap:editor="brcr" MadCap:editDate="2019-04-22T10:16:58.1132613-04:00">file</MadCap:annotation>.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;BrandOwnerAAIAID&gt;BRST&lt;/BrandOwnerAAIAID&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">BuyerDuns </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">D&amp;B D-U-N-S Number for PIES Trading Partner. The D&amp;B D-U-N-S Number is a unique nine-digit identification sequence, which provides unique identifiers of single business entities, while linking corporate family structures together</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;BuyerDuns&gt;8888888880001&lt;/BuyerDuns&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">CurrencyCode </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">The default value for the entire PIES file. This value may be overridden at the PRCS (Price Sheet Segment) or PRCE (Pricing Segment) levels. </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;CurrencyCode&gt;USD&lt;/CurrencyCode&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">LanguageCode </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">The default value for the entire PIES file. This value may be overridden within many of the underlying Segments. </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;LanguageCode&gt;EN&lt;/LanguageCode&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">TechnicalContact </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Name of Contact for resolving technical issues with PIES file. </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;TechnicalContact&gt;John Smith&lt;/TechnicalContact&gt;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">ContactEmail</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Contact Email address at data Supplier/Sender company for resolving issues with PIES file or receiving file processing reports. </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;ContactEmail&gt;john@smith.com&lt;/ContactEmail&gt; </td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">PCdbVersionDate</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Version date of the PCdb used to create the file. The date can be found in the 'Version' table of the PCdb. </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;PCdbVersionDate&gt;2014-06-27&lt;/PCdbVersionDate&gt;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">PAdbVersionDate </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Optional</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 10pt;">Version date of the PAdb used to create the file. The date can be found in the 'Version' table of the PAdb.</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="font-size: 10pt;">&lt;PAdbVersionDate&gt;2014-06-27&lt;/PAdbVersionDate&gt;</td>
+            </tr>
+        </table>
+        <h3>Price Sheet Header Segment (PRCS)</h3>
+        <p>The Price Sheet Header Segment is used to <MadCap:annotation MadCap:createDate="2019-04-22T10:26:30.8084584-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="This is unclear. Should revise." MadCap:editor="brcr" MadCap:editDate="2019-04-22T10:26:38.4294264-04:00">define from zero to any number of price sheets</MadCap:annotation>. When exchanging pricing data with a trading partner, it is recommended to define at least one Price Sheet Header. The &lt;PriceSheetNumber&gt; defined in the Price Sheet Header segment will be referenced within the Price Segment for an individual PIES Item record.</p>
+        <p>The Price Sheet Header Segment is defined within the &lt;PriceSheets&gt; tag. This segment is an optional looping segment within the specification, meaning there may be zero instances of this segment in a PIES file. If this segment is used, there must be one or more instances of a child &lt;PriceSheet&gt; &lt;/PriceSheet&gt; loop. Multiple loops of a &lt;PriceSheet&gt; &lt;/PriceSheet&gt; section may be used to define multiple Price Sheets.</p>
+        <p>A sample PIES Sheet Header Segment and a screenshot of  how the segment is populated in STEP are displayed below.The Price Sheet information is created as  Data Container  valid on the PIES Products object (root node).</p><pre class="PreIndent" xml:space="preserve">&lt;PriceSheets&gt;
+        &lt;PriceSheet MaintenanceType="A"&gt;
+            &lt;PriceSheetNumber&gt;2017WD&lt;/PriceSheetNumber&gt;
+            &lt;PriceSheetName&gt;2017 WD Prices&lt;/PriceSheetName&gt;
+            &lt;SupersededPriceSheetNumber&gt;2016WD&lt;/SupersededPriceSheetNumber&gt;
+            &lt;CurrencyCode&gt;USD&lt;/CurrencyCode&gt;
+            &lt;PriceZone&gt;Western&lt;/PriceZone&gt;
+            &lt;EffectiveDate&gt;2017-03-07&lt;/EffectiveDate&gt;
+            &lt;ExpirationDate&gt;2018-03-07&lt;/ExpirationDate&gt;
+        &lt;/PriceSheet&gt;
+    &lt;/PriceSheets&gt;
+</pre>
+        <p class="Body1Image" xml:space="preserve">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/35.png" class="Inch6" />
+        </p>
+        <p class="Body1Image" MadCap:conditions="Primary.Under Construction">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/31.png" />
+        </p>
+        <h3>PIES Item <MadCap:annotation MadCap:createDate="2019-04-22T10:32:43.2092275-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="Are these elements sections or segments? In a previous section, you wrote, &quot;A normal PIES file has five sSections in it:  Header, Price Sheet (PRCS), Market copy (MKTC),   Item (ITEM), and the Trailer.&quot; Again, whatever the right word, we need to be consistent throughout. I like 'section' because 'segment' seems to be in use by another kind of element, so it's less confusing to call it a 'section'. This, of course, is all from a complete layman's perspective :) " MadCap:editor="brcr" MadCap:editDate="2019-04-22T10:34:19.7231996-04:00">Segment </MadCap:annotation>(ITEM)</h3>
+        <p>The <MadCap:annotation MadCap:createDate="2019-04-22T10:34:29.7427577-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="Capitalizations correct here? &quot;Item' seems right, but 'Segment'?" MadCap:editor="brcr" MadCap:editDate="2019-04-22T10:34:47.6332371-04:00">Item segment</MadCap:annotation> is the core looping (or repeating) segment within the PIES standard. Each instance of this segment is responsible for defining individual Item Part Numbers (which are also called PIES Items).</p>
+        <p>All &lt;Item&gt; instances are contained within the parent &lt;Items&gt; element. For each Item Part Number (PIES Item) to be defined, a new instance of &lt;Item&gt; and its child segments are initiated. Many of the child segments under &lt;Item&gt; are themselves segments of PIES which are defined later in this topic.</p>
+        <p>The following XML sample code shows the upper level &lt;Items&gt; element and the beginning of a single instance of &lt;Item&gt;. The child segments are part of the logical grouping known as the Item Segment. Further segments continue from the end of this code sample.</p>
+        <p>A sample PIES XML PIES Item structure and a screenshot  of how it is populated in STEP is displayed below.</p><pre class="PreIndent" xml:space="preserve">&lt;Items&gt;
+        &lt;Item MaintenanceType="A"&gt;
+            &lt;HazardousMaterialCode&gt;Y&lt;/HazardousMaterialCode&gt;
+            &lt;BaseItemID&gt;VC21&lt;/BaseItemID&gt;
+            &lt;ItemLevelGTIN GTINQualifier="UP"&gt;11234567890123&lt;/ItemLevelGTIN&gt;
+            &lt;PartNumber&gt;VC21499&lt;/PartNumber&gt;
+            &lt;BrandAAIAID&gt;DKGX&lt;/BrandAAIAID&gt;
+            &lt;BrandLabel&gt;Wako&lt;/BrandLabel&gt;
+            &lt;SubBrandAAIAID&gt;DMST&lt;/SubBrandAAIAID&gt;
+            &lt;SubBrandLabel&gt;SubBrand Label&lt;/SubBrandLabel&gt;
+            &lt;ACESApplications&gt;Y&lt;/ACESApplications&gt;
+            &lt;ItemQuantitySize UOM="EA"&gt;1&lt;/ItemQuantitySize&gt;
+            &lt;ContainerType&gt;BO&lt;/ContainerType&gt;
+            &lt;QuantityPerApplication Qualifier="VAR" UOM="EA"&gt;1&lt;/QuantityPerApplication&gt;
+            &lt;ItemEffectiveDate&gt;2010-08-13&lt;/ItemEffectiveDate&gt;
+            &lt;AvailableDate&gt;2010-08-13&lt;/AvailableDate&gt;
+            &lt;MinimumOrderQuantity UOM="EA"&gt;123&lt;/MinimumOrderQuantity&gt;
+            &lt;ManufacturerProductCodes&gt;
+                &lt;Group&gt;02347&lt;/Group&gt;
+                &lt;SubGroup&gt;A&lt;/SubGroup&gt;
+            &lt;/ManufacturerProductCodes&gt;
+            &lt;AAIAProductCategoryCode&gt;199456&lt;/AAIAProductCategoryCode&gt;
+            &lt;UNSPSC&gt;11223348&lt;/UNSPSC&gt;
+            &lt;PartTerminologyID&gt;5696&lt;/PartTerminologyID&gt;
+            &lt;VMRSCode&gt;123000789&lt;/VMRSCode&gt;
+
+            &lt;Descriptions&gt; … &lt;/Descriptions&gt;
+            &lt;Prices&gt;   …   &lt;/Prices&gt;
+            &lt;ExtendedInformation&gt; … &lt;/ExtendedInformation&gt;
+            &lt;Packages&gt; … &lt;/Packages&gt;
+            &lt;PartInterchangeInfo&gt; … &lt;/PartInterchangeInfo&gt;
+            &lt;DigitalAssets&gt; … &lt;/DigitalAssets&gt;
+            &lt;Kits&gt; … &lt;/Kits&gt;
+        &lt;/Item&gt;
+    &lt;/Items&gt;
+</pre>
+        <p xml:space="preserve" class="Body1Image">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/32.png" />
+        </p>
+        <h4>PIES Description Segment</h4>
+        <p>
+            <MadCap:annotation MadCap:createDate="2019-04-22T11:32:49.2726407-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="Is the fact that you can send 'zero' descriptions important? If so, I would add &quot;(or zero)&quot; after 'more'." MadCap:editor="brcr" MadCap:editDate="2019-04-22T11:33:27.8269577-04:00">The </MadCap:annotation>Description segment allows you to send one or as many descriptions of an Item record part number (PIES Item). The flexibility to send multiple descriptions on a single PIES&#160;Item is possible because of the capabilities inherent in XML's looping structure. The Description segment (&lt;Descriptions&gt;…&lt;/Descriptions&gt;) is an element group available within the &lt;Item&gt; tag. To send multiple descriptions about an individual Item part number (PIES Item), a user can loop (repeat) the &lt;Description&gt; element, changing the 'DescriptionCode' attribute as well as the string value for the Description.</p>
+        <p>A sample PIES Description Segment and a screenshot that shows how it is populated in STEP is displayed <MadCap:annotation MadCap:createDate="2019-05-30T23:23:13.1192913+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="There is also a 'Sequence' that can be assigned to the Description (example in RDCUST-3456) that should be mentioned in this document." MadCap:editor="bond" MadCap:editDate="2019-05-30T23:23:15.1771240+05:30">below.</MadCap:annotation></p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The Description (DESC) segment is created as Data Containers on the PIES Item starting with Automotive 9.1 MP1. Earlier versions of the PMDM for Automotive solution had the Description (DESC) segment stored as attribute values within an attribute group called 'PIES Description Segment DESC'.</p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">When a Data Container is deleted from a Product or Entity object, its ID cannot be revived, nor can its ID be reused until the object is purged from STEP. This is a known core STEP gap (not Automotive specific). User needs to be aware of this behavior while importing files to test and happen to delete the Data Container on the PIES Item. The next time when user imports the same file, that Data Container will not be created because its ID was in use and then deleted (the import process generates the Data Container ID through a hash function). But if the Data Containers are manually created   in the workbench / Web UI, then user will not encounter the ID problem because a new ID is auto-generated for each new Data Container.</p><pre xml:space="preserve">&lt;Descriptions&gt;
+&lt;Description MaintenanceType="A" Sequence="1" DescriptionCode="ABR"&gt;Driving Lamp&lt;/Description&gt;
+&lt;Description MaintenanceType="A" Sequence="2" DescriptionCode="DES"&gt;Optilux® Model 2500 Angel Eye Driving Lamp (Single Lamp)&lt;/Description&gt;
+&lt;Description MaintenanceType="A" Sequence="3" DescriptionCode="DES"&gt;Optilux® Model 2500 Angel Eye Driving Lamp (Single Lamp)&lt;/Description&gt;
+&lt;Description MaintenanceType="A" DescriptionCode="EXT"&gt;Optilux® Model 2500 Angel Eye Driving Lamp (Single Lamp)&lt;/Description&gt;
+&lt;Description MaintenanceType="A" DescriptionCode="INV"&gt;OPTILUX 2500 ANGEL EYE SNGL&lt;/Description&gt;
+&lt;Description MaintenanceType="A" DescriptionCode="MKT"&gt;Optilux® Model 2500 Angel Eye Driving Lamp (Single Lamp)&lt;/Description&gt;
+&lt;Description MaintenanceType="A" DescriptionCode="SHO"&gt;Driving Lamp&lt;/Description&gt;
+&lt;Description MaintenanceType="A" DescriptionCode="LAB"&gt;OPTILUX 2500 ANGEL EYE SNGL&lt;/Description&gt;
+&lt;Description MaintenanceType="A" DescriptionCode="KEY"&gt;driving light optilux&lt;/Description&gt;
+&lt;/Descriptions&gt;</pre>
+        <p xml:space="preserve" class="Image1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/60.png" />
+        </p>
+        <p xml:space="preserve" class="Body1Image" MadCap:conditions="Primary.Under Construction">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/33.png" />
+        </p>
+        <h4>PIES Price Segment PRCE</h4>
+        <p>The Pricing Segment is defined by the PIES XML parent element &lt;Prices&gt;. Within this element group, there may be multiple instances of &lt;Pricing&gt; that define a single pricing <MadCap:annotation MadCap:createDate="2019-05-31T01:01:14.9102344+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Reanalyse and rewrite..." MadCap:editor="bond" MadCap:editDate="2019-05-31T01:01:23.4931146+05:30">instance.</MadCap:annotation> This element takes a 'Price Type' as an attribute indicating which type of price the following child segments needs to be defined in.</p>
+        <p>To <MadCap:annotation MadCap:createDate="2019-05-31T00:59:35.6137795+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Read it again and analyse and re write again:\r\n\r\nBelow are the suggestions from NIFE\r\n\r\nMultiple prices handle more than just price types. Some scenarios are:\r\n\r\n-  Looping the same PriceSheet with different PriceType\r\n-  Looping the same PriceSheet with the same PriceType and Price UOM, but different EffectiveDate and different  Price values\r\n-  Looping the same PriceSheet with the same PriceType, but different Price UOM\r\n\r\nSee the sample import file in RDCUST-3456 and the screenshot in CARDON-79." MadCap:editor="bond" MadCap:editDate="2019-05-31T01:00:17.4287995+05:30">supply multiple prices (price types) </MadCap:annotation>for an Item Part Number (PIES Item), the user needs to repeat the &lt;Pricing&gt; XML structure and redefine the new loop with the 'Price Type' attribute.</p>
+        <p>A sample PIES Price Segment and a screenshot of how it is populated in the STEP system is displayed below. </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The PIES Price Segment is created as Data Containers on the PIES Item starting with Automotive 9.1 MP1. Earlier versions of the PMDM for Automotive solution had the PIES Price Segment stored as attribute values within an attribute group.</p><pre xml:space="preserve">&lt;Prices&gt;
+                &lt;Pricing MaintenanceType="A" PriceType="WD1"&gt;
+                    &lt;PriceSheetNumber&gt;2017WD&lt;/PriceSheetNumber&gt;
+                    &lt;CurrencyCode&gt;USD&lt;/CurrencyCode&gt;
+                    &lt;EffectiveDate&gt;2008-10-22&lt;/EffectiveDate&gt;
+                    &lt;ExpirationDate&gt;2012-10-22&lt;/ExpirationDate&gt;
+                    &lt;Price UOM="PE"&gt;10&lt;/Price&gt;
+                &lt;/Pricing&gt;
+            &lt;/Prices&gt;
+</pre>
+        <p xml:space="preserve" class="Body1Image">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/34.png" class="Inch6" />
+        </p>
+        <p class="Body1Image" MadCap:conditions="Primary.Under Construction">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/22.png" />
+        </p>
+        <h4>PIES Extended Product Info Segment (EXPI)</h4>
+        <p>The Extended Product Information (EXPI) <MadCap:annotation MadCap:createDate="2019-04-22T12:08:22.8386726-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="Does 'Segment' need to be capitalized? " MadCap:editor="brcr" MadCap:editDate="2019-04-22T12:08:40.4615796-04:00">Segment </MadCap:annotation>is designed to relay information about an Item Part (PIES Item). The PIES Extended Product Information Segment contains information ranging from 'Country of Origin' to 'Warranty Terms'.</p>
+        <p>The format of the data expressed in the 'EXPI Data' field (&lt;ExtendedProductInformation&gt;) is dependent on the 'EXPI Code' selected.</p>
+        <p>To express information covering multiple (or one) 'EXPI Codes', the &lt;ExtendedProductInformation&gt; element is looped once for each code. Any and all instances of &lt;ExtendedProductInformation&gt; are grouped under the &lt;ExtendedInformation&gt; element.</p>
+        <p>A sample PIES Extended Product Info Segment and a screenshot of showing  how it is populated in STEP  is displayed <MadCap:annotation MadCap:createDate="2019-04-22T12:10:46.1665693-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="Good section." MadCap:editor="brcr" MadCap:editDate="2019-04-22T12:10:49.5516467-04:00">below</MadCap:annotation><MadCap:annotation MadCap:createDate="2019-05-31T00:46:27.7387860+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="The change that Sujay is doing in RDCUST-3621 will update 19 of the attributes to be List Of Values validation base type. So this screenshot will need to be updated when that change goes into affect.\r\n\r\nBut this screenshot needs to also be updated because the Harmonizing Tariff attributes have wrong values." MadCap:editor="bond" MadCap:editDate="2019-05-31T00:46:44.1973025+05:30">.</MadCap:annotation></p><pre xml:space="preserve">&lt;<MadCap:annotation MadCap:createDate="2019-05-31T00:52:05.5718261+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Some of these examples are wrong, such as the one for HSB, HAC, and HTS. Those are tariff codes and are greater than two digits. Some valid examples are:\r\n\r\n            &lt;ExtendedInformation&gt;\r\n                &lt;ExtendedProductInformation MaintenanceType = &quot;A&quot; EXPICode = &quot;CTO&quot;&gt;TW&lt;/ExtendedProductInformation&gt;\r\n                &lt;ExtendedProductInformation MaintenanceType = &quot;A&quot; EXPICode = &quot;EMS&quot;&gt;1&lt;/ExtendedProductInformation&gt;\r\n                &lt;ExtendedProductInformation MaintenanceType = &quot;A&quot; EXPICode = &quot;HSB&quot;&gt;8708295170&lt;/ExtendedProductInformation&gt;\r\n                &lt;ExtendedProductInformation MaintenanceType = &quot;A&quot; EXPICode = &quot;LIF&quot;&gt;2&lt;/ExtendedProductInformation&gt;\r\n                &lt;ExtendedProductInformation MaintenanceType = &quot;A&quot; EXPICode = &quot;LIS&quot;&gt;Available to Order&lt;/ExtendedProductInformation&gt;\r\n                &lt;ExtendedProductInformation MaintenanceType = &quot;A&quot; EXPICode = &quot;NPC&quot;&gt;D&lt;/ExtendedProductInformation&gt;\r\n                &lt;ExtendedProductInformation MaintenanceType = &quot;A&quot; EXPICode = &quot;REM&quot;&gt;N&lt;/ExtendedProductInformation&gt;\r\n                &lt;ExtendedProductInformation MaintenanceType = &quot;A&quot; EXPICode = &quot;REF&quot;&gt;N&lt;/ExtendedProductInformation&gt;\r\n            &lt;/ExtendedInformation&gt;\r\n\r\nIn addition, the change that Sujay is doing in RDCUST-3621 (should be available for automotive 9.1 MP3 June release) will change 19 out of 48 of the EXPI attributes to be List Of Values validation base type, so that will affect your screenshot that you have below." MadCap:editor="bond" MadCap:editDate="2019-05-31T00:52:08.0354251+05:30">ExtendedInformation&gt;</MadCap:annotation>
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="HSB"&gt;01&lt;/<MadCap:annotation MadCap:createDate="2019-05-31T00:51:50.4361973+05:30" MadCap:creator="bond" MadCap:initials="BO">ExtendedProductInformation&gt;</MadCap:annotation>
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="HAC"&gt;HAC&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CTS"&gt;FR&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="LIF"&gt;0&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="NAF"&gt;1&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="HTS"&gt;02&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="HZ1"&gt;12&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="TAX"&gt;Y&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="LIS"&gt;Proposed&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="TMC"&gt;AB&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="NPD"&gt;Top 60%&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="NPC"&gt;A&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="WS2"&gt;LF&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="WS1"&gt;SR&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="WD2"&gt;MI&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CXP"&gt;12&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="RST"&gt;GA&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CPN"&gt;CPN&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="WT2"&gt;MO&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CGR"&gt;CGR&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="WT1"&gt;36&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CCL"&gt;CCL&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="MSR"&gt;Y&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="RCT"&gt;Marietta, GA&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="MSD"&gt;MSDS26426&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="RCS"&gt;Cobb, GA&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="EMS"&gt;1&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="RPC"&gt;30060&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CTR"&gt;GB&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CTQ"&gt;DE&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CTP"&gt;DK&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="CTO"&gt;US&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="OSN"&gt;OSN&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="OEP"&gt;OEP&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="OEM"&gt;OEM&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="REF"&gt;Y&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="PTS"&gt;PTS&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="PTN"&gt;PTN&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="OSP"&gt;OSP&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="WD1"&gt;500&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="RET"&gt;RET&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="REM"&gt;N&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="STA"&gt;S&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="PLM"&gt;20&lt;/ExtendedProductInformation&gt;
+                &lt;ExtendedProductInformation MaintenanceType="A" EXPICode="PLC"&gt;100&lt;/ExtendedProductInformation&gt;
+            &lt;/ExtendedInformation&gt;
+</pre>
+        <p xml:space="preserve" class="Image1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/36.png" />
+        </p>
+        <p xml:space="preserve" class="Body1Image" MadCap:conditions="Primary.Under Construction">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/23.png" />
+        </p>
+        <h3>Packaging Segment (PACK)</h3>
+        <p>The Packaging Segment is used to express various volumetric details for different packaging levels of PIES Items.  Package information is grouped within the &lt;Packages&gt; child element of &lt;Item&gt;. Each instance of the &lt;Package&gt; element (looped beneath &lt;Packages&gt;) and its child segments corresponds to a distinct 'Package UOM'. This UOM, or Unit of Measure, identifies the type of packaging the data element contains.</p>
+        <p>The consumer-level package (UOM type 'PK') should always be defined if possible. The consumer-level pack can be defined, for example, as the Item Part in the packaging used for in-store display and stocking. This is the package level that an individual consumer may purchase.</p>
+        <p>The sample XML code below shows the Packaging Segment in relation to the other segments defined to this point, and the screenshot below shows the way it is populated in the <MadCap:annotation MadCap:createDate="2019-04-22T12:19:46.3870032-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="Another good section." MadCap:editor="brcr" MadCap:editDate="2019-04-22T12:19:49.5981427-04:00">system</MadCap:annotation> where the packaging object is created as an object below the PIES Item.</p><pre>&lt;Packages&gt;
+                &lt;Package MaintenanceType="A"&gt;
+                    &lt;PackageLevelGTIN&gt;12345000451747&lt;/PackageLevelGTIN&gt;
+                    &lt;ElectronicProductCode&gt;4A.356E414.B351C7.AD331A465&lt;/ElectronicProductCode&gt;
+                    &lt;PackageBarCodeCharacters&gt;005555010&lt;/PackageBarCodeCharacters&gt;
+                    &lt;PackageUOM&gt;PK&lt;/PackageUOM&gt;
+                    &lt;QuantityofEaches&gt;1&lt;/QuantityofEaches&gt;
+                    &lt;Dimensions UOM="CM"&gt;
+                        &lt;Height&gt;10.2&lt;/Height&gt;
+                        &lt;Width&gt;3.6&lt;/Width&gt;
+                        &lt;Length&gt;2.0&lt;/Length&gt;
+                    &lt;/Dimensions&gt;
+                    &lt;Weights UOM="PG"&gt;
+                        &lt;Weight&gt;12.5&lt;/Weight&gt;
+                        &lt;DimensionalWeight&gt;45&lt;/DimensionalWeight&gt;
+                    &lt;/Weights&gt;
+                    &lt;WeightVariance&gt;90&lt;/WeightVariance&gt;
+                    &lt;HazardousMaterial&gt; … &lt;/HazardousMaterial&gt;
+                &lt;/Package&gt;
+            &lt;/Packages&gt;
+</pre>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/24.png" />
+        </p>
+        <h3>Hazardous Material Package Segment (HAZM)</h3>
+        <p>Hazmat information is relayed due to different Hazmat rules and regulations, each of which may depend on the type of package a product is using. For instance, a product may have one set of regulations (or none) at the Consumer Pack level, but a completely different set of government regulations may apply if the package is a Case or Pallet of product. Regulations may change as well depending on the transportation method used when shipping a product.</p>
+        <p>The Hazardous Material Package Segment does not repeat as a loop of &lt;Item&gt;. Rather, this segment is a looping structure within the &lt;Packaging&gt; segment.</p>
+        <p>The sample XML code below shows how a single instance of the Hazardous Material Package Segment, defined by the &lt;HazardousMaterial&gt; parent element, falls within the Packaging Segment (&lt;Package&gt;), and the screenshot below shows how it is populated in the system.</p><pre xml:space="preserve">&lt;HazardousMaterial MaintenanceType="A" LanguageCode="EN"&gt;
+                        &lt;ShippingScope&gt;INT&lt;/ShippingScope&gt;
+                        &lt;Bulk&gt;N&lt;/Bulk&gt;
+                        &lt;RegulatingCountry&gt;US&lt;/RegulatingCountry&gt;
+                        &lt;TransportMethod&gt;R&lt;/TransportMethod&gt;
+                        &lt;Regulated&gt;Y&lt;/Regulated&gt;
+                        &lt;Description&gt;Hazmat Description&lt;/Description&gt;
+                        &lt;HazardousClass&gt;2.2&lt;/HazardousClass&gt;
+                        &lt;HazardousMaterialCodeQualifier&gt;D&lt;/HazardousMaterialCodeQualifier&gt;
+                        &lt;HazardousMaterialClassCode&gt;1.4&lt;/HazardousMaterialClassCode&gt;
+                        &lt;HazardousMaterialDescription&gt;Hazardous&lt;/HazardousMaterialDescription&gt;
+                        &lt;ShippingName&gt;Great Lakes Shipping&lt;/ShippingName&gt;
+                        &lt;UNNAIDCode&gt;027455&lt;/UNNAIDCode&gt;
+                        &lt;HazardousPlacardNotation&gt;Caution&lt;/HazardousPlacardNotation&gt;
+                        &lt;WHMISCode&gt;B.4&lt;/WHMISCode&gt;
+                        &lt;WHMISFreeText&gt;Caution&lt;/WHMISFreeText&gt;
+                        &lt;PackingGroupCode&gt;III&lt;/PackingGroupCode&gt;
+                        &lt;RegulationsExemptionCode&gt;4&lt;/RegulationsExemptionCode&gt;
+                        &lt;TextMessage&gt;Be careful&lt;/TextMessage&gt;
+                        &lt;OuterPackageLabel&gt;ORM-AIR&lt;/OuterPackageLabel&gt;
+                    &lt;/HazardousMaterial&gt;
+</pre>
+        <p xml:space="preserve" class="Image1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/25.png" />
+        </p>
+        <h4>Kits Segment (KITS)</h4>
+        <p>The Kits Segment is defined by the &lt;Kits&gt; parent element which contains the child element &lt;KitComponent&gt;. This element contains child segments that define the component parts and supporting data.</p>
+        <p>If the item is a kit or set, the Kit Segment of PIES conveys the part numbers contained in a kit or set Bill of Materials (BOM). </p>
+        <p class="Body1">Kits are defined as an assemblage of parts or equipment that serve the specific purpose of performing a full maintenance procedure or function. <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">An assembly of parts needed to repair a carburetor, or an assembly of parts needed to rebuild an engine are examples of <MadCap:annotation MadCap:createDate="2019-05-31T00:35:46.0428150+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Rafale says it as a poor example, find something more suitable." MadCap:editor="bond" MadCap:editDate="2019-05-31T00:36:18.0350248+05:30">kits.</MadCap:annotation></MadCap:conditionalText></p>
+        <p class="Body1"> A Set is a group or collection of things that belong together, resemble one another, or are usually found together. A range of tools (such as a drill bit set, or a tool assortment), or a battery booster cable set are examples of sets.</p>
+        <p>The Kits Segment allows the data sender to express what components are in a particular kit. To <MadCap:annotation MadCap:createDate="2019-04-22T12:33:23.7535795-04:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="the word 'express' in this context: does this have a special currency in automotive or it just writer's choice. If it is just a choice, consider a more common word, if appropriate, like 'send'" MadCap:editor="brcr" MadCap:editDate="2019-04-22T12:34:21.6960662-04:00">send </MadCap:annotation>multiple components within a Kit, the segments within the Kit Segment repeat as many times as necessary to identify all components.</p>
+        <p class="Body1">If the Kit object does not already exist in STEP, then the import will create the Kit as a PIES Item object type. And will establish a reference from the PIES Item to the Kit PIES Item through the 'PIES Item To Kit Component Item' reference type. The Kit Sequence, Quantity, UOM, and Qualifier is populated as metadata attributes on the Reference Type within the References tab.</p>
+        <p>A sample Kits Segment and a screenshot showing  how it is populated on STEP is displayed below. </p><pre xml:space="preserve">&lt;Kits&gt;
+                &lt;Kit MaintenanceType="A"&gt;
+                    &lt;ComponentPartNumber IDQualifier="VN"&gt;VC36004&lt;/ComponentPartNumber&gt;
+                    &lt;ComponentBrand&gt;DKGX&lt;/ComponentBrand&gt;
+                    &lt;Description DescriptionCode="SHO" LanguageCode="EN"&gt;CKENGSENS&lt;/Description&gt;
+                    &lt;QuantityInKit UOM="EA"&gt;2&lt;/QuantityInKit&gt;
+                    &lt;SequenceCode&gt;1&lt;/SequenceCode&gt;
+                &lt;/Kit&gt;
+                &lt;Kit MaintenanceType="A"&gt;
+                    &lt;ComponentPartNumber IDQualifier="VP"&gt;VC36009&lt;/ComponentPartNumber&gt;
+                    &lt;ComponentBrand&gt;DKGX&lt;/ComponentBrand&gt;
+                    &lt;Description DescriptionCode="SHO" LanguageCode="EN"&gt;CKENGSENS&lt;/Description&gt;
+                    &lt;QuantityInKit UOM="EA"&gt;1&lt;/QuantityInKit&gt;
+                    &lt;SequenceCode&gt;2&lt;/SequenceCode&gt;
+                &lt;/Kit&gt;
+            &lt;/Kits&gt;
+</pre>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/26.png" />
+        </p>
+        <h3>Interchange Segment (INTE)</h3>
+        <p>The Interchange Segment in PIES is used to relay interchange data for the Item Part Number (PIES Item) in relation to alternative Brand Owner Part Numbers. The Interchange part number is also known as Competitor / OE Number in STEP system. The segment is defined by the &lt;PartInterchangeInfo&gt; grouping element. Within &lt;PartInterchangeInfo&gt; is the &lt;PartInterchange&gt; element which contains the child segments that define an interchange. &lt;PartNumber&gt; element instance is repeated as many times as necessary to identify all components.</p>
+        <p>All interchange part numbers are defined by both the interchange part number  and a 'Brand AAIAID'. The 'Brand AAIAID' value for the interchange supplier can be found in the industry supported Brand table. If a brand code value is not present in the Industry Brand Code table, the use of 'ZZZN' is permitted until such time as a 'Brand AAIAID' is created for the Brand in question. In such an instance, the 'Brand Label' value should be populated for clarity. Using 'ZZZN' and a 'Brand label' should be used as a last resort not as standard practice as the Brand table is updated frequently.</p>
+        <p>As with some of the other  segments described above, to express multiple interchanges for an Item Part Number, the &lt;PartInterchange&gt; element is repeated as many times as necessary to identify all interchanges.</p>
+        <p>If the Interchange object does not already exist in STEP, then the import will create the Interchange object as a PIES Interchange Item object type. And will establish a reference from the PIES Item to the PIES Interchange Item through the 'PIES Interchange' reference type. The PIES Interchange data is populated as metadata attributes on the Reference Type within the References tab.</p>
+        <p>A sample Interchange Segment and a screenshot showing  how it is populated in STEP is displayed below.</p><pre xml:space="preserve">&lt;PartInterchangeInfo&gt;
+                &lt;PartInterchange MaintenanceType="A" LanguageCode="EN"&gt;
+                    &lt;TypeCode&gt;O&lt;/TypeCode&gt;
+                    &lt;BrandAAIAID&gt;BBTB&lt;/BrandAAIAID&gt;
+                    &lt;BrandLabel&gt;Great Lakes&lt;/BrandLabel&gt;
+                    &lt;PartNumber&gt;GL26409&lt;/PartNumber&gt;
+                    &lt;QualityGradeLevel&gt;P&lt;/QualityGradeLevel&gt;
+                    &lt;InterchangeNotes&gt;Yellow indicator light&lt;/InterchangeNotes&gt;
+                    &lt;InternalNotes&gt;May be dificult to remove&lt;/InternalNotes&gt;
+                &lt;/PartInterchange&gt;
+            &lt;/PartInterchangeInfo&gt;</pre>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/27.png" />
+        </p>
+        <h3>Digital Asset File Information Segment (ASST)
+        </h3>
+        <p>The Digital Asset File Information Segment is used to relay information about many different media types which support the PIES Item.  The 'Asset Type' field is used to identify what type of digital asset is being defined.</p>
+        <p>This segment is defined by the &lt;DigitalAssets&gt; grouping element. Below this element is the &lt;DigitalFileInformation&gt; element which contains corresponding child segments (fields) used to express the defined values for a digital asset. As with other segments, to supply information for multiple digital assets for a PIESItem, the &lt;DigitalFileInformation&gt; element and its child segments are repeated for each digital asset.</p>
+        <p>AutoCare Easy Setup creates the Asset Type attribute and LOV, and the PCdb importer populates the values for the LOV. Easy Setup also creates following six PIES asset object types:</p>
+        <ul class="StiboBullet">
+            <li> PIES Asset (General)</li>
+            <li>PIES Hazardous Material Asset (AssetType = HMS)</li>
+            <li>PIES Logo (AssetType = LGO)</li>
+            <li> PIES Material Safety Data Sheet (AssetType = MSD)</li>
+            <li>PIES Owners Manual (AssetType = OWN)</li>
+            <li>PIES Product Image (AssetType = P04)</li>
+        </ul>
+        <p>And following six Image and Document Reference Types:</p>
+        <ul class="StiboBullet">
+            <li> PIES Item To Hazardous Material Asset (AssetType = HMS)</li>
+            <li>PIES Item To Logo (AssetType = LGO)</li>
+            <li>PIES Item To Material Safety Data Sheet (AssetType = MSD)</li>
+            <li>PIES Item To Owners Manual (AssetType = OWN)</li>
+            <li>PIES Item To Product Image (AssetType = P04)</li>
+            <li>PIES To Asset</li>
+        </ul>
+        <p>Five asset types (HMS, LGO, MSD, OWN, and P04) will get its own object type and reference type, and all other asset types will be created as PIES Asset (General) object type and referenced using 'PIES To Asset' reference type.</p>
+        <p>A sample Digital Asset File Information Segment and a screenshot showing how it is populated in STEP is displayed below.</p><pre xml:space="preserve">&lt;DigitalAssets&gt;
+                &lt;DigitalFileInformation MaintenanceType="A" AssetID="Asset456" LanguageCode="EN"&gt;
+                    &lt;FileName&gt;VC21499_P04&lt;/FileName&gt;
+                    &lt;AssetType&gt;P04&lt;/AssetType&gt;
+                    &lt;Representation&gt;R&lt;/Representation&gt;
+                    &lt;Resolution&gt;96&lt;/Resolution&gt;
+                    &lt;Background&gt;CLI&lt;/Background&gt;
+                    &lt;OrientationView&gt;BAC&lt;/OrientationView&gt;
+                    &lt;Details&gt;Details/Description&lt;/Details&gt;
+                    &lt;FilePath&gt;images\SVlight.tif&lt;/FilePath&gt;
+                    &lt;URI&gt;www.stibo.com&lt;/URI&gt;
+                    &lt;FileDateModified&gt;2008-04-11&lt;/FileDateModified&gt;
+                    &lt;EffectiveDate&gt;2008-04-11&lt;/EffectiveDate&gt;
+                    &lt;ExpirationDate&gt;2012-04-11&lt;/ExpirationDate&gt;
+                    &lt;Country&gt;US&lt;/Country&gt;
+                &lt;/DigitalFileInformation&gt;
+                
+            &lt;/DigitalAssets&gt;
+</pre>
+        <p>In the screenshot below, the Asset ID ‘VC21499_P04’ is linked to the PIES Item ‘VC21499’ via the reference type ‘PIES Item To Product Image.’</p>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/28.png" />
+        </p>
+        <p>Asset details are populated as attribute values on the asset object (listed under the PIES Assets folder) based on the input data in the PIES file as shown in the screenshot below.</p>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/29.png" />
+        </p>
+        <h3>Output</h3>
+        <p>Upon successful import, a PIES Item will be created / modified. The PIES Importer do not delete any PIES Item. The Importer marks the PIES Item as new, delete, or change through change flags.</p>
+        <p>The &lt;PartTerminologyID&gt; within the &lt;Item&gt; segment is used to locate the Part Terminology in the PCdb classification. If the PartTerminologyID is found in the PCdb classification, then the importer will create the PIES Item under the same structure in the PIES Products Hierarchy for Brand, PCdb Category, PCdb Sub Category, and PCdb Part Terminology.</p>
+        <p class="Body1">An example of PIES Item ‘VC21499’ (ID: AC_PIESItem_DKGX_VC21499) created under Object 'Check Engine Light Sensor' (ID: AC_PIESPCdbPartTerminology_5696_DKGX) with its various attribute values and reference type (as explained above) is shown below.</p>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/30.png" />
+        </p>
+        <p>In addition, a reference will be established from the PIES Item to the Part Terminology using the 'Product To Part Terminology' reference type. This is done so that the PIES Item will display only the PAdb attributes that are valid for that Part Terminology.</p>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/61.png" />
+        </p>
+        <p MadCap:conditions="Primary.PRODOC Note">PRODOC note: Add a screenshot to show the 'Product To Part Terminology' reference and a screenshot showing the PAdb attributes that are valid for the Part Terminology that the PIES Item is linked to.</p>
+        <p MadCap:conditions="Primary.PRODOC Note" class="Body1">&#160;</p>
+        <p MadCap:conditions="Primary.PRODOC Note">As per Nikki's comment in the ACM-3261: The following are requirements for Price Sheet (PRCS) and Price (PRCE) segments (most were already specified in CARDON-79):</p>
+        <p MadCap:conditions="Primary.PRODOC Note">For Price Sheet (PRCS) segment, the Data Container ID should consider the following combination:</p>
+        <p MadCap:conditions="Primary.PRODOC Note" class="Body1">Price Sheet Number</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Superseded Price Sheet Number</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Currency Code</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Zone</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Sheet Level Effective Date</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Sheet Level Expiration Date</p>
+        <p MadCap:conditions="Primary.PRODOC Note">And for Price (PRCE) segment, customers need to be able to send Prices that are a combination of the following:</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Sheet Number</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Currency Code</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Sheet Level Effective Date</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Expiration Date</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Type</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Type Description</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price UOM</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Multiplier (PIES 7.1 only)</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Break Quantity</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Price Break Quantity UOM</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Superseded Price Sheet Number</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Important considerations:</p>
+        <p MadCap:conditions="Primary.PRODOC Note">The customer may need to send two different prices for the same price sheet for the same price type, with different effective dates (think future price notifications).</p>
+        <p MadCap:conditions="Primary.PRODOC Note">The customer may need to send more than one price for the same price sheet and price type for different units of measure (each/bag/box/bucket/etc.)</p>
+        <p MadCap:conditions="Primary.PRODOC Note">The customer may need to store more than one price for the same price sheet, price type, effective date, expiration date, unit of measure for more than one currency code.</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Also, Benjamin had made a comment in RDCUST-3456 that the price data containers should be created with:</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Just one multi valued data container with all the attributes + the pricesheet number.</p>
+        <p MadCap:conditions="Primary.PRODOC Note">.... Maybe also a seperate data container to hold the root level info of a pricesheet.</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Can you update PIES importer please to handle the prices with all of the different attribute combinations?</p>
+        <p MadCap:conditions="Primary.PRODOC Note">Thanks,</p>
+        <p MadCap:conditions="Primary.PRODOC Note" class="Body1">&#160;</p>
+        <p MadCap:conditions="Primary.PRODOC Note" class="Body1">&#160;</p>
+    </body>
+</html>

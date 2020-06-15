@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>PMDM for Automotive 9.3 MP2 April 2020 Patch Notes</title>
+        <meta name="description" content="Automotive Solution: PMDM for Automotive 9.3 MP2 April 2020 Patch Notes" />
+    </head>
+    <body>
+        <h1 class="MPN">PMDM for Automotive 9.3 MP2 Patch Notes</h1>
+        <h2 style="text-align: center;">Release Date: April 24, 2020</h2>
+        <h2 class="MPNDocumentation">Announcement</h2>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST- 3756</MadCap:conditionalText>Removed NAPA Attribute Import and Export from all Easy Setup configurations</p>
+        <p class="Body3">The NAPA Easy Setup is updated to no longer create the NAPA Attribute IIEP, workflow, and Web UI screens. The following services are no longer supported by the Easy Setup action:</p>
+        <ul>
+            <li class="Bullet3">Creation of IIEP ID = NAPAAttributeInboundEndpoint</li>
+            <li class="Bullet3">Creation of workflow ID = NAPAAttributeImport</li>
+            <li class="Bullet3">Creation of NAPA Attribute Exporter in Export Manager Format</li>
+            <li class="Bullet3">Creation of NAPAAttributeImport Status Selector Homepage Widget in the Web UI ID = NAPAWebUI</li>
+            <li class="Bullet3">Creation of NAPAAttributeControllerScreen in the Web UI ID = NAPAWebUI</li>
+            <li class="Bullet3">Creation of NAPAAttributeWorkflowScreen in the Web UI ID = NAPAWebUI</li>
+            <li class="Bullet3">Creation of NAPAAttributeInboundEndpoint from the Inbound Integration Endpoint Parameter in the File Loading Widget in Web UI ID = NAPAWebUI</li>
+        </ul>
+        <h2 class="MPNNewFeatures">New Features</h2>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST- 4006</MadCap:conditionalText>Updated Mapping plugins to allow editing the existing transformations</p>
+        <p class="Body3">It is now possible to edit existing transformations that are available within the attribute transformation. Clicking the three-dotted icon (<img src="../../Resources/Images/Data Onboarding/three dotted icon.png" />) that is available in the right of an existing transformation will now display the Edit Transformation  (<img src="../../Resources/Images/Data Onboarding/Edit icon.png" />) button. Clicking on the Edit Transformation button allows users to edit the existing Transformations.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/2.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST- 4006</MadCap:conditionalText>Updated Mapping plugins to allow  editing transformation lookup tables</p>
+        <p class="Body3">It is now possible to edit / create the transformation lookup tables that are available within the attribute transformation. There are multiple ways that one can access and edit the transformation lookup table in the Mapper row. One easy access is by clicking the three-dotted icon (<img src="../../Resources/Images/Data Onboarding/three dotted icon.png" />) that is available to the right of an existing lookup table derived transformation. Clicking the three-dotted icon (<img src="../../Resources/Images/Data Onboarding/three dotted icon.png" />) will now display the Edit Lookup Table (<img src="../../Resources/Images/Data Onboarding/Edit icon.png" />) button that allows users to edit the existing transformation lookup table.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/13.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST- 4029</MadCap:conditionalText>Target Hierarchy Editor window now allows creating / editing an attribute transformation</p>
+        <p class="Body3">The Target Hierarchy Editor window gets displayed when the user clicks the edit icon (<img src="../../Resources/Images/Data Onboarding/Edit icon.png" />) next to the Target Hierarchy field in the Setup tab of the Onboarding Mappings Details screen. The Target Hierarchy Editor window now provides users an option to create / edit attribute transformations. Previously, users had an option to only use an existing attribute transformation in the system. Now, a 'Select and modify transformation' icon (<img src="../../Resources/Images/Release Notes/9.3mp2/Select and modify.png" />) is available within the Target Hierarchy Editor window that allows users to create / edit attribute transformations. Clicking on the 'Select and modify transformation' icon (<img src="../../Resources/Images/Release Notes/9.3mp2/Select and modify.png" />) will open the Transformation dialog that allows users to add a new attribute transformation (<img src="../../Resources/Images/Data Onboarding/Create transformation icon.png" />) or edit an existing transformation from the list.</p>
+        <p class="Body3">For more information, see Creating Attribute Transformations Through Target Hierarchy Editor window topic in the Automotive Reference Guide<MadCap:xref href="../../Reference Guide/Data Onboarding/Configuring Mapper Configuration Setup Entity.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/10.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-3796</MadCap:conditionalText>Updated the Stack Panel in Web UI to be able to list Mapper Configuration setup entities under a setup group</p>
+        <p class="Body3">Previously, the creation of the Mapper Configuration setup entities in Web UI was defaulted to be created directly under the setup group root. This provided no option for the user to select any setup group to reside the Mapper Configuration setup entity in. Now, a new <b>Parent</b> field is available within the 'Create New Mapping Configuration' dialog that allows users to select an existing setup group to reside the Mapper Configuration setup entity in.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/3.png" />
+        </p>
+        <p class="Body3">Also, the following changes are implemented to assist in creating the Mapping:</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/4.png" />
+        </p>
+        <ul>
+            <li class="Bullet4">The 'Create new global mapping' link has been renamed to 'Create new Mapping'</li>
+            <li class="Bullet4">The stack panel now shows all setup groups that are available below the root node</li>
+        </ul>
+        <p class="Body3">For more information, see Configuring Mapper Configuration Setup Entity topic in the Automotive Reference Guide<MadCap:xref href="../../Reference Guide/Data Onboarding/Configuring Mapper Configuration Setup Entity.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-</MadCap:conditionalText>New Advanced tab in the Mapping Guide window to handle attribute transformations on multivalued attributes</p>
+        <p class="Image3">The Mapping Guide window now has the Advanced tab that allows users to perform some advanced transformation functionalities when required. The functionalities in this tab are mainly designed to handle multivalued source attributes.</p>
+        <p class="Body3">While the attribute transformation configured in the Mapping tab is applied to the values of the source attribute, the attribute transformation configured in the Advanced tab will be applied to the intermittent string that gets created during the transition of data from the source attribute to the target attribute.</p>
+        <p class="Body3">For example, consider that data is being onboarded into a single-valued target attribute (named 'Body Color') from a multivalued source attribute (Color) with an attribute transformation that changes the value from the upper case to the lower case. The source attribute Color has three values, RED, BLUE, and BLACK. If the attribute transformation was set in the Transformation field of the Mapping tab, the target attribute Body Color would be populated with a value 'black' (because the target attribute can accommodate only one value). However, before it populates this value in the target attribute, it is to be known that in the background, the system creates an intermittent string called 'red&lt;multisep/&gt;blue&lt;multisep/&gt;black' and extracts only the value 'black' out of this string to populate on the target attribute. Now, with the introduction of the Advanced tab, it is possible to configure and apply another attribute transformation on this string, and users can transform and retrieve the desired data from this string to be populated in the target attribute value. For example, if the On Save Transformation field is populated with an attribute transformation that replaces the '&lt;multisep/&gt;' substring into the hyphen '-', then the final value in the target attribute will be populated as 'red-blue-black'.</p>
+        <p class="Body3">Along with the functionality described above, the Advanced tab can also be used for the following:</p>
+        <ul>
+            <li class="Bullet4">Ensure that no duplicate values are populated in the target attribute by selecting the Distinct checkbox</li>
+            <li class="Bullet4">Determine if the value of a LOV or the ID of the LOV value is to be populated in the target attributes using the 'UseValueOnValueID' checkbox</li>
+        </ul>
+        <p class="Body3" MadCap:conditions="Primary.Under Construction">The features in this tab would be of no significance when the transformations are to be applied on single valued source attributes. It means that the attribute transformation configured in the Advanced tab would behave normally as the attribute transformations being configured and applied for the single valued attributes in the Mapping tab (screenshot below). However, the significance of the attribute transformations configured in this tab kick in when there is a multivalued source attribute. This ststement violates with the </p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/12.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-3493</MadCap:conditionalText>Updated Target Hierarchy Editor window with an option to rearrange the order of existing criteria</p>
+        <p class="Body3">Clicking on the 'Add' icon (<img src="../../Resources/Images/Data Onboarding/165.png" />) that is available within the Target Hierarchy Editor window allowed users to set criteria that could be used to define the name and ID of the newly created objects. Previously, if there were multiple criteria created within the Target Hierarchy Editor window, users did not have an option to rearrange the order of the listed criteria. Now, a new three-dotted icon (<img src="../../Resources/Images/Data Onboarding/three dotted icon.png" />) is made available to the right of each criteria to display the rearranging dialog. The user can select the Top, Up, Down, or Bottom button to rearrange the transformation accordingly.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/5.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: NGK-459</MadCap:conditionalText>Updated the Mapper Configuration setup entity to be able to duplicate an existing Mapping plugin</p>
+        <p class="Body3"> The Mapper Configuration setup entity is now able to duplicate an existing Mapping plugin in the Web UI. The 'Duplicate mapping' button will be displayed  in the toolbar while clicking on the checkbox available on the left side of the listed Mapping plugins. Clicking on the 'Duplicate mapping' button will create a copy of the selected Mapping plugin that resides in the same Mapper Configuration setup entity. The newly copied Mapping plugin will be listed in the last order of listings. </p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/8.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: NGK-459</MadCap:conditionalText>Updated some Mapping plugins to be able to duplicate existing Mapper rows</p>
+        <p class="Body3"> The Application Mapping plugin, Attribute Mapping plugin, Object to Object Mapping plugin, and the Concatenator Mapping plugin now has the option to duplicate existing Mapper rows. The 'Duplicate' button will be displayed  in the toolbar after clicking on the checkbox that is available on the left side of the listed Mapper rows. Clicking on the 'Duplicate' button will create a copy of the selected Mapper row(s) that resides in the same Mapping plugin. The newly copied Mapper row will be listed in the last order of listings.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/9.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: NGK-491</MadCap:conditionalText>Updated the Suggested Part Number table header component with an option to determine if the ID or name or the attribute value of the suggested part number to be displayed  within the table cell</p>
+        <p class="Body3">The Suggested Part Number table header component which can be configured in the Application Manager Screen and the Application Editor Screen is updated with an option that determines if the table cell has to display the ID, Name, or with an attribute value of the suggested part number. Previously, the table cell was defaulted to display only the ID of the suggested part number. Now, two new parameters (Display ID and Attribute) have been added in the Suggested Part Number Properties designer window. These parameters determine if the ID or name or the attribute value of the suggested part number to be displayed within the table cell. the Display ID parameter defaults to the 'NODE_ID' value. This allows the Id of the suggested part number to display within the cell. Optionally, the 'NAME_VALUE' or 'ATTRIBUTE_VALUE' value can be selected using the dropdown. While the 'NAME_VALUE' displays the name of the suggested part number, the 'ATTRIBUTE_VALUE' allows the values of the attribute selected within the 'Attribute' parameter to display within the cell. The Attribute parameter allows the user to populate with an attribute that is valid for the suggested part number. The Attribute parameter should only be populated when the 'ATTRIBUTE_VALUE' value is selected in the Display ID parameter. Otherwise, the defined attribute value will not be displayed in the cell.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/6.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-3990</MadCap:conditionalText>Updated Easy Setup to mark certain PIES attributes as Mandatory and updated certain PIES attribute formatting to meet validation requirements</p>
+        <p class="Body3">Previously, AutoCare Easy Setup did not create certain PIES attributes as mandatory or with the correct format in order to meet the validation requirements. Now, Easy Setup and certain parameters in the PIES Exporter 'Select Format' step have been updated in order to fix the PIES attributes to meet the validation requirements that are provided in the PIES spec. It is to be noted that the changes that have been done to Easy Setup will only take effect when newly creating PIES attributes and will not update existing attributes in the system. All existing implementations will need to manually change for PIES attributes.</p>
+        <p class="Body3">The following parameters in PIES Exporter Select Format step have been updated:</p>
+        <ul>
+            <li class="Bullet4"> Currency Code parameter is restricted to use the valid 3-digit Currency Code values from LOV ID = AC_PIESCurrencyCode</li>
+            <li class="Bullet4"> Language Code parameter is restricted to use the valid 3-digit Currency Code values from LOV ID = AC_PIESLanguageCode</li>
+            <li class="Bullet4">Technical Contact parameter is changed to be an optional parameter. Previously it was required to enter a value in this parameter.</li>
+            <li class="Bullet4">Contact Email parameter is changed to be an optional parameter. Previously it was required to enter a value in this parameter. Also, this parameter is now restricted to allow typing in the maximum of 254 characters. </li>
+        </ul>
+        <p class="Body3">For <b>new implementations</b>, run step 1 of the <b>Automotive - AutoCare Model</b> Easy Setup to create the PIES attributes.</p>
+        <p class="Body3">For <b>existing implementation</b>, manually update the following attributes in STEP workbench:</p>
+        <ul>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCS_PriceSheetNumber:</li>
+            <li class="Bullet4">Change the Validation Base Type from Text to Regular Expression</li>
+            <li class="Bullet4">Add the following to the Regular Expression field:  [0-9A-Za-z\{\}\,\%\!\$\?'"\ \/\.\-\`\_\#\&amp;\+\=\&lt;\&gt;\@]{1,15}</li>
+            <li class="Bullet4" style="font-weight: normal;">Change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCS_PriceSheetName to have Maximum Length = 30</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCE_SuperSPrcShtNbr:</li>
+            <li class="Bullet4">Change the Validation Base Type from Text to Regular Expression</li>
+            <li class="Bullet4">Add the following to the Regular Expression field:  [0-9A-Za-z\{\}\,\%\!\$\?'"\ \/\.\-\`\_\#\&amp;\+\=\&lt;\&gt;\@]{1,15}</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_MKTC_Code to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_MKTC_CodeReference to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_MKTC_Type to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_MKTC_RecordSequence to add a Mask of 99999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMItemLevelGTIN to remove the Maximum Value of 99999999999999, and to add a Mask of 99999999999999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCE_SuperSPrcShtNbr:</li>
+            <li class="Bullet4">Change the Validation Base Type from Text to Regular Expression</li>
+            <li class="Bullet4">Add the following to the Regular Expression field:  [0-9A-Za-z\{\}\,\%\!\$\?'"\ \/\.\-\`\_\#\&amp;\+\=\&lt;\&gt;\@]{1,15}</li>
+            <li class="Bullet4">Change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMBrandAAIAID to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMVMRSBrandID to add a Mask of AAAAA</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMItemQuantitySize to change Validation Base Type from Number to Regular Expression, and to add the following to the Regular Expression field:  [0-9\.]{1,8}</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMQuantityPerApplication to change Validation Base Type from Text to Numeric Text, and to add Mask of 99999999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMMinimumOrderQuantity to add a Mask of 99999999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMAAIAProductCategoryCode to change Validation Base Type from Text to Number, and to add Mask of 999999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMUNSPSC:</li>
+            <li class="Bullet4">Remove the existing Minimum Value of 10000000</li>
+            <li class="Bullet4">Remove the existing Maximum Value of 9999999999</li>
+            <li class="Bullet4">Change the Validation Base Type from Number to Regular Expression</li>
+            <li class="Bullet4">Add the following to the Regular Expression field:  [0-9]{8}|[0-9]{10}</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_DESC_TYPE to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_Description:</li>
+            <li class="Bullet4">Change the Validation Base Type from Text to Regular Expression</li>
+            <li class="Bullet4">Add the following to the Regular Expression field:  [0-9A-Za-z\;\{\}\,\%\!\$\?\'\"\ \/\.\-\`\_\#\&amp;\+\=\&lt;\&gt;\@\(\)\xA9\u00AE\u2122]{1,2000}</li>
+            <li class="Bullet4">Change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCE_PriceType to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCE_PriceTypeDescription to change Validation Base Type from Text to Numeric Text, and to add Maximum Length of 80</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCE_Price to add Mask of 999990, and to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCE_PriceUOM to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PRCE_PriceMultiplier to add a Mask of 999990.0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKPackageLevelGTIN to change Validation Base Type from Text to Number, and to add Mask of 00000000000000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKPackageBarCodeCharacters: </li>
+            <li class="Bullet4">Change the Validation Base Type from Numeric Text to Regular Expression</li>
+            <li class="Bullet4">Add the following to the Regular Expression field:  [0-9A-Za-z\/\.\-\#\&amp;\+\=\&lt;\&gt;\@\`\_]{1,48}</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKPackageUOM to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKQuantityOfEaches to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKInnerQuantity to change Validation Base Type from Number to Regular Expression, and to add the following to the Regular Expression field:  [0-9\.]{1,8}</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKHeight to remove Maximum Value of 9999999999, and to add Mask of 9990.0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKWidth to remove Maximum Value of 9999999999, and to add Mask of 9990.0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKLength to remove Maximum Value of 9999999999, and to add Mask of 9990.0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKShippingHeight to remove Maximum Value of 9999999999, and to add Mask of 9990.0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKShippingWidth to remove Maximum Value of 9999999999, and to add Mask of 9990.0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKShippingLength to remove Maximum Value of 9999999999, and to add Mask of 9990.0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKWeight to remove Maximum Value of 9999999999, and to add Mask of 9990.0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKWeightVariance to change Validation Base Type from Number to Regular Expression, and to add the following to the Regular Expression field:  [0-9\.]{1,8}</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_PACKDimensionalWeight to change Validation Base Type from Number to Regular Expression, and to add the following to the Regular Expression field:  [0-9\.]{1,9}</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_HAZMShippingScope to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_HAZMBulk to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_HAZMRegulatingCountry to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_HAZMTransportMethod to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_HAZMRegulated to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_HAZMUNNAIDCode to change Validation Base Type from Text to Numeric Text, and to add Mask of LL0000</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_KITSComponentIDQualifier to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_KITSQuantityInKit to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_KITSQuantityUOM to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTAssetID to have Maximum Length = 34</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTAssetType to change the Mandatory parameter to Yes</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTFileSize to add a Mask of 9999999999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTAssetHeight to add a Mask of 999999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTAssetWidth to add a Mask of 999999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTFilePath to have Maximum Length = 80</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTDuration to add a Mask of 999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTTotalFrames to add a Mask of 999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTPlane to add a Mask of 999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTPlunge to add a Mask of 999999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ASSTTotalPlanes to add a Mask of 999</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_INTEBrandAAIAID to add Mask of AAAA</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_INTESubBrandAAIAID to add Mask of AAAA</li>
+            <li class="Bullet3">Update attribute ID = AC_PIES_ITEMVMRSBrandID to add Mask of AAAAA</li>
+        </ul>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-3953, 3954</MadCap:conditionalText>Added support for recent AutoCare PAdb format change</p>
+        <p class="Body3">Starting with the February 2020 PAdb file, AutoCare updated the format by removing the "ValidValues" and "UoMList" fields from the PartAttributeAssignment table. And introduced four new tables: ValidValues, ValidValueAssignment, MetaUOMCodeAssignment, and MeasurementGroup. The PAdb Importer has been updated to handle these new tables.</p>
+        <p class="note3" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt; ">This will not change the existing PAdb data model or how PAdb attributes are created and stored in STEP.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-3989</MadCap:conditionalText>New parameter 'Select Business Condition' in all mapping plugins of Mapper Configuration setup entity</p>
+        <p class="Body3"> A new parameter called 'Select Business Condition' is available in all mapping plugins of the Mapper Configuration setup entity. This parameter provides an option to configure a business condition on each mapping plugin that defines to run the mapper plugin only on the object if the condition is true.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/11.png" />
+        </p>
+        <h2 class="MPNBugFix">Bugfixes</h2>
+        <h3>All Standards</h3>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-3493</MadCap:conditionalText>Corrected Advanced Part Number Suggestions Node List component to display 'Node List' as an option</p>
+        <p class="Body3">Corrected Advanced Part Number Suggestions component to display 'Node List' as an option to select when the user clicks on the dropdown next to the Node List parameter. Previously, clicking on the 'go to component' link without any selection from the drop down was navigating to the Node List Properties designer screen. Now the dropdown list consists of 'Node List' as an option so that users can select the 'Node List' option and click on the 'go to component' link to navigate to the Node List Properties designer screen. Also, the Node List parameter is now marked with  a red asterisk indicating that the parameter is mandatory.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/1.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: NGK-335</MadCap:conditionalText>Corrected the Onboarding Mappings Details screen to retain the state of the screen when the user clicks the Save button</p>
+        <p class="Body3"> Previously, when the user makes an edit in any Mapper row and saves the changes by clicking the Save button, the Onboarding Mappings Details screen was not holding the exact previous state of the screen and was navigating to display the state of the screen where the Mapping plugins were listed. Now, the  Onboarding Mappings Details screen is updated to remember the state of the screen so that users can save the changes made to the Mapper row with the same state of the Onboarding Mappings Details screen retained.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-3909</MadCap:conditionalText>Corrected a bug in the display of 'Add Object Type' icon (<img src="../../Resources/Images/Data Onboarding/Add description Icon.png" />) in the Target Hierarchy Editor dialog</p>
+        <p class="Body3">Previously, if the Target Hierarchy parameter that is available in a Mapper Configuration setup entity had an existing hierarchy configured and if the user clicked on the <b>Clear All</b> link in the Target Hierarchy Editor dialog, it was forcing the user to click on the <b>Ok</b> button first before being able to go back into the Target Hierarchy Editor dialog to configure the root node and children objects. Now, this issue is fixed so that if the Target Hierarchy parameter has an existing hierarchy defined and the user clicks on the Clear All link in the Target Hierarchy Editor dialog, as soon as the user enters and selects the Root Node, the 'Add Object Type' icon (<img src="../../Resources/Images/Data Onboarding/Add description Icon.png" />) is enabled so that the user can select a child node.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC Note: RDCUST-2787</MadCap:conditionalText>Updated ACES Application Qualifiers component in Application Manager to have a fixed height and vertical scroll bar</p>
+        <p class="Body3">In the Application Manager Screen, the vertical scroll bar of the 'ACES Application Qualifiers' value editor window has been updated to not engulf the Delete icon if the data to be displayed is greater than the window size.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC Note: RDCUST-3999</MadCap:conditionalText>Fixed some bugs exhibited in the Onboarding Comparison Screen</p>
+        <p class="Body3">The following updates are made in the Onboarding Comparison Screen:</p>
+        <ul>
+            <li class="Bullet4">Updated to not display the Mapper row checkboxes in Attribute stage of the Onboarding Comparison Screen if the current values in source attribute and the target attribute is empty</li>
+            <li class="Bullet4">Previously, if the LOV validated attribute had an ID for each LOV values, then the Attribute stage of the Onboarding Comparison Screen displayed empty parentheses as the attribute value when the attribute actually had no value in it. Now, this issue is fixed so that the word [Empty] is displayed whenever there is no value populated in the attributes.</li>
+            <li class="Bullet4">If there is any transformation applied on the source attribute in Attribute Mapping plugin, the '[Updated STEP] values' column in the Attribute stage of the Onboarding Comparison Screen will display a help text icon (<img src="../../Resources/Images/Release Notes/9.3mp2/help text icon.png" />). Clicking on the icon displays the transformation name that is being applied on the source attribute. Previously, when the current values of the source attribute and the target attribute were empty, the help text icon (<img src="../../Resources/Images/Release Notes/9.3mp2/help text icon.png" />) was still being displayed on an empty value. This issue is corrected so that there will not be a help text icon displayed when there is no value populated in the source and the target attributes.</li>
+            <li class="Bullet4">For the Application Mapping plugins displayed in the Application stage, if any mapper row is defined to retrieve the value from an attribute, and if that attribute has no value, then such mapper rows will not be displayed in the Application stage of the Onboarding Comparison Screen. </li>
+        </ul>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC Note: NGK-780</MadCap:conditionalText>Corrected an error that was displayed when the system runs multiple onboarding processes simultaneously</p>
+        <p class="Body3">Previously, when trying to run multiple onboarding processes simultaneously, the onboarding process would fail with an internal error. This has been fixed so that multiple onboarding processes performed simultaneously will complete the onboarding without throwing any error.</p>
+        <p class="Body3"><b>Hotfix recipe compatible with STEP 9.3 MP2 + Automotive-7.0.25: </b><span class="commandfont">to:hotfix/394/issue-394063-HOTFIX-3901.spr</span>
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC Note: RDCUST-3352</MadCap:conditionalText>Corrected the 'Create New' button to be always displayed in the dropdown-list dialog when typing a manufacturer name in the typeahead field of a Part Number Reference component</p>
+        <p class="Body3">Previously, when typing a manufacturer name in the typeahead field of a Part Number Reference component, in a case when the long list of part numbers in the dropdown-list dialog was exceeding the screen size, the 'Create New' button was not visible and the user could not access it. Now, this issue is corrected so that the 'Create New' button is always visible when there is a long suggestion list and the search field is at the bottom of the screen. </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC Note: RDCUST-3696</MadCap:conditionalText>Enabled to copy and paste Part Number in Application Manager results table without having to double-click in the cell</p>
+        <p class="Body3">Previously, in the Application Manager search results table, a user was not able to just select the cell for an existing Part Number to copy and then select the cell for a missing application to paste in the Part Number. In order to copy the existing Part Number, a user had to either double-click in the Part Number cell in order to highlight and select it, or had to select the cell and hit the [Enter] button in order to select the Part Number. To paste what was copied, the user had to either double-click in the desired cell, or hit [Enter], or multi-select the Part Number cells and then hit [Enter] in order to paste the Part Number. Now, this issue is fixed so that users will hereafter be able to click once on the existing Part Number cell and press Ctrl + c to copy, and then click once on the missing Part Number cell(s) and press Ctrl + v to paste the Part Number.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC Note: NGK-690</MadCap:conditionalText>Enabled to simultaneously paste the copied value in multiple cells of Application Manager results table</p>
+        <p class="Body3">Previously, in the Application Manager search results table, a user was not able to paste the copied value in multiple cells simultaneously.  Now, this issue is fixed so that users will hereafter be able to copy from a cell, and then select multiple cells and press Ctrl + v to paste the copied value. </p>
+        <p class="Body3">This feature will be available with the STEP 10.0 baseline recipe. For this to be working with STEP 9.3 MP3, apply the following hotfix recipe:</p>
+        <p class="Body3"><b>Hotfix recipe compatible with STEP 9.3 MP3 + Automotive-7.0.26: </b><span class="commandfont">to:hotfix/397/issue-397815-HOTFIX-3978.spr</span>
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC Note: RDCUST-3582</MadCap:conditionalText>Corrected an Internal Server error that was displayed on a specific case while creating a new Mapper Configuration setup entity</p>
+        <p class="Body3">Corrected an Internal Server Error that was displayed if more than 40 characters is entered in the 'From' or 'To' fields of the 'Create New Mapping configuration' dialog. This dialog is displayed during the creation of a new Mapper Configuration setup entity in the Web UI. Now, users can type any number of characters within the 'From' and the 'To' fields.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/7.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST- 3910</MadCap:conditionalText>Updated the description texts for some parameters that are available within the Mapping plugins</p>
+        <p class="Body3">The description texts and icons for some parameters that are available within the Mapping plugins have been updated in the Web UI to avoid confusion for users. The changes are as follows:</p>
+        <ul>
+            <li class="Bullet3">The Add comment icon is changed from <img src="../../Resources/Images/Release Notes/9.3mp2/Old add icon.png" /> to <img src="../../Resources/Images/Release Notes/9.3mp2/New add icon.png" /></li>
+            <li class="Bullet3">The name of the dialog 'Edit Information' is changed to 'Add Comment' and the new dialog displays as shown below</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/15.png" />
+        </p>
+        <ul>
+            <li class="Bullet3">Once any description is added, the new Add comment icon changes to the Edit comment icon <img src="../../Resources/Images/Release Notes/9.3mp2/commentadded.png" />. Previously, this icon was of a different appearance (<img src="../../Resources/Images/Release Notes/9.3mp2/14.png" />).</li>
+            <li class="Bullet3">Previously, when a comment existed for a Mapper row, clicking on the Edit icon (<img src="../../Resources/Images/Release Notes/9.3mp2/14.png" />) to edit the information was opening a dialog named  'Edit Information'. This dialog is renamed to display as 'Edit Comment' with a 'Delete' button to delete an existing comment.</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3mp2/Edit comment.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-3998</MadCap:conditionalText>Corrected the Validation Path Editor to be able to retrieve the parent or child information after the <b>reference[type:'[id]']</b> element</p>
+        <p class="Body3">A variety of information can be retrieved from the source/ target object by using the combination of multiple elements that are available within the Step Path Editor window for the Mapping Validation Path functionality in 'Application Mapping' and 'Object to Object Mapping' plugins. Previously, using the <b>child[objecttype:'[id]']</b> and <b>parent</b> elements after the <b>reference[type:'[id]']</b> element was failing to retrieve any data despite its presence. This issue has been corrected so that it is possible to retrieve the parent and child information after using the <b>reference[type:'[id]']</b> element. </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-3998</MadCap:conditionalText>Corrected an error in the Application Mapping plugin</p>
+        <p class="Body3">Previously, when using an Application Mapping plugin, some special cases ended up creating one application record referenced to multiple part types instead of creating separate individual application records referenced to each part type. This behavior of the Application Mapping plugin is now corrected. </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-3997</MadCap:conditionalText>Corrected an inappropriate flag displayed in the Onboarding Comparison Screen</p>
+        <p class="Body3">Previously, when the LOV validated attributes were compared between the Source and the Target object, the attributes with the same values but with a different order of listings were flagged as different in the Onboarding Comparison Screen. Now, this issue is corrected, so that the LOV validated attributes with the same values in the Source and the Target object are considered as equal values and are not flagged as unique.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: NGK-471 </MadCap:conditionalText>Corrected  an Internal Server error that displayed while sorting / filtering 'Application Approval Status' table header results in the Application Manager screen</p>
+        <p class="Body3">Corrected an Internal Server error (<i>Error communicating with the STEP server. Unexpected error. Please contact your system administrator</i>) that was displayed when the user clicks on the 'Application Approval Status' table header for sorting / filtering the missing and existing applications search results in the Application Manager screen. Now, the user can sort / filter all the search results (existing, missing, and existing and missing applications) via 'Application Approval Status' table header.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-4089</MadCap:conditionalText>Corrected the Enable and Disable button in the Mapping plugins to clear the selection after the user clicks the Enable / Disable button</p>
+        <p class="Body3"> Previously, when the user enables or disables any Mapping plugins / Mapper rows by selecting the checkbox and clicking the Enable / Disable button, the selected Mapping plugins / Mapper rows checkboxes held the state of being selected and the user had to deselect them by clicking the checkboxes again. Now, the  Enable and Disable button in the Mapping plugins are updated to clear the state of selection so that it clears the selection after the user clicks the Enable / Disable button.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC Note: SKF-970</MadCap:conditionalText>Corrected an Internal Server error that was displayed while duplicating an application record in the Application Manager Screen</p>
+        <p class="Body3">Corrected an Internal Server error (<i>Error communicating with the STEP server. Unexpected error. Please contact your system administrator</i>) that was displayed when the user clicks on the 'Duplicate' button for duplicating the application records from the search results of the Application Manager screen. Now, the user can duplicate the application records via 'Duplicate' button.</p>
+        <p class="Body3"><b>Hotfix recipe compatible with STEP 9.1 MP6 + Automotive-7.0.18: </b><span class="commandfont">to:hotfix/395/issue-395095-HOTFIX-3918.spr</span>
+        </p>
+        <h3>AutoCare</h3>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-3948</MadCap:conditionalText>Updated PIES Importer to handle EXPI codes dynamically  </p>
+        <p class="Body3">In the previous release, the PIES Importer was updated to include all 55 EXPI codes, and the EXPI codes were correctly getting populated when the PIES Item was created through PIES Importer. But the previous solution had the PIES Importer handling the EXPI Codes with Enum class checking a static list of EXPI codes. This solution required to keep changing the Automotive code to update the list whenever the new EXPI values were added by AutoCare. Now, as a permanent fix, the PIES EXPI codes are  handled dynamically by the PIES Importer so that whenever AutoCare introduces new EXPI codes that the Automotive code does not need to be updated.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST-4048</MadCap:conditionalText>Updated PIES importer and exporter to handle UOMs for PAdb attributes with multivalues </p>
+        <p class="Body3">Previously, if a multivalued PAdb attribute had any UOMs, PIES importer was not populating the UOMs for the attribute. And PIES exporter did not export the UOMs for the multivalues if it was populated. Now, the PIES importer and exporter is updated to handle UOMs for PAdb attributes with multivalues.</p>
+        <p class="Body3"><b>Hotfix recipe compatible with STEP 9.2 MP3 + Automotive-7.0.23: </b><span class="commandfont">to:hotfix/395/issue-395646-HOTFIX-3931.spr</span>
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-4044</MadCap:conditionalText>Fixed NPE generated in the outbound integration endpoint related to the selection of PIES Exporter format</p>
+        <p class="Body3">Previously, when the Output Templates that are available in the Configuration tab of an outbound integration endpoint was to be configured with PIES Exporter format, a null pointer error would be generated. This has been corrected so an exception error is no longer thrown and users are able to configure the PIES Exporter format in the OIEP.</p>
+        <p class="Body3"><b>Hotfix recipe compatible with STEP 9.3 MP2 + Automotive-7.0.25: </b><span class="commandfont">to:hotfix/396/issue-396870-HOTFIX-3961.spr</span>
+        </p>
+        <p class="Body3"><b>Hotfix recipe compatible with STEP 9.3 MP2 + Automotive-7.0.25: </b><span class="commandfont">to:hotfix/396/issue-396493-HOTFIX-3953.spr</span>
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-3993</MadCap:conditionalText>Updated Easy Setup and ACES Importer to handle ACES asset description field</p>
+        <p class="Body3">&lt;AssetDescription&gt; tag is available within the AutoCare ACES file that can be metadata for any asset on an application. Previously, importing an ACES asset with the &lt;AssetDescription&gt; tag was creating the application but the value that is stored in that field was not populated anywhere for the ACES asset. Now, the ACES Importer has been updated to handle the information available within the AssetDescription tag.</p>
+        <p class="Body3">To handle the &lt;AssetDescription&gt; tag for the ACES import and export, run step 1 of the <b>Automotive - AutoCare Model</b> Easy Setup to create the Asset Description attribute (ID = AC_ACESAssetDescription) and make it valid for all ACES assets.</p>
+        <p class="Body3">The ACES Importer has been updated to populate the AC_ACESAssetDescription attribute values.</p>
+        <p class="Body3">The ACES Exporter has been updated to include data from the AC_ACESAssetDescription attribute in the exported file.</p>
+        <p class="Body3" MadCap:conditions="Primary.PRODOC Note">Previously, importing an ACES asset with the &lt;AssetDescription&gt; field was generating the following error:</p>
+        <p MadCap:conditions="Primary.PRODOC Note" class="Body3">Error in this import 00_Assets.xml setting completed with errors - Error: The value for attribute 'AC_PIES_ASSTAssetDescriptionCode' on asset 'AC_4c0e9c06db3f159c5ff85fc255b6c066' isn't valid (IllegalLOVValue: Line Art Diagram for LOV: com.stibo.core.domain.impl.ListOfValuesImpl: AC_PIES_DESC_TYPE_LOV)</p>
+        <p MadCap:conditions="Primary.PRODOC Note" class="Body3">The application will still get created but the value that is stored in that field isn't populated anywhere for the ACES asset.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">Internal Note: RDCUST-2988 </MadCap:conditionalText>ACES reference type names no longer use the ACES prefix</p>
+        <p class="Body3">To improve users' ability to find and view ACES reference types, the default reference type names are no longer prefixed with 'ACES.' When Easy Setup actions are used for new environments, the reference types' names will no longer be prefixed with 'ACES.' </p>
+        <p class="Body3"><b>Existing Implementations</b>: Optionally, manually update the name of the ACES reference types to no longer contain the 'ACES'&#160;prefix. </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">Internal Note: RDCUST-4079 </MadCap:conditionalText>Fixed a synchronization problem between the search boxes and Hierarchy Restriction dropdown in Application Manager screen</p>
+        <p class="Body3">Previously, there was some synchronization problem between the search boxes and the Hierarchy Restriction dropdown in the Application Manager screen that failed to filter the search results based on the criteria defined in the Hierarchy Restriction dropdown. This synchronization problem occurred only when there was any criteria defined in the Make / Model search box and/or Part Type search box but there was no criteria defined in the Year search box. This issue is now resolved so that the criteria set in the Hierarchy Restriction dropdown will always be considered irrespective of the presence / absence of the criteria set in the Year search box.</p>
+        <p class="Body3"><b>Hotfix recipe compatible with STEP 9.2 MP3 + Automotive-7.0.23: </b><span class="commandfont">to:hotfix/397/issue-397548-HOTFIX-3971.spr</span>
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST- 3943</MadCap:conditionalText>Updated the context method of delta calculation to compare the Pricing and Description information from the PIES file against the data containers in the system</p>
+        <p class="Body3">Previously, the 'Context' method delta calculation used in the PIES Importer did not compare the Pricing and Description data from the PIES file against the existing respective data containers in the system. This caused the same PIES Item to be imported again thereby causing PIES imports to be slower than needed. Now, the 'Context' method of delta calculation is updated to compare the Pricing and Description information from the PIES file against the respective data containers existing in the system. If the existing PIES Item data in the system matches the data in the PIES file being imported, then such PIES Item will be excluded from being imported into the system.</p>
+        <p class="MPNHeadNoTOC" MadCap:conditions="Primary.Under Construction">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note:RDCUST4097</MadCap:conditionalText>Corrected the Conversion state in the AutoCare PIES Importer</p>
+        <p class="Body3" MadCap:conditions="Primary.Under Construction">Corrected an error in Conversion state that would occur while importing the AutoCare PIES file. Previously, the attribute information of 'Expiration Date' and 'Effective Date' were being retrieved from &lt;PriceSheet&gt; and &lt;Price&gt; segments of the importing PIES file, and were populated in the data container of the PIES Item. Now, this issue is corrected so that these attribute information will only be retrieved from the &lt;Price&gt; segment.</p>
+        <h3>TecDoc</h3>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: NGK-784</MadCap:conditionalText>Corrected  TAF import error</p>
+        <p class="Body3">Corrected an error in Conversion state that would occur while importing the TecDoc Supplier Data file. Previously, the absence of TAF table 702 and TAF table 701 in the loaded supplier file would cause a stacktrace error to occur during conversion. These tables have now been removed from validation, therefore the validation state no longer displays the '<i>Conversion failed: Missing file '702.102'. Please include this file in the import even though it is empty</i>' and '<i>Conversion failed: Missing file '701.102'. Please include this file in the import even though it is empty</i>' message.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: BOND NGK-650</MadCap:conditionalText>Corrected  TAF import error</p>
+        <p class="Body3">Corrected an error in Conversion state that would occur while importing TecDoc Supplier Data file. Previously, creating '58_ArticleSearchTreeAllocation-table400-Number-3.xml' file in Conversion state was not creating references to 'Generic Article' object in classification hierarchy.</p>
+        <h2 class="MPNDocumentation">Documentation Updates</h2>
+        <p class="Body3">Enhancement of the PMDM for Automotive online help documentation is continuous, and updates are released with each maintenance patch. When these updates are significant and/or include high-level content reorganizations, they are communicated within the patch notes.</p>
+        <p class="MPNHeadNoTOC">Attribute Transformation in Mapper Configuration Setup Entity topic</p>
+        <p class="Body3">The <b>Attribute Transformation in Mapper Configuration Setup Entity</b> topic explains how to access and create / edit attribute transformations in Mapper Configuration setup entity. The topic has been added to the <b>Automotive Reference Guide</b><MadCap:xref href="../../Reference Guide/Data Onboarding/Attribute Transformation in Mapping Plugin/Attribute Transformation in Mapper Configuration Setup Entity.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="MPNHeadNoTOC">Search by Card Screen topic</p>
+        <p class="Body3">The <b>Search by Card Screen</b> topic explains how to configure and use the Search by Card screen. The topic has been added to the <b>Automotive Reference Guide</b><MadCap:xref href="../../Reference Guide/Search By Cards Screen/Search by Cards Screen.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <h2 class="MPNDownload">Patch recipe</h2>
+        <p class="Body1">The Automotive add-on can be installed with the following recipe:</p>
+        <p class="Body3"><span class="commandfont">to:automotive/7.0/automotive-7.0.26.</span><span MadCap:createDate="2018-10-04T09:05:58.3700255-04:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="update the Patch Recipe and Compatibility topic too" MadCap:editor="medu" MadCap:editDate="2018-10-10T15:52:58.2899872-04:00" class="commandfont">spr</span>
+        </p>
+        <p class="Body3">The above recipe is compatible with the following STEP 9.3 MP2 baseline recipe: </p>
+        <p class="Body3"><span><span class="commandfont">to:step/platform/step-9.3-mp3.spr</span></span>
+        </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Once an Automotive add-on is installed to a base STEP system, the base system cannot be upgraded without upgrading the Automotive add-on at the same time. Additionally, when upgrading any base STEP system that has any Automotive add-on installed, both install recipes must be prepared at the same time. </p>
+        <p class="Body1">For assistance in applying the patch to systems with extensions or additional add-on components, contact Stibo Systems Technical Services. <MadCap:snippetText src="../../../../Resources/Snippets/Installing componentsRN.flsnp" />&#160;</p>
+    </body>
+</html>

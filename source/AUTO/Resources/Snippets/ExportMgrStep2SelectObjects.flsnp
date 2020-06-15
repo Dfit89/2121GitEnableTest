@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h3>Step 2. Select Objects</h3>
+        <p class="Body1">In the Select Objects dialog, the only parameter that is read by the exporter is the actual object selection.  The additional parameters (shown within the red box in the screenshot below) are disregarded.</p>
+        <p class="Image1">
+            <img src="../Images/Exporters/1.jpg" />
+        </p>
+    </body>
+</html>

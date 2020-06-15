@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="141" MadCap:lastWidth="865">
+    <head>
+    </head>
+    <body>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Within the AutoCare model, validation paths are populated on some standard ACES vehicle options during Easy Setup when the reference modeling option is first created. If an automotive validation path is subsequently deleted, it can be reapplied manually using the syntax described within this guide. The attribute or reference can be deleted and Easy Setup can be re-run (System Setup &gt; Component Models &gt; Automotive - AutoCare Model &gt; 1. Configure AutoCare Data Model). However, this is not the recommended method for production environments since deleting the reference also deletes all existing data for the reference. It is recommended to re-populate a deleted validation path manually on production environments.</p>
+    </body>
+</html>

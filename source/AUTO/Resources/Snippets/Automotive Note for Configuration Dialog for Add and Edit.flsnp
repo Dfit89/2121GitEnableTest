@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">After the initial setup, access to the configuration dialogs does not change, therefore these steps can be helpful when editing the configuration. However, when editing, the 'Add' button is replaced with the 'Save' button, and the 'Add component...' labels at the top of the dialogs display as 'Edit component....'</p>
+    </body>
+</html>

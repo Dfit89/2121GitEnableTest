@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Under Construction">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <link href="../../../Resources/TableStyles/StiboTableStyles.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <meta name="description" content="Automotive Solution:  Describes terminology specific to the automotive solution" />
+    </head>
+    <body>
+        <h1>PMDM for Automotive Terminology </h1>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU PRODOC- 1296 Assigned to SIMO with notes about data model inconsistancies and suggestions for improvement.</p>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU per KRMA - Add a terminology table to align across the standards. The core solution uses the word 'Assembly' a lot (e.g., in component models, Web UI designer, etc). But this is a TecDoc term. Those using the solution for AutoCare, NAPA, or their own model won't necessarily know what this means. So we need some type of definitions on all of this just so people know what is being referenced in the UIs and which terms are equivalent across the models. e.g., Vehicle = Assembly = Make Model Year. Part = Article = PIES Part. Application = Linkage = ACES application = Parts Pro. Part Terminology = Part Type = MPCC. Conditions = Options = Criteria. (Plus a definition of the concept that each set of related words is about).</p>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU Much of the TecDoc Term column was gleaned from the TecDoc Terminology PDF</p>
+        <p class="Body1">The table below can be used to align terminology used across the standards.</p>
+        <table style="mc-table-style: url('../../../Resources/TableStyles/StiboTableStyles.css');margin-left: 0;margin-right: auto;width: 688px;" class="TableStyle-StiboTableStyles" cellspacing="0" MadCap:autosort="False">
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 57px;" MadCap:autosortPriority="0" MadCap:autosortDirection="ascending">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 257px;" MadCap:conditions="" MadCap:autosortPriority="1" MadCap:autosortDirection="ascending">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 120px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 108px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 112px;">
+            </col>
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 112px;">
+            </col>
+            <thead>
+                <tr class="TableStyle-StiboTableStyles-Head-Header1">
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1">STEP Term</th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 9pt;">
+                        <p class="Body1TableSmall" style="font-size: 10pt;">General Description</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 9pt;">
+                        <p class="Body1TableSmall" style="font-size: 10pt;">AutoCare Term</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 9pt;">
+                        <p class="Body1TableSmall" style="font-size: 10pt;">NAPA Term</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="font-size: 9pt;"><span style="font-size: 10pt;">TecDoc Term</span>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadD-Column1-Header1">Model Term</th>
+                </tr>
+            </thead>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">
+                    <p>Vehicle</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">
+                    <p class="Body1TableSmall" style="font-size: 9pt;">What an application points to.</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Base Vehicle</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>NAPA Year</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Linking Target</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Part</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">
+                    <p class="Body1TableSmall"><span style="font-size: 9pt;">An artifact that is one of the individual parts of which a composite entity (vehicle) is made up; especially a part that can be separated from or attached to a system.</span>
+                    </p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>PIES Item</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p class="Body1TableSmall">NAPA&#160;Product</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Article</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Part Type</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">The most granular product classification of a part and/or components that are not applications. For example, Water Pump Pulley or Tire Valve Stem Replacement Tool.</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Part Terminology delivered via the PCdb</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">NAPA MPCC delivered via the Translation file.</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Universal Generic Article / Standard Generic Article</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Application</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">
+                    <p class="Body1TableSmall"><span style="font-size: 9pt;">Defines part to vehicle fitment based on vehicle, part type, part number, and additional options (e.g., Position, Quantity, Number of doors).</span>
+                    </p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>ACES Application</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">NAPA Application</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Linkage</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">
+                    <p>Part Type Categories (Classifications)</p>
+                    <p>&#160;</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">For example, Water Pump and related components or Tire Service Tools. Logical collection of related part types that perform together as a system. For example, Cooling System or Tools and Equipment.</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">PCdb Categories and Subcategories</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Part Attribute</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">Physical characteristics of a specific part that will not change, regardless of which vehicle the part is fitted to.</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">PIES Attribute &amp; PAdb Attributes</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">*look for export plugin napa attribute export</MadCap:conditionalText>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Article Attribute</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Options </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">Vehicle specifications that can describe details or variations of a vehicle. For example Sub Model, Engines, Drive types</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Defined within VCdb</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Defined within Valid Vehicle Table</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Defined within Reference Data</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Conditions</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">Conditions are restrictions on an application as to when and how the part can fit the vehicle. Conditions can refer to the vehicles options.</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">ACES&#160;Conditions</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">NAPA Conditions</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Linkage Criteria </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Comments</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">Used to describe conditions for applications that do not fit predefined attributes.</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">ACES Application Note</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">NAPA Comment</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Text Block</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">
+                    <p>Make</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Brand name under which vehicles are sold. For example, Acura, BMW, and Honda.</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Make</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Make</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Manufacturer / Brand</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">Model</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Model</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Model</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Model Series</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+            <tr class="TableStyle-StiboTableStyles-Body-Body1" MadCap:conditions="Primary.Under Construction">
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1">
+                    <p MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU Per SIMO  Feature in old Application Editor that was not brought into AM  This is in the component model today.</p>
+                    <p class="Body1">Part type list</p>
+                    <p>&#160;</p>
+                </td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;">Parts Lists are made up of various parts that form an integral part of the main part. Parts lists are fixed. A parts list is always in a 1-1 relation with the main part. That means that the main part will always contain the same fixed number of parts list items.</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">Part Terminology List</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">NAPA&#160;Part Terminology List</td>
+                <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="font-size: 9pt;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-top-width: .5em;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">&#160;</td>
+                <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1">&#160;</td>
+            </tr>
+        </table>
+        <p>There are three automotive standards:</p>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU I think these need to go on the standards intro page.. if there is one...</p>
+        <ul>
+            <li><b>AutoCare:</b> Standardization of part and fitment data pertaining to North America. This standard is managed by the AutoCare Association. More information about this standard can be found at <a href="http://www.autocare.org/" target="_blank">www.autocare.org</a>.</li>
+            <li><b>NAPA:</b> Standardization of part and fitment data pertaining to North America. This standard is managed by the Genuine Parts Company. </li>
+            <li><b>TecDoc:</b> Standardization of part and fitment data pertaining to Europe. This standard is managed by TecAlliance. More information about this standard can be found at <a href="https://www.tecalliance.net/" target="_blank">www.tecalliance.net</a>. </li>
+            <li class="Bullet1" MadCap:conditions="Primary.Under Construction"><span class="bold">ACES</span> -	Aftermarket Catalog Exchange Standard</li>
+            <li class="Bullet1" MadCap:conditions="Primary.Under Construction"><span class="bold">Hard Parts</span> - Parts required for your vehicle to operate properly (i.e., Spark Plugs, alternators, ball joints, control arms, batteries)</li>
+            <li class="Bullet1" MadCap:conditions="Primary.Under Construction"><span class="bold">Interchanges</span> - Identify application equivalent part from competing suppliers</li>
+            <li class="Bullet1" MadCap:conditions="Primary.Under Construction"><span class="bold">Mapper</span> - process of converting your own data to ACES, NAPA Parts Pro, PIES, or some other format, so that it can be easily translated by your trading partners</li>
+            <li class="Bullet1" MadCap:conditions="Primary.Under Construction"><span class="bold">PIES</span>	- Product Information Exchange Standard</li>
+            <li class="Bullet1" MadCap:conditions="Primary.Under Construction"><span class="bold">TecDoc</span> - European Part and Vehicle Standards (owned by manufacturers)</li>
+        </ul>
+    </body>
+</html>

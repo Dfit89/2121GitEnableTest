@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes the features available within the Application Manager Results table and toolbar." />
+    </head>
+    <body>
+        <h1>Results Table and Toolbar</h1>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU Peer reviewed by ERPO </MadCap:conditionalText>The bottom half of the Application Manager screen offers features related to the results table and its toolbar. The top half of the screen is dedicated to the intelligent search interface. For more information about the intelligent search interface, see the <b>Intelligent Search Interface</b> topic<MadCap:xref href="../Intelligent Search Interface/Intelligent Search Interface.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Body1">This section provides an overview of the results table and toolbar and addresses the following:</p>
+        <ul>
+            <li class="Bullet2">Results Table Default Columns<MadCap:xref href="Column Headers/Results Table Default Columns.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet2">Controlling Display of Conditions in Application Manager<MadCap:xref href="Controlling Display of Conditions in Application Manager.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet2">Creating Applications<MadCap:xref href="Creating Applications.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+        </ul>
+        <p class="Body1HeadNoTOC" MadCap:conditions="Primary.Print">Results Table and Toolbar Overview</p>
+        <h2 MadCap:conditions="Primary.Web">Results Table and Toolbar Overview</h2>
+        <p class="Body1">The results table and toolbar of an Application Manager screen are composed of the following:</p>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/Results Table Overview.png" />
+        </p>
+        <ol>
+            <li><b>Results table toolbar</b><![CDATA[  ]]></li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/Data Governance/ResultToolbar.png" />
+        </p>
+        <p class="Body2">Contains action buttons relative to the Application Manager results table. Action buttons can be configured using the Web UI Designer. For more information about action buttons, see the <b>Action Buttons</b> section of the <b>Web User Interfaces</b> guide within <b>STEP Online Help</b><MadCap:xref href="../../../../../Web User Interfaces/Using Web UI/Action Buttons.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <ul>
+            <li class="Bullet3"><b>Button labels:</b> When the 'Include Labels' parameter within the Node List Properties is disabled, the labels for each icon within the toolbar will not display. However, when a user hovers over an icon, help text will display. </li>
+            <li class="Bullet3"><b>Clear all / Select all:</b> The 'Clear all' button displays when one or more rows are selected using the 'row selection boxes.' When no rows are selected, the 'Select all' button will display. Clicking the 'Clear all' button will remove the selections within the 'row selection boxes.' Clicking this button will not clear the actual table results, but rather disables the selection of 'row selection boxes.' Clicking the 'Select all' button enables the 'row selection boxes' for each row within the results table.</li>
+            <li class="Bullet3"><b>Clear filter:</b> The 'Clear filter' button displays when one or more filters are applied to columns in the Results table. Clicking the 'Clear filter' button will remove any filter selections within the Results table columns but will not  clear the actual table results. Within the filter dialog for each column is a 'Reset filter' button that can be used to reset the filter setting for each column. Additionally, the 'Clear All' link above the Results table (not to be confused with the 'Clear all' action button within the Results table toolbar) can be used to clear all filters and search criteria. For more information, see the <b>Clear All link</b> section of the <b>Intelligent Search Interface</b> topic<MadCap:xref href="../Intelligent Search Interface/Intelligent Search Interface.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet3"><b>Compressed / Normal view:</b> By default, the table results display using the 'Normal view.' Clicking the ‘Compressed view’ button will compress the values displayed in the Options column by removing the attribute labels and displaying only the attribute values. When the table displays as compressed, the 'Normal view' button will display within the toolbar instead of the 'Compressed view' button. </li>
+            <li class="Bullet3"><b>Delete:</b> For the Delete button to display, one or more rows must be selected by enabling 'row selection boxes.'  No warning nor confirmation dialog will display, and the application (and its data) will be permanently deleted.</li>
+            <li class="Bullet3"><b>Bulk Updates:</b> For the Bulk Updates button to display, one or more rows must be selected by enabling the 'row selection boxes.' The Bulk Updates action button is not configured automatically by Easy Setup Actions, and must be configured for use with Automotive Business Rule Plugins. For more information, see the <b>Automotive Business Rule Plugins</b> section within the <b>Automotive Reference Guide</b><MadCap:xref href="../../Business Rules/Automotive Business Rule Plugins.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet3"><b>Export:</b> For the Export button to display, one or more rows must be selected by enabling 'row selection boxes.' The Export action button is not configured automatically by Easy Setup Actions. To properly function, a Web UI Designer User must add an export configuration to the 'Narrowed Export Configurations' parameter of the Export action button. If the Export button has not yet been configured, and the button is selected, a 'No export configurations found' warning message will display (as shown below).</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/ExportWarning.jpg" />
+        </p>
+        <ul>
+            <li class="Bullet3"><b>Create Collection:</b> For the Create Collection button to display, one or more rows must be selected by enabling 'row selection boxes.' Clicking the Create Collection button displays a 'Create New Collection' dialog where users can provide a Name of the new collection, and select a Collection Group to store the collection in. For more information, see the <b>Collections</b> topic within the <b>Getting Started Section</b> of the <b>STEP Online Help</b><MadCap:xref href="../../../../../Getting Started/Collections and Collection Groups/Collections.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+        </ul>
+        <ol start="2">
+            <li><b>Flip table icon</b>
+            </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/Flip table icon.png" />
+        </p>
+        <p class="Body2">Allows users to change or flip the orientation of the table.</p>
+        <ol start="2" MadCap:continue="true">
+            <li><b>Row selection boxes</b>
+            </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/Row selection boxes.png" />
+        </p>
+        <p class="Body2">Allows for selection of one or more rows within the table. Selecting at least one row can change the action buttons that display within the  toolbar.</p>
+        <ol start="2" MadCap:continue="true">
+            <li><b>Number of items</b>
+            </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/Number of items.png" />
+        </p>
+        <p class="Body2">List the total number of rows available for display within the results table.</p>
+        <ol start="2" MadCap:continue="true">
+            <MadCap:snippetBlock src="../../../Resources/Snippets/ResultsTableMaxAllowedUseReport.flsnp" />
+        </ol>
+        <ol start="5">
+            <li><b>Column Headers</b>
+            </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/Column Headers.png" />
+        </p>
+        <p class="Body2">Displays the column headings as configured within the Headers parameter for the Node List Properties Child Component of the Application Manager. </p>
+        <ul>
+            <li class="Bullet3"><b>Sorting and filtering columns:</b> Each column displays  a black dot to the right of the Heading. Clicking the black dot will display the sort and filter options for the column. By default, search results are sorted by the Vehicle column. When a sort selection is made an up or down arrow displays in place of the black dot, indicating the search is respectively ascending or descending. When a filter selection is made, a black filter displays in place of the black dot. This makes it easy for users to identify any sorting and/or filtering applied to the results table. When one or more filters are applied, the 'Clear filter' button within the toolbar can be used to clear all the filters. Otherwise, any sort and filter selections made will remain (even after conducting a new search) until the Application Manager page is exited. </li>
+        </ul>
+        <p class="Body2">By default, the following components are configured within the Headers parameter for the Node List Properties Child Component of the Application Manager:</p>
+        <ul>
+            <li class="Bullet3">Application Set Assembly (labeled as 'Vehicle')</li>
+            <li class="Bullet3">Application Part Type Title Header (labeled as 'Part Terminology')</li>
+            <li class="Bullet3">Application Set Part (labeled as 'Part Number')</li>
+            <li class="Bullet3">Application Condition Header - Individual (labeled as 'Additional Options,' but displays the relative attribute name.) In the example above, ACES Fuel Type and ACES Position are displayed because the attributes are linked to a part type with the display condition set to ‘true.’ For more information on how to display linked attributes, see the <b>Business Action : Set condition Links on Part Types</b> topic within the <b>Automotive Business Rule Plugins</b> section<MadCap:xref href="../../Business Rules/Business Action Set Condition Links on Part Types.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet3">Application Condition Header - Group (labeled as 'Options')</li>
+            <li class="Bullet3">Application Comment (labeled as 'Notes')</li>
+            <li class="Bullet3">Application Asset Reference (labeled as 'Assets')</li>
+        </ul>
+        <p class="Body2">For  information on adding columns to the results table, see the <b>Adding Additional Headers to Application Screens</b> topic within the <b>Automotive Quick Start Guide</b><MadCap:xref href="../../../Quick Start Guide/Admin QSG/Adding Additional Headers to Application Screens.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">When the Easy Setup actions for the AutoCare solution are completed, the 'ACES Application Qualifiers' component is automatically configured (labeled as 'Qualifiers') in addition to the components listed above. </p>
+        <ol start="6">
+            <li><b>Edited items panel</b>
+            </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/Edit Items panel.png" />
+        </p>
+        <p class="Body2"> Contains an expand / collapse arrow, Save, and Reset buttons. When the panel is expanded and changes are made to the results table, the changes are displayed as a list in the panel. In the example above, it is easy to see that the 2008 Acura application has been edited. By default, the 'Use Immediate Save' parameter within the Node List Properties is disabled. When enabled, the Save button will not display, and the list of edited items will briefly display.</p>
+        <MadCap:pageBreak />
+        <ol start="6" MadCap:continue="true">
+            <li><b>Edit icons</b>
+            </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/IconEdit.jpg" />
+        </p>
+        <p class="Body2">Clicking on any one of the Edit icons within the results table will display a Value editor dialog where the value ID and/or Name are displayed. From a Value editor dialog, users can add and/or remove References.</p>
+        <ol start="6" MadCap:continue="true">
+            <li><b>Hyperlinks</b>
+            </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/hyperlinks.jpg" />
+        </p>
+        <p class="Body2">When text within the results table displays as a hyperlink, users are able to click the text and a screen specific to that text will display. The most common use of this is with the Part Terminology (classifications) and Vehicle columns. </p>
+        <ul>
+            <li class="Bullet3"><b>Classification Hyperlinks:</b> For classification hyperlinks to display within a results table,  a Node Details component should be used to create a 'Classification Details' screen that is configured to display details about the classification object types. To make sure this screen displays when a classification is selected within the results table, be sure to add the necessary Mappings to the Web UI MAIN screen. For more information, see the <b>Mappings</b> topic within the <b>Main Properties Overview</b> of the <b>STEP Online Help</b><MadCap:xref href="../../../../../Web User Interfaces/Using Web UI/Main Properties/Mappings.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </li>
+            <li class="Bullet3"><b>Part Number Hyperlinks:</b> For Part Number hyperlinks  to display within a results table, the 'Enable Link' parameter must be enabled within the 'Application Set Part' component. By default, this is enabled. When a user clicks a part number hyperlink, an Application Editor screen will display. Values within cells can be edited by double-clicking in a cell. Once a cell is active, a typeahead or Node Picker can be used to select a new value. <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">For more information, see the Application Editor Screen topic.</MadCap:conditionalText></li>
+            <li class="Bullet3"><b>Vehicle Hyperlinks:</b> For Vehicle hyperlinks to display within a results table, the 'Enable Link' parameter must be enabled within the 'Application Set Assembly' component. By default, this is enabled. When a user clicks a vehicle hyperlink, an Application Editor screen will display. Values within cells can be edited by double-clicking in a cell. Once a cell is active, a typeahead or Node Picker can be used to select a new value. <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">For more information about an Application Editor Screen, see the Application Editor topic.</MadCap:conditionalText> <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">For more information about this component, see the Application Set Assembly topic.</MadCap:conditionalText></li>
+        </ul>
+        <ol start="9" MadCap:continue="false">
+            <li><b>Results table</b>
+            </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../Resources/Images/AppMgr/ResultsTable/Results Table grid.png" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The example above is from an AutoCare Application Manager. However, NAPA&#160;and TecDoc Application Managers use the same results table settings, but the AutoCare specific headers are removed. The vehicle names and part numbers shown above display as plain text because the 'Enable Link' parameter for the   'Application Set Assembly' and 'Application Set Part' components are disabled.</p>
+        <p class="Body2">A Node List component is used to display the results of selections made within the intelligent search interface. This includes criteria selected within the Vehicle Type Search Panel, and selections made within the Existing and Missing Applications and Hierarchy Restriction dropdowns. For more information on the intelligent search interface, see the <b>Intelligent Search Interface</b> topic<MadCap:xref href="../Intelligent Search Interface/Intelligent Search Interface.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Body2">Once the Search button is clicked, valid results display within the results table. However, it is possible to click the Search button and have zero results display. For example, if the 'Existing Applications Only' dropdown option is selected, and the search criteria is limited to vehicles types that do not have any applications, then a 'No Result' dialog will display, and the results table will only display column headings. When results are displayed within the results table, users have the option to create, edit, or delete part application data. </p>
+        <p class="Body2">For more information on column headers, and editing data using the different Header components, see the <b>Results Table Default Columns</b> topic<MadCap:xref href="Column Headers/Results Table Default Columns.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Each column label can be edited as needed by accessing the Application Manager Node List Properties Child Component Headers parameter.</p>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">Additionally the results table can be configured as read-only, as described in the <b>Making Application Editor Screens Read-Only</b> topic within the <b>Automotive Reference Guide</b> found within the <b>Solution Enablement</b><MadCap:annotation MadCap:createDate="2018-03-28T10:09:05.7516104-04:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="Read Only - if we enable this feature this link needs to be displayed" MadCap:editor="medu" MadCap:editDate="2018-05-25T10:44:11.1565502-04:00"> section</MadCap:annotation> of <b>STEP Online Help</b>.</MadCap:conditionalText>
+        </p>
+    </body>
+</html>

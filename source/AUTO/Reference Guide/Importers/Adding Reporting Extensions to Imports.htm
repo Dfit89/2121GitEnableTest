@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to add reporting extensions to imports." />
+    </head>
+    <body>
+        <h1>Adding Reporting Extensions to Imports</h1>
+        <p class="Body1">It is expected that customers may want to add some additional states to the default workflow, and some of theses states may include a process to generate a report and/or other file type for end users to view. </p>
+        <p class="Body1">For example, an Impact Report state could be added to generate a report listing new data that would be created as a result of the import, and existing data that would be marked for deletion. The state could be added to the workflow screen (as described in the <b>Displaying Import Modifications in Web UI</b> section<MadCap:xref href="Displaying Import Modifications in Web UI.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>), and a downloadable report could be made available to the user, as shown below:</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/QS/DownloadFile.png" />
+        </p>
+        <p class="Body1">Creation of the service to generate the report requires use of the Import Flow Extension Service (ImportFlowExtensionService), but there is some built-in functionality to be aware of to enable users to access the report file in the Web UI. For more information about the Import Flow Extension Service, see the <b>Modifying Import Framework</b> topic<MadCap:xref href="Modifying Import Framework.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1">Files can be stored to the importflow using the <b>addFile</b> (String attachmentID, File file) method in <b>ImportFlowExtensionContext</b>. Later it can be accessed from another process with the <b>getFile</b> (String attachmentID) method, using the same attachmentID with which it was stored. For the file to display in the Report column in the Web UI, the attachmentID has to be equal to the ID of the workflow state in which the file should appear. See the <b>ImportFlowExtensionContext</b> interface in the Javadoc for additional information.</p>
+        <p class="Body1">However, this requires the Importflow State Report header to be displayed in the associated workflow screen, as described in the <b>Displaying the Import Details Report Column</b> topic within the <b>Automotive Quick Start Guide </b>found within the<b> Solution Enablement </b>section of<b> STEP Online Help</b><MadCap:xref href="../../Quick Start Guide/Admin QSG/Displaying the Import Details Report Column.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+    </body>
+</html>

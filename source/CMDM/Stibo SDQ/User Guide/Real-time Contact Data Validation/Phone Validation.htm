@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <link href="../../../../../Resources/TableStyles/StiboTableStyles.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <meta name="description" content="Stibo SDQ User Guide: With Stibo SDQ, real-time phone validation to check for the validity of a mobile number is conducted globally. Additionally, the validation status can be captured along with the validation timestamp." />
+    </head>
+    <body>
+        <h1><b>Phone Validation</b>
+        </h1>
+        <p class="Body1">With Stibo SDQ, real-time phone validation to check for the validity of a mobile number is conducted globally. Additionally, the validation status can be captured along with the validation timestamp.</p>
+        <p class="Body1">This section addresses: </p>
+        <ul>
+            <li>Using Phone Validation</li>
+            <li>Handling Country Codes</li>
+            <li>Phone Data Quality</li>
+            <li>Phone Validation Statuses</li>
+        </ul>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Land-line phone number validation is also available for a number of countries including US / CAN. </p>
+        <MadCap:pageBreak />
+        <p class="Body1HeadNoTOC">Using Phone Validation</p>
+        <p class="Body1">Phone validation can be configured to display when creating a new  Business Account, Person Account, and/or Contact. </p>
+        <p class="Body1">Once configured, when a phone field is viewed, it will display as any other. However, once text is entered, and the cursor is moved off of the phone field, then either  a red icon displays indicating the phone number is invalid, or a green checkbox displays indicating the phone number is valid. </p>
+        <p class="Body1">In the example below, a new contact screen is displayed with a field labeled 'Mobile Phone.'</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Create New Contact Mobile Phone field.png" />
+        </p>
+        <p class="Body1">Once text is entered, and the cursor is moved off the Mobile Phone field, then a processing symbol may briefly display to the left of the field (as shown below).</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Mobile Phone field processing.png" />
+        </p>
+        <p class="Body1">In the example below, an invalid phone number is entered into the Mobile Phone field, and the red icon displays.</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/PVRedValid.png" />
+        </p>
+        <p class="Body1">Once a valid phone number  is entered into the Mobile Phone field, then a green checkbox icon displays, as shown below.</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/PVGreenValid.png" />
+        </p>
+        <p class="Body1">There is no need to enter a country code. If no country code is entered, the phone validation will automatically add a default country code.</p>
+        <p class="Body1">If the red or green icons do not display, then the field is not configured for validation. </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"> In the example above, one phone field is displayed, however there is no limit to the number of phone validation configurations allowed.  For more information, see the <b>Configuring Mappings</b> section of the Enabling Real-Time Data Validation topic<MadCap:xref href="../../Admin Guide/2a. Enable Real-Time Data Validation.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>, the Enable Master Data Management Theme topic<MadCap:xref href="../../Admin Guide/2b. Enable Master Data Management Theme.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>, or the Enable Dun &amp; Bradstreet Theme topic<MadCap:xref href="../../Admin Guide/2c. Enable Dun &amp; Bradstreet Theme.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within the <b>Stibo SDQ Admin Guide</b>.</p>
+        <MadCap:pageBreak />
+        <p class="Body1HeadNoTOC">Handling Country Codes</p>
+        <p>System administrators can configure a default country code, allowing users to save time when entering phone numbers. If the user needs to enter a country code that is different from the default, they  enter the correct country code prior to the phone number. For example, if 1 is specified for the value of the default country code, then the user will need to enter 770 425 3282 instead of +1 770 425 3282. </p>
+        <p class="Body1HeadNoTOC">Phone Data Quality</p>
+        <p class="Body1">Once a phone number is verified, the phone meta data is automatically enriched by auto-populating fields configured by the system administrator. These are helpful when creating reports to get an overview of phone number quality. At a minimum, the following custom fields are recommended for each phone number type that should be validated (i.e., Phone, Mobile, Home):</p>
+        <ul>
+            <li>Phone Validation Status</li>
+            <li>Phone Validation Timestamp (for the latest validation)</li>
+        </ul>
+        <MadCap:pageBreak />
+        <p class="Body1HeadNoTOC">Phone Validation Statuses</p>
+        <p class="Body1">The table below describes each validation status. </p>
+        <table style="border-left-style: solid;border-left-width: 1pt;border-left-color: #000000;border-right-style: solid;border-right-width: 1pt;border-right-color: #000000;border-top-style: solid;border-top-width: 1pt;border-top-color: #000000;border-bottom-style: solid;border-bottom-width: 1pt;border-bottom-color: #000000;mc-table-style: url('../../../../../Resources/TableStyles/StiboTableStyles.css');margin-left: 0;margin-right: auto;width: 711px;" class="TableStyle-StiboTableStyles" cellspacing="0">
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 192px;" />
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 114px;" />
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 101px;" />
+            <col class="TableStyle-StiboTableStyles-Column-Column1" style="width: 415px;" />
+            <thead>
+                <tr class="TableStyle-StiboTableStyles-Head-Header1">
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;">
+                        <p class="Body1">Phone Validation Status</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1">Stibo SDQ Icon</th>
+                    <th class="TableStyle-StiboTableStyles-HeadE-Column1-Header1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;">
+                        <p class="Body1">Error Code</p>
+                    </th>
+                    <th class="TableStyle-StiboTableStyles-HeadD-Column1-Header1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;">
+                        <p class="Body1">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Live</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <img src="../../../../../Resources/Images/CMDM/User Guide/IconGreen.png" />
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;font-size: 11pt;text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <p class="Body1">0</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Active number.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Dead</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <img src="../../../../../Resources/Images/CMDM/User Guide/IconRed.png" />
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;font-size: 11pt;text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <p class="Body1">1</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Number decommissioned by the owning network.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Inconclusive</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <img src="../../../../../Resources/Images/CMDM/User Guide/IconRed.png" />
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;font-size: 11pt;text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <p class="Body1">5</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Unable to retrieve a response from the network for this number.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">No Credit </p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">See Description Column. </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;font-size: 11pt;text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <p class="Body1">7</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Account has insufficient funds to process this request. The following integration error message will display, indicating that your credits with the phone validation server have expired.</p>
+                        <p class="Body1" style="text-align: center;padding-bottom: 2mm;">
+                            <img src="../../../../../Resources/Images/CMDM/User Guide/Clerical Review/Error Warning Insufficient Credits.png" />
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">No Teleservice Provisioned</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <img src="../../../../../Resources/Images/CMDM/User Guide/IconRed.png" />
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;font-size: 11pt;text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <p class="Body1">11</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Number is not able to receive calls nor SMS messages. This is usually a number relating to a data SIM.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Absent Subscriber</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <img src="../../../../../Resources/Images/CMDM/User Guide/IconRed.png" />
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyE-Column1-Body1" style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;font-size: 11pt;text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <p class="Body1">27</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Number has not been active for a short period of time. This can include a prolonged period of inactivity, and when a phone is turned off or in Airplane mode.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-StiboTableStyles-Body-Body1">
+                    <td class="TableStyle-StiboTableStyles-BodyB-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Number Not Supported</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyB-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <img src="../../../../../Resources/Images/CMDM/User Guide/IconRed.png" />
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyB-Column1-Body1" style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;font-size: 11pt;text-align: center;vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;border-left-width: .5em;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-width: .5em;">
+                        <p class="Body1">999</p>
+                    </td>
+                    <td class="TableStyle-StiboTableStyles-BodyA-Column1-Body1" style="vertical-align: middle;padding-left: 2mm;padding-right: 2mm;padding-top: 2mm;padding-bottom: 2mm;font-size: 11pt;">
+                        <p class="Body1">Number is invalid for one or more of the following reasons: does not contain a valid country code, does not contain a valid number range, is too long or too short.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:lastBlockDepth="2" MadCap:lastHeight="5261" MadCap:lastWidth="1242" MadCap:changes="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Stibo SDQ Admin Guide: To perform some Stibo SDQ actions, new buttons must be configured and mapped to the interface." />
+    </head>
+    <body>
+        <h1>Button Customization Setup</h1>
+        <p class="Body1">The following section will detail how to create buttons configured Salesforce actions. In this guide, those actions are changing how the Create button works.</p>
+        <h2>Create Override</h2>
+        <p> Admins must customize the Salesforce 'New' button. To do that, select Setup &gt; Object Manager &gt; Account or Contact &gt; Buttons, Links, and Actions &gt; New. The Override properties screen will display. Change the Salesforce Classic Override to SBCAccountSearchForm for the Visualforce page for Accounts. For Contacts, change the Salesforce Classic Override to SBCContactSearchForm.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">This has to be done for either the New Account or both New Account and New Contact buttons. Person Accounts use Account's New button.</p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/OverrideProperty.png">
+            </img>
+        </p>
+        <h2>Adding D&amp;B Buttons</h2>
+        <p class="Body1">For the D&amp;B Enrichment theme, some D&amp;B buttons must be added to the details pages.</p>
+        <p class="Body1">Navigate to the Object Manager in Setup, and then, navigate to Account object to add the buttons. In this example, the D&amp;B buttons can be configured via the Account page (Setup &gt; Object Manager &gt; Account &gt; Buttons, Links, and Actions).</p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddButtons.png" />
+        </p>
+        <p>Select the 'New Button or Link' option to prompt the 'New Button or Link' page.</p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/NewButtonorLinkOption.png" />
+        </p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/NewButtonOrLink-DnBLookup.png" />
+        </p>
+        <p class="Body1">In the above screenshot, the DUNS Lookup button is created and, once saved, will need to be added to the Account page. The Contact Sync and Enrichment buttons will also need to be created. The parameters for these buttons are:</p>
+        <p class="Body1HeadNoTOC">D&amp;B Lookup Button</p>
+        <p class="Body2">Label: <b>DUNS Lookup</b></p>
+        <p class="Body2">Name: <b>DUNS_Lookup</b></p>
+        <p class="Body2">Display Type: <b>Detail Page Button</b></p>
+        <p class="Body2">Behavior: <b>Display in existing window without sidebar</b></p>
+        <p class="Body2">Content Source: <b>Visualforce Page</b></p>
+        <p class="Body2">Content: <b>DnBAccountLookup [stibo_dq_DnBAccountLookup]</b></p>
+        <p class="Body1HeadNoTOC">D&amp;B Enrichment Button</p>
+        <p class="Body2">Label: <b>D&amp;B Enrich</b></p>
+        <p class="Body2">Name: <b>DnB_Enrich</b></p>
+        <p class="Body2">Display Type: <b>Detail Page Button</b></p>
+        <p class="Body2">Behavior: <b>Display in existing window without sidebar</b></p>
+        <p class="Body2">Content Source: <b>Visualforce Page</b></p>
+        <p class="Body2">Content: <b>DnBAccountEnrich [stibo_dq_DnBAccountEnrich]</b></p>
+        <p class="Body1HeadNoTOC">D&amp;B Sync Contacts Button</p>
+        <p class="Body2">Label: <b>D&amp;B Sync Contacts</b></p>
+        <p class="Body2">Name: <b>DnB_Sync_Contacts</b></p>
+        <p class="Body2">Display Type: <b>Detail Page Button</b></p>
+        <p class="Body2">Behavior: <b>Display in existing window without sidebar</b></p>
+        <p class="Body2">Content Source: <b>Visualforce Page</b></p>
+        <p class="Body2">Content: <b>DnBSyncContacts [stibo_dq_DnBSyncContacts]</b></p>
+        <p class="Body1">After creating each button, they will need to be added to the page layout. To do that, from the Setup &gt; Object Manager &gt; Account page, select <b>Page Layouts</b>.</p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/Page Layouts.png" />
+        </p>
+        <p class="Body1">On the 'Account Layout' entry, select the 'Edit' option.</p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/EditAccountLayout.png" />
+        </p>
+        <p>To add buttons to the Classic view, in the Account Layout panel, select the 'Buttons' option in the field to the left. Then, select the DUNS Lookup, D&amp;B Enrich, and D&amp;B Sync Contacts buttons from the buttons field. These buttons are dragged (left-click and hold the desired button then, while holding left mouse button slide your mouse to the location) into the 'Custom Buttons' section of the Account Detail panel.</p>
+        <p class="Body1Image" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddtoAccountLayout-Reduced.png" />
+        </p>
+        <p class="Body1Image" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddtoAccountLayout.png" />
+        </p>
+        <p class="Body1Image" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/CustomButtonsAdded-Reduced.png" />
+        </p>
+        <p class="Body1Image" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/CustomButtonsAdded.png" />
+        </p>
+        <p>To add buttons for Lightning Experience and the Salesforce1 mobile app, switch to the 'Mobile &amp; Lightning Actions' option in the left pane. Drag the DUNS Lookup, D&amp;B Enrich, and D&amp;B Sync Contacts buttons into the Salesforce Mobile and Lightning Experience Actions box.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">If only one view is used, then there is no requirement to add buttons to the unused view.</p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/MobileandLightingActions.png" />
+        </p>
+        <p>Once completed, the Salesforce Mobile and Lightning Experience will look like this:</p>
+        <p class="Body1Image" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/SalesforceMobileandLightningButtons-Reduced.png" />
+        </p>
+        <p class="Body1Image" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/SalesforceMobileandLightningButtons.png" />
+        </p>
+        <p>Select the 'Save' button above the buttons panel to save the changes.</p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/SaveLayoutChanges.png" />
+        </p>
+    </body>
+</html>

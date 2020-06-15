@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p>For information on supported versions, see the <b>Supported Versions and Formats</b> topic<MadCap:conditionalText MadCap:conditions="Primary.Web"><MadCap:xref href="../../Reference Guide/Supported Versions and Formats.htm" class="Here"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></MadCap:conditionalText>.</p>
+    </body>
+</html>

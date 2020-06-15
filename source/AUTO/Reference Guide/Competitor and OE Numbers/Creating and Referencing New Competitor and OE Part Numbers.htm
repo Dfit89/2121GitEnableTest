@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Describes how to create new competitor and/or OE part numbers for existing manufacturers and simultaneously reference them to a selected part." />
+    </head>
+    <body>
+        <h1>Creating and Referencing New Competitor and OE Part Numbers</h1>
+        <p MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU and BOND PRODOC- 1517</p>
+        <p class="Body1"> When the Part Number References component is configured, Web UI users can create new competitor and/or OE part numbers for existing manufacturers and simultaneously reference them to a selected part. </p>
+        <p class="Body1">When a part is selected within the Web UI Tree, STEP looks at the configured Reference Types and displays their targets, attribute values, and/or metadata via configurations within the 'Part Number References' Node Editor component. Whether or not references are displayed, at a minimum the blank typeahead field will display, prompting users to 'Enter a manufacturer name and/or part number.' This typeahead field can be used to access the 'Create New Part' dialog where users can create a new part number for an existing manufacturer and reference it to the selected part. This typeahead field can also be used to quickly select an existing part number to be referenced. For more information, see the <b>Adding Part Number References Manually</b> topic<MadCap:xref href="Adding Part Number References Manually.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1">In the example below, part '90069' is selected within the Web UI Tree, and an 'OE Numbers' tab is configured to display results for 'Existing OE Part Number References.' Within the results, two part numbers display with different Makes and  Manufacturers, along with the blank typeahead field that prompts users to 'Enter a manufacturer name and/or part number.'</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Competitor OE Number/30.jpg">
+            </img>
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Though a new part number can be created using the Create New Part dialog, a new manufacturer name cannot be created. </p>
+        <p class="Body1">When the manufacturer name exists in STEP, but the part number does not, users can type at least two letters of the beginning of an existing manufacturer name, and the dropdown list will display a list of manufacturers and their part numbers. </p>
+        <p class="Body1">In the example below, 'lan' is typed in and the typeahead suggestion list displays the matching manufacturer name, part numbers, and a 'Create new' button.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Competitor OE Number/31.jpg">
+            </img>
+        </p>
+        <p>Clicking on a manufacturer name in the dropdown list, or using the arrow keys to navigate to the desired manufacturer name and pressing the Enter key, or clicking the 'Create new' button will display the Create New Part dialog with the Manufacturer Name field pre-populated  (as shown below).</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Competitor OE Number/32.jpg">
+            </img>
+        </p>
+        <p>Once the Create New Part dialog displays, the Part Number field must be populated before the OK button will enable. </p>
+        <p class="Body1">Optionally, the text within the pre-populated Manufacturer Name field can be edited. Typing text into this typeahead field will display a list of existing manufacturer names that begin with the provided text. </p>
+        <p class="Body1">Once a part number is typed into the Part Number field and the OK button is clicked, the new part number is added to STEP and displays at the top of the references list.</p>
+        <p class="Body1">If the Manufacturer name cannot be found, a warning dialog will display, as shown below.</p>
+        <p class="Image1"> <img src="../../Resources/Images/Competitor OE Number/warning1.jpg" /></p>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU Email from NIFE. </MadCap:conditionalText>Additionally, if the attribute configured within the 'Original Number Attribute' parameter is not valid for the object type used for the new part number created, a warning dialog will display (as shown below). For more information, see the 'Original Number Attribute' parameter within the <b>Configuring the Part Number References Component</b> topic<MadCap:xref href="Configuring the Part Number References Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Competitor OE Number/Warning2.jpg" />
+        </p>
+        <p> If the Part Number References list / Part Number Suggestions list is configured to display attributes of  Competitor / OE Part Number, those attributes values (<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST- 2847 </MadCap:conditionalText>whether single valued or multi- valued) can only be displayed  and cannot be edited in the Part Number References list / Part Number Suggestions list. To edit any Competitor / OE Part Number attribute value, users should navigate to the Competitor / OE Part Number using the Web UI tree. </p>
+        <p class="Body1">When more than one manufacturer with same manufacturer name exists  in STEP but different IDs, the typeahead field cannnot determine  the actual manufacturer and so does not auto populate. In this case, the system assumes the value should be created as the new part number. When users access the 'Create New Part' dialog, they can choose the desired manufacturer and type in the correct part number.</p>
+        <p class="Body1">For example, let us consider that there are two existing manufacturers with the name 'Ferrari' present in STEP. STEP cannot auto populate the Manufacturer Name field with 'Ferrari.' However, within the 'Create New Part' dialog, users can retype the manufacturer name and select the correct instance of 'Ferrari<MadCap:annotation MadCap:createDate="2018-11-28T22:47:57.2638627+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Raised a ticket in PRODOC-1645. Waiting for bugfix." MadCap:editor="bond" MadCap:editDate="2018-11-29T00:40:27.2122303+05:30">.'</MadCap:annotation></p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Competitor OE Number/38.jpg" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">To ensure users are able to easily distinguish the correct manufacturer name, be sure the manufacturer names within STEP&#160;are unique.</p>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST- 3029 Look at example of Ferrari - there are 2 matching MFR names so it will not auto populate! </p>
+        <h2>Normalization / Harmonization of Part Numbers</h2>
+        <p class="Body1">When the Create New Part dialog is used, part numbers created using special characters, spaces, and/or non-ASCII characters are normalized / harmonized to use alphanumeric characters only. The original part number can be stored (and searched for) within a separate attribute value configured within the Part Number References 'Original Number Attribute' parameter. For more information, see the <b>Configuring the Part Number References Component</b> topic<MadCap:xref href="Configuring the Part Number References Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Body1">In the example below, a new part number '12ET00@#12/*2' is created and then normalized / harmonized to '12ET00122.' The actual value '12ET00@#12/*2' is retained in the attribute 'ATTR_Original.'</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Competitor OE Number/371.jpg" />
+        </p>
+        <p class="Body1">The original number can sometimes have illegal characters or spaces, the original value can be stored but a normalized value can also be stored and displayed along with the original value.</p>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST- 2850 </MadCap:conditionalText>Once a new competitor and/or OE part number is created, a business <MadCap:annotation MadCap:createDate="2018-12-04T09:50:02.7674185-05:00" MadCap:creator="jopi" MadCap:initials="JOPI" MadCap:comment="To BOND: in addition to your own annotation, i wonder what this action might be expected to do - use case?" MadCap:editor="jopi" MadCap:editDate="2018-12-04T09:50:31.7219638-05:00">action </MadCap:annotation>can be executed if configured. The business action must be valid for the following standards: AutoCare, TecDoc, and <MadCap:annotation MadCap:createDate="2018-11-26T16:50:17.4930514+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Need to add more information about this." MadCap:editor="bond" MadCap:editDate="2018-11-26T16:50:29.3392140+05:30">NAPA.</MadCap:annotation></p>
+    </body>
+</html>

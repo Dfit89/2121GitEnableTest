@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>PMDM for Automotive 9.3 - 7.0.27 May 2020 Patch Notes</title>
+        <meta name="description" content="Automotive Solution: PMDM for Automotive 7.0.27 May 2020 Patch Notes" />
+    </head>
+    <body>
+        <h1 class="MPN">PMDM for Automotive 9.3 - 7.0.27 Patch Notes</h1>
+        <h2 style="text-align: center;">Release Date: May 15, 2020</h2>
+        <p style="text-align: center;" class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC Note: MORC says that NGK-767 and RDCUST-4092 are the NGK specific issues and there was nothing to mention about it in the patch notes.</p>
+        <h2 class="MPNDocumentation">Announcement</h2>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note:</MadCap:conditionalText>Change in the PMDM for Automotive release naming convention</p>
+        <p>With this maintenance patch, the PMDM for Automotive release sequence numbering in online help has been changed. This helps to accurately refer to the automotive release instead of previously being out of sync with the core STEP releases. Instead of this release being named as 'PMDM for Automotive 9.3 MP3,' it will be named as 'PMDM for Automotive 9.3 - 7.0.27.'</p>
+        <h2 class="MPNNewFeatures">New Features</h2>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST- 4055</MadCap:conditionalText>Added support for import and export of PIES 7.2 file</p>
+        <p class="Body3">Updated AutoCare Easy Setup, PIES Importer, and PIES Exporter to handle import and export of PIES 7.2 version. The AutoCare PIES Exporter now provides an option to select between PIES 6.5, 6.7, 7.0,  7.1, and 7.2 versions in the 'Version' parameter within the 'Select Format' dialog as shown below. For more information, see the AutoCare PIES Exporter topic of the Automotive Reference Guide<MadCap:xref href="../../Reference Guide/Exporters/Standard_AC/AutoCare PIES Exporter.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/1.png" />
+        </p>
+        <p class="Body3" style="font-weight: normal;">Run step 1 of the Automotive - AutoCare Model Easy Setup to create the <b>PCdb Version Date</b> attribute (ID= AC_PCdbVersionDate) as mandatory.</p>
+        <p class="note3" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt; ">Existing implementations will need to manually change the Mandatory parameter for this attribute from 'No' to 'Yes.'</p>
+        <p class="Body3" style="font-weight: bold;">PIES Exporter has been updated to:</p>
+        <ul>
+            <li class="Bullet3">Make Version <b>7.2</b> available in the Select Format step</li>
+            <li class="Bullet3">Not allow users to enter a value in the <b>Brand Owner AAIAID</b> parameter within the Select Format step if PIES Version 7.2 is selected since this element has been removed from the Header Segment</li>
+            <li class="Bullet3">If PIES Version 7.2 is selected and the PCdb Version Date attribute does not have a value, then the export will fail with the error message '<i>Convert failed with exception: PCDBVersionDate is required for PIES starting from version 7.2' </i>that is written to the BGP.</li>
+        </ul>
+        <p class="Body3" style="font-weight: bold;">PIES Importer has been updated to:</p>
+        <ul>
+            <li class="Bullet3">Check and warn against a mismatch in the PCdb Version Date during the Conversion state when comparing the date that is provided in the import file to the date that is stored in STEP.</li>
+            <li class="Bullet3">If the imported file contains the &lt;BrandOwnerAAIAID&gt; element in version 7.2, then the import process will fail  during the Validation state.</li>
+            <li class="Bullet3">If the import file is missing the &lt;PCdbVersionDate&gt; element in version 7.2, then the import process will fail during the Validation state.</li>
+        </ul>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">Internal Note: RDCUST- 4059</MadCap:conditionalText>Added support for import and export of ACES 4.1 file</p>
+        <p class="Body3">Updated AutoCare Easy Setup, ACES Importer, and ACES Exporter to handle import and export of ACES 4.1 version. The AutoCare ACES Exporter now provides an option to select between ACES 3.0, 3.2, 4.0, and 4.1 versions in the 'Version' parameter within the 'Select Format' dialog as shown below. For more information, see the AutoCare ACES Exporter topic of the Automotive Reference Guide<MadCap:xref href="../../Reference Guide/Exporters/Standard_AC/AutoCare ACES Application Exporter.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/3.png" />
+        </p>
+        <p class="Body3">The following updates have been implemented:</p>
+        <ul>
+            <li class="Bullet3">Step 1 of the Automotive - AutoCare Model Easy Setup has been updated to create the AC_ACESQuantity attribute with 'Integer' Validation Base Type and a Minimum Value of '0' to ensure that a positive integer is entered.</li>
+        </ul>
+        <p class="note3" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt; ">Existing implementations will need to manually change the Validation Base Type of the attribute from 'Number' to 'Integer' and add a Minimum Value = 0.</p>
+        <ul>
+            <li class="Bullet3">The ACES Exporter has been updated to make Version 4.1 available in the Select Format step.</li>
+            <li class="Bullet3">Both ACES Importer and Exporter has been updated to validate against the ACES 4.1 XSD.</li>
+        </ul>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST- XXXX</MadCap:conditionalText>Added option to include / exclude Digital assets based on their Asset Type from the ACES Export</p>
+        <p class="Body3">Previously, the 'AutoCare ACES Exporter' format was hard-coded to include all Digital assets irrespective of their Asset Type in the exported file. The ACES Exporter has now been updated to include a new parameter called 'Digital Assets' to allow users to select the Digital asset types to be included or excluded in the exported file. The 'Digital Assets' parameter is available within the 'Advanced' tab of the Export Manager. Clicking the ellipses button (<img src="../../../../Resources/Images/Buttons/ellipsis.png" class="img_intext" />) that is available next to the parameter will display the Filter Digital Asset Types dialog (as shown below). By default, all Asset Types will be included in the exported file. </p>
+        <p class="Body3">This parameter is available in all the versions of the PIES export.</p>
+        <p class="Body3">Following are the features of this parameter: </p>
+        <ul>
+            <li class="Bullet3">The new parameter allows multi Asset Type selection. If more than one Asset Type needs to be excluded from the export, users can define more than one Asset Type in the parameter.</li>
+            <li class="Bullet3">This new functionality also handles the values defined in the Asset Item Order (AC_PIES_ASSTAssetItemOrder) attribute that belongs to the reference types as the metadata attribute. The exported assets will be in the order defined within the Asset Item Order attribute.</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/2.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-4082</MadCap:conditionalText>Added option to filter PIES Market Copy based on the Market Copy Types from the PIES Export</p>
+        <p class="Body3">Previously, the 'AutoCare PIES Exporter' format only had an option to either include or exclude all the PIES Market Copies related to the PIES Item in the PIES exported file. This prevented users from filtering which Market Copy Type to be included / excluded in the exported file. The existing 'Market Copy' parameter within the PIES Exporter has been updated with two additional fields, 'General Copy' and 'Features and Benefits,' which allows users to select the Market Copy Type to be excluded in the exported file. By default, selecting the Market Copy parameter will select all Market Copy Types to be included in the exported file. Users can exclude the PIES Market Copies belonging to a particular Market Copy Type by deselecting the 'General Copy' or 'Features and Benefits' checkbox as required. Deselecting both 'General Copy' and 'Features and Benefits' checkbox with the 'Market Copy' parameter still selected <i>will not</i> include any PIES Market Copies in the exported file.</p>
+        <p class="Body3">This parameter is available in all the versions of the PIES export.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/4.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: NGK-701</MadCap:conditionalText>Added option to filter and sequence application notes based on the Note Types from the ACES Export</p>
+        <p class="Body3">Previously, the 'AutoCare ACES Exporter' format was hard-coded to include all application notes that are referenced by the application records in the ACES exported file. It was not possible to filter out certain notes from the export. To handle this requirement, a new metadata attribute called Note Type is made available in the system that allows users to define the Note Type for an application note and then be able to filter the application notes based on those Note Types. This solution allows users to filter out the application notes belonging to the particular Note Type to be  excluded in the exported file. </p>
+        <p class="Body3">To handle filtering of application notes based on their Note Type: </p>
+        <ol>
+            <li class="Bullet3">Run step 1 of the Automotive - AutoCare Model Easy Setup to:</li>
+        </ol>
+        <ul>
+            <li class="Bullet4">Create a new Description attribute called AC_ACESNoteType and make it valid for ACES Application To Application Note reference</li>
+            <li class="Bullet4">Create a new LOV called  AC_NoteType and make it referenced for AC_ACESNoteType attribute</li>
+        </ul>
+        <p class="important4" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Users will need to manually add the values to this LOV. Users will then need to populate these values on the application in the AC_ACESApplicationToApplicationNote Product Reference to define which Type the Note should be. These values will then be used in the ACES exporter <b>Note types filter</b> parameter to indicate which Note reference should get included in the exported file.</p>
+        <ol start="2">
+            <li class="Bullet3">The ACES Exporter has been updated with a new parameter called 'Note types filter' that is available within the Advanced tab of the ACES Export Manager. Selecting this parameter will ensure that all the application notes belonging to the ACES application will be included in the exported ACES file. Clicking the ellipses button (<img src="../../../../Resources/Images/Buttons/ellipsis.png" class="img_intext" />) that is available next to the parameter will display the 'Filter note types' dialog (as shown below). By default, all Note Types will be included in the exported file, however, adding any one note type from the Excluded to the Included column will overwrite the default settings and continues only to include those Note Types that are listed in the Include column. </li>
+        </ol>
+        <p class="Bullet3NextPara">This parameter is available in all the versions of the ACES export.</p>
+        <p class="Bullet3NextPara">Following are the features of this parameter: </p>
+        <ul>
+            <li class="Bullet4">The new parameter allows multi Note Type selection. If more than one Note Type needs to be included / excluded in the export, users can define more than one Note Type in the parameter.</li>
+            <li class="Bullet4">This new functionality also handles the values defined in the Display Sequence (DisplaySequence) metadata attribute that is valid for ACES Application To Application Note reference. The exported application notes will be placed in the order defined within the Display Sequence attribute. However, if users need to rearrange the sequence of application notes to have different sequences for different receivers, then the users can utilize the up (<img src="../../Resources/Images/Release Notes/9.3MP3/6.png" />) and down (<img src="../../Resources/Images/Release Notes/9.3MP3/7.png" />) arrow buttons that are available within the 'Filter note types' dialog to rearrange the sequence.</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/5.png" />
+        </p>
+        <ol start="3">
+            <li class="Bullet3">For existing implementations, update the 'Value editor' window of the <b>Application Comment</b> table header component configured in the AutoCare Application Manager Screen to include following two additional Headers (as shown in the screenshot below):</li>
+        </ol>
+        <ul>
+            <li class="Bullet4">Reference Metadata Value Header configured to display the 'DisplaySequence' attribute</li>
+            <li class="Bullet4">Reference Metadata Value Header configured to display the 'AC_ACESNoteType' attribute</li>
+        </ul>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/8.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-4064, 4065. 4066</MadCap:conditionalText>Added a feature to retrieve the error file that is generated in the ACES Conversion</p>
+        <p class="Body3">The [ACESToStepXMLConvertService] conversion service has been updated to generate an error report if the ACES imported file encounters validation errors. As the conversion service runs a background process (BGP), a corresponding BGP folder is created on the application server in the /workarea/background-processarea/ACEStoStepXMLConvertService directory. The BGP folder contains an output file of the conversion process. Now, if an ACES file completes conversion with errors, the conversion service also writes an additional error.xlsx file in the BGP folder. In the screenshot below, <b>error.xlsx</b> is the error report file that is placed in the BGP_41839 folder.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/11.png" />
+        </p>
+        <p class="Body3"> The Conversion state within the AutoCare ACES import workflow now includes a new 'Error file attachment ID' parameter that allows a user to define a value to identify the error file. The value that is entered in this parameter specifies the filename of the error report in the conversion process. Meaning, that the error report Excel file will contain the name that is specified in the 'Error file attachment ID' parameter.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/10.png" />
+        </p>
+        <p class="Body3">The error file can also be accessed in the AutoCare ACES Import Controller screen of the Web UI that is used to display the details of the ACES file import. Users need to add the new <b>Importflow Attachment</b> table header component to the AutoCare ACES Import Controller screen to access this file in the Web UI. </p>
+        <p class="Body3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/9.png" />
+        </p>
+        <p class="Body3">Within the Attachment ID parameter of the Importflow Attachment Properties designer screen, the user has to enter the same value that is entered in the 'Error file attachment ID' parameter in the Conversion state to identify this file.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/12.png" />
+        </p>
+        <p class="MPNHeadNoTOC" MadCap:conditions="Primary.Under Construction">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: XXXXX</MadCap:conditionalText>Updated ACES Importer to store the Brand information (postponed to next release)</p>
+        <p class="Body3" MadCap:conditions="Primary.Under Construction">Previously, the Brand information present in the ACES file was not stored in ACES Importer and the importer. Now, the [ACESToStepXMLConvertService] conversion service of the ACES Importer is updated so that the Brand information will get marked in the defined attribute. A new parameter 'Importing Brands attribute' is avaialable within the [ACESToStepXMLConvertService] conversion service that allows users to configure an attribute that stores information on Brands of the ACES file</p>
+        <p MadCap:conditions="Primary.Under Construction" class="Body3">Note: This requires that the xxxxx attribute has been created, made valid on the XXXX and XXX objects, and indicated for use in the correct workflow state.</p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-4066</MadCap:conditionalText>Updated ACES conversion process to be able to check on application records with invalid vehicle configurations and invalid part type conditions</p>
+        <p class="Body3">The Conversion state within the AutoCare ACES import workflow now includes a new parameter called 'Validate application' that will write errors to a file for application records with invalid configurations. The validation process of the 'Validate application' parameter works similar to the 'Validate Application on Import' business condition with the only difference that it runs a check for the applications with invalid configurations during the Conversion state on the xml ACES object rather than in the Import state on a product node application. The benefit of this is that users will be able to detect invalid applications prior to having to import the file.</p>
+        <p class="important3" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Since the validation is done in the ACES converter, the Conversion process will be slower if the 'Validate application' parameter is selected.</p>
+        <p class="Image3">Some examples of applications that will error are:  Missing Part Type; missing Vehicle; vehicle configurations such as Sub Model, Engine Base, Drive Type, etc. that are not valid for the vehicle.</p>
+        <p class="Body3">With the 'Validate application' parameter checked, when an application record is found that does not meet the condition, an error is written to the execution report of the conversion process and the record will continue to the pass conversion process. The error contains the application ID from the ACES file, as well as IDs of the objects that it failed on. If the 'Validate application' parameter is not checked, importing ACES applications that have invalid configurations will pass the conversion process but without writing an error in the execution report.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/13.png" />
+        </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-4066</MadCap:conditionalText>Updated ACES conversion process to be able to treat application records with application notes as errors</p>
+        <p class="Body3">The Conversion state within the AutoCare ACES import workflow now includes a new parameter called 'Treat notes as errors' that will write errors to a file for application records with Notes in the ACES import file.</p>
+        <p class="Body3">With the 'Treat notes as errors' parameter checked, when an application record with application notes is found, an error stating '<i>Application has note(s), that is not allowed on application id=&lt;ID&gt;, partNumber=&lt;Part Number&gt;</i>' is written to the execution report of the conversion process, and the record will continue to the pass conversion process. The error contains the application ID from the ACES file, as well as IDs of the part number belonging to the application. If the 'Treat notes as errors' parameter is not checked, importing ACES applications with application notes will pass the conversion process but without writing an error in the execution report.</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Release Notes/9.3MP3/14.png" />
+        </p>
+        <h2 class="MPNBugFix">Bugfixes</h2>
+        <h3>All Standards</h3>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-4087</MadCap:conditionalText>Corrected the Attribute Mapping plugin to rightly handle context-dependent multivalued attribute</p>
+        <p class="Body3">Previously, onboarding data from a context-dependent multivalued Source attribute to the Target attribute was not being performed and exhibited a Nullpoint Exception error. This issue has been resolved so that now there is a possibility to onboard data from a context-dependent multivalued Source attribute to a Target attribute. </p>
+        <p class="MPNHeadNoTOC">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: NGK-391</MadCap:conditionalText>Corrected the Application Condition Header - Group table header component to rightly filter out the irrelevant condition attributes</p>
+        <p class="Body3">Previously, condition attributes that had Vehicle Types defined but were not marked 'true' in the 'Display Condition' metadata were not getting filtered out correctly and was still being displayed in the 'Value editor' dialog within the 'Application Condition Header - Group' table header component (that is configured in the Application Manager Screen). This bug has been resolved and irrelevant condition attributes are now filtered out correctly in the 'Value editor' dialog of 'Application Condition Header - Group' table header component based on the Vehicle Types.</p>
+        <h3 MadCap:conditions="Primary.Under Construction">AutoCare</h3>
+        <p class="MPNHeadNoTOC" MadCap:conditions="Primary.Under Construction">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note" style="color: #4b0082;">PRODOC note: RDCUST-4063</MadCap:conditionalText>Corrected a Validation Error related to the Approved For parameter in ACES Exporter</p>
+        <p class="Body3" MadCap:conditions="Primary.Under Construction">Previously, selecting the options available in the Approved For parameter for the ACES 3.0 version in the ACES Exporter exhibited a validation error that displayed '<i>Validation Error: at line 10, column 38: cvc-complex-type.2.3: Element 'ApprovedFor' cannot have character [children], because the type's content type is element-only. at line 10, column 38: cvc-complex-type.2.4.b: The content of element 'ApprovedFor' is not complete. One of '{Country}' is expected.</i>' The problem exhibited was that the output file which is ACES 3.0 was validated with the 3.2 schema. Now, this issue has been corrected so that the user can select the options available in the Approved For parameter for the  ACES 3.0 version.</p>
+        <h2 class="MPNDownload">Patch recipe</h2>
+        <p class="Body1">The Automotive add-on can be installed with the following recipe:</p>
+        <p class="Body3"><span class="commandfont">to:automotive/7.0/automotive-7.0.27.</span><span MadCap:createDate="2018-10-04T09:05:58.3700255-04:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="update the Patch Recipe and Compatibility topic too" MadCap:editor="medu" MadCap:editDate="2018-10-10T15:52:58.2899872-04:00" class="commandfont">spr</span>
+        </p>
+        <p class="Body3">The above recipe is compatible with the following STEP 9.3 MP3 and STEP 9.3 MP4 baseline recipes: </p>
+        <p class="Body3"><span><span class="commandfont">to:step/platform/step-9.3-mp3.spr</span></span>
+        </p>
+        <p class="Body3"><span><span class="commandfont">to:step/platform/step-9.3-mp4.spr</span></span>
+        </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">Once an Automotive add-on is installed to a base STEP system, the base system cannot be upgraded without upgrading the Automotive add-on at the same time. Additionally, when upgrading any base STEP system that has any Automotive add-on installed, both install recipes must be prepared at the same time. </p>
+        <p class="Body1">For assistance in applying the patch to systems with extensions or additional add-on components, contact Stibo Systems Technical Services. <MadCap:snippetText src="../../../../Resources/Snippets/Installing componentsRN.flsnp" />&#160;</p>
+    </body>
+</html>

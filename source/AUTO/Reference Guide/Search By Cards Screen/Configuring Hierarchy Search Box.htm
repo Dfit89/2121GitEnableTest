@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to configure a Hierarchy Search Box component." />
+    </head>
+    <body>
+        <h1>Configuring the Hierarchy Search Box </h1>
+        <p>The Hierarchy Search Box will search for the parent folder(s) of the searched object in order to more efficiently gather relevant  search results. For example, in the AutoCare standard, if a Vehicle object is to be searched for, then the Hierarchy Search Box can be configured to search for the Make/Model to display all of the Vehicle objects (Vehicle) for the selected Make/Model. </p>
+        <p>If a root node has been configured in the Root Nodes parameter, then the Hierarchy Search Box will only search below the configured root node(s). For example, the Light Duty Vehicle root node can be added so that the search will only be performed to include Light Duty vehicles and exclude all other vehicle types (Medium/Heavy Duty, Powersports, etc.).</p>
+        <p class="Body1">To add and configure the Hierarchy Search Box component within the Search Cards parameter, follow the instructions below:</p>
+        <ol MadCap:continue="false">
+            <li>From the Search by Card Screen Properties dialog, click the <b>Add</b> button next to the Search Cards parameter field. The Add Component dialog will display.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/23.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click <b>Hierarchy Search Box</b> from the list of components.</li>
+            <li>Click the <b>Add</b> button, and the Hierarchy Search Box Properties will display.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/224.png" />
+        </p>
+        <p class="Body2"><b>Card name:</b> This optional field lets the user provide a label for the card associated with the Hierarchy Search Box. It is a good practice to label the card that best communicates to the user what criteria are available for selection within the card. By default, the label is set to ‘Hierarchy.’</p>
+        <p class="Body2"><b>Parent Object Type:</b> Determines the parent object type that a user can select within the Hierarchy card. <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select the  object type that should be displayed for the user as a parent object to select within the typeahead dropdown.</p>
+        <p class="Body2">The defined object type should meet all of the following criteria:</p>
+        <ul>
+            <li class="Bullet3">Should exist as any top-level parent folder for the object type that is intended for search.</li>
+            <li class="Bullet3">Should be present in the hierarchy of the root node defined in the Root Nodes parameter.</li>
+            <li class="Bullet3">Cannot be the object type that is intended for search.</li>
+        </ul>
+        <p class="Body2"><b>Child Object Type: </b>Determines the child object type that a user can select within the Hierarchy card. <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select the  object type that should be displayed for a user as a child object to select within the typeahead dropdown. </p>
+        <p class="Body2">The defined object type should meet all of the following criteria:</p>
+        <ul>
+            <li class="Bullet3">Should exist as any top-level parent folder for the object type that is intended for search.</li>
+            <li class="Bullet3">Should exist as any lower-level folder below the object type defined in the Parent Object Type parameter.</li>
+            <li class="Bullet3">Should be present in the hierarchy of the root node defined in the Root Nodes parameter.</li>
+            <li class="Bullet3">Cannot be the object type that is intended for search.</li>
+        </ul>
+        <p class="Body2"><b>Minimal Suggestion Length:</b> This required field determines the minimum number of characters that must be entered  into the typeahead field so the associated card starts suggesting relevant object names in the dropdown.</p>
+        <ol MadCap:continue="true">
+            <li>Once the required parameters are populated, click the <b>Add</b> button (or <b>Save</b> button) to return to the  Hierarchy Search Box Properties and <b>Save</b> the configuration.</li>
+        </ol>
+        <p class="Body2">Below is an example of a configured Hierarchy Search Box component:</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/25.png" />
+        </p>
+        <p class="Body2">Below is another example of a configured Hierarchy Search Box component:</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/26.png" />
+        </p>
+    </body>
+</html>

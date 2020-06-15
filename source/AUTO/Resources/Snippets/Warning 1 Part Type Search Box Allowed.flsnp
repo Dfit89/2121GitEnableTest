@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p class="Body2">Because each search box type can be only be configured once for each Application Manager, if a  second search box of the same type is added, a Warning dialog will display as shown below, and the Search Box Types parameter will remain unchanged.</p>
+        <p class="Image2">
+            <img src="../Images/AppMgr/Configuring/Warning dialog for criterion.png" />
+        </p>
+    </body>
+</html>

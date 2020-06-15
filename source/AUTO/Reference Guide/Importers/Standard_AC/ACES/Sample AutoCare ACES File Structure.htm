@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Introduces the AutoCare ACES sample file structure." />
+    </head>
+    <body>
+        <h1>Sample AutoCare ACES File <MadCap:annotation MadCap:createDate="2019-03-27T12:02:16.1063560-04:00" MadCap:creator="erpo" MadCap:initials="ER" MadCap:comment="Try to be mindful of quotation use. In examples, doubles are fine, but everything else, we use single. Also, we use Oxford commas." MadCap:editor="erpo" MadCap:editDate="2019-03-27T12:02:35.0841421-04:00">Structure</MadCap:annotation></h1>
+        <p class="Body1" MadCap:conditions="Primary.PRODOC Note">PRODOC note:  Details can be found at PRODOC-1244</p>
+        <p class="Body1">The intention of this topic is to introduce  the basic AutoCare ACES file structure and the way the objects are built in the  system when the ACES file is imported into the system.</p>
+        <p class="Body1">Currently, the Automotive solution supports import and export of three versions of  ACES files. Namely, ACES 3.0, ACES 3.2 and ACES 4.0. All three versions are common in <MadCap:annotation MadCap:createDate="2019-03-27T11:21:38.7465250-04:00" MadCap:creator="erpo" MadCap:initials="ER" MadCap:comment="Nitpicky but it's redundant" MadCap:editor="erpo" MadCap:editDate="2019-03-27T11:21:44.7897327-04:00">its</MadCap:annotation> structure with additional add-on features amongst the later versions. For better understanding, ACES 3.2 is considered to be an example throughout this topic.</p>
+        <p>The ACES file shall include only plain text delimited by 'valid' XML tags (as defined below). A CR/LF (ASCII 13,10 decimal) should separate lines and it is recommended that the text should use UTF-8 character encoding. However,  ISO-8859-1 is also accepted.</p>
+        <p class="Body1HeadNoTOC">File Naming</p>
+        <p>It is a good practice that the external file name of the  ACES file  shall include the company, a short catalog title, the delivery date (yyyy-mm-dd), and the word '<b>FULL</b>' or '<b>UPD</b>', or '<b>TEST</b>' in a sequence all separated by underlines and an "xml" extension. Below is an example of how an ACES file can be named. </p><pre>ACMESupply_BrakeHardware_2001-01-18_FULL.xml</pre>
+        <p class="Body1HeadNoTOC">Zipped File Imports</p>
+        <p>When more than one file is imported simultaneously into the system or when the ACES file contains a million records so you would want to reduce the size of the file, users can use an archiving program (such as WinZip, or Windows XP 'Compressed (zipped) Folders') to compress the files into a single ZIP archive. Again, it is a good practice to name the archive as above but without the catalog title and with a '.zip' extension.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">When more than one ACES files are zipped, and the user drop the zip file into the hotfolder, those ACES files will not get processed simultaneously unless it is configured for the ACES import to be able to run in parallel (the default is that only one file will be processed at a time).</p>
+        <p class="Body1HeadNoTOC">Delivering ACES Files</p>
+        <p class="Body1" style="font-weight: bold;">Sample File structure </p>
+        <p class="Body1">Below is a sample ACES 3.2 file with two application records</p><pre class="PreIndent" xml:space="preserve">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;ACES  version="3.2"&gt;
+&lt;Header&gt;
+	&lt;Company&gt;KRMA&lt;/Company&gt;
+	&lt;SenderName&gt;Kay Jensen&lt;/SenderName&gt;
+	&lt;SenderPhone&gt;6787978489&lt;/SenderPhone&gt;
+	&lt;TransferDate&gt;2018-04-21&lt;/TransferDate&gt;
+	&lt;BrandAAIAID&gt;DKGX&lt;/BrandAAIAID&gt;
+	&lt;DocumentTitle&gt;ACES FILE&lt;/DocumentTitle&gt;
+	&lt;EffectiveDate&gt;2018-04-21&lt;/EffectiveDate&gt;
+	&lt;SubmissionType&gt;FULL&lt;/SubmissionType &gt;
+	&lt;MapperCompany&gt;Maps R Us&lt;/MapperCompany&gt;
+	&lt;MapperEmail&gt;maps@maps.com&lt;/MapperEmail&gt;
+	&lt;VcdbVersionDate&gt;2018-04-20&lt;/VcdbVersionDate&gt;
+	&lt;QdbVersionDate&gt;2018-04-20&lt;/QdbVersionDate&gt;
+	&lt;PcdbVersionDate&gt;2018-04-20&lt;/PcdbVersionDate&gt;
+&lt;/Header&gt;
+    &lt;App action="A" id="1"&gt;
+        &lt;BaseVehicle id="5289"/&gt;
+        &lt;MfrBodyCode id="2765"/&gt;
+        &lt;EngineBase id="1305"/&gt;
+        &lt;Qty&gt;1&lt;/Qty&gt;
+        &lt;PartType id="5696"/&gt;
+        &lt;MfrLabel&gt;ChkEngSens&lt;/MfrLabel&gt;
+        &lt;Part BrandAAIAID="DKGX"&gt;VC36009&lt;/Part&gt;
+    &lt;/App&gt;
+    &lt;App action="A" id="2"&gt;
+        &lt;BaseVehicle id="5289"/&gt;
+        &lt;BodyNumDoors id="5"/&gt;
+        &lt;EngineBase id="1305"/&gt;
+        &lt;Qty&gt;2&lt;/Qty&gt;
+        &lt;PartType id="5696"/&gt;
+        &lt;MfrLabel&gt;ChkEngSens&lt;/MfrLabel&gt;
+        &lt;Part BrandAAIAID="DKGX"&gt;VC36112&lt;/Part&gt;
+    &lt;/App&gt;
+    &lt;Footer&gt;
+        &lt;RecordCount&gt;2&lt;/RecordCount&gt;
+    &lt;/Footer&gt;
+&lt;/ACES&gt;</pre>
+        <p>The whole ACES file is divided into three required sections:  Header, Body, and Footer.</p>
+        <h3>Header</h3>
+        <p>This constitutes the  initial section of the file. This section includes generic file information such as company details, sender details, mapper details, version details of Vehicle,  etc.  Header information is present within the &lt;Header&gt; tags.</p>
+        <p class="Body1">The order of the tags within the header is defined by the XML schema. In the Header section, the &lt;Company&gt;, &lt;SenderName&gt;, &lt;SenderPhone&gt;, &lt;TransferDate&gt;, &lt;EffectiveDate&gt;, &lt;SubmissionType&gt;, &lt;VcdbVersionDate&gt;, &lt;QdbVersionDate&gt;, &lt;PcdbVersionDate&gt; and &lt;DocumentTitle&gt; tags are required to be populated and cannot be left empty.</p>
+        <p MadCap:conditions="Primary.Under Construction">ACES file is imported in to the system in the following ways:</p>
+        <ul>
+            <li MadCap:conditions="Primary.Under Construction"><b>FULL</b>: All applications are found in the file </li>
+            <li MadCap:conditions="Primary.Under Construction"><b>UPDATE</b>: Only the changes made to the file since the last delivery are present in the <MadCap:annotation MadCap:createDate="2019-03-25T16:46:31.5953481+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="I have not seen any Update file till date. Gotta check once with NIFE" MadCap:editor="bond" MadCap:editDate="2019-03-25T16:46:53.4723171+05:30">file</MadCap:annotation></li>
+        </ul>
+        <p MadCap:conditions="Primary.Under Construction">These details are entered within the &lt;SubmissionType&gt; tags in the header section of the file.</p>
+        <p MadCap:conditions="Primary.Under Construction">The 'action' attribute (available in the body of the file as explained below) is used to indicate changes. All records in the initial FULL load of a file should be coded with an 'A.' If desired, after the initial FULL load, updates can be sent instead of the entire file. When delivering updates, only transmit applications that are new or have changed in some way. Changes are accomplished with a pair of 'D' (delete) and 'A' (add) records. The 'D' application record should match the existing application record in the system as originally delivered. The corresponding 'A' record should contain the information as the user now want it stored.</p>
+        <p MadCap:conditions="Primary.Under Construction">For example, if the user originally delivered a year-range application, and now, the user wants to change a single year of that range, then it is acceptable to delete one year using the old information and add the updated information for that year.</p>
+        <h3>Body</h3>
+        <p class="Body1">The Body section contains catalog data that should only include the information necessary to unambiguously select the correct part (PIES Item).  Each  application record will be surrounded with the &lt;App&gt; tags and can contain some or all of the following <MadCap:annotation MadCap:createDate="2019-03-27T11:55:26.9836564-04:00" MadCap:creator="erpo" MadCap:initials="ER" MadCap:comment="What if you bold the ones that are required and make a special note for that rather than repeating it?" MadCap:editor="erpo" MadCap:editDate="2019-03-27T11:55:41.4488230-04:00">details.</MadCap:annotation></p>
+        <ul>
+            <li>Application Record Number</li>
+            <li>Base Vehicle ID</li>
+            <li>Make</li>
+            <li>Model</li>
+            <li>Years</li>
+            <li>Submodel</li>
+            <li>Engine Base ID</li>
+            <li>Part number </li>
+            <li>Part Type (Numeric ID of the Part type)</li>
+            <li>Position</li>
+            <li>Part Quantity</li>
+            <li>Note</li>
+            <li>Action (‘A’ or ‘D’, 'A' indicates to add the application record and 'D' indicates to delete the application record).</li>
+            <li>Asset ID </li>
+            <li>Asset name</li>
+            <li>
+                <p>All other attributes / vehicle options that exist for any application record create and populate a unique column.</p>
+            </li>
+        </ul>
+        <p class="Body1">Of the above listed details, the following information is required for each application:</p>
+        <ul>
+            <li>
+                <p>Base Vehicle ID</p>
+            </li>
+            <li>
+                <p>Part Type</p>
+            </li>
+            <li>
+                <p>Part Number</p>
+            </li>
+            <li>
+                <p>Part Quantity</p>
+            </li>
+        </ul>
+        <p>A sample ACES XML body structure and the details in how it is populated on the STEP system is displayed below </p><pre class="PreIndent" xml:space="preserve">     &lt;App action="A" id="2"&gt;
+        &lt;BaseVehicle id="5289"/&gt;
+        &lt;BodyNumDoors id="5"/&gt;
+        &lt;EngineBase id="1305"/&gt;
+        &lt;Qty&gt;2&lt;/Qty&gt;
+        &lt;PartType id="5696"/&gt;
+        &lt;MfrLabel&gt;ChkEngSens&lt;/MfrLabel&gt;
+        &lt;Part BrandAAIAID="DKGX"&gt;VC36112&lt;/Part&gt;
+    &lt;/App&gt;
+</pre>
+        <p>App Action value '’A'’adds a new ACES application (if it was the value  ‘D’ instead of 'A' then it would notify the system to mark the application for deletion).</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The automotive importers do not delete any objects, it just marks objects as new, delete, or change through change flags.</p>
+        <p>ID value '2' signifies the sequential order of parsing for the applications.</p>
+        <p>The value in the &lt;part&gt; tag is extracted to identify the parent for the application item. The application will be created / modified under the ‘VC36112’ PIES Item. &lt;BodyNumDoors id="5"/&gt;, &lt;/MfrLabel&gt;, and &lt;Qty&gt;, populates the respective attribute values as displayed in the screenshot below.</p>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/12.png" />
+        </p>
+        <p>&lt;BaseVehicle id="5289"/&gt; and &lt;EngineBase id="1305"/&gt; creates a reference to the objects within the Vehicle Configuration (VCdb) classification and &lt;PartType id="5696"/&gt;  creates a reference to the object within the Parts Categorization (PCdb) classification in the STEP system as displayed in the screenshot below.</p>
+        <p class="Body1Image">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/13.png" />
+        </p>
+        <h3>Footer</h3>
+        <p>The Footer section indicates the end of the data and provides a count of the applications that is being transferred in the file.</p><pre class="PreIndent" xml:space="preserve">&lt;Footer&gt;&lt;RecordCount&gt;2&lt;/RecordCount&gt;&lt;/Footer&gt;</pre><pre class="PreIndent" xml:space="preserve">&#160;</pre>
+    </body>
+</html>

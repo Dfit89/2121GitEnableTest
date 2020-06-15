@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>Configuring a File Loading Widget for TecDoc Supplier Data Imports</title>
+        <meta name="description" content="Automotive Solution: Describes how to configured a File Loading Widget for the TecDoc solution so that Web UI users can import TecDoc Supplier Data files into STEP using a File Loading Widget. " />
+    </head>
+    <body>
+        <h1>Configuring a File Loading Widget for Supplier Data Imports</h1>
+        <p class="Body1"> When configured, Web UI users can import TecDoc Supplier Data files into STEP using a File Loading Widget. Users can also monitor the progress of Supplier Data imports using a Status Selector Homepage Widget and a Node Details component.</p>
+        <p class="Body1HeadNoTOC" MadCap:conditions="Primary.Print">Prerequisites</p>
+        <h2 MadCap:conditions="Primary.Web">Prerequisites</h2>
+        <p>Before starting to configure the Web UI portion of this solution, an IIEP for TecDoc Supplier data imports must be configured within workbench. For more information, see the <b>Configuring an IIEP for Supplier Data Imports</b> topic<MadCap:xref href="Configuring an IIEP for Supplier Data Imports.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Body1">Additionally, it is helpful to know how to add a widget to a Web UI Homepage. Details on how to do this can be found in the<b> Adding Widgets to a Homepage</b> topic in the <b>Getting Started</b> documentation<MadCap:xref href="../../../../../../Web User Interfaces/Using Web UI/Homepage Widgets/Adding Widgets to a Homepage.htm" class="Here"><span style="color: Blue;" class="mcFormatColor" MadCap:conditions="Primary.Web"> here</span></MadCap:xref>.</p>
+        <p class="Body1HeadNoTOC" MadCap:conditions="Primary.Print">Configuration</p>
+        <h2 MadCap:conditions="Primary.Web">Configuration</h2>
+        <p class="Body1">Each screenshot example within this section provides recommended values for the TecDoc Supplier Data Importer and the parameters displayed.</p>
+        <p class="Body1">This topic describes how to configure a File Loading Widget so that users can drag and drop TecDoc Supplier Data files onto a File Loading Widget on a Web UI Homepage.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">If Easy Setup actions for the TecDoc solution have been completed as described in the <b>3. Run Easy Setup of Standards </b>topic of<b> Automotive Quick Start Guide</b><MadCap:xref href="../../../../Quick Start Guide/Admin QSG/3. Run Easy Setup of Standards.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>, then the 'TECDOC&#160;IMPORTS' File Loading Widget will automatically be added to the TecDoc Web UI Homepage as shown in the examples below. Otherwise, the steps below can be used to complete configuration. </p>
+        <ol>
+            <li>Go to the Web UI Homepage where a File Loading Widget configured with the 'TECDOC&#160;IMPORTS' title is configured with a 'Supplier' drop area available for users to drag and drop supplier import files.</li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Using Web UI design mode, select the existing File Loading Widget to be used or add a new File Loading Widget to the Homepage Widget Grid component. For more information, see the <b>File Loading Widget</b> topic within the <b>Web User Interfaces</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../../../Web User Interfaces/Using Web UI/Homepage Widgets/File Loading Widget.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Go to the Inbound Integration Endpoint Parameters field, click the <b>Add</b> button, and the Inbound Integration Endpoint Parameters Properties dialog will display. </li>
+            <li>Click the dropdown for the Inbound Integration Endpoint parameter, and select <b>TecDoc Supplier Inbound Endpoint</b> (the IIEP  created for TecDoc Supplier imports).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_TD/Supplier/cwu1.jpg" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">If the desired IIEP does not display in the dropdown, then it can be created using the steps described in the <b>Configuring an IIEP for Supplier Data Imports</b> topic<MadCap:xref href="Configuring an IIEP for Supplier Data Imports.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <ol MadCap:continue="true">
+            <li>Optionally, provide a label to be displayed within the drop zone of the widget.</li>
+        </ol>
+        <p class="Body2">In the example below:</p>
+        <ul>
+            <li class="Bullet2">A File Loading Widget labeled as 'TECDOC&#160;IMPORTS' is displayed above its configurations. </li>
+            <li class="Bullet2">The File Loading Widget and its configurations are shown with the default configurations provided automatically when Easy Setup actions for the TecDoc component model are completed. </li>
+            <li class="Bullet2">An IIEP for both the TecDoc Supplier and Reference importers is added within the  'TECDOC&#160;IMPORTS' File Loading Widget. </li>
+        </ul>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_TD/Supplier/cwf1.jpg" />
+        </p>
+        <ol start="6">
+            <li>Click the <b>Save</b> and <b>Close</b> buttons to save the changes and close the designer.</li>
+        </ol>
+    </body>
+</html>

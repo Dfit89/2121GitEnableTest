@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Under Construction">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  " />
+    </head>
+    <body>
+        <h1>Using AutoCare Qdb Importer</h1>
+        <p>The intention of the Automotive AutoCare Qdb Importer is to provide an out-of-the-box solution for importing data included within the AutoCare   Qdb (Qualifier Database) file type. </p>
+        <p class="Body1">This section addresses the following:</p>
+        <ul>
+            <li MadCap:conditions="Primary.Under Construction" class="Bullet1">Sample Qdb File Structure and Output</li>
+            <li class="Bullet1">Importing Qdb Files via Web UI<MadCap:xref href="../../../../Reference Guide/Importers/Standard_AC/Qdb/Importing Qdb Files via Web UI_InProgress.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></li>
+            <li class="Bullet1">Qdb Import Validation Rules<MadCap:xref href="../../../../Reference Guide/Importers/Standard_AC/Qdb/Qdb Import Validation Rules.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></li>
+            <li class="Bullet1">Configuring Qdb Importer for Web UI<MadCap:xref href="../../../../Reference Guide/Importers/Standard_AC/Qdb/Configuring Qdb Importer for Web UI_InProgress.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></li>
+            <li class="Bullet1">Configuring Qdb Importer for Workbench<MadCap:xref href="../../../../Reference Guide/Importers/Standard_AC/Qdb/Configuring Qdb Importer for Workbench_InProgress.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></li>
+        </ul>
+        <h2>Sample Qdb File Structure and Output</h2>
+        <p class="Body1">This section describes a sample Qdb file structure and output.</p>
+        <h3>Sample Qdb file structure</h3>
+        <ul>
+            <li class="Bullet1">Whether uploading the file via accessing the application server or a file loading widget, the file must be in Zip format. The Example file name for this section is: AAIA Qdb ASCII.zip</li>
+        </ul>
+        <ul>
+            <li class="Bullet1">Each Zip file can contain the following files:</li>
+        </ul>
+        <ul>
+            <li class="Bullet1"><b>Language.txt:</b> Provides data for translation purposes, but is ignored during the AAIA Import process. An example of the contents of this file is shown below.</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/LanguageID.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>QdbCHanges.txt:</b>  Outlines all changes to the Qualifier Database, but is ignored during the AAIA Import process.  An example of the contents of this file is shown below.</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/QdbChanges.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>Qualifier.txt:</b> Provides information within each of the following columns:</li>
+            <li class="Bullet2"><b>QualifierID:</b> Provides the ID of the qualifier.</li>
+            <li class="Bullet2"><b>QualifierText:</b> Provides the actual text of the qualifier, which appears as the name in STEP and as an attribute (Qdb_QualifierText) on the Qualifier object type. </li>
+            <li class="Bullet2"><b>ExampleText:</b> Provides an example of the qualifier in use, which is particularly helpful when the qualifier contains parameters. This is stored as an attribute on the Qualifier object type (Qdb_ExampleText). </li>
+            <li class="Bullet2"><b>QualifierTypeID:</b> Indicates the ID of the qualifier type under which the qualifier resides and must match the ID of an existing Qualifier Type object type.</li>
+            <li class="Bullet2"><b>NewQualifierID:</b> Used to supersede  the current qualifier to another, and is stored in STEP as an attribute (Qdb_NewQualifierID). An entry of ‘0’ indicates no supersession applies and no further action is taken. A nonzero entry indicates that the current qualifier is being superseded by the indicated qualifier ID. In this case, a Classification reference (Reference Type=Qualifier Supersession, ID=Qdb_Supersession) is created between the two qualifiers. The new qualifier is the source of the reference, and the old qualifier is the target. This reference is created upon import of the file only if both qualifiers will exist in STEP post-import.  Any qualifiers present in STEP, but not included in the input file, are removed from STEP.</li>
+            <li class="Bullet2"><b>WhenModifiedDate:</b> Used to maintain the modification date of the qualifier.</li>
+        </ul>
+        <p class="Bullet2NextPara"> An example of the contents of this file is shown below.</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/QualifiertxtNotepad.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>QualifierTranslation.txt:</b> Provides data for translation purposes but is ignored during the AAIA Import process.  An example of the contents of this file is shown below.</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/QualifierTranslationIDQ.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>QualifierType.txt:</b> Provides information within each of the following columns:</li>
+            <li class="Bullet2">QualifierTypeID: Provides the ID of the Qualifier Type as referenced in the other files. The STEP ID for the qualifier type prefixes the QualifierTypeID with 'AC_QualifierType_' </li>
+            <li class="Bullet2">QualifierType: Provides the name of the Qualifier Type in STEP.</li>
+        </ul>
+        <p class="Bullet2NextPara">An example of the contents of this file is shown below.</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/QualifierTypeID.png" />
+        </p>
+        <p class="Body1">In the example below the Fitment Qualifier Type has been created within the Qualifiers (Qdb) Object type of the AutoCare Root.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/Fitment.png" />
+        </p>
+        <ul>
+            <li class="Bullet1"><b>Version.txt:</b> Contains only two lines indicating the version date of the Qdb. This should match the date in the file name. Version date is stored as a description attribute (Qdb_VersionDate) on the Qualifier Group node of the hierarchy. An example of the contents of this file is shown below.</li>
+        </ul>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/VersionDate.png" />
+        </p>
+        <p class="Bullet1NextPara">In the example below the Qdb Version Date attribute is displayed within the Qualifiers (Qdb) Object type of the AutoCare Root.</p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/Qualifiers and Cautlon.png" />
+        </p>
+        <h3>Sample Qdb Output:</h3>
+        <p>Upon successful import of a file, based on the qualifier type ID, the necessary record / data will be created / updated under the 'Qualfiers (Qdb)' node in the hierarchy under the respective folders.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/Qualifiers(Qdb).png" />
+        </p>
+        <p>For example, in the import file, if the qualifier is specified with the Qualifier Type ID of five. Then the qualifier will be created / updated under the ‘Product’ folder.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/Importers/Standard_AC/Qdb/QualifierType.txt.png" />
+        </p>
+    </body>
+</html>

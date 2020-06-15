@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head>
+        <title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to display import modifications in Web UI." />
+    </head>
+    <body>
+        <h1>Displaying Import Modifications in Web UI</h1>
+        <p class="Body1">If additional states are added to any workflow, it may be useful to also reflect them in the Web UI. If the file will spend more than a few minutes processing within the state, it may be useful to display the state to end users so the file does not appear to be missing. </p>
+        <p class="Body1">Additionally, if user interaction is required for the file to move to the next state, it must be accessible to end users so that they can take action on it. On the other hand, new states that are automated only (e.g., the system will transition the task into the next state without any user intervention) do not necessarily need to be displayed to the end user. </p>
+        <p class="Body1">To manage additional import workflow states in the Web UI, two actions need to be taken:</p>
+        <ol>
+            <li class="Numbered1">Add the state to the Homepage Status Selector for the workflow. An introduction to status selectors in the Automotive solution is provided in the <b>Automotive Quick Start Guide</b><MadCap:xref href="../../Quick Start Guide/Automotive Quick Start Guide Introduction.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within the<b> Solution Enablement </b>section of<b> STEP Online Help</b>. Detailed information for configuring status selectors is available in the <b>Status Selector Homepage Widget</b> topic within <b>STEP Online Help</b>.</li>
+            <li class="Numbered1">Update the associated workflow screen to display details about the state. Each importer has a corresponding workflow screen in Web UI called '[Standard][Format]WorkflowScreen,' (e.g., AutoCareACESApplicationWorkflowScreen). Select that screen in the Web UI designer and navigate to the Data Provider to add the states, e.g., select the <b>go to component</b> link for the Node Editor child component &gt; double click on the <b>Refreshable Node List</b> child component &gt; click the <b>Edit</b> button for the Data Provider &gt; select the appropriate workflow in the Workflow parameter &gt; add the additional states using the dropdown and <b>Add</b> button for the States parameter &gt; <b>Save</b>)<MadCap:annotation MadCap:createDate="2017-10-13T17:26:28.6586539-04:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="add image" MadCap:editor="medu" MadCap:editDate="2017-10-13T17:26:30.8093671-04:00">.</MadCap:annotation></li>
+        </ol>
+    </body>
+</html>

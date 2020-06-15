@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:searchable="True" MadCap:conditions="Primary.80 Percent" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution: Search by Card Screen allows users to find specific data using multiple search criteria that  allows users to find the most relevant information to meet their needs." />
+    </head>
+    <body>
+        <h1>Search by Card Initial Configuration</h1>
+        <p class="Body1">Search by Card allows users to find specific data by using the sync between search cards functionality to narrow down the search result and only see the relevant result.</p>
+        <p class="Body1">Search by Card properties can be edited at any time. However, it is best to configure the properties early on. Removing search criteria later may impact searches you have already saved. If removed, the saved search still remains  accessible, but the Search button will not be enabled. </p>
+        <p class="Body1">The Search by Card link can be added to the Web UI homepage for convenient user access. In addition, the search criteria panel itself is configurable so Web UI designers can present users with criteria that are relevant to their job. It is better to define the search criteria in a manner that reduces the risk of unintended and restricted searches.</p>
+        <h2>Configuration Prerequisites</h2>
+        <p class="Body1">It is expected that anyone configuring the Search by Card Screen component is familiar with the Web UI Designer as basic concepts for working with the designer are not covered in this section. In addition, the user must have appropriate privileges to access the designer. Additional information can be found in the <span class="bold">Designer Access</span> section of the <span class="bold">Web User Interfaces / Web UI Getting Started</span> documentation<MadCap:xref href="../../../../Web User Interfaces/Web UI Getting Started/Designer Access.htm" class="Here"><span style="color: Blue;" class="mcFormatColor" MadCap:conditions="Primary.Web"> here</span></MadCap:xref>.</p>
+        <h2>Configuration Process</h2>
+        <p class="Body1">In the designer, create a new screen by selecting <b>New</b>. Select the <b>Search by Card Screen</b> and create a name for the screen in the 'Screen ID' field. In the example below, the Screen ID&#160;is 'Search by Card Screen.' Click <b>Add</b>.</p>
+        <p class="Body1">The Screen ID you use should be something descriptive (e.g., Search by Card or Card Search) since this will be the name shown on any design component list in the Web UI. Screen IDs cannot be reused and must be unique. </p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Search by Card Screen/1.png" />
+        </p>
+        <p>Once this screen is created,  the Search by Card Screen Properties designer screen displays, which contains the following parameters for configuration:</p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Search by Card Screen/2.png" />
+        </p>
+        <p class="Body2"><b>Title:</b> To make changes to the default title in the screen, add the custom text to the Title field. If nothing is added, the Title default will display as 'Search screen.'</p>
+        <p class="Body2"><b>Result Object Types:</b> Allows search results to display only results of the listed object type. This parameter cannot be left blank. Click the Add button below the parameter field to browse or search for the necessary object types.</p>
+        <p class="Body2"><b>Root Nodes:</b> Defines the root node under which the search needs to be performed when searching / filtering for specific data. Only results from those folders that pertain to the root notes that are defined within this parameter will be displayed. In addition, once the root node(s) is defined, the search input field displays only suggestions of objects that belong in the root node that is defined within this parameter.  Click the <b>Add</b> button below the parameter field to browse or search for the necessary root node object(s).</p>
+        <p class="Body2"><b>Search Cards:</b> This parameter allows adding multiple search boxes that are displayed as cards within the Search by Card Screen. Of the available options, Name Search Box and Hierarchy Search Box components can be added only once and Attribute Search Box can be added multiple times. The order that the search boxes are listed determines the order that they will be displayed within the Search by Card Screen. All of the search boxes require additional configuration. Clicking the Add button next to the Search Cards parameter displays an Add Component dialog with the option to add one of the following search boxes: Attribute Search Box, Hierarchy Search Box, and Name Search Box. Steps for configuring each search field can be found in their respective sections mentioned below:</p>
+        <ul>
+            <li class="Bullet3">Configuring Name Search Box<MadCap:xref href="Configuring Name Search Box.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet3">Configuring Hierarchy Search Box<MadCap:xref href="Configuring Hierarchy Search Box.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+            <li class="Bullet3">Configuring Attribute Search Box<MadCap:xref href="Configuring Attribute Search Box.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></li>
+        </ul>
+        <p class="Body2">Because Name Search Box and Hierarchy Search Box components can only be configured once for each Search by Card Screen, adding the search box of the same type again will cause the Error dialog as shown below to display, and the Search Cards parameter will remain unchanged.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/3.png" />
+        </p>
+        <p class="Body2"><b>Attribute Filters:</b> Allows users to define attributes and their values. The objects that hold these attributes with the defined values will be excluded from the search result.</p>
+        <p class="Body2"><b>Business Condition:</b> Optional parameter allowing users to select a business condition to be run as part of the search process.</p>
+        <p class="Body2"><b>Node List:</b> The Search by Card Screen Properties is pre-configured with a Node List in Table Display Mode. Select the 'Node List' option in the dropdown and click on the 'go to component' to add more table header components in the Node List component. For more information, see the <b>Node List Component</b> topic within the <b>Web User Interfaces</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node List Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <h2> Adding Search by Card to the Homepage</h2>
+        <p class="Body1">To add a link to Search by Card on the homepage:</p>
+        <ol>
+            <li class="Numbered1">Log in to the Web UI. User must have privileges to edit Web UI configurations.</li>
+            <li class="Numbered1">Enter design mode.</li>
+            <li class="Numbered1">The link must now be configured to display in the <b>Links Widget</b>.</li>
+        </ol>
+        <p class="Body2">Select HOMEPAGE from the screen dropdown in the designer and select the Links Widget in the applicable Widget Grid (found under Home Page Properties &gt;&#160;Child Components &gt;&#160;Content).</p>
+        <p class="Body2">If the Links Widget has never been configured to display on the Homepage, it will need to be added to a Widget Grid. Details on how to do this can be found  in the<b> Adding Widgets to a Homepage</b> topic in the <b>Getting Started</b> documentation of the STEP Online Help<MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Homepage Widgets/Adding Widgets to a Homepage.htm" class="Here"><span style="color: Blue;" class="mcFormatColor" MadCap:conditions="Primary.Web"> here</span></MadCap:xref>.</p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Within Links Widget Properties, go down to the Child Components section and click the <b>Add</b> button.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/STEPPortals/Advancedsearch1.png" class="NoColumns" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Choose the Navigation component and click <b>Add</b>.</li>
+            <li class="Numbered1">On the Navigation properties screen, click the dropdown available towards the right of the Screen field.</li>
+            <li class="Numbered1">Select the desired Search by Card Screen. </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/4.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Fill in the Label field with the name that will show on the links widget, then click <b>Add</b>. </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/5.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">You can move the Links Widget Child Components up and down based on your preference for how they show on the homepage. </li>
+            <li class="Numbered1">Click <b>Save</b> in the Properties Configuration dialog box.</li>
+            <li class="Numbered1">The Advanced Search link will now show under Quick Links and is identified by the name you gave the link in Step 8.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Search by Card Screen/6.png" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"> Additional information regarding STEP&#160;Web UI Designer (entering design mode, selecting screens to edit, and more) can be found in the <span class="bold">Web User Interfaces</span> / <span class="bold">Getting Started</span> documentation of the STEP Online Help<MadCap:conditionalText MadCap:conditions="Primary.Web"><MadCap:xref href="../../../../Web User Interfaces/Web UI Getting Started/Web UI Getting Started.htm" class="Here"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></MadCap:conditionalText>.</p>
+        <p class="Body1">Search by Card Screen is now set up and ready for use.</p>
+    </body>
+</html>

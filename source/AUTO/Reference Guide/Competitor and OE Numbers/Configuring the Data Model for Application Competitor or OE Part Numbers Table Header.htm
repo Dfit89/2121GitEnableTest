@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>Configuring the Data Model for Application Competitor or OE Part Numbers Table Header</title>
+        <meta name="description" content="Automotive Solution: Describes how to configure the Data Model in the workbench before configuring and using the Application Competitor or OE  Part Number Table Header." />
+    </head>
+    <body>
+        <h1>Configuring the Data Model for Application Competitor or OE Part Numbers Table <MadCap:annotation MadCap:createDate="2019-01-21T10:42:02.7915781-05:00" MadCap:creator="erpo" MadCap:initials="ER" MadCap:comment="This is a really long title. Can we shorten it to just 'Application Competitor or OE Part Number Table Header Configuration?' Just a lot to take in.\r\n\r\nBond: I tried to gamble with more other names but this was the best that could fit in the current topic" MadCap:editor="bond" MadCap:editDate="2019-01-23T21:16:02.5701658+05:30">Header</MadCap:annotation></h1>
+        <p MadCap:conditions="Primary.PRODOC Note">PRODOC note: BOND PRODOC- 1673 and 1519 </p>
+        <p MadCap:conditions="Primary.PRODOC Note" class="Body1">Refer to PAKA demo video in Zoom</p>
+        <p MadCap:conditions="Primary.PRODOC Note" class="Body1">PRODOC note: Per convo with LURE he will be sending me his setup notes. New object type is 'OE Application AutoCare' Interchange Application </p>
+        <p> The Application Competitor or OE Part Numbers Table Header involves two levels of configuration. The first level of configuration is performed  in the workbench and the part is configured in the Web UI. After the Easy Setup action, the Application Competitor or OE Part Numbers Table Header Component requires additional setup in the data model and needs to be manually modified. The user needs to be  aware of the  data model structure of the modifying automotive standard. This document only describes the  procedure to configure / modify the data model in the workbench. For information on configuring the Web UI portion, see the <b>Configuring the Application Competitor or OE Part Numbers Table Header Component</b> topic<MadCap:xref href="Configuring the Application Competitor or OE Part Numbers Table Header Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1">By the end of this configuration in the workbench, there must be a link established from Interchange  application (competitor or OE  number application) object to Part Type (Part Terminology / MPCC / Generic Article) and a reference established from Interchange application (competitor or OE  number application) object to Vehicle (Base Vehicle / NAPA Year / VehicleType(CV or PC)). </p>
+        <p>Below are the steps to configure in the workbench.</p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;"> Throughout this topic, all the manually created Object Types / Objects are provided with example IDs for easier understanding. It is up to the user to either follow the same ID or their own while creating the Object Types / Objects.</p>
+        <ol>
+            <li>Log in to the workbench, and access the System Setup tab.</li>
+        </ol>
+        <ol start="2">
+            <li>Create a new Interchange  application (competitor or OE  number application) object type under an Interchange product object type.</li>
+        </ol>
+        <ul>
+            <li>For AutoCare solution this may be creating 'AC_PIESInterchangeApplication' under 'AC_PIESInterchangeItem'</li>
+            <li>For NAPA solution this may be creating 'NAPA_InterchangeApplication' under 'NAPA_InterchangeProduct' </li>
+            <li>For TecDoc solution this may be creating 'TD_DS_OENumberApplication' under 'TD_DS_OENumber' and/or 'TD_DS_CompetitorNumberApplication' under 'TD_DS_SupplierCompetitorNumber'</li>
+        </ul>
+        <p class="Body2">Below is an example of a created OE Number application for the TecDoc solution.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/71.png" />
+        </p>
+        <ol start="3">
+            <li>Define the newly created Interchange application object type as valid Product Type in the following Classification Link Type.</li>
+        </ol>
+        <ul>
+            <li>For AutoCare solution this may be defining 'AC_PIESInterchangeApplication'  as valid Product Type to 'AC_ProductToPartTerminology' Classification Link Type</li>
+            <li>For NAPA solution this may be defining 'NAPA_InterchangeApplication' as valid Product Type to 'NAPA_ProductToMPCC' Classification Link Type</li>
+            <li>For TecDoc solution this may be defining 'TD_DS_OENumberApplication' and/or 'TD_DS_CompetitorNumberApplication' as valid Product Type to 'TD_<MadCap:annotation MadCap:createDate="2019-01-09T16:05:05.6459166+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Confirm this with NIKKI" MadCap:editor="bond" MadCap:editDate="2019-01-09T16:05:15.3087768+05:30">SupplierArticleToGenericArticle' Classification Link Type</MadCap:annotation></li>
+        </ul>
+        <p class="Body2">Below is an example of OE Number application being defined as the valid Product Type to 'TD_SupplierArticleToGenericArticle' Classification Link Type.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/72.png" />
+        </p>
+        <ol start="4">
+            <li>Define the created Interchange application object type as  valid Source Type in the following  Classification Reference Type.</li>
+        </ol>
+        <ul>
+            <li>For Autocare solution this may be defining 'AC_PIESInterchangeApplication'  as valid Source Type to 'AC_<MadCap:annotation MadCap:createDate="2019-01-08T16:59:14.1831184+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="Double confirm this with NIKKI" MadCap:editor="bond" MadCap:editDate="2019-01-29T17:33:23.9289715+05:30">ACESApplicationToBaseVehicle'</MadCap:annotation> Classification Reference Type</li>
+            <li>For NAPA solution this may be defining 'NAPA_InterchangeApplication' as valid Source Type to 'NAPA_ApplicationToYear' Classification Reference Type</li>
+            <li>For TecDoc solution this may be defining 'TD_DS_OENumberApplication' and/or 'TD_DS_CompetitorNumberApplication' as valid Source Type to 'TD_SupplierArticleToVehicleType(CV)' and/or 'TD_SupplierArticleToVehicleType(PC)' Classification Reference Type</li>
+        </ul>
+        <p class="Body2">Below is an example of OE Number application  object type being defined as the valid Source Type to 'TD_SupplierArticleToVehicleType(CV)' Classification Reference Type.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/73.png" />
+        </p>
+        <ol start="5">
+            <li>Define the Interchange  (Competitor / OENumber) product object type as valid Source Type and valid Target Type in the following Product Reference Type.</li>
+        </ol>
+        <ul>
+            <li>Define 'AC_PIESInterchangeItem' object type as valid Source Type and valid Target Type to 'AC_PartRelation' Product Reference Type.</li>
+            <li>Define 'NAPA_InterchangeProduct' object type as valid Source Type and valid Target Type to 'NAPA_PartRelation' Product Reference Type.</li>
+            <li>Define 'TD_DS_OENumber' and 'TD_DS_SupplierCompetitorNumber' object type as valid Source Type and valid Target Type to 'TD_PartRelation' Product Reference Type.</li>
+        </ul>
+        <p class="Body2">Below is an example of OE Number   object type being defined as the valid Source Type and valid Target Type to 'TD_PartRelation' Product Reference Type.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/74.png" />
+        </p>
+        <ol start="6">
+            <li>Add the Interchange  (Competitor / OENumber) product object type  to 'Part' aspect in Automotive - Application Model.</li>
+        </ol>
+        <ul>
+            <li>For the AutoCare&#160;solution, this may be 'AC_PIESInterchangeItem'</li>
+            <li>For the NAPA&#160;solution, this may be 'NAPA_InterchangeProduct'</li>
+            <li>For the TecDoc solution, this may be 'TD_DS_SupplierCompetitorNumber' or 'TD_DS_OENumber' </li>
+        </ul>
+        <p class="Body2">Below is an example of OE Number   application object type being added to 'Part' aspect in Automotive - Application Model.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/75.png" />
+        </p>
+        <ol start="7">
+            <li>Add the created Interchange application object type to 'Application' aspect in Automotive - Application Model.</li>
+        </ol>
+        <ul>
+            <li>For the AutoCare&#160;solution, this may be 'AC_PIESInterchangeApplication'</li>
+            <li>For the NAPA&#160;solution, this may be 'NAPA_InterchangeApplication'</li>
+            <li>For the TecDoc solution, this may be 'TD_DS_OENumberApplication' and/or 'TD_DS_CompetitorNumberApplication'</li>
+        </ul>
+        <p class="Body2">Below is an example of OE Number   object type being added to 'Application' aspect in Automotive - Application Model.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Competitor OE Number/76.png" />
+        </p>
+    </body>
+</html>

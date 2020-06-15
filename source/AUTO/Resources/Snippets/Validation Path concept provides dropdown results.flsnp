@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="90" MadCap:lastWidth="1032">
+    <head>
+    </head>
+    <body>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">When a dropdown within the Application Manager search boxes and/or value editors displays only valid options filtered by previous selections and/or specific vehicle configurations, this intelligence is driven by the validation path concept. For more information about the validation path concept, see the <b>Automotive Validation Paths</b> topic<MadCap:xref href="../../Reference Guide/Application Manager/Validation Paths/Automotive Validation Path Functionality.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within this guide. </p>
+    </body>
+</html>

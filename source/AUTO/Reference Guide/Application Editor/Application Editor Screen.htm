@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:searchable="True" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="Automotive Solution: This topic explains the Application Editor Screen that allows Web UI users to view, edit, create and delete application records when a vehicle / assembly or a part is selected." />
+    </head>
+    <body>
+        <h1>Application Editor Screen</h1>
+        <p>Running step 1 of Easy Setup for each standard (AutoCare / NAPA / TecDoc) will create two Application Editor Screens:</p>
+        <ul>
+            <li class="Bullet1">One for when a Part is selected to display the applications belonging to that Part.</li>
+            <li class="Bullet1">One for when a Vehicle / Assembly is selected to display the applications belonging to that Vehicle / Assembly.</li>
+        </ul>
+        <p>Web UI users can view, edit, create, and delete application records within these screens. Users can also further configure results table in the screen to meet their requirements.</p>
+        <p class="Body1">The Application Editor Screen require an object selection, so these screens need to be mapped for a particular object type or added on a tab within another screen that is mapped to the appropriate object. To map the Parts or Vehicles screen directly so  that when you are on a part or vehicle, you will only see that screen, see the <b>Mappings</b> topic within the <b>Main Properties Overview</b> section of  <b>STEP Online </b><b>Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Main Properties/Mappings.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1">To add the Parts or Vehicles screen to an existing screen, use the Sub Screen Tab Page configuration, described in the <b>Tab Pages</b> topic in the <b>Web User Interfaces / Web UI Getting Started</b> documentation of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node Details/Tab Pages.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">AutoCare will be used as an example throughout this topic.</p>
+        <p class="Body1"> Each of the automatically configured Application Editor Screens for the different standards are described below:</p>
+        <p class="Body1HeadNoTOC">AutoCare</p>
+        <p class="Body1">Each of the automatically configured screens for the AutoCare solution are described below:</p>
+        <ul>
+            <li class="Bullet2"><b>AutoCare Application Editor Screen (Parts):</b> A screen for viewing / editing application records when a part is selected. This screen is mapped to the  AC_PIESITEM object type.</li>
+            <li class="Bullet2"><b>AutoCare Application Editor Screen (Vehicles):</b> A screen for viewing / editing application records when a vehicle is selected. This screen is mapped to the  AC_Basevehicle object type.</li>
+        </ul>
+        <p class="Body1HeadNoTOC">NAPA </p>
+        <ul>
+            <li class="Bullet2"><b>NAPA Application Editor Screen (Parts):</b> A screen for viewing / editing application records when a part is selected. This screen is mapped to the NAPA_Product object type.</li>
+            <li class="Bullet2"><b>NAPA Application Editor Screen (Vehicles):</b> A screen for viewing / editing application records when a vehicle is selected. This screen is mapped to the  NAPA_Year object type.</li>
+        </ul>
+        <p class="Body1HeadNoTOC">TecDoc</p>
+        <ul>
+            <li class="Bullet2"><b>TecDoc Application Editor Screen (Articles):</b> A screen for viewing / editing application records / linkages when an article is selected. This screen is mapped to the TD_DS_SupplierArticle object type.</li>
+            <li class="Bullet2"><b>TecDoc Application Editor Screen (Assemblies):</b> A screen for viewing / editing application records / linkages when an assembly is selected. This screen is mapped to the  TD_VehicleType(PC) object type.</li>
+        </ul>
+        <h2>Prerequisites</h2>
+        <p class="Body1">It is expected that anyone configuring the Application Editor Screen (Parts / Vehicle) is familiar with the Web UI Designer, as basic concepts for working with the designer are not covered in this section. In addition, the user must have appropriate privileges to access the designer. Additional information can be found in the <span class="bold">Designer Access</span> section of the <span class="bold">Web User Interfaces</span> / <span class="bold">Web UI Getting Started</span> documentation<MadCap:xref href="../../../../Web User Interfaces/Web UI Getting Started/Designer Access.htm" class="Here"><span style="color: Blue;" class="mcFormatColor" MadCap:conditions="Primary.Web"> here</span></MadCap:xref>.</p>
+        <h2>Configuring Application Editor Screen Properties</h2>
+        <p class="Body1">The Application Editor Screen Properties includes the <b>Data Provider</b> parameter that is prepopulated  with either the 'Part Application' or 'Assembly Application' options. The 'Part Application' option is selected for the Application Editor Screen that is used to display the application records while selecting a part. The  'Assembly Application' option is selected for the Application Editor Screen that is used to display the application records while selecting a vehicle / assembly. No further configuration is needed for the Data Provider parameter.</p>
+        <p class="Body1"><b>Object Type Filter:</b> This parameter allows users to restrict the Application Editor results by an object type. If left blank, application records belonging to all object type will be displayed.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Application Editor/2.png" />
+        </p>
+        <p>The Application Editor Screen Properties is pre-configured with a Node List in Multi Edit Display Mode along with the 'Delete Application Action' and 'Create Application Action' toolbar actions (as shown above).</p>
+        <ol>
+            <li class="Numbered1">Select the 'Node List' option in the dropdown and click on the 'go to component' link.</li>
+            <li class="Numbered1">Configure the Node List component. For more information, see the <b>Node List Component</b> topic within the <b>Web User Interfaces</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node List Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+        </ol>
+        <p class="Body1" MadCap:conditions="Primary.Under Construction">The Headers parameter available within the Multi Edit Display Mode  allows for the display of various headers to be used to display needed information. For more information on configuring the Multi Edit Display Mode Properties, see the <b>Node List Component</b> topic within the <b>Web User Interfaces</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node List Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Body1">Since the Application Editor Screen is based on the Node List component and the Multi Edit Display Mode, sorting and filtering of the header component values are supported. This allows for multiple information of the application records to be shown in the same table with the column filtering capabilities. Also, the 'Number of Items' shown in the Application Editor Screen is displayed towards the bottom of the results table, allowing a user to see the total number of application records without having to scroll through the data. In the example screenshot shown below, the Application Editor Screen is configured as a tab page within the Node details screen and eight application records are displayed for the selected part.</p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Application Editor/3.png" />
+        </p>
+        <h2>Node List Properties</h2>
+        <p>Only the significant information applicable to the Application Editor Screen is detailed below. Additional information about the Node List Properties can be found in the <b>Node List Component</b> section of the <b>Web User Interfaces</b> documentation<MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node List Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Body1">The following are the parameters available within the Child Components section of the properties <MadCap:annotation MadCap:createDate="2019-10-11T14:34:15.7900800-04:00" MadCap:creator="erpo" MadCap:initials="ER" MadCap:comment="This is a fragment. I'm not sure what it saying.\r\nBOND: Edited" MadCap:editor="bond" MadCap:editDate="2019-10-14T13:45:38.5717627+05:30">screen:</MadCap:annotation></p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Application Editor/11.png" />
+        </p>
+        <h3>Display Modes</h3>
+        <p class="Body1">The <span class="bold">Multi Edit Display Mode</span> comes pre-configured in this Node List. As the name implies, users can edit multiple application records and multiple attributes in the same screen and save the changes automatically (using the 'Use Immediate Save' parameter) or manually. For details, see the the <b>Auto-Save in the Web UI</b> topic within the <b>Using Web UI</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../Data Exchange/Export Manager/Export Manager.htm" class="Here" MadCap:conditions="Primary.Web"><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Auto-Save in the Web UI.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref></MadCap:xref>. When the user double clicks the Multi Edit Display Mode component available within the Display Mode parameter, the Multi Edit Display Mode Properties dialog displays. The Multi Edit Display Mode Properties dialog allows to further configure the  component based on the user requirements. </p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Application Editor/12.png" />
+        </p>
+        <p class="Body1"><span class="bold">Table Headers</span>
+        </p>
+        <p class="Body2">The Headers parameter available within the Multi Edit Display Mode Properties allow users to add multiple table header components that gets listed as individual columns in the results table of the Application Editor Screen. </p>
+        <p class="Body2">Below are some header examples. The bullet under each header explains what is displayed in that header column. Additional headers may be used (e.g., Name, Attribute Value, Attribute Value Group). When adding headers, you can read a description of each before adding them to the Headers field.</p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">It is suggested that the <span class="bold">Application ID Header</span> be used in place of <MadCap:annotation MadCap:createDate="2019-10-11T14:36:24.0769414-04:00" MadCap:creator="erpo" MadCap:initials="ER" MadCap:comment="I would put all of these as one line entries with bullets (no bold). It's a lot of space here." MadCap:editor="erpo" MadCap:editDate="2019-10-11T14:36:41.8735781-04:00">the</MadCap:annotation> ID Header to display the ID of the application records. </p>
+        <ul>
+            <li class="Bullet1"><span class="bold" style="font-weight: bold;">Application Condition Header - Individual</span>&#160;- Table header expanding to show all 'important' conditions for an application. For details, see the <b>Application Condition Header Components</b> topic<MadCap:xref href="../Application Manager/Results Table/Column Headers/Application Condition Header Components.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet1"><span class="bold">Application Condition Header - Group</span> - Table header showing attributes that serves as conditions for an application. The attributes could be on the application object, the child object to the application or on the reference from the application object to the assembly object. For details, see the <b>Application Condition Header Components</b> topic<MadCap:xref href="../Application Manager/Results Table/Column Headers/Application Condition Header Components.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+            <li class="Bullet1"><span class="bold">ACES Application Qualifiers</span> - Table header that shows AutoCare application qualifiers.</li>
+            <li class="Bullet1"><span class="bold">Application Approval Status</span> - Table header that shows application approval status.</li>
+            <li class="Bullet1"><span class="bold">Application Assembly Value</span> - Table header that shows the value of an attribute of an assembly linked to an application.</li>
+            <li class="Bullet1"><span class="bold">Application Asset Reference</span> - Table header that shows the asset reference for an application.</li>
+            <li class="Bullet1"><span class="bold">Application Comment</span> - Table header that shows comments.</li>
+            <li class="Bullet1"><span class="bold">Application Competitor or OE Part Numbers</span> - Table Header used to display competitor or OEM part numbers and manufacturer names (optional) in the Application Manager results table. Additionally, when users click a part number value within the column, a read-only dialog will display the competitor or OEM applications.</li>
+            <li class="Bullet1"><span class="bold">Application Country Handling Table Header</span> - Component used to display and edit country handling data within the Application Editor Screen table.</li>
+            <li class="Bullet1"><span class="bold">Application ID</span> - Table header that shows the ID of an application.</li>
+            <li class="Bullet1"><span class="bold">Application Part Type Title Header</span> - Table header that shows the name of the part type that is linked to the applications in the table.</li>
+            <li class="Bullet1"><span class="bold">Application Part Type Value</span> - Table header that shows the value of an attribute of a part type that is linked to an application.</li>
+            <li class="Bullet1"><span class="bold">Application Set Assembly</span> - Table header that shows the name of the assemblies linked to the applications in the table.</li>
+            <li class="Bullet1"><span class="bold">Application Set Part</span> - Table header that shows the name of the parts linked to the applications in the table.</li>
+            <li class="Bullet1"><span class="bold">Application Suggestion Info</span> - Table header component used to display information for why the application record is being suggested.</li>
+        </ul>
+        <p class="Body2">While configuring the headers in Display Mode properties, a user can choose to set up the table sort order based on a specific header. By editing a particular header's properties, sorting order (ascending or descending) can be designated using the dropdown next to Table Sorting. Once the properties are saved, the table will sort itself based on the new header settings, and the Display Mode properties will be retained until configured differently. </p>
+        <p class="Body2">The Table Sorting designation can only apply to one header at a time. It has to be removed from one header before setting up on another. Additionally, if 'Enable Default Sorting' is enabled / selected in the Node List properties, selecting a header to sort by overwrites this setting.</p>
+        <h3 style="margin-top: 6mm;">Actions</h3>
+        <p class="Body1">Many action buttons can be added to a screen to be used with a Node List. These are all added and configured within the <span class="bold">Actions</span> field on the Node List Properties screen. The <span class="bold">Create Application Action</span> and the <span class="bold">Delete Application Action</span> come pre-configured. These actions and the Bulk Application Updates action are described below. Other actions can be configured based on the user requirements. </p>
+        <p class="Body1">After clicking the <b>Add</b> button, the 'Add component' dialog is displayed. Selecting a component in the left area will display the description for that component in the right area.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Application Editor/4.png" />
+        </p>
+        <h4><span class="bold">Create Application <MadCap:annotation MadCap:createDate="2019-10-11T14:39:15.7728246-04:00" MadCap:creator="erpo" MadCap:initials="ER" MadCap:comment="This should be a header style. I think H3?" MadCap:editor="erpo" MadCap:editDate="2019-10-11T14:39:26.6960184-04:00">Action</MadCap:annotation></span>
+        </h4>
+        <p class="Body2">The <span class="bold">Create Application Action </span>button ( <img src="../../Resources/Images/Application Editor/5.png" /> ) opens a 'Create Application' dialog with Select Assembly (or Select Part depending on the type of Application Editor Screen) option.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/6.png" />
+        </p>
+        <p class="Body2">When a user clicks on a node picker icon (as shown in the screenshot above), they are presented with standard Browse and Search tabs to select an existing vehicle / assembly or part. The 'Select Assembly' and 'Select Part' value fields support typeahead functionality, which allows users to easily add a vehicle / assembly or part without having to click through various hierarchies and/or folders.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/7.png" />
+        </p>
+        <p class="Body2">Additional functionality can be configured that allows users to set a name of the newly created application records  with a unique name format, search for vehicles / assemblies or parts in an effort to only select below the defined hierarchy, or narrow the search result in the Faceted Search window to aid efficient  vehicles / assemblies or parts selection. For more details regarding how to fully configure the properties for the Create Application Action component, see the <span class="bold">Create Application Action</span> section of the <span class="bold">Automotive Reference Guide</span> documentation<MadCap:xref href="Create Application Action Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <h4><span class="bold">Delete Application Action</span>
+        </h4>
+        <p class="Body2">The <span class="bold">Delete Application Action</span> ( <img src="../../Resources/Images/Application Editor/8.png" /> ) is enabled when an application record is selected in the table. When clicked, it will delete the selected application record from the table without showing any warning dialog.</p>
+        <h4>Bulk Applications Updates</h4>
+        <p class="Body2">The <b>Business action(s) for Bulk Update(s)</b> <img src="../../Resources/Images/Application Editor/Auto-Bulk Application Updates Button.png" /> button is enabled when one or more application records are selected in the table. When clicked, it will update multiple application records in a single operation. Users have the flexibility to add any number of bulk updates. If more than one bulk update is configured then the Bulk Applications Updates dialog will display (as shown below), prompting users to select the desired bulk update to be executed. For more details regarding how to fully configure the properties for the Create Application Action component, see the <span class="bold">Bulk Applications Updates</span> topic of the <span class="bold">Automotive Reference Guide</span> documentation<MadCap:xref href="Bulk Applications Updates Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/10.png" />
+        </p>
+    </body>
+</html>

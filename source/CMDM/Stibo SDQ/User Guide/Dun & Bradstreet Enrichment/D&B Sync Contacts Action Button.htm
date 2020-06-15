@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="4882" MadCap:lastWidth="1210" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Stibo SDQ User Guide: Once a DUNS&#160;Number is established, the DnB Sync Contacts action button is used to search for potential contact persons. When appropriate contact candidates are found, this action button can be used to easily add the contact records to the Salesforce Business Account. The DnB Sync Contacts action button (shown below), can be accessed by clicking the action button dropdown arrow when viewing an account in Salesforce Lightning Experience. " />
+    </head>
+    <body>
+        <h1>D&amp;B Sync Contacts Action Button</h1>
+        <p> Once a DUNS&#160;Number is established, the D&amp;B Sync Contacts action button is used to search for potential contact persons. When appropriate contact candidates are found, this action button can be used to easily add the contact records to the Salesforce Business Account. The D&amp;B Sync Contacts action button (shown below), can be accessed by clicking the action button dropdown arrow when viewing an account in Salesforce Lightning Experience. </p>
+        <p class="Body1">In order to enable the full functionality of the  D&amp;B Sync Contacts action button, it is expected that a user has already performed a DUNS Lookup and assigned a DUNS&#160;Number to the account. For more information, see the <b>DUNS Lookup Action Button</b> topic<MadCap:xref href="DUNS Lookup Action Button.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> within this guide.</p>
+        <p class="Body1">If the user clicks the D&amp;B&#160;Sync Contacts option from the dropdown and the selected account does not have a valid DUNS Number, then an error will display. For more information, see the <b>Missing DUNS&#160;Number</b> section below.</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Dun&amp;BradstreetEnrichment/D&amp;BSyncContactsMenuOption.png" />
+        </p>
+        <p class="Body1" MadCap:conditions="Primary.Under Construction">For more information on configuring the D&amp;B Contacts Sync action button to display in Salesforce, see the <b>D&amp;B Buttons</b> setup section of the <b>Stibo SDQ Admin Guide</b><MadCap:annotation MadCap:createDate="2017-12-04T13:24:27.9180749-05:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="link maybe create snippet" MadCap:editor="medu" MadCap:editDate="2017-12-04T14:31:53.9462427-05:00">.</MadCap:annotation></p>
+        <p class="Body1">When a user selects the D&amp;B Sync Contacts action button, Stibo SDQ performs a contact lookup for principal contacts associated with the given account using the DUNS&#160;Number against the D&amp;B <MadCap:annotation MadCap:createDate="2018-01-26T17:00:54.6336438-05:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="This is good -- these two sentences should open your topic." MadCap:editor="brcr" MadCap:editDate="2018-01-26T17:02:09.9704984-05:00">database</MadCap:annotation>.  If the operation fails, the user will be prompted for the missing DUNS Number. If the operation successfully completes, then the 'Contacts sync' page will display. </p>
+        <MadCap:pageBreak />
+        <h2>Missing DUNS&#160;Number</h2>
+        <p class="Body1">If a DUNS&#160;Number is not provided within the account details, a 'Missing DUNS Number' error will display (as shown below).</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Dun&amp;BradstreetEnrichment/DB Sync Contacts Missing DUNS Number Error.png" />
+        </p>
+        <p>When this message displays, click the <b>Cancel</b> button to return to the account details <MadCap:annotation MadCap:createDate="2017-12-04T14:30:45.8456818-05:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="SALESINT-1018 Changes the Cancel button to a Back button.  The images wll need to be updated.button" MadCap:editor="medu" MadCap:editDate="2018-01-04T15:31:18.3257737-05:00">page, and use the DUNS Lookup action button to acquire a proper DUNS&#160;Number.</MadCap:annotation></p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">If the DUNS&#160;Number displays within the account details, but the Missing DUNS&#160;Number error message displays, then t<MadCap:annotation MadCap:createDate="2018-01-26T17:09:26.4012638-05:00" MadCap:creator="brcr" MadCap:initials="BR" MadCap:comment="I think this needs to be written differently. Too tech-y. " MadCap:editor="brcr" MadCap:editDate="2018-01-26T17:09:43.2392928-05:00">here is empty DUNS Number passed to the operation</MadCap:annotation>. When this occurs the system administrator needs to confirm the correct mapping configurations are <MadCap:annotation MadCap:createDate="2017-12-04T14:17:16.9169835-05:00" MadCap:creator="medu" MadCap:initials="MEDU" MadCap:comment="link to appropriate admin topic" MadCap:editor="medu" MadCap:editDate="2017-12-04T14:17:23.3581081-05:00">in place.</MadCap:annotation></p>
+        <h2>D&amp;B Contacts Sync Page</h2>
+        <p>The D&amp;B Contacts sync page allows users to determine which contact data from the Dun &amp;&#160;Bradstreet database should be pulled into the Salesforce account. </p>
+        <p>When a user selects the D&amp;B Sync Contacts action button for an account with a valid DUNS&#160;Number, Stibo SDQ performs a contact-lookup for principal contacts associated with the given account. This is accomplished by searching for the DUNS&#160;Number assigned to the current account against the D&amp;B database. The results display within the  Contacts sync page.</p>
+        <p class="Body1">In the example below, the Contacts sync page consists of the following elements:</p>
+        <ol>
+            <li class="Numbered1">Group field</li>
+            <li class="Numbered1">Group name column</li>
+            <li class="Numbered1">Count column</li>
+            <li class="Numbered1">Group checkbox</li>
+            <li class="Numbered1">Back button</li>
+            <li class="Numbered1">Pull Contacts button</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Dun&amp;BradstreetEnrichment/Contact Sync for Stibo.png" />
+        </p>
+        <p class="Body1HeadNoTOC">1. Group Field</p>
+        <p>The Group field parameter allows users to choose from a dropdown list how contacts are grouped within the page. </p>
+        <p class="Body1">In the example below, the contacts can be grouped by Job Title, Organization, and Job Title Level.</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Dun&amp;BradstreetEnrichment/Group Field.png" />
+        </p>
+        <p class="Body1HeadNoTOC">2. Group Name Column</p>
+        <p class="Body1">The group name column displays the group name based upon the Group field selection. </p>
+        <p class="Body1">In the example above, 'Job Title' is selected for the Group field parameter. Therefore the column is labeled 'JOB&#160;TITLE', and the contact groups are displayed in alphabetical order based upon their job title grouping.</p>
+        <p class="Body1HeadNoTOC">3. Count Column</p>
+        <p class="Body1">The count column displays with the 'COUNT' label for all of the Group field selections. The COUNT column displays the total number of individual contacts within the group.</p>
+        <p class="Body1">In the example above, many Job Title groups contain only one contact. However it is easy to see the 'Account Executive' group contains three contacts.</p>
+        <p class="Body1HeadNoTOC">4. Group Checkbox</p>
+        <p class="Body1">To the left of each group name is a checkbox. Once enabled, the group will expand to display the following contact details:</p>
+        <ul>
+            <li>NAME</li>
+            <li>JOB&#160;TITLE</li>
+            <li>RESPONSIBILITY</li>
+            <li class="Bullet3">Displays additional information as to the contacts job responsibility. </li>
+            <li>MARKETABILITY</li>
+            <li class="Bullet3">Indicates if the contact record does or does not satisfies D&amp;B marketability rules.</li>
+            <li>EMAIL</li>
+            <li class="Bullet3">Indicates if the contact record does or does not contain an email address.</li>
+            <li>PHONE</li>
+            <li class="Bullet3">Indicates if the contact record does or does not contain a phone number</li>
+        </ul>
+        <p>In the example below, the 'Account Executive' group is enabled, and three rows of contact data are displayed with each of their contact checkboxes enabled.</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Dun&amp;BradstreetEnrichment/D&amp;BSyncContactsGroupCheckboxEnabled.png" />
+        </p>
+        <p class="important1" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">For this screen, the red and/or green icons do NOT indicate contact data validity. The green checkbox only indicates that contact information is provided, and the red icon only indicates that contact data is NOT provided.</p>
+        <p>By default when the group checkbox is enabled, the individual contact checkboxes are enabled. Clicking on the individual checkbox when it is enabled, will remove the blue checkbox, indicating it is not selected to be pulled into Salesforce.</p>
+        <p class="Body1">Multiple groups (or partial groups) can be selected.</p>
+        <p class="Body1HeadNoTOC">5. Back Button</p>
+        <p class="Body1">Users can click the back button to return to the account details page.</p>
+        <p class="Body1HeadNoTOC">6. Pull Contacts Button</p>
+        <p>After selecting the desired contacts, a user can pull them into Salesforce by clicking the <b>Pull Contacts</b> button. Once the contacts have been pulled into Salesforce a confirmation screen will display.</p>
+        <p class="Body1">In the example below, three  contacts have been selected to be pulled into the Stibo Systems, Inc. account within Salesforce, the Pull Contacts button was clicked, and the confirmation screen displays as shown below.</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Dun&amp;BradstreetEnrichment/ContactSyncPullContactsButton.png" />
+        </p>
+        <p class="Body1" MadCap:conditions="Primary.Under Construction,Primary.PRODOC Note">PRODOC note: MEDU: When a selected contact has at least one Email or Phone, the enrichment will be executed in CNTCT_PLUS mode. Whereas when a selected contact does not have neither an Email nor a Phone, the enrichment will be executed in the more efficient CNTCT mode.</p>
+        <MadCap:pageBreak />
+        <p class="Body1">If the Pull Contacts button is selected, and a contact has not been selected, then the 'Select at least one contact to pull' error will display (as shown below).</p>
+        <p class="Image2">
+            <img src="../../../../../Resources/Images/CMDM/User Guide/Dun&amp;BradstreetEnrichment/ContactSyncErrorWhenNoRecord.png" />
+        </p>
+        <p>After contacts have been successfully pulled from Dun &amp; Bradstreet, they can be found along with any preexisting contact data for the account. </p>
+    </body>
+</html>

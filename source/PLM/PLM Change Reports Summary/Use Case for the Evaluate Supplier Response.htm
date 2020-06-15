@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="PLM Solution: When the Chocolate Cookie project reaches the Pending Evaluation state of the Private Label Food New Projects, all project specifications are in the Evaluate Supplier Responses state of the Private Label Food Product Specification" />
+    </head>
+    <body>
+        <h1>Use Case for the Evaluate Supplier Response</h1>
+        <p>When the Chocolate Cookie project reaches the Pending Evaluation state of the Private Label Food New Projects, all project specifications are in the Evaluate Supplier Responses state of the Private Label Food Product Specification. The quality manager user can start the process to evaluate supplier responses.</p>
+        <p>The quality manager user selects the Chocolate Cookie Project Dark Chocolate Chip 'Recipe Specification' from the Evaluate Supplier Responses task list and starts reviewing Supplier A's 'Recipe Response.'</p>
+        <p>Since the Change Report component is active when the quality manager user opens the 'Recipe Responses' received from Supplier A, changes between the snapshot and the current data are detected  and an active Change Report notification displays.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Solution Enablement/PLM/usecase4.png" />
+        </p>
+        <p class="Body1">The notification will include an indication that changes were detected in one or more languages.</p>
+        <p>The quality manager user clicks on the Change Report notification, and a dialog displays showing a comparison of the changes that have taken place in the user login context. The dialog displays three tabs in this case since the Supplier performed changes to Recipe Ingredients, Requirements, and Parameters.</p>
+        <p>The name of the tabs is taken from the value of the attribute 'Snapshot Display Name' in the current context. If Snapshot Display Name is empty, the STEP ID will be shown.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Solution Enablement/PLM/usecase5.png" />
+        </p>
+        <p>The order of the tabs is determined by the attribute Snapshot Tab Order on the link between the Snapshot Configuration and Snapshot Recorder. If the Snapshot Tab Order attribute is empty, the display order will be alphabetic.</p>
+        <p>Each tab will display only the data that was defined by the Snapshot Recorder and only if there are changes between the current data and the last snapshot with the Event ID indicated on the Snapshot Configuration.</p>
+        <p>Each tab will group changes by the type of change. For example, a tab displaying changes for Requirements during an internal review can show new requirements that were added, values that were added to an existing requirement, deleted requirements, values that were deleted from an existing requirement, and any attribute value changes. The Additions, Deletions, and Value Changes sections can be collapsed by the user.</p>
+        <p>In this example of the Change Report Recipe Requirement tab, only value changes were made to the Recipe Requirements.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Change Reports/UseCase6.png" />
+        </p>
+        <p>In this example of the Change Report Recipe Parameters tab, only value changes were made to the Recipe Parameters.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Change Reports/UseCase7.png" MadCap:mediastyle="@media print { height: 9.1in; }" />
+        </p>
+        <p>In this example of the Change Report Recipe Ingredients tab, only additions were made to the Recipe Ingredients.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Change Reports/UseCase9.png" MadCap:mediastyle="@media print { height: 9.1in; }" />
+        </p>
+        <p>If there are no changes in the Change Report in any language, the Change Report notification will appear disabled and it is not clickable.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/Change Reports/UseCase10.png" />
+        </p>
+    </body>
+</html>

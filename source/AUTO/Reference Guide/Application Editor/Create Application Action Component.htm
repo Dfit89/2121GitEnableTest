@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="Automotive Solution: Create Application Action component allows the user to create application records. This component is available as a toolbar action for Node Lists." />
+    </head>
+    <body>
+        <h1>Create Application Action Component</h1>
+        <p>The Create Application Action component enables users to create application records for the selected vehicle / assembly or part. Meaning that this component applicates the selected part to the vehicle / assembly or vice versa. This component is available as a toolbar action for Node Lists, and one common usage is within the Application Editor Screen.</p>
+        <h2>Configuring the Create Application Action Component</h2>
+        <p class="Body1">When Easy Setup actions  are used to create a standard data model, Create Application Action component is added in the Application Editor Screen by default. It is the ready-to-use component that allows users to create application records. Users can further configure this component to their requirements. Follow the steps described below to add and configure the Create Application Action component as a toolbar action on a Node List, or skip to step 3 to directly configure the available Create Application Action component.</p>
+        <ol>
+            <li>First, add the component. Under Child&#160;Components on the Node&#160;List Properties screen in the designer, click the <b>Add</b> button under the field for Actions parameter.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/13.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Then select <b>Create Application Action</b> from the component list. Click <b>Add</b>.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/14.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Once added to the list of actions for the Node List, double-click the <b>Create Application Action</b> component to configure.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/15.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li> In the Create Application Action Properties dialog, define the following optional parameters:</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/16.png" />
+        </p>
+        <ul>
+            <li class="Bullet2"><b>Create Application Business Action</b>: This parameter lets users define a business rule that will be executed on all new applications. One example is to configure a business action that sets the STEP object Name of the newly created application records. When using a business action to set the application record name, it is required that the 'Do not set name' parameter is selected so that the name is only set through the configured business action.</li>
+            <li class="Bullet2"><b>Icon Style Class</b>: This parameter allows a custom icon to be displayed on the action button.</li>
+            <li class="Bullet2"><b>Label</b>: To change the default button label, add the custom text to the Label field. If nothing is added, the Label default will display as 'Create.'</li>
+        </ul>
+        <p class="Body3">This is how the button will display at the top of the Application Editor Screen:</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Application Editor/5.png" />
+        </p>
+        <ul>
+            <li class="Bullet2"><b>Node Picker Configuration</b>: This parameter allows users to define root nodes, search tab pages, and a custom title. For details, see the <b>Node Picker Dialog</b> documentation within the <b>Web User Interfaces</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../Web User Interfaces/Using Web UI/Node Picker Dialog.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </li>
+        </ul>
+        <p class="note3" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt; ">The settings made in this parameter are overwritten when the Faceted Search Configuration parameter is populated with the Faceted Search Node Picker Dialog component.</p>
+        <ul>
+            <li class="Bullet2"><b>Title</b>: To change the default title of the dialog that appears when a user clicks on the Create Application Action button, add the custom text to the Title field. If nothing is added, the default title will display as 'Create Application.'</li>
+        </ul>
+        <p class="Body3">This is how the title will display at the top of the dialog when a user clicks on the Create Application Action button:</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Application Editor/17.png" />
+        </p>
+        <ul>
+            <li class="Bullet2"><b>Do not set name</b>: This parameter provide control over the naming convention of the application records that are created via the Create Application Action button. If unselected, the STEP name of the application record will be created using the default combination of Part Number, Part Type, Year, Make, and Model from the system. Select this parameter if the STEP Name of the newly created application record should be left empty, or if it will be set by the business action that is defined in the Create Application Business Action parameter.</li>
+            <li class="Bullet2"><b>Faceted Search Configuration</b>: This parameter, when configured with Faceted Search Node Picker Dialog component, acts as a replacement for the regular Node Picker component where the user can search for the required objects by narrowing down the search result using facets. The faceted search fields allow users to search for vehicle or part objects based on the object Name, ID, or attribute values. Users can configure the faceted search to use all available attributes, IDs, or Names. For details, see the <b>Faceted Search Dialog</b> documentation within this guide<MadCap:xref href="Faceted Search Dialog.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</li>
+        </ul>
+        <p class="Body3">Below is an example of how the Faceted search dialog will display  when the user clicks on the Create Application Action button:</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Application Editor/18.png" />
+        </p>
+        <h2>Creating applications using Create Application Action </h2>
+        <p>The central feature of the Application Editor Screen is the ability to create an application record on the selected vehicle / assembly or part (depending upon the type of Application Editor Screen). Follow the steps described below to create an application record for the selected part in a Application Editor Screen. The example in this document considers applicating the Part to the vehicle / assembly. </p>
+        <ol>
+            <li>Select the part  that application records should be created for.</li>
+        </ol>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Application Editor Screen must be configured to display either as the Main Screen or as a Sub Screen Tab Page when the part is selected.</p>
+        <p class="Body2">In this example, the part 'JK21499' is selected and the Application Editor Screen displays the existing application records belonging to that part.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/19.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click the <b>Create</b> button that is available in the toolbar of the screen and the Create Application dialog will be displayed as shown below:</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/17.png" />
+        </p>
+        <p class="note2" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"> In the above example, a regular Node Picker Dialog is displayed. However, the user can configure it to display the Faceted Search Dialog instead of  the regular node picker. For details on how to use the Faceted Search Dialog, see the <b>Faceted Search Dialog</b> documentation within this guide<MadCap:xref href="Faceted Search Dialog.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <ol MadCap:continue="true">
+            <li>Click on the Node Picker icon and select the vehicle / assembly that should be applicated to the selected part either by navigating through the standard Browse tab or by searching through the Search tab. In the example below, vehicle '1962 Abarth 1000' is selected. Click OK to close the Node Picker dialog.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/20.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click <b>OK</b> to close the Create Application dialog.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/21.png" />
+        </p>
+        <p>The result is that the part 'JK21499' is applicated to vehicle '1962 Abarth 1000' and the application record 'JK21499 - Check Engine Light Sensor - 1962 Abarth 1000' is created and listed in the Application Editor Screen (as shown below).</p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Application Editor/22.png" />
+        </p>
+    </body>
+</html>

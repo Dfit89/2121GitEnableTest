@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to configure the Suggested Part Number Table Header component for the Application Manager Screen. This Header is used to display the potential parts fitting the missing applications." />
+    </head>
+    <body>
+        <h1>Suggested Part Number Table Header</h1>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: BOND PRODOC-XXXX </MadCap:conditionalText>When configured within an Application Manager Results Table, the 'Suggested Part Number' component can be used to display the potential parts fitting the missing application.  The suggested parts are listed in a column against each result in the Application Manager screen. Users can double click on the cell to open up the Value Editor window and can add the suggested parts to the missing application.</p>
+        <p class="Body1HeadNoTOC">Prerequisites</p>
+        <p>It is expected that anyone configuring the Suggested Part Number component is familiar with the Web UI Designer, as basic concepts for working with the designer are not covered in this section. In addition, the user must have appropriate privileges to access the designer. Additional information can be found in the <b>Designer Access</b> section of the <b>Web User Interfaces / Web UI Getting Started</b> documentation<MadCap:xref href="../../../../../../Web User Interfaces/Web UI Getting Started/Designer Access.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1">For information about accessing and configuring the Node List component, see the <b>Node List Component</b> topic within the <b>Web User Interfaces</b> section of <b>STEP Online Help</b><MadCap:xref href="../../../../../../Web User Interfaces/Using Web UI/Node List Component.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1">For information about how the Application Manager results table displays the missing application for a search criteria, see the <b>Missing Application Coverage Functionality</b> topic within the <b>Application Manager</b> section of this guide<MadCap:xref href="../../Application Manager.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body1HeadNoTOC">Configuration Steps</p>
+        <p class="Body1">The Suggested Part Number component is added within any of the display modes available in the Node list Properties for the selected Application Manager screen.<MadCap:conditionalText MadCap:conditions="Primary.Under Construction"> Each of the parameters for the Application Approval Status Properties are described below. </MadCap:conditionalText>Follow  the steps below to configure the Suggested Part Number component.</p>
+        <ol>
+            <li>Using the Web UI designer as shown in the image below, go to Node List Properties &gt; Display Modes parameter for the Application Manager Screen that needs to display potential product.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/AppMgr/ResultsTable/11.png" />
+        </p>
+        <ol start="2">
+            <li>Add a display mode (or edit the one that exists) by clicking the <b>Add</b> button available next to the Display Modes parameter.</li>
+            <li>Double click to enter the added (or available) display mode, click the <b>Add</b> button for the Headers parameter, and the Add Component dialog will display.</li>
+            <li>Find and select the <b>Suggested Part Numbers</b> component.</li>
+            <li>Click the <b>Add</b> button, and the Suggested Part Number Properties designer screen will display (as shown below).</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/AppMgr/ResultsTable/6.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li value="6">Populate the parameters listed below:</li>
+        </ol>
+        <ul>
+            <li class="Bullet2"><b>Display ID:</b> Determines if the ID or name or the attribute value of the suggested part number to be displayed  within the table cell. By default, the parameter uses the 'NODE_ID' value that allows the ID of the suggested part number to display within the cell. Optionally, the 'NAME_VALUE' or 'ATTRIBUTE_VALUE' value can be selected using the dropdown. While the 'NAME_VALUE' displays the name of the suggested part number, the 'ATTRIBUTE_VALUE' allows the values of the attribute selected within the 'Attribute' parameter to display within the cell. </li>
+            <li class="Bullet2"><b>Attribute:</b> This parameter must be populated with an attribute that is valid for the suggested part number. </li>
+        </ul>
+        <p class="note3" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt; ">The Attribute parameter should only be populated when the 'ATTRIBUTE_VALUE' value is selected. Otherwise, the defined attribute value will not be displayed in the cell.</p>
+        <ul>
+            <li class="Bullet2"><b>Label:</b> By default, the parameter is blank, but after clicking the <b>Add</b> button, the default column header label (Suggested Part Number) will be stored. Optionally, enter the desired label to be displayed as the column header within the Application Manager result's table.</li>
+            <li class="Bullet1"><b>Part Suggestions Plugins:</b> Currently, this parameter allows to configure  the 'Referenced Parts Suggestion Plugin.' This plugin is used to suggest the part number  where the part number is referencing the current part that has similar application records defined in the Application Manager search criteria. Clicking on the Add button will directly display the Referenced Parts Suggestion Plugin Properties designer screen. It is mandatory to have at least one reference type within the Referenced Parts Suggestion Plugin Properties designer screen, so that when a missing application is displayed in the Application Manager results table, information about the suggested part number (if available) can be displayed. The configured reference types must be the associated reference types linked between the suggested part number and the current part number.</li>
+        </ul>
+        <p>&#160;</p>
+        <p class="Body2">In the example chart below, App-V1P1X1 and App-V2P1X2 are the existing application records for Part B (that is of Part Type-P1).<MadCap:conditionalText MadCap:conditions="Primary.Under Construction">While the existing application record App-V1P1X1 is referenced to Vehicle-V1, Part Type-P1, and Engine Base-X1. </MadCap:conditionalText></p>
+        <p class="Image2">
+            <img src="../../../../Resources/Images/AppMgr/ResultsTable/7.png" />
+        </p>
+        <p class="Body2">When the Application Manager performs a search for missing application records based on the vehicle (V1) and the part type (P1) values, since there are existing application records for the vehicle (V1) and part type (P1) defined in the search, the Application Manager checks for the application records covering all the different configurations of the vehicle (V1) and displays some missing application records. For understanding the logic of how the missing applications are calculated and displayed in the search results,  see the <b>Missing Application Coverage Functionality</b> topic within the <b>Application Manager</b> section of this guide<MadCap:xref href="../../Missing Application Coverage Functionality.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>.</p>
+        <p class="Body2">In this scenario, since the Part A is referenced to Part B by the reference type (Part Relation) configured within the Part Suggestion Plugins, Part A will be displayed as suggested part number.</p>
+        <ul>
+            <li class="Bullet1"><b>Table Headers:</b> By default, no table headers are listed in this parameter. It is required to add at least the ID and the Name headers within this parameter. Table headers configured in this parameter display the associating information of the suggested part number when the user accesses the Value Editor dialog by double-clicking the suggested part number cell.</li>
+        </ul>
+        <ul>
+            <li class="Bullet1"><b>Dimensions:</b> By default, the parameter is blank. Optionally, to configure column width and height, select 'Table Header Dimensions.'</li>
+        </ul>
+        <ul>
+            <li class="Bullet1"><b>Table Sorting:</b> By default, the parameter is blank. Optionally, select from the dropdown values to specify the default sorting order of the column data.
+</li>
+        </ul>
+        <ol start="7">
+            <li>
+                <MadCap:conditionalText MadCap:conditions="Primary.Under Construction">Once the required parameters are populated, the Add button will activate. </MadCap:conditionalText>Click the <b>Add</b> button (or <b>Save</b> button if editing an existing component) to save the newly added component to the Headers parameter.</li>
+            <li>Optionally, on the Node List Properties Headers parameter, use the <b>Up</b> and/or <b>Down</b> buttons to configure the order in which the newly added column should display within the Results Table. </li>
+            <li>Click the <b>Save</b> and <b>Close</b> buttons for the designer.</li>
+        </ol>
+        <p>&#160;</p>
+        <p>When a search is performed in the Application Manager screen, the Application Manager Results Table will display the missing application records with the suggested part number(s) for application as shown below. </p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/AppMgr/ResultsTable/8.png" />
+        </p>
+        <p> When users click on the cell, the Value Editor window listing all the suggested part numbers will be displayed, as shown below.</p>
+        <p class="Body1">
+            <img src="../../../../Resources/Images/AppMgr/ResultsTable/9.png" />
+        </p>
+        <p>Clicking on the add button (<img src="../../../../Resources/Images/Competitor OE Number/43.png" class="img_intext" />) that is available alongside each part number will applicate the missing application to the suggested part number. </p>
+        <p class="Body1"> Clicking the remove button (<img src="../../../../Resources/Images/Competitor OE Number/51.png" class="img_intext" />)  that is available alongside each part number will  remove the suggested part number from the list. </p>
+        <p class="Body1">Clicking the info button (<img src="../../../../Resources/Images/Release Notes/9.3mp2/help text icon.png" />) opens a dialog explaining the reason for suggesting that part number.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/AppMgr/ResultsTable/10.png" />
+        </p>
+    </body>
+</html>

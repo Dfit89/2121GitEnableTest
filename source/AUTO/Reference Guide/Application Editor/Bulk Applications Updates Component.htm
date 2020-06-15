@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.Done">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="Automotive Solution: Bulk Applications Updates component allows users to bulk update the application records. This component is available as a toolbar action for Node Lists." />
+    </head>
+    <body>
+        <h1>Bulk Applications Updates Component</h1>
+        <p>The Bulk Applications Updates component allows users to execute configured Business Action(s) on selected application records. This component is available as a toolbar action for Node Lists, and is commonly used within the Application Editor Screen and Application Manager Screen. One of the notable features of this component is that it allows users to add any number of Business Actions. If more than one Business Action is configured, then the Bulk Applications Updates dialog will display the options for the user to select the desired Business Action to be executed.</p>
+        <p class="Image1">
+            <img src="../../Resources/Images/Application Editor/10.png" />
+        </p>
+        <h2>Configuring the Bulk Applications Updates Component</h2>
+        <p class="Body1">In the Application Editor Screen and Application Manager Screen, users need to add and configure the Bulk Applications Updates component within the Actions field of the Node List. The following process details how to add and configure the Bulk Applications Updates component as a toolbar action in a Node List.</p>
+        <ol>
+            <li class="Numbered1">First, add the component. Under Child&#160;Components on the Node&#160;List Properties screen in the designer, click the <b>Add</b> button under the field for the Actions parameter.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/13.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Then select <b>Bulk Applications Updates</b> from the component list. Click <b>Add</b>.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/37.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1">Once added to the list of actions for the Node List, double-click the <b>Bulk Applications Updates</b> component to configure.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/36.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1"> In the Bulk Applications Updates Properties dialog, define the following parameters:</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/38.png" />
+        </p>
+        <ul>
+            <li class="Bullet2"><b>Icon Style Class</b>: This parameter allows a custom icon to be displayed on the action button.</li>
+            <li class="Bullet2"><b>Label</b>: To make changes to the default button label, add the custom text to the Label field. If nothing is added, the Label default will display as 'Business action(s) for Bulk Update(s).'</li>
+        </ul>
+        <p class="Bullet2NextPara">This is how the button will display at the top of the Application Editor Screen:</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Application Editor/Auto-Bulk Application Updates Button.png" />
+        </p>
+        <ul>
+            <li class="Bullet2"><b>Title</b>: To make changes to the default title of the dialog that appears when the user clicks on the Bulk Applications Updates button, add the custom text to the Title field. If nothing is added, the Title default will display as 'Bulk Applications Updates.'</li>
+        </ul>
+        <p class="Bullet2NextPara">This is how the title will display at the top of the dialog when the user clicks on the Business action(s) for Bulk Update(s) button:</p>
+        <p class="Image3">
+            <img src="../../Resources/Images/Application Editor/42.png" />
+        </p>
+        <p class="note3" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt; "> The Bulk Applications Updates dialog will be displayed only when there is more than one Business Action configured within the component. This dialog prompts users to select the desired Business Action to be executed. <b>The presence of only one bulk update will not display this dialog and the configured sole Business Action gets executed (without any confirmation dialog) when the user clicks on the Business action(s) for Bulk Update(s) button.</b></p>
+        <ul>
+            <li class="Bullet2"><b>Business action(s) for Bulk Update(s)</b>: This parameter lets users add one or multiple Business Actions that gets displayed as radio buttons to select when the user clicks the action button in the screen. </li>
+        </ul>
+        <ol start="5">
+            <li class="Numbered1"> Click the <b>Add</b> button under the field for <b>Business action(s) for Bulk Update(s)</b> parameter to add Business Action(s) that needs to be executed. Then the <b>Add Component</b> dialog will display.</li>
+        </ol>
+        <p class="Image2"><a href="../../Resources/Images/Application Editor/44.png"><img src="../../Resources/Images/Application Editor/44.png" /></a>
+        </p>
+        <ol start="5" MadCap:continue="true">
+            <li class="Numbered1"> Select the <b>Initiate Business Action on Application(s)</b> component from the component list and then click <b>Add</b>, and the Initiate Business Action on Application(s) Properties will display as shown below.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/45.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="Numbered1"> In the Initiate Business Action on Application(s) Properties dialog, define the following parameter:</li>
+        </ol>
+        <p class="Bullet1NextPara"><b>Business Action</b>: This parameter allows the user to configure a Business Action that is intended to be executed on the selected application records in the Application Editor Screen or Application Manager Screen. <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" /> to find and select the required Business Action. Click the <b>OK</b> button once the Business Action has been selected.</p>
+        <ol start="8">
+            <li class="Numbered1"> Click the <b>Add</b> button and the Initiate Business Action on Application(s) component will be listed within the Business action(s) for Bulk Update(s) parameter as shown below.</li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/46.png" />
+        </p>
+        <ol start="9">
+            <li class="Numbered1"> Double-click on the  Initiate Business Action on Application(s) component listed within the Business action(s) for Bulk Update(s) parameter to define the type of node selector dialog that needs to be displayed if the business action configured within the Business Action parameter needs an object selection when executed.</li>
+        </ol>
+        <p class="Body2">If the configured business action requires an object selection, click the <b>Add</b> button available under the field for <b>Node Selector Dialog</b> parameter. Node Selector Dialog allows the user to determine how the nodes are selected.</p>
+        <p class="Body2">Configure the required Node Selector Dialog as detailed in the following topics:</p>
+        <ul>
+            <li class="Bullet3"><b>Faceted Search Parameter Dialog</b>
+                <MadCap:xref href="Faceted Search Parameter Component.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>
+            </li>
+            <li class="Bullet3"><b>Node Picker Parameter Dialog</b>
+                <MadCap:xref href="Node Picker Parameter Component.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref>
+            </li>
+            <li class="Bullet3"><b>String Parameter <MadCap:annotation MadCap:createDate="2019-12-17T14:42:10.4534905-05:00" MadCap:creator="erpo" MadCap:initials="ER" MadCap:comment="Does this need to be linked?\r\nBond: Topic not creaed as on 18th Dec 2019" MadCap:editor="bond" MadCap:editDate="2019-12-18T13:59:54.9987391+05:30">Dialog</MadCap:annotation></b>
+            </li>
+        </ul>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/47.png" />
+        </p>
+        <h2>Using Business Action(s) for Bulk Update(s) Action </h2>
+        <p class="Body1">The <b>Business action(s) for Bulk Update(s)</b> button (<img src="../../Resources/Images/Application Editor/Auto-Bulk Application Updates Button.png" />)  is enabled when one or more application records are selected in the search results table. If more than one Business Actions are configured then the Bulk Applications Updates dialog will display, prompting users to select the desired Business Action to be executed.</p>
+        <ol start="1">
+            <li>Perform a search for applications.</li>
+            <li>Select the application records that are to be updated.</li>
+        </ol>
+        <ol start="3">
+            <li>Click the <b>Business action(s) for Bulk Update(s)</b> button (<img src="../../Resources/Images/Application Editor/Auto-Bulk Application Updates Button.png" />) that is available in the toolbar of the screen.</li>
+        </ol>
+        <p class="Bullet1NextPara">If only one Business Action has been configured, then the bulk update will be done instantly without a dialog window being displayed. In this case, it is suggested that the Label of the button be changed to something that is more meaningful for the user to relay what the bulk update will do (for example:  'Change Part').</p>
+        <p class="Bullet1NextPara">If more than one Business Actions are configured, then a dialog window will be displayed with the available Business Actions for the user to select. Below is an example of two Business Actions that have been configured.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/10.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Select the required Business Action that is to be executed by clicking the radio button, and then click <b>OK</b>. </li>
+        </ol>
+        <p class="Body2">If the Business Action requires an object selection, then the Node Picker Dialog will display. Select the required object and click <b>OK</b> to close the dialog.</p>
+        <p class="Body2">The 'Started background process' dialog (shown below) will be displayed at the top of the screen. Optionally, click the Background Process Link (BGP_109137) to view the detailed execution of the background process within the Background Process Details screen.</p>
+        <p class="Image2">
+            <img src="../../Resources/Images/Application Editor/48.png" />
+        </p>
+        <p>This action button can be configured to execute different Business Actions. The following use cases are contained within the <b>Automotive Business Rule Plugins</b> section<MadCap:xref href="../Business Rules/Automotive Business Rule Plugins.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></p>
+        <ul>
+            <li class="Bullet2"><b>Business Action: Change Assembly</b>
+                <MadCap:xref href="../Business Rules/Business Action Change Assembly.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li class="Bullet2"><b>Business Action: Change Part Type</b>
+                <MadCap:xref href="../Business Rules/Business Action Change Part Type.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue; font-weight: normal;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li class="Bullet2"><b>Business Action: Change Part</b>
+                <MadCap:xref href="../Business Rules/Business Action Change Part.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue; font-weight: normal;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li class="Bullet2"><b>Business Action: Copy Application to Other Assembly</b>
+                <MadCap:xref href="../Business Rules/Business Action Copy Application to Other Assembly.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue; font-weight: normal;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li class="Bullet2"><b>Business Action: Copy Application to Other Part</b>
+                <MadCap:xref href="../Business Rules/Business Action Copy Application to Other Part.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+            <li class="Bullet2"><b>Business Action: Copy Applications to Related Parts</b>
+                <MadCap:xref href="../Business Rules/Business Action Copy Applications to Related Parts.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span>
+                </MadCap:xref>
+            </li>
+        </ul>
+    </body>
+</html>

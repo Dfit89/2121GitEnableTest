@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:changes="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Stibo SDQ Admin Guide: Once the real-time validation theme is enabled, users may ensure that a phone, address, and/or email is real and accurately entered." />
+    </head>
+    <body>
+        <h1>Enable Real-Time Data Validation Theme</h1>
+        <p class="Body1">Ensuring quality data requires knowing that the provided data is actually valid. Through three different channels—address, email, and phone validations—this theme allows for real-time, instant data checking.</p>
+        <p class="Body1">To validate user data, the following services are used:</p>
+        <ul>
+            <li>Phone: https://www.hlrlookup.com</li>
+            <li>Email: https://api.experianmarketingservices.com</li>
+            <li>Address: https://api.everythinglocation.com</li>
+        </ul>
+        <p>When selecting the 'Configure Data Quality' option, the following screen displays. This screen can also be reached via the 'Settings' option on the left menu pane.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/DataQualityConfig.png">
+            </img>
+        </p>
+        <p class="Body1">It should be noted that you may add combinations of these data quality items. The API keys and passwords should be in the email from StiboSDQ@stibosystems.com.</p>
+        <p class="Body1">Under the Address settings, the <b>Default Country</b> field is a default country to auto-populate when an end user enters address data<MadCap:conditionalText MadCap:conditions="Primary.Under Construction"> as shown in the <b>Address Validation</b> section<MadCap:xref href="../User Guide/Real-time Contact Data Validation/Address Validation.htm" class="HereWithParens" MadCap:conditions="Primary.Web"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref> of the <b>Stibo SDQ User Guide</b></MadCap:conditionalText>. When no selection is made, the default country will display as 'United States of America.' Users may also select a different country if the default does not apply to their entered address. Under the phone settings section, the <b>Default Country Phone Code</b> field is  a default country phone code to auto-populate when an end user enters phone data<MadCap:conditionalText MadCap:conditions="Primary.Under Construction"> as shown in the <b>Phone Validation</b><MadCap:conditionalText MadCap:conditions="Primary.Web"><MadCap:xref href="../User Guide/Real-time Contact Data Validation/Phone Validation.htm" class="HereWithParens"> (<span style="color: Blue;" class="mcFormatColor">here</span>)</MadCap:xref></MadCap:conditionalText> section of the <b>Stibo SDQ User Guide</b></MadCap:conditionalText>. While it is not required to enter a default country phone code, it is highly recommended for users to specify one so that the system will have something to fall back on if the field is not populated. </p>
+        <p class="Body1">Once the Real-time Contact Data Validation theme is configured, you will need to create / modify a user profile, some custom fields, and map the Salesforce objects to the Stibo Systems objects. Also, some buttons need to be overridden and some Visualforce pages need to be enabled. To do these, see the following sections titled <b>Configure User Profile</b> for permissions and to enable Visualforce pages, <b>Setting up Custom Fields</b>, <b>Overriding Buttons</b>, and <b>Configure Mappings between Salesforce and Stibo SDQ</b>.</p>
+        <h2>Configuring Real-time Contact Data Validation Mapping between Salesforce and Stibo SDQ</h2>
+        <p class="Body1">Data enters Salesforce by way of user entry. For this data to be validated, however, it needs to connect to Stibo SDQ. To create this connection, Salesforce data objects need to be mapped to Stibo SDQ data objects. Each theme will require its own mappings. Each mapping is configured by selecting 'Mapping' below the theme header.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/Initial Setup/DataQualityMappingHeader.png" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">Each mapping will only display when the theme is configured in Settings.</p>
+        <p class="Body1">When opening the mapping section, mappings are not preconfigured, so you must select the 'New Mapping' button to begin.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/NewMappings.png" />
+        </p>
+        <p>Select any of the desired options, and follow the email mapping example. All mappings are configured in the same manner of selecting 'New Mapping,' naming it, defining the object type, then mapping the input and output values.</p>
+        <p class="Body1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddEmailMapping-Reduced.png" />
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddEmailMapping.png" />
+        </p>
+        <p class="Body1">With each mapping, provide a name, object type, and input / output mappings. The following sections will show the needed API fields to match. More mappings can be added to each section by selecting the 'New Mapping' option at the top right of the screen.</p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">The 'New Mapping' option at the top of the mapping screen is different from the '+ New Mapping' button at the bottom of the mapping screen. The '+ New Mapping' button will add new fields for mapping where as the 'New Mapping' creates a new object that collects all the fields.</p>
+        <p class="Image1">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/NewMappingButton.png" />
+        </p>
+        <p class="note1" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+            <br />The appended '__c' indicates that the Salesforce field is a custom one. Two required custom fields are for validation status and timestamp. The timestamp field must be a date / time format.
+			 See the <b>Setting Up Custom Fields</b> section of this document for information on this process.<br /><br />In the following examples, any blue option is a suggestion and may be deleted. The gray field cannot be replaced or removed. 
+		</p>
+        <h3>Real-time Contact Data Validation - Address Mapping</h3>
+        <p class="Body1">For addresses, the expected input and output API fields to match to are:</p>
+        <p class="Image1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/InputMappings-Address-Reduced.png">
+            </img>
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/AddressValdationMapping.png">
+            </img>
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/OutputMappings-Address-Reduced.png">
+            </img>
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/OutputMappings-Address.png">
+            </img>
+        </p>
+        <h3>Real-time Contact Data Validation - Phone Mapping</h3>
+        <p class="Body1">For phone numbers, the expected input and output API fields to match to are:</p>
+        <p class="Image1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/PhoneValidationMapping-Reduced.png">
+            </img>
+        </p>
+        <p class="Image1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/PhoneValidationMapping.png">
+            </img>
+        </p>
+        <h3>Real-time Contact Data Validation - Email Mapping</h3>
+        <p class="Body1">For emails, the expected input and output API fields to match to are:</p>
+        <p class="Body1" MadCap:conditions="Primary.Print">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/EmailMappings-Reduced.png">
+            </img>
+        </p>
+        <p class="Body1" MadCap:conditions="Primary.Web">
+            <img src="../../../../Resources/Images/CMDM/AdminGuide/emailMappings.png">
+            </img>
+        </p>
+    </body>
+</html>

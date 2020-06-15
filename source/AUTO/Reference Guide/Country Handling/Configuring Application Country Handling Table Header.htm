@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.80 Percent">
+    <head><title>[%=Heading.AnyLevel%]</title>
+        <meta name="description" content="Automotive Solution:  Describes how to configure the Application Country Handling Table Header component for the Country Handling solution.  Component make it is possible to display existing country handling on applications within the Results Table of an Application Manager screen. From there, users can double click a cell and a value editor will display allowing users to add and/or remove country inclusions and/or exclusions. " />
+    </head>
+    <body>
+        <h1>Configuring Application Country Handling Table Header</h1>
+        <p class="Body1">
+            <MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note">PRODOC note: MEDU RDCUST- 2916 </MadCap:conditionalText>When configured, the 'Application Country Handling Table Header' component can be used to display the country handling data within an Application Manager Results Table. Additionally, when a cell within the Table Header is clicked, a Value editor will display allowing users to edit country handling data. </p>
+        <p class="Body1HeadNoTOC">Prerequisites</p>
+        <p class="Body1">Configuration of the Automotive - Country Model component model is required before the Application Country Handling Table Header component can be configured. For more information, see the <b>Prerequisites</b> section of the <b>Country Handling Solution</b> topic<MadCap:xref href="Country Handling Solution.htm" class="Here" MadCap:conditions="Primary.Web"><span style="color: Blue;" class="mcFormatColor"> here</span></MadCap:xref>. </p>
+        <p class="Body1">Attempting to add the Application Country Handling Table Header component to a Web UI prior to configuring the Automotive - Country Model component model will result in the following warning: The screen cannot be saved while one or more components has configuration errors. </p>
+        <p class="Body1">
+            <img src="../../Resources/Images/Country Incl Excl/Warn.png" />
+        </p>
+        <p class="Body1HeadNoTOC">Configuration Steps</p>
+        <p class="Body1">Below are steps to configure the Application Country Handling Table Header component within a Node Editor. Each of the parameters for the Application Country Handling Table Header Properties are described below. </p>
+        <ol>
+            <li>Using the Web UI designer as shown in the image below, go to Node List Properties Headers parameter for the Application Manager screen that needs to display country handling data. </li>
+            <li>Click the <b>Add</b> button for the Headers parameter, and the Add Component dialog will display.</li>
+            <li>Find and select the <b>Application Country Handling Table Header</b> component.</li>
+            <li>Click the <b>Add</b> button, and the Application Country Handling Table Header Properties dialog will display (as shown below)<MadCap:annotation MadCap:createDate="2018-12-07T23:13:01.8830677+05:30" MadCap:creator="bond" MadCap:initials="BO" MadCap:comment="The last screenshot in the below image needs to be updated when the parameter 'Included By Default' is updated RDCUST - 3223 Lukasz comments" MadCap:editor="bond" MadCap:editDate="2018-12-07T23:15:13.6529792+05:30">.</MadCap:annotation> </li>
+        </ol>
+        <p class="Image2">
+            <img src="../../Resources/Images/Country Incl Excl/41.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Populate the required parameters listed below.</li>
+        </ol>
+        <ul>
+            <li class="Bullet2"><b>Include Attribute:</b> This required parameter is used to select a multivalued attribute where the country inclusion data will be stored. <b><MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp" style="font-weight: normal;" /></b> to browse and/or search for the necessary attribute value. </li>
+        </ul>
+        <ul>
+            <li class="Bullet3" MadCap:conditions="Primary.Under Construction">For the AutoCare&#160;solution, this may be <span style="color: #ff6347;">&lt;&lt;SIMO / NIFE&#160;to provide&gt;&gt;</span></li>
+            <li class="Bullet3" MadCap:conditions="Primary.Under Construction">For the NAPA&#160;solution, this may be <span style="color: #ff6347;">&lt;&lt;SIMO / NIFE&#160;to provide&gt;&gt;</span></li>
+            <li class="Bullet3">For the TecDoc solution, this may be 'TD_ATTR_LKZ_Include'</li>
+        </ul>
+        <p class="important2" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">When an attribute value selection is made within the Country Handling Value editor, the referenced attribute values are stored within the configured inclusion attribute. However, when an attribute value is deselected from inclusion, it is <b>NOT</b> added to the exclusion attribute.  When this occurs, the assumption is made that desired attribute values for inclusion are specified within the inclusion attribute, and therefore all others are excluded.</p>
+        <ol MadCap:continue="true">
+            <li value="6">Optionally, populate the other parameters listed below.</li>
+        </ol>
+        <ul>
+            <li class="Bullet2"><b>Dimensions:</b> By default, the parameter is blank. Optionally, to configure column width and height, select 'Table Header Dimensions.'</li>
+            <li class="Bullet2" MadCap:conditions="Primary.Under Construction"><b>Included By Default:</b> By default, the parameter is disabled. This filter option provides user an option to include all countries by default in the Country Inclusion list.  When disabled, all countries are listed in the Country Exclusion list and user needs to add the desired countries to the Country Inclusion list. When enabled,  all countries are listed in the Country Inclusion list and user deselects the excluded countries from the Country Inclusion list.<MadCap:conditionalText MadCap:conditions="Primary.PRODOC Note"> PRODOC note: BOND RDCUST-3221and 3223 Discuss this with Sujay</MadCap:conditionalText></li>
+        </ul>
+        <ul>
+            <li class="Bullet2"><b>Exclude Attribute:</b> This required parameter is used to select a multivalued attribute where the country exclusion data is stored. Attribute values (country names) within this attribute will not be displayed as included within the country handling components. <MadCap:snippetText src="../../../../Resources/Snippets/click ellipsis button Start Sentence.flsnp"></MadCap:snippetText> to browse and/or search for the necessary attribute value. </li>
+            <li class="Bullet3" MadCap:conditions="Primary.Under Construction">For the AutoCare&#160;solution, this may be <span style="color: #ff6347;">&lt;&lt;SIMO / NIFE&#160;to provide&gt;&gt;</span></li>
+            <li class="Bullet3" MadCap:conditions="Primary.Under Construction">For the NAPA&#160;solution, this may be <span style="color: #ff6347;">&lt;&lt;SIMO / NIFE&#160;to provide&gt;&gt;</span></li>
+            <li class="Bullet3">For the TecDoc solution, this may be 'TD_ATTR_LKZ_Exclude'</li>
+        </ul>
+        <p class="important2" MadCap:autonum="&lt;b&gt;Important: &lt;/b&gt;">A value cannot exist in both the configured exclude attribute and in the include attribute. If a value is stored within the exclusion attribute, and is later selected for inclusion within the Country Handling Value editor, then the referenced value is removed from the exclusion attribute. However, if that attribute value is deselected from inclusion, it is <b>NOT</b> added back to the exclusion attribute. When this occurs, the assumption is that desired attribute values for inclusion are specified within the inclusion attribute, and therefore all others are excluded.</p>
+        <ul>
+            <li class="Bullet2"><b>Label:</b> By default, the parameter is blank. But after clicking the <b>Add</b> button, the default column header label (Countries) will be stored. Optionally enter a desired label to be displayed as the column header within the Application Manager Results Table.</li>
+            <li class="Bullet2"><b>Table Sorting:</b> By default, the parameter is blank. Optionally, select from the dropdown values to specify the default sorting order of the column data.</li>
+        </ul>
+        <ol start="7">
+            <li>Once the required parameters are populated, the Add button will activate. Click the <b>Add</b> button to save the newly added component to the Headers parameter.</li>
+            <li>Optionally, on the Node List Properties Headers parameter, use the <b>Up</b> and/or <b>Down</b> buttons to configure the order in which the newly added column should display within the Results Table. </li>
+            <li>Click the <b>Save</b> and <b>Close</b> buttons for the designer.</li>
+        </ol>
+    </body>
+</html>

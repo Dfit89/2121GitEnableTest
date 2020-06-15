@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" description="Customer MDM Solution: The CMDM solution requires an understanding of terminology. In this primer topic, these terms and implementation methodologies are discussed and defined.">
+    <head><title>[%=Heading.Level1%]</title>
+        <meta name="description" content="Customer MDM Solution: This topic is an overview explanation of the CMDM solution." />
+    </head>
+    <body>
+        <h1>Customer MDM Overview</h1>
+        <p class="Body1">The Customer Master Data Management solution provides organizations with the means to address complex customer data challenges and improve their overall customer experience. </p>
+        <h2 MadCap:conditions="Primary.Web">Improving Customer Experience</h2>
+        <h2 class="RNNoTOC" MadCap:conditions="Primary.Print">Improving Customer Experience</h2>
+        <p>Customer Experience is the holistic journey of a customer that begins the moment they first become aware of a product and continues until the customer is building their own loyalty platform with a product.</p>
+        <p class="Body1">This documentation is focused on providing guidance to organizations in how to improve their customer data so that they can make informed decisions, and thus improve their customer experience.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/CMDM/CX Journey.png" />
+        </p>
+        <h2 MadCap:conditions="Primary.Web">Customer Data Management Challenges</h2>
+        <h2 class="RNNoTOC" MadCap:conditions="Primary.Print">Customer Data Management Challenges</h2>
+        <p class="Body1">Organizations are faced with four primary challenges when managing customer data:</p>
+        <ul>
+            <li class="Bullet2">Data Quality</li>
+            <li class="Bullet2">Operational Inefficiencies</li>
+            <li class="Bullet2">Reactive Strategic Decisions</li>
+            <li class="Bullet2">Governance</li>
+        </ul>
+        <p class="Body1HeadNoTOC">Data Quality Challenges</p>
+        <p>Data quality issues typically arise when attempting to house and manage customer data across multiple platforms. Doing so often times leads to inaccurate, duplicated, and incomplete data.</p>
+        <p class="Body1HeadNoTOC">Operational Inefficiencies</p>
+        <p class="Body1">Operational inefficiencies can be characterized by an organization's inability to share accurate and up-to-date data across the business, severely impacting downstream systems, processes, and initiatives. For example, some of these inefficiencies can lead to: returned mail, increased costs, payment delays, and unacceptable response time.</p>
+        <p class="Body1HeadNoTOC">Reactive Strategy Decisions</p>
+        <p class="Body1">Many organizations struggle to achieve their Customer Relationship Management (CRM) vision. Considering its impact on an organization's success, a concrete CRM&#160;strategy is a high concern for business and IT&#160;leaders.</p>
+        <p class="Body1">Bad data is the most common reason many CRM initiatives fail.</p>
+        <p class="Body1HeadNoTOC">Governance</p>
+        <p class="Body1">The most important part of data governance is to consider the availability, usability, integrity, and security of data within an organization. Poor data governance can lead to financial, reputational, and legal risks.</p>
+        <h2 MadCap:conditions="Primary.Web">Implementation Methodologies</h2>
+        <h2 class="RNNoTOC" MadCap:conditions="Primary.Print">Implementation Methodologies</h2>
+        <p>CMDM comprises four paths to implementation. These paths are:</p>
+        <ul>
+            <li>Consolidation Implementation</li>
+            <li>Coexistence Implementation</li>
+            <li>Registry Implementation</li>
+            <li>Centralized Implementation</li>
+        </ul>
+        <p class="Body1HeadNoTOC">Consolidation Implementation</p>
+        <p>This methodology refers to an implementation where STEP is a hub for externally provided data that is funneled into single Golden Records, which are then made available to external systems. These records are created via matching and merging operations with validation checks throughout the process. The STEP data created from this process is read-only, which is often a necessity as the data originates outside of STEP in an upstream system. A consolidation style implementation does not synchronize data back to the contributing systems.</p>
+        <p>For example, a company wishes to combine all of their sales channel data into one record bank so that data analytics may provide meaningful information. Once all these records are consolidated, marketing initiatives can use this information to target different channels as well as different regions.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/CMDM/ConsolidationMethodolgy.png" />
+        </p>
+        <p class="Body1HeadNoTOC">Coexistence Implementation</p>
+        <p>This methodology refers to a scenario where multiple databases containing the master data must operate at the same time. The customer data is authored and stored in various external sources while being synchronized to STEP. This process involves deduplication, conflict resolution, and validation operations, resulting in the creation of golden records. Finally, updates to the data can be done in the source system and any external systems that master customer data. STEP synchronizes the content of golden records back to the source systems, keeping every source up to date with data contributed from any source. This allows for a hybrid where DTA authoring may happen in the source system as well as in the MDM system.</p>
+        <p>A common situation for coexistence is in companies where each department has their own customer database. For example, a service department that has data on customers is stored in a separate database than where customer data is stored for the sales and marketing departments. However, using a CMDM solution with the Coexistence model, if information is changed in the marketing department, it is changed in all other departments.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/CMDM/CoexistenceMethodolgy.png" />
+        </p>
+        <p class="Body1HeadNoTOC">Registry Implementation</p>
+        <p>The registry method uses a simple database to reconcile identifiers for all customers across the enterprise. This method allows STEP to serve as a referenced, read-only source of mastered customer data for external systems with minimal data redundancy. STEP will only match on the bare minimum of needed data to confirm a unique record. All externally maintained data quality is the responsibility of the source systems.</p>
+        <p>For example, a company maintains different types of customer information across various external systems. A registry is used to identify and associate these different types of customer data with external systems. STEP serves as this registry by storing unique records with identifiers that are different from one external system to the next. STEP will ONLY store these records and unique record identifiers, and deduplicate their contact information.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/CMDM/RegistryMethod.png" />
+        </p>
+        <p class="Body1HeadNoTOC">Centralized Implementation</p>
+        <p>The centralized implementation is based around a well-managed and governed central repository for all master data. This repository holds a set of Golden Records that are read-only by the operational and analytical systems throughout the enterprise. STEP is the centralized owner of customer data, serving as the system of record. This system of record is an organization’s single version of truth for customer data. Data is not only centralized in STEP but also created and stored there. The most important aspect of a centralized implementation is that it is a system of record instead of a system of reference.</p>
+        <p>For example, a company wants to use STEP as the system of record for onboarding, deduplicating, and enriching new suppliers. Over time, STEP could remove duplicate records of these suppliers, and then the golden supplier records could be provided to external systems.</p>
+        <p class="Image1">
+            <img src="../../../Resources/Images/CMDM/CentralizedMethology.png" />
+        </p>
+        <p>This implementation guidelines focuses with a case that implements data with the <b>consolidation</b> and the <b>coexistence</b> methodologies.</p>
+    </body>
+</html>
