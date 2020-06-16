@@ -1,3 +1,10 @@
+---
+description: 'This section provides information, as available, in
+  regards to enabling product-specific solutions using the STEP
+  platform.'
+title: Solution Enablement
+---
+
 Solution Enablement
 ===================
 

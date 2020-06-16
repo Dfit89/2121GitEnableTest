@@ -1,1 +1,15 @@
-site_name: My Docs
+site_name: Stibo Systems Solution Enablement
+
+nav:
+  - Home: index.md
+  - Product Lines:
+    - PMDM:
+      - 'Product MDM Guide': pmdm/intro-to-pmdm.md
+    - GDSN: gdsn/intro-to-gdsn.md
+    - PLM: intro-to-plm.md
+    - CMDM: intro-to-cmdm.md
+    - Automotive: auto/intro-to-auto.md
+  - About: about.md
+
+theme:
+    name: mkdocs
